@@ -2,9 +2,9 @@ import React from "react";
 
 const Sidebar = () => {
 	return (
-		<aside className="w-64 bg-blue-800 text-white p-6 flex flex-col justify-between">
+		<aside className="w-1/7 min-w-40 bg-blue-800 text-white p-8 pt-12  flex flex-col justify-between">
 			<div>
-				<div className="text-2xl font-bold mb-8">Assist</div>
+				<div className="text-2xl font-bold mb-8">JioCloudPC</div>
 				<nav>
 					<ul className="space-y-4">
 						<li className="text-lg font-medium flex items-center space-x-2 text-teal-400">

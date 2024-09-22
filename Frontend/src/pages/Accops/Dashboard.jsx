@@ -1,43 +1,19 @@
 import React from "react";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../../components/Sidebar";
 
-const Accops = () => {
-	const mainApps = [
-		{ name: "Alo", icon: "🔥" },
-		{ name: "Emote", icon: "💬" },
-		{ name: "JioEvents", icon: "🎉" },
-		{ name: "JioGames", icon: "🎮" },
-		{ name: "JioMart", icon: "🛒" },
-		{ name: "JioMeetPro", icon: "📹" },
-		{ name: "JioNews", icon: "📰" },
-		{ name: "JioTranslate", icon: "🌐" },
-	];
-
-	const otherApps = [
-		{ name: "Adobe Express", icon: "🎨" },
-		{ name: "Adobe Lightroom", icon: "📷" },
-		{ name: "Audacity", icon: "🎧" },
-		{ name: "Blender", icon: "🌀" },
-		{ name: "LibreOffice Base", icon: "📊" },
-		{ name: "LibreOffice Calc", icon: "📈" },
-		{ name: "LibreOffice Draw", icon: "✏️" },
-		{ name: "LibreOffice Impress", icon: "📽️" },
-		{ name: "LibreOffice Writer", icon: "📝" },
-		{ name: "Shotcut", icon: "✂️" },
-	];
-
+const Dashboard = () => {
 	return (
 		<div className="flex h-screen bg-gray-100 text-white">
 			{/* Sidebar */}
 			<Sidebar />
 
 			{/* Main Content */}
-			<main className="flex-1 p-6">
+			<main className="flex-1 p-6 pt-12">
 				{/* Header */}
 				<header className="flex justify-between items-center mb-6">
 					<div>
 						<h1 className="text-2xl font-bold text-black">
-							Manage your projects
+							Welcome, Rahul Bhandhari
 						</h1>
 						<p className="text-gray-400">
 							Track your projects, tasks & team activity here
@@ -57,7 +33,7 @@ const Accops = () => {
 				{/* Project Overview Section */}
 				<section className="grid grid-cols-3 gap-6 mb-6">
 					<div className="bg-white text-black p-6 rounded-lg">
-						<h2 className="text-lg font-bold mb-4">Biond Project</h2>
+						<h2 className="text-lg font-bold mb-4">Bond Project</h2>
 						<div className="flex items-center space-x-2 mb-4">
 							<span className="text-sm text-gray-400">#Design</span>
 						</div>
@@ -99,7 +75,7 @@ const Accops = () => {
 					</div>
 
 					<div className="bg-white text-black p-6 rounded-lg">
-						<h2 className="text-lg font-bold mb-4">Team Activity</h2>
+						<h2 className="text-lg font-bold mb-4">Top Performers</h2>
 						<div className="flex items-center space-x-4">
 							<div className="bg-orange-500 w-10 h-10 flex items-center justify-center rounded-full">
 								97%
@@ -137,7 +113,6 @@ const Accops = () => {
 										</button>
 									</td>
 								</tr>
-								{/* Repeat rows as needed */}
 							</tbody>
 						</table>
 					</div>
@@ -147,4 +122,4 @@ const Accops = () => {
 	);
 };
 
-export default Accops;
+export default Dashboard;
