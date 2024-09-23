@@ -11,8 +11,6 @@ const App = () => {
   return (
     <Router>
       <div className="relative w-screen h-screen">
-        {/* Header */}
-        <Header />
         {/* Left sidebar */}
         <Routes>
           <Route path="/" element={<Lockscreen />} />

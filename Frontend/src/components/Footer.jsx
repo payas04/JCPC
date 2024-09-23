@@ -14,9 +14,12 @@ const Footer = () => {
   const JioCloudPath = location.pathname.startsWith("/accops");
   return (
     <div
-      className="fixed bottom-0 w-full h-12 rounded-t-3xl flex justify-between items-center space-x-6 px-1 z-10"
+      className="fixed bottom-0 w-full h-12 rounded-t-3xl justify-between items-center space-x-6 px-1 z-10"
       style={{
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
+        backgroundColor: JioCloudPath
+          ? "rgba(0, 0, 0, 1)"
+          : "rgba(0, 0, 0, 0.5)",
+        display: location.pathname == "/" ? "none" : "flex",
       }}
     >
       <div className="flex gap-4">
@@ -40,7 +43,7 @@ const Footer = () => {
             borderBottomWidth: JioCloudPath ? 2 : 0,
           }}
           onClick={() => {
-            if (JioCloudPath) navigate("/");
+            if (JioCloudPath) navigate("/home");
             else navigate("/accops/dashboard");
           }}
         >
@@ -56,7 +59,7 @@ const Footer = () => {
             borderBottomWidth: JioCloudPath ? 2 : 0,
           }}
           onClick={() => {
-            if (JioCloudPath) navigate("/");
+            if (JioCloudPath) navigate("/home");
             else navigate("/accops/dashboard");
           }}
         >
@@ -72,7 +75,7 @@ const Footer = () => {
             borderBottomWidth: JioCloudPath ? 2 : 0,
           }}
           onClick={() => {
-            if (JioCloudPath) navigate("/");
+            if (JioCloudPath) navigate("/home");
             else navigate("/accops/dashboard");
           }}
         >
@@ -88,7 +91,7 @@ const Footer = () => {
             borderBottomWidth: JioCloudPath ? 2 : 0,
           }}
           onClick={() => {
-            if (JioCloudPath) navigate("/");
+            if (JioCloudPath) navigate("/home");
             else navigate("/accops/dashboard");
           }}
         >
@@ -99,17 +102,14 @@ const Footer = () => {
           />
         </span>
       </div>
-      {/* <div className="flex gap-4">
-        <FaTrashCan className="cursor-pointer" size={30} />
-        <BiSolidWidget className="cursor-pointer" size={30} />
-      </div> */}
+    
       <div className="flex gap-1">
         <span className=" bg-white bg-opacity-10 rounded-full w-[40px] h-[40px] flex justify-center items-center">
           <LuListMusic size={20} />
         </span>
-        <span className=" bg-white bg-opacity-10 rounded-s-3xl rounded-e-md w-[60px] h-[40px] flex justify-center items-center gap-2">
-          <FaArrowAltCircleUp size={20} />
-          <PiNumberCircleTwoFill size={22} />
+        <span className=" bg-white bg-opacity-10 rounded-s-3xl rounded-e-md w-[70px] h-[40px] flex justify-center items-center gap-1 px-5">
+          <FaArrowAltCircleUp size={20} className="min-w-[20px] min-h-[20px]" />
+          <PiNumberCircleTwoFill size={50} className="min-w-[23px] min-h-[20px]" />
         </span>
         <span className=" cursor-default bg-white bg-opacity-10 rounded-md w-[80px] h-[40px] flex justify-center items-center">
           <p>Sept 23</p>
