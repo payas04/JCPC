@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import JioCloudLogo from "../assets/JioCloudPC.png";
 import { FaRegCircle, FaArrowAltCircleUp } from "react-icons/fa";
@@ -6,7 +5,6 @@ import { LuListMusic } from "react-icons/lu";
 import { PiNumberCircleTwoFill } from "react-icons/pi";
 import { MdOutlineSignalWifi4Bar } from "react-icons/md";
 import { MdOutlineBatteryFull } from "react-icons/md";
-import GetDate from "./GetDate";
 
 const Footer = () => {
   const navigate = useNavigate();

@@ -1,20 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserProfile } from "./Userprofile";
+import { useAuth } from "../context/auth";
 
-function Login({ toggleLogin }) {
-  const [name, setName] = useState("");
+function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { user, login, logout } = useAuth();
 
-  async function login(e) {
+  useEffect(() => {
+    if (user) {
+      navigate("/home");
+    }
+  }, [user, navigate]);
+
+  async function handleLogin(e) {
     e.preventDefault();
     try {
       setLoading(true);
       // Simulating a delay for demonstration purposes
       setTimeout(() => {
+        login(true); // Assuming `login(true)` sets the user to a logged-in state
         navigate(`/home`);
         setLoading(false);
       }, 3000);
@@ -33,9 +41,7 @@ function Login({ toggleLogin }) {
     <>
       {loading && (
         <div className="fixed inset-0 flex items-center justify-center z-50 ">
-          <div className="inline-block animate-spin rounded-full border-4 border-solid border-current border-e-transparent h-8 w-8">
-            <span className="sr-only">Loading...</span>
-          </div>
+          <div className="inline-block mt-24 animate-spin rounded-full border-4 border-solid border-current border-e-transparent h-8 w-8"></div>
         </div>
       )}
       {!loading && error && (
@@ -60,10 +66,10 @@ function Login({ toggleLogin }) {
           <div>{error}</div>
         </div>
       )}
-      <form onSubmit={login}>
+      <form onSubmit={handleLogin}>
         <div className="relative left-0 top-44  w-full flex flex-col items-center z-10">
           <div className="aspect-square w-32 h-36">
-            <UserProfile name={name} />
+            <UserProfile />
           </div>
           <div className="mt-2 font-bold text-xl">
             <h1>Rahul Bhandari</h1>
