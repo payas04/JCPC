@@ -30,7 +30,7 @@ const Sidebar = () => {
       </div>
 
       {/* Teams */}
-      <div>
+      {/* <div>
         <h2 className="text-gray-500 text-sm mb-4">TEAMS</h2>
         <ul className="space-y-2">
           <li className="text-sm flex items-center space-x-2">
@@ -46,7 +46,7 @@ const Sidebar = () => {
             <span>Add project</span>
           </li>
         </ul>
-      </div>
+      </div> */}
     </aside>
   );
 };

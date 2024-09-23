@@ -5,12 +5,12 @@ import StatCard from "../../components/StatCard";
 import { Users, ShoppingCart, DollarSign, Package, Star } from "lucide-react";
 const Dashboard = () => {
   return (
-    <div className="flex h-screen bg-gray-100 text-white">
+    <div className="flex h-screen bg-gray-100 text-white ">
       {/* Sidebar */}
       <Sidebar />
 
       {/* Main Content */}
-      <main className="flex-1 p-6 pt-12">
+      <main className="flex-1 p-6 pt-12 overflow-y-auto mb-8">
         {/* Header */}
         <header className="flex justify-between items-center mb-6">
           <div>

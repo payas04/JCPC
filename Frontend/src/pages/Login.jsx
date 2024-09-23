@@ -92,15 +92,6 @@ function Login() {
           )}
         </div>
       </form>
-      <div className="absolute flex gap-9 text-white bottom-5 right-12 select-none">
-        <span className="material-symbols-outlined text-3xl">wifi</span>
-        <span className="material-symbols-outlined text-3xl">
-          accessibility
-        </span>
-        <span className="material-symbols-outlined text-3xl">
-          power_settings_new
-        </span>
-      </div>
     </>
   );
 }
