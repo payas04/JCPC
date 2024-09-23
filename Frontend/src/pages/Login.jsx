@@ -8,7 +8,7 @@ function Login() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const { user, login, logout } = useAuth();
+  const { user, login } = useAuth();
 
   useEffect(() => {
     if (user) {
@@ -41,7 +41,7 @@ function Login() {
     <>
       {loading && (
         <div className="fixed inset-0 flex items-center justify-center z-50 ">
-          <div className="inline-block mt-24 animate-spin rounded-full border-4 border-solid border-current border-e-transparent h-8 w-8"></div>
+          <div className="inline-block mt-24 animate-spin text-white rounded-full border-4 border-solid border-current border-e-transparent h-8 w-8"></div>
         </div>
       )}
       {!loading && error && (
@@ -71,7 +71,7 @@ function Login() {
           <div className="aspect-square w-32 h-36">
             <UserProfile />
           </div>
-          <div className="mt-2 font-bold text-xl">
+          <div className="mt-2 font-bold text-2xl text-white">
             <h1>Rahul Bhandari</h1>
           </div>
 
@@ -82,7 +82,7 @@ function Login() {
                 id="password"
                 name="password"
                 placeholder="Password"
-                className="input pl-2 py-2  bg-opacity-30 w-72 max-w-xs focus:outline-none border-[0.5px] rounded-sm border-b-white mt-4 placeholder-white opacity-100::placeholder"
+                className="input pl-2 py-2  bg-opacity-30 w-72 max-w-xs focus:outline-none border-[0.5px] rounded-sm border-b-white mt-4 placeholder-black font-medium opacity-100::placeholder"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 required

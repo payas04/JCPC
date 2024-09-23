@@ -1,11 +1,11 @@
 import CustomPieChart from "../../components/CustomPieChart";
-import PieChart from "../../components/CustomPieChart";
+
 import Sidebar from "../../components/Sidebar";
 import StatCard from "../../components/StatCard";
-import { Users, ShoppingCart, DollarSign, Package, Star } from "lucide-react";
+import { Users, ShoppingCart, Package, Star } from "lucide-react";
 const Dashboard = () => {
   return (
-    <div className="flex h-screen bg-gray-100 text-white ">
+    <div className="flex h-screen bg-gray-100 text-black ">
       {/* Sidebar */}
       <Sidebar />
 
