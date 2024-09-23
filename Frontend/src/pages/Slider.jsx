@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 
 export default function Slider({ isMenuOpen, toggleMenu }) {
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [funFact, setFunFact] = useState("");
 
   useEffect(() => {
     const updateTime = () => setCurrentTime(new Date());
@@ -39,7 +38,7 @@ export default function Slider({ isMenuOpen, toggleMenu }) {
   return (
     <motion.nav
       transition={{ type: "spring", damping: 200, stiffness: 1000 }}
-      initial={{ y: "-100%" }}
+      initial={{ y: "0" }}
       animate={{ y: isMenuOpen ? "0%" : "-110%" }}
       className="fixed inset-0 bg-black h-full w-full z-50"
       onClick={(e) => {
