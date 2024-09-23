@@ -46,6 +46,10 @@ export default function Slider({ isMenuOpen, toggleMenu }) {
         e.stopPropagation();
         toggleMenu();
       }}
+      onKeyPress={(e) => {
+        e.stopPropagation();
+        toggleMenu();
+      }}
       style={{
         background: "url(https://images8.alphacoders.com/134/1346089.png)",
         backgroundSize: "cover",
@@ -56,6 +60,9 @@ export default function Slider({ isMenuOpen, toggleMenu }) {
           <div className="text-9xl font-bold">{formatTime(currentTime)}</div>
           <div className="font-semibold text-4xl mt-5">
             {formatDate(currentTime)}
+          </div>
+          <div className="font-semibold text-xl mt-52 w-92 flex flex-col items-center">
+            Press anywhere on screen to continue
           </div>
         </div>
       </div>
