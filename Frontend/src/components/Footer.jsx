@@ -1,10 +1,11 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import JioCloudLogo from "../assets/JioCloudPC.png";
-import { FaRegCircle, FaArrowAltCircleUp } from "react-icons/fa";
+import { FaArrowAltCircleUp } from "react-icons/fa";
 import { LuListMusic } from "react-icons/lu";
 import { PiNumberCircleTwoFill } from "react-icons/pi";
 import { MdOutlineSignalWifi4Bar } from "react-icons/md";
 import { MdOutlineBatteryFull } from "react-icons/md";
+import { GetDate } from "./GetDate";
 
 import Power from "./Power";
 
@@ -89,10 +90,24 @@ const Footer = () => {
 					/>
 				</span>
 				<span className=" cursor-default bg-white bg-opacity-10 rounded-md w-[80px] h-[40px] flex justify-center items-center">
-					<p>Sept 23</p>
+					<p>
+						{GetDate().toLocaleTimeString("en-US", {
+							hour: "numeric",
+							minute: "2-digit",
+							// weekday: "long",
+							day: "numeric",
+							month: "short",
+						})}
+					</p>
 				</span>
 				<span className=" cursor-default bg-white bg-opacity-10 rounded-s-md rounded-e-3xl w-[130px] h-[40px] flex justify-center items-center space-x-1">
-					<p>14:49</p>
+					<p>
+						{GetDate().toLocaleTimeString([], {
+							hour: "2-digit",
+							minute: "2-digit",
+							hour12: false,
+						})}
+					</p>
 					<p>US</p>
 					<MdOutlineSignalWifi4Bar size={20} />
 					<MdOutlineBatteryFull size={20} />
@@ -103,3 +118,13 @@ const Footer = () => {
 };
 
 export default Footer;
+
+// {
+// 	date.toLocaleString("en-US", {
+// 		hour: "numeric",
+// 		minute: "2-digit",
+// 		// weekday: "long",
+// 		day: "numeric",
+// 		month: "short",
+// 	});
+// }

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-const GetDate = () => {
+export function GetDate() {
 	const [date, setDate] = useState(new Date());
-
 	useEffect(() => {
 		const timer = setInterval(() => {
 			setDate(new Date());
@@ -10,17 +9,5 @@ const GetDate = () => {
 		return () => clearInterval(timer); // Clear interval on component unmount
 	}, []);
 
-	return (
-		<div>
-			{date.toLocaleString("en-US", {
-				hour: "numeric",
-				minute: "2-digit",
-				// weekday: "long",
-				day: "numeric",
-				month: "short",
-			})}
-		</div>
-	);
-};
-
-export default GetDate;
+	return date;
+}
