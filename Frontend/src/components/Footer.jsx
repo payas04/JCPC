@@ -14,7 +14,7 @@ const Footer = (toggleStart, setInput, setIsSleeping, setActionType) => {
   const JioCloudPath = location.pathname.startsWith("/accops");
   return (
     <div
-      className="fixed bottom-0 w-full h-12 rounded-t-3xl justify-between items-center space-x-6 px-1 z-10"
+      className="fixed bottom-0 w-full h-12 rounded-t-3xl justify-between items-center text-white space-x-6 px-1 z-10"
       style={{
         backgroundColor: JioCloudPath
           ? "rgba(0, 0, 0, 1)"

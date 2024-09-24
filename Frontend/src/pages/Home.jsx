@@ -1,8 +1,8 @@
-import { useState } from "react";
 import Draggable from "react-draggable";
 import Logo from "../assets/JioCloudPC.png";
 import { useNavigate } from "react-router-dom";
 import { MdShortcut } from "react-icons/md";
+import CustomModal from "../components/CustomModal";
 
 const Home = () => {
   const navigate = useNavigate();

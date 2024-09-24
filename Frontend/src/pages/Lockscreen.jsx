@@ -14,10 +14,10 @@ function Lockscreen() {
   return (
     <>
       <div
-        className="absolute bg-black h-screen w-full blur-sm"
+        className="absolute bg-black h-screen w-full opacity-80  "
         style={{
           background:
-            "url(https://images8.alphacoders.com/134/1346089.png) no-repeat center center",
+            "url(https://www.wallpaperhub.app/_next/image?url=https%3A%2F%2Fcdn.wallpaperhub.app%2Fcloudcache%2F6%2F1%2Fd%2F8%2Fe%2F1%2F61d8e1478765c4255530a177f093168488e2ebaa.jpg&w=4500&q=100) no-repeat center center",
           backgroundSize: "cover",
         }}
       ></div>
