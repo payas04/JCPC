@@ -1,5 +1,4 @@
 import CustomPieChart from "../../components/CustomPieChart";
-
 import Sidebar from "../../components/Sidebar";
 import StatCard from "../../components/StatCard";
 import { Users, Bug, BugOff, Star } from "lucide-react";
@@ -40,12 +39,14 @@ const Dashboard = () => {
               value="277"
               color="bg-emerald-500"
               icon={BugOff}
+              shouldOpenModal={true}
             />
             <StatCard
               title="Open Issues"
               value="338"
               color="bg-purple-500"
               icon={Bug}
+              shouldOpenModal={true}
             />
             <div className="md:row-span-2">
               <div className="mb-4 font-bold text-2xl flex items-center justify-center text-black ">
