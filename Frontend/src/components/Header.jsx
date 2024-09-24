@@ -1,45 +1,32 @@
-import { CiPower, CiBluetooth } from "react-icons/ci";
-import { IoNotifications } from "react-icons/io5";
-import { FaWifi } from "react-icons/fa";
-import { MdVolumeUp } from "react-icons/md";
-import { GiSettingsKnobs } from "react-icons/gi";
-import { useLocation } from "react-router-dom";
-import GetDate from "./GetDate";
-import { useAuth } from "../context/auth";
+import { Link, useLocation } from "react-router-dom";
+import { IoClose } from "react-icons/io5";
+import { IoMdRefresh } from "react-icons/io";
 
 const Header = () => {
   const location = useLocation();
-  const { logout } = useAuth();
   return (
     <div
-      className="fixed top-0 w-full h-10 flex justify-between items-center px-4 text-white text-sm z-20"
+      className="fixed top-0 w-full h-6 bg-white bg-opacity-50 shadow-md flex justify-between items-center px-4 text-white text-sm z-20"
       style={{
-        backgroundColor:
-          location.pathname == "/" ? "rgba(0, 0, 0, 0.5)" : "rgba(0, 0, 0, 1)",
+        display:
+          location.pathname == "/"
+            ? "none"
+            : location.pathname == "/home"
+            ? "none"
+            : "",
       }}
     >
-      <div>
-        <CiPower onClick={() => logout()} size={25} />
-      </div>
-      <div className="text-lg ">
-        <GetDate />
+      <div
+        onClick={() => {
+          window.location.reload();
+        }}
+      >
+        <IoMdRefresh color="black" size={15} />
       </div>
       <div className="flex space-x-2">
-        <span>
-          <GiSettingsKnobs className="rotate-90" size={25} />
-        </span>
-        <span>
-          <IoNotifications size={25} />
-        </span>
-        <span>
-          <MdVolumeUp size={25} />
-        </span>
-        <span>
-          <CiBluetooth size={25} />
-        </span>
-        <span>
-          <FaWifi size={25} />
-        </span>
+        <Link to={"/home"}>
+          <IoClose color="black" size={15} />
+        </Link>
       </div>
     </div>
   );

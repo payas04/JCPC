@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <aside className="w-1/7 min-w-52 bg-blue-800 text-white p-8 pt-12  flex flex-col justify-between">
+    <aside className="w-1/7 min-w-52 bg-blue-800 text-white pt-12  flex flex-col justify-between">
       <div>
-        <div className="text-2xl font-bold mb-8">JioCloudPC</div>
+        <div className="text-2xl font-bold mb-8 px-3 py-2">JioCloudPC</div>
         <nav>
           <ul className="space-y-4">
             <Li
@@ -38,42 +38,27 @@ const Sidebar = () => {
           </ul>
         </nav>
       </div>
-
-      {/* Teams */}
-      {/* <div>
-        <h2 className="text-gray-500 text-sm mb-4">TEAMS</h2>
-        <ul className="space-y-2">
-          <li className="text-sm flex items-center space-x-2">
-            <span className="text-purple-500">●</span>
-            <span>Sales</span>
-          </li>
-          <li className="text-sm flex items-center space-x-2">
-            <span className="text-orange-500">●</span>
-            <span>Marketing</span>
-          </li>
-          <li className="text-sm flex items-center space-x-2">
-            <span>➕</span>
-            <span>Add project</span>
-          </li>
-        </ul>
-      </div> */}
     </aside>
   );
 };
 
 const Li = ({ url, title, Icon, location }) => (
   <li
+  
     style={{
       backgroundColor: location.pathname.includes(url)
-        ? "rgba(0,115,255,0.1)"
+        ? "#f3f4f6"
         : "",
+        padding:"5px 12px",
+        borderTopLeftRadius:"3px",
+        borderBottomLeftRadius:"3px"
     }}
   >
     <Link
       className="text-lg font-medium flex items-center gap-2 text-teal-400"
       to={url}
       style={{
-        color: location.pathname.includes(url) ? "yellow" : "white",
+        color: location.pathname.includes(url) ? "#1e1926" : "white",
       }}
     >
       {Icon}

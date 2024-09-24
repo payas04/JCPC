@@ -5,11 +5,13 @@ import Dashboard from "./pages/Accops/Dashboard";
 import Lockscreen from "./pages/Lockscreen";
 import Test from "./pages/test";
 import Profile from "./pages/Profile";
+import Header from "./components/Header";
 
 const App = () => {
   return (
     <Router>
       <div className="relative w-screen h-screen">
+        <Header/>
         {/* Left sidebar */}
         <Routes>
           <Route path="/" element={<Lockscreen />} />
