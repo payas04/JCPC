@@ -6,6 +6,11 @@ const StatCard = ({
   value,
   color,
   icon: Icon,
+  blocker,
+  critical,
+  major,
+  normal,
+  minor,
   shouldOpenModal = false,
 }) => {
   const [open, setOpen] = useState(false);
@@ -21,7 +26,16 @@ const StatCard = ({
       className={`rounded-lg p-6 text-white ${color} cursor-pointer`}
       onClick={handleOpenModal}
     >
-      <CustomModal open={open} setOpen={setOpen} />
+      <CustomModal
+        open={open}
+        setOpen={setOpen}
+        heading={title}
+        blocker
+        critical
+        major
+        normal
+        minor
+      />
       <div className="flex justify-between items-start mb-4">
         <div>
           <h3 className="text-lg font-medium">{title}</h3>
