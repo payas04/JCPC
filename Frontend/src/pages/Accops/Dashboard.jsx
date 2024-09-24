@@ -2,6 +2,7 @@ import CustomPieChart from "../../components/CustomPieChart";
 import Sidebar from "../../components/Sidebar";
 import StatCard from "../../components/StatCard";
 import { Users, Bug, BugOff, Star } from "lucide-react";
+import JioPcObservation from "./JioPcObservation";
 const Dashboard = () => {
   return (
     <div className="flex h-screen bg-gray-100 text-black ">
@@ -55,7 +56,7 @@ const Dashboard = () => {
               <CustomPieChart />
             </div>
             <StatCard
-              title="Total Users"
+              title="Total Members"
               value="90"
               color="bg-sky-500"
               icon={Users}
@@ -71,35 +72,7 @@ const Dashboard = () => {
 
         {/* Tasks Activity Table */}
         <section className="bg-white text-black p-6 rounded-lg">
-          <h2 className="text-lg font-bold mb-4">Tasks Activity</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left">
-              <thead className="bg-white text-black">
-                <tr>
-                  <th className="p-2">Assigned to</th>
-                  <th className="p-2">Deadline</th>
-                  <th className="p-2">Task</th>
-                  <th className="p-2">Status</th>
-                  <th className="p-2">Project</th>
-                  <th className="p-2"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="p-2">Juan M.</td>
-                  <td className="p-2">May 16th, 2023</td>
-                  <td className="p-2">Establish and maintain design...</td>
-                  <td className="p-2 text-yellow-400">In Progress</td>
-                  <td className="p-2">Crimson Studio</td>
-                  <td className="p-2">
-                    <button className="bg-teal-500 p-1 rounded">
-                      See Details
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <JioPcObservation />
         </section>
       </main>
     </div>
