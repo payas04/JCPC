@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <aside className="w-1/7 min-w-40 bg-blue-800 text-white p-8 pt-12  flex flex-col justify-between">
+    <aside className="w-1/7 min-w-52 bg-blue-800 text-white p-8 pt-12  flex flex-col justify-between">
       <div>
         <div className="text-2xl font-bold mb-8">JioCloudPC</div>
         <nav>
@@ -73,7 +73,7 @@ const Li = ({ url, title, Icon, location }) => (
       className="text-lg font-medium flex items-center gap-2 text-teal-400"
       to={url}
       style={{
-        color: location.pathname.includes(url) ? "yellow" : "black",
+        color: location.pathname.includes(url) ? "yellow" : "white",
       }}
     >
       {Icon}

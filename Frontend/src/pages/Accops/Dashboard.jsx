@@ -2,7 +2,7 @@ import CustomPieChart from "../../components/CustomPieChart";
 
 import Sidebar from "../../components/Sidebar";
 import StatCard from "../../components/StatCard";
-import { Users, ShoppingCart, Package, Star } from "lucide-react";
+import { Users, Bug, BugOff, Star } from "lucide-react";
 const Dashboard = () => {
   return (
     <div className="flex h-screen bg-gray-100 text-black ">
@@ -38,34 +38,30 @@ const Dashboard = () => {
             <StatCard
               title="Total Issues"
               value="277"
-              increase="95%"
               color="bg-emerald-500"
-              icon={Users}
+              icon={BugOff}
             />
             <StatCard
-              title="Total Orders"
+              title="Open Issues"
               value="338"
-              increase="30%"
               color="bg-purple-500"
-              icon={ShoppingCart}
+              icon={Bug}
             />
             <div className="md:row-span-2">
-              <div className="mb-4  pl-5 font-bold text-2xl text-black ">
+              <div className="mb-4 font-bold text-2xl flex items-center justify-center text-black ">
                 ISSUE CHART
               </div>
               <CustomPieChart />
             </div>
             <StatCard
-              title="Total Products"
-              value="557"
-              increase="25%"
+              title="Total Users"
+              value="90"
               color="bg-sky-500"
-              icon={Package}
+              icon={Users}
             />
             <StatCard
               title="Total Reviews"
               value="166"
-              increase="45%"
               color="bg-amber-500"
               icon={Star}
             />

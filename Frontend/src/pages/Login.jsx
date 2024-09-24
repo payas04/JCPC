@@ -66,8 +66,11 @@ function Login() {
           <div>{error}</div>
         </div>
       )}
-      <form onSubmit={handleLogin}>
-        <div className="relative left-0 top-44  w-full flex flex-col items-center z-10">
+      <form
+        onSubmit={handleLogin}
+        className="h-full flex justify-center items-center"
+      >
+        <div className="relative left-0  flex items-center justify-center  w-full flex-col  z-10">
           <div className="aspect-square w-32 h-36">
             <UserProfile />
           </div>
@@ -82,7 +85,7 @@ function Login() {
                 id="password"
                 name="password"
                 placeholder="Password"
-                className="input pl-2 py-2  bg-opacity-30 w-72 max-w-xs focus:outline-none border-[0.5px] rounded-sm border-b-white mt-4 placeholder-black font-medium opacity-100::placeholder"
+                className="input pl-2 py-2 bg-blue-700  placeholder:text-white  w-72 max-w-xs focus:outline-none  rounded-md opacity-90 border-b-white border-2 mt-4  font-medium opacity-100::placeholder"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 required

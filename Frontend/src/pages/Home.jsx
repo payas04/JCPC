@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Draggable from "react-draggable";
 import Logo from "../assets/JioCloudPC.png";
 import { useNavigate } from "react-router-dom";
