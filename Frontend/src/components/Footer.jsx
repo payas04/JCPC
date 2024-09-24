@@ -6,7 +6,9 @@ import { PiNumberCircleTwoFill } from "react-icons/pi";
 import { MdOutlineSignalWifi4Bar } from "react-icons/md";
 import { MdOutlineBatteryFull } from "react-icons/md";
 
-const Footer = () => {
+import Power from "./Power";
+
+const Footer = (toggleStart, setInput, setIsSleeping, setActionType) => {
   const navigate = useNavigate();
   const location = useLocation();
   const JioCloudPath = location.pathname.startsWith("/accops");
@@ -21,14 +23,12 @@ const Footer = () => {
       }}
     >
       <div className="flex gap-4">
-        <span
-          className="cursor-pointer bg-white bg-opacity-10 rounded-full w-[40px] h-[40px] flex justify-center items-center"
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          <FaRegCircle size={20} />
-        </span>
+        <Power
+          toggleStart={toggleStart}
+          setInput={setInput}
+          setIsSleeping={setIsSleeping}
+          setActionType={setActionType}
+        />
       </div>
 
       <div className="flex gap-4 justify-center items-center">
@@ -51,63 +51,20 @@ const Footer = () => {
             className="w-[30px] h-full rounded-lg block mx-auto"
           />
         </span>
-        <span
-          className="text-white text-2xl cursor-pointer p-1 rounded-sm border-white"
-          style={{
-            borderBottomWidth: JioCloudPath ? 2 : 0,
-          }}
-          onClick={() => {
-            if (JioCloudPath) navigate("/home");
-            else navigate("/accops/dashboard");
-          }}
-        >
-          <img
-            src={JioCloudLogo}
-            alt="JioCloudPc logo"
-            className="w-[30px] h-full rounded-lg block mx-auto"
-          />
-        </span>
-        <span
-          className="text-white text-2xl cursor-pointer p-1 rounded-sm border-white"
-          style={{
-            borderBottomWidth: JioCloudPath ? 2 : 0,
-          }}
-          onClick={() => {
-            if (JioCloudPath) navigate("/home");
-            else navigate("/accops/dashboard");
-          }}
-        >
-          <img
-            src={JioCloudLogo}
-            alt="JioCloudPc logo"
-            className="w-[30px] h-full rounded-lg block mx-auto"
-          />
-        </span>
-        <span
-          className="text-white text-2xl cursor-pointer p-1 rounded-sm border-white"
-          style={{
-            borderBottomWidth: JioCloudPath ? 2 : 0,
-          }}
-          onClick={() => {
-            if (JioCloudPath) navigate("/home");
-            else navigate("/accops/dashboard");
-          }}
-        >
-          <img
-            src={JioCloudLogo}
-            alt="JioCloudPc logo"
-            className="w-[30px] h-full rounded-lg block mx-auto"
-          />
-        </span>
+       
+       
       </div>
-    
+
       <div className="flex gap-1">
         <span className=" bg-white bg-opacity-10 rounded-full w-[40px] h-[40px] flex justify-center items-center">
           <LuListMusic size={20} />
         </span>
         <span className=" bg-white bg-opacity-10 rounded-s-3xl rounded-e-md w-[70px] h-[40px] flex justify-center items-center gap-1 px-5">
           <FaArrowAltCircleUp size={20} className="min-w-[20px] min-h-[20px]" />
-          <PiNumberCircleTwoFill size={50} className="min-w-[23px] min-h-[20px]" />
+          <PiNumberCircleTwoFill
+            size={50}
+            className="min-w-[23px] min-h-[20px]"
+          />
         </span>
         <span className=" cursor-default bg-white bg-opacity-10 rounded-md w-[80px] h-[40px] flex justify-center items-center">
           <p>Sept 23</p>
