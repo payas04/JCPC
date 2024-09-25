@@ -1,23 +1,15 @@
 :root {
-  --card-height: 300px;
+  --card-height: 450px;
   --card-width: calc(var(--card-height) / 1.5);
 }
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: #191c29;
-}
-
 .activities-container {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  width: calc(100% - 300px); /* Adjusted width to accommodate sidebar */
+  padding: 20px;
 }
 
 .card {
@@ -27,19 +19,40 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding: 0 36px;
-  perspective: 2500px;
-  margin: 0 50px;
+  padding: 0 20px;
+  perspective: 1500px;
+  transition: transform 0.5s ease, box-shadow 0.3s ease; /* Transition for transform and shadow */
+  cursor: pointer;
+  margin: 20px;
+}
+
+.card.enlarged {
+  width: calc(100% - 300px); /* Full width minus sidebar */
+  /* height: calc(100% - 40px);*/
+  height: 85%;
+  margin-left: 7em;
+  z-index: 999; /* Ensures it is on top of other elements */
+  position: absolute; /* Make it cover the right side */
+  top: 20px; /* Offset to fit within the screen */
+  /* left: 300px; /* Position beside the sidebar */
+  /* right: 300px; */
+  background-color: rgba(0, 0, 0, 0.8); /* Darken background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease; /* Smooth transition for all properties */
+  overflow: hidden; /* Prevent overflow issues */
 }
 
 .cover-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease; /* Smooth transition for the cover image */
 }
 
 .wrapper {
-  transition: all 0.5s;
+  transition: all 0.5s ease; /* Smoother transitions for the wrapper */
   position: absolute;
   width: 100%;
   z-index: -1;
@@ -50,66 +63,72 @@ body {
   box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
 }
 
-.wrapper::before,
-.wrapper::after {
-  content: "";
-  opacity: 0;
-  width: 100%;
-  height: 80px;
-  transition: all 0.5s;
-  position: absolute;
-  left: 0;
-}
-
-.wrapper::before {
-  top: 0;
-  height: 100%;
-  background-image: linear-gradient(
-    to top,
-    transparent 46%,
-    rgba(12, 13, 19, 0.5) 68%,
-    rgba(12, 13, 19) 97%
-  );
-}
-
-.wrapper::after {
-  bottom: 0;
-  opacity: 1;
-  background-image: linear-gradient(
-    to bottom,
-    transparent 46%,
-    rgba(12, 13, 19, 0.5) 68%,
-    rgba(12, 13, 19) 97%
-  );
-}
-
-.card:hover .wrapper::before,
-.card:hover .wrapper::after {
-  opacity: 1;
-}
-
-.card:hover .wrapper::after {
-  height: 120px;
-}
-
 .title {
   width: 100%;
-  transition: transform 0.5s;
+  transition: transform 0.5s ease; /* Smooth transition for the title */
 }
 
 .card:hover .title {
-  transform: translate3d(0%, -50px, 100px);
+  transform: translateY(-50px); /* Adjust movement to be smoother */
 }
 
 .character {
   width: 100%;
   opacity: 0;
-  transition: all 0.5s;
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth opacity and transform transitions */
   position: absolute;
   z-index: -1;
 }
 
 .card:hover .character {
   opacity: 1;
-  transform: translate3d(0%, -30%, 100px);
+  transform: translateY(-30%); /* Adjust movement to be smoother */
+}
+
+.card-details {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto; /* Scroll if content is too long */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for details */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: black;
+  cursor: pointer;
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+/* Smoother transition for closing */
+.card.active .wrapper,
+.card.active .title,
+.card.active .character {
+  display: none; /* Hide elements when the card is active */
+}
+
+.card:not(.enlarged) {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth shrink transition */
+}
+
+.card.active {
+  transform: scale(1); /* Ensure it scales correctly */
 }
