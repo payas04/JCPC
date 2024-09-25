@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaRegCircle } from "react-icons/fa";
 import { GoMoon } from "react-icons/go";
@@ -7,66 +7,82 @@ import { VscDebugRestart } from "react-icons/vsc";
 import { useAuth } from "../context/auth";
 
 function Power() {
-	const navigate = useNavigate();
-	const { logout, setIsShutdown } = useAuth();
-	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const navigate = useNavigate();
+  const { logout, setIsShutdown } = useAuth();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
-	function toggleDropdown() {
-		setIsDropdownOpen(!isDropdownOpen);
-	}
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    }
 
-	function handleSleep() {
-		logout();
-		navigate("/");
-	}
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
-	function handleShut() {
-		setIsShutdown(true);
-		// setTimeout(() => {}, 2700);
-	}
+  function toggleDropdown() {
+    setIsDropdownOpen(!isDropdownOpen);
+  }
 
-	return (
-		<span
-			className="cursor-pointer rounded-full w-[40px] h-[40px] flex justify-center items-center"
-			style={{
-				backgroundColor: isDropdownOpen
-					? "rgba(0, 0, 0, 0.5)"
-					: "rgba(255, 255, 255, 0.1)",
-			}}>
-			<div
-				className="flex justify-center items-center"
-				style={{}}
-				onClick={toggleDropdown}>
-				<FaRegCircle size={20} />
-			</div>
-			{isDropdownOpen && (
-				<ul className="absolute bottom-14 left-3 p-2 shadow rounded-lg w-40 bg-neutral-800 border-black border-2 border-opacity-10 flex flex-col gap-3">
-					<li>
-						<button
-							className="flex gap-2 justify-center items-center"
-							onClick={handleSleep}>
-							<GoMoon /> Sleep
-						</button>
-					</li>
-					<li>
-						<button
-							className="flex gap-2 justify-center items-center"
-							onClick={handleShut}>
-							<IoPower /> Shut Down
-						</button>
-					</li>
-					<li>
-						<button
-							className="flex gap-2 justify-center items-center"
-							// onClick={ }
-						>
-							<VscDebugRestart /> Restart
-						</button>
-					</li>
-				</ul>
-			)}
-		</span>
-	);
+  function handleSleep() {
+    logout();
+    navigate("/");
+  }
+
+  function handleShut() {
+    setIsShutdown(true);
+    // setTimeout(() => {}, 2700);
+  }
+
+  return (
+    <span
+      ref={dropdownRef}
+      onClick={toggleDropdown}
+      className="cursor-pointer rounded-full w-[40px] h-[40px] flex justify-center items-center relative"
+      style={{
+        backgroundColor: isDropdownOpen
+          ? "rgba(0, 0, 0, 0.5)"
+          : "rgba(255, 255, 255, 0.1)",
+      }}
+    >
+      <div className="flex justify-center items-center">
+        <FaRegCircle size={20} />
+      </div>
+      {isDropdownOpen && (
+        <ul className="absolute bottom-14 left-3 p-2 shadow rounded-lg w-40 bg-neutral-800 border-black border-2 border-opacity-10 flex flex-col gap-3">
+          <li>
+            <button
+              className="flex gap-2 hover:bg-neutral-500 w-full p-1 items-center rounded-md"
+              onClick={handleSleep}
+            >
+              <GoMoon /> Sleep
+            </button>
+          </li>
+          <li>
+            <button
+              className="flex gap-2 hover:bg-neutral-500 w-full p-1 items-center rounded-md"
+              onClick={handleShut}
+            >
+              <IoPower /> Shut Down
+            </button>
+          </li>
+          <li>
+            <button
+              className="flex gap-2 hover:bg-neutral-500 w-full p-1 rounded-md items-center"
+              // onClick={ }
+            >
+              <VscDebugRestart /> Restart
+            </button>
+          </li>
+        </ul>
+      )}
+    </span>
+  );
 }
 
 export default Power;

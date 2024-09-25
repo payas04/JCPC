@@ -41,7 +41,7 @@ function Login() {
     <>
       {loading && (
         <div className="fixed inset-0 flex items-center justify-center z-50 ">
-          <div className="inline-block mt-24 animate-spin text-white rounded-full border-4 border-solid border-current border-e-transparent h-8 w-8"></div>
+          <div className="inline-block mt-60 animate-spin text-white rounded-full border-4 border-solid border-current border-e-transparent h-8 w-8"></div>
         </div>
       )}
       {!loading && error && (
