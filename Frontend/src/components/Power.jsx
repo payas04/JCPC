@@ -71,14 +71,6 @@ function Power() {
               <IoPower /> Shut Down
             </button>
           </li>
-          <li>
-            <button
-              className="flex gap-2 hover:bg-neutral-500 w-full p-1 rounded-md items-center"
-              // onClick={ }
-            >
-              <VscDebugRestart /> Restart
-            </button>
-          </li>
         </ul>
       )}
     </span>
