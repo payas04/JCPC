@@ -35,6 +35,12 @@ const Sidebar = () => {
               location={location}
               Icon={<IoSettings />}
             />
+            <Li
+              url="/accops/Activities"
+              title="Extra Activities"
+              location={location}
+              Icon={<IoSettings />}
+            />
           </ul>
         </nav>
       </div>
@@ -44,14 +50,11 @@ const Sidebar = () => {
 
 const Li = ({ url, title, Icon, location }) => (
   <li
-  
     style={{
-      backgroundColor: location.pathname.includes(url)
-        ? "#f3f4f6"
-        : "",
-        padding:"5px 12px",
-        borderTopLeftRadius:"3px",
-        borderBottomLeftRadius:"3px"
+      backgroundColor: location.pathname.includes(url) ? "#f3f4f6" : "",
+      padding: "5px 12px",
+      borderTopLeftRadius: "3px",
+      borderBottomLeftRadius: "3px",
     }}
   >
     <Link
