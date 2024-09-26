@@ -45,7 +45,7 @@ const data = [
 const AreaGraph = ({ title }) => {
 	return (
 		<div className="w-[36%] my-auto">
-			<h2 className="text-center font-semibold text-xl">{title}</h2>
+			<h2 className="text-center font-semibold text-xl pb-2">{title}</h2>
 			<AreaChart
 				title="Jio PC issues"
 				width={430}

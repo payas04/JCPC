@@ -82,11 +82,15 @@ const Dashboard = () => {
 				{/* Tasks Activity Table */}
 
 				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10">
-					<JioPcObservation title="JioPc" />
+					<JioPcObservation title="JioPC" />
 					<AreaChart title="Issues Raised (May 2024 - Present)" />
 				</section>
 				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10">
-					<JioPcObservation title="Chromebook" />
+					<JioPcObservation title="HP Chromebook" />
+					<AreaChart title="Issues Raised (May 2024 - Present)" />
+				</section>
+				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10">
+					<JioPcObservation title="Lenovo Chromebook" />
 					<AreaChart title="Issues Raised (May 2024 - Present)" />
 				</section>
 			</main>
