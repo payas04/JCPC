@@ -8,14 +8,13 @@ const JioCloudPc = () => {
 			{/* Sidebar */}
 			<Sidebar />
 
-      <div className=" w-full pt-20 border-2 border-black mx-auto  overflow-y-scroll grid grid-cols-4 px-11  ">
-        {data.map((user, index) => {
-          return <CustomCard key={index} user={user} />;
-        })}
-        <CustomCard />
-      </div>
-    </div>
-  );
+			<div className=" w-full pt-20 mx-auto  overflow-y-scroll grid grid-cols-4 px-11 pb-56">
+				{data.map((user, index) => {
+					return <CustomCard key={index} user={user} />;
+				})}
+			</div>
+		</div>
+	);
 };
 
 export default JioCloudPc;

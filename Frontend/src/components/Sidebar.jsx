@@ -3,6 +3,7 @@ import { FaCloud } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { IoSettings } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { FaTasks } from "react-icons/fa";
 
 const Sidebar = () => {
 	return (
@@ -41,7 +42,7 @@ const Sidebar = () => {
 							url="/accops/Activities"
 							title="Extra Activities"
 							location={location}
-							Icon={<IoSettings />}
+							Icon={<FaTasks />}
 						/>
 					</ul>
 				</nav>

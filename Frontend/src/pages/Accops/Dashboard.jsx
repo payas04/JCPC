@@ -26,13 +26,11 @@ const Dashboard = () => {
 								}}
 							/>
 						</h1>
-						<p className="text-lg text-gray-400">
-							Track your projects, tasks & team activity here
+						<p className="text-lg text-gray-400 my-2">
+							Track your team progress here
 						</p>
 					</div>
 					<div className="flex space-x-4 items-center">
-						{/* <button className="bg-gray-700 p-2 rounded-full">🔍</button>
-						<button className="bg-gray-700 p-2 rounded-full">📅</button> */}
 						<img
 							className="w-20 h-20 rounded-full"
 							src="/images/avtar.png"
@@ -42,7 +40,7 @@ const Dashboard = () => {
 				</header>
 
 				{/* Project Overview Section */}
-				<div className="p-6 bg-white rounded-md mb-4 flex gap-10">
+				<div className=" bg-white mb-4 p-6 rounded-md flex gap-10">
 					<div className="grid grid-cols-2 md:grid-cols-2 gap-6 w-[64%]">
 						<StatCard
 							title="Total Issues"
@@ -93,6 +91,7 @@ const Dashboard = () => {
 					<JioPcObservation title="Lenovo Chromebook" />
 					<AreaChart title="Issues Raised (May 2024 - Present)" />
 				</section>
+				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10"></section>
 			</main>
 		</div>
 	);
