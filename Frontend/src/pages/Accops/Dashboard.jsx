@@ -4,23 +4,8 @@ import StatCard from "../../components/StatCard";
 import { Users, Bug, BugOff, Star } from "lucide-react";
 import JioPcObservation from "./JioPcObservation";
 import AreaChart from "../../components/charts/AreaGraph";
-import { TypewriterEffect } from "../../components/ui/typewriter-effect";
+import Typewriter from "typewriter-effect";
 const Dashboard = () => {
-	const words = [
-		{
-			text: "Welcome,",
-		},
-		{
-			text: "Rahul",
-		},
-		{
-			text: "",
-		},
-		{
-			text: "Bhandhari",
-		},
-	];
-
 	return (
 		<div className="flex h-screen bg-gray-100 text-black ">
 			{/* Sidebar */}
@@ -29,29 +14,36 @@ const Dashboard = () => {
 			{/* Main Content */}
 			<main className="flex-1 p-6 pt-12 overflow-y-auto mb-8">
 				{/* Header */}
-				<header className="flex justify-between items-center mb-6">
+				<header className="flex justify-between items-center bg-white rounded-md mb-4 px-6">
 					<div>
-						<h1 className="text-2xl font-bold text-black">
-							<TypewriterEffect words={words} />
+						<h1 className="text-4xl font-bold text-black">
+							<Typewriter
+								onInit={(typewriter) => {
+									typewriter
+										.typeString("Welcome, Rahul Bhandari")
+										.pauseFor(2500)
+										.start();
+								}}
+							/>
 						</h1>
-						<p className="text-gray-400">
+						<p className="text-lg text-gray-400">
 							Track your projects, tasks & team activity here
 						</p>
 					</div>
 					<div className="flex space-x-4 items-center">
-						<button className="bg-gray-700 p-2 rounded-full">🔍</button>
-						<button className="bg-gray-700 p-2 rounded-full">📅</button>
+						{/* <button className="bg-gray-700 p-2 rounded-full">🔍</button>
+						<button className="bg-gray-700 p-2 rounded-full">📅</button> */}
 						<img
-							className="w-10 h-10 rounded-full"
-							src="https://via.placeholder.com/40"
+							className="w-20 h-20 rounded-full"
+							src="/images/avtar.png"
 							alt="Profile"
 						/>
 					</div>
 				</header>
 
 				{/* Project Overview Section */}
-				<div className="p-6 bg-gray-100 ">
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<div className="p-6 bg-white rounded-md mb-4 flex gap-10">
+					<div className="grid grid-cols-2 md:grid-cols-2 gap-6 w-[64%]">
 						<StatCard
 							title="Total Issues"
 							value="277"
@@ -66,12 +58,6 @@ const Dashboard = () => {
 							icon={Bug}
 							shouldOpenModal={true}
 						/>
-						<div className="md:row-span-2">
-							<div className="mb-4 font-bold text-2xl flex items-center justify-center text-black ">
-								ISSUE CHART
-							</div>
-							<CustomPieChart />
-						</div>
 						<StatCard
 							title="Total Members"
 							value="90"
@@ -85,16 +71,23 @@ const Dashboard = () => {
 							icon={Star}
 						/>
 					</div>
+					<div className="md:row-span-2 w-[36%] my-auto">
+						<div className="mb-4 font-bold text-2xl flex items-center justify-center text-black ">
+							ISSUE CHART
+						</div>
+						<CustomPieChart />
+					</div>
 				</div>
 
 				{/* Tasks Activity Table */}
-				<section className="bg-white text-black px-2 rounded-lg flex">
+
+				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10">
 					<JioPcObservation title="JioPc" />
-					<AreaChart />
+					<AreaChart title="Issues Raised (May 2024 - Present)" />
 				</section>
-				<section className="bg-white text-black px-2 rounded-lg flex">
+				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10">
 					<JioPcObservation title="Chromebook" />
-					<AreaChart />
+					<AreaChart title="Issues Raised (May 2024 - Present)" />
 				</section>
 			</main>
 		</div>
