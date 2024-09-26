@@ -18,8 +18,8 @@ const workItems = [
 
 export default function JioPcObservation({ title }) {
 	return (
-		<div className="container mx-auto p-4">
-			<h2 className="font-bold text-2xl mb-5">{title}</h2>
+		<div className="container mx-auto w-[64%]">
+			<h2 className="font-bold text-3xl mb-5">{title}</h2>
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
 				{workItems.map((item, index) => (
 					<WorkItemTile
