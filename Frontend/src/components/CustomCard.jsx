@@ -3,29 +3,29 @@ import { useState } from "react";
 import UserModal from "./UserModal";
 
 export function CustomCard({ user, shouldOpenModal = false }) {
-	const [open, setOpen] = useState(false);
-	const handleOpenModal = () => {
-		console.log(open);
-		if (!shouldOpenModal) {
-			setOpen(true);
-		}
-	};
+  const [open, setOpen] = useState(false);
+  const handleOpenModal = () => {
+    console.log(open);
+    if (!shouldOpenModal) {
+      setOpen(true);
+    }
+  };
 
 	return (
 		<div onClick={handleOpenModal} className="scrollAnimation">
 			<UserModal open={open} setOpen={setOpen} user={user} />
-			<CardContainer className="mb-10 h-60 mx-auto mt-8">
+			{/* <CardContainer className="mb-10 h-60 mx-auto mt-8">
 				<CardBody className="card h-52 w-60 border px-2 mx-2 rounded-lg flex-col flex items-center text-black bg-[#F1EDFF] shadow-xl hover:shadow">
-					{/* bg-gradient-to-br from-[#92d1f8] to-[#bbedff] */}
+					
 					<CardItem translateZ="64" className="w-full">
-						{/* Image */}
+					
 						<img
 							className="mx-auto -mt-36 w-36 rounded-full border-8 border-white outline-none "
 							alt="thumbnail"
 							src="/images/Binit.jpg"
 						/>
 					</CardItem>
-					{/* Info */}
+					
 					<CardItem
 						translateZ="60"
 						className="text-black text-lg max-w-sm mt-2 text-center font-semibold">
@@ -37,7 +37,12 @@ export function CustomCard({ user, shouldOpenModal = false }) {
 						</div>
 					</CardItem>
 				</CardBody>
-			</CardContainer>
+			</CardContainer> */}
+			<div className="flex flex-col justify-center m-8 text-center">
+				<img alt="" className="self-center flex-shrink-0 w-24 h-24 mb-4 bg-center bg-cover rounded-full dark:bg-gray-500" src="/images/Binit.jpg" />
+				<span className="text-xl font-semibold leading-tight">{user && user.Name}</span>
+				<span className="dark:text-gray-600">@developer</span>
+			</div>
 		</div>
 	);
 }
