@@ -1,4 +1,4 @@
-import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
+import { CardContainer, CardItem } from "../components/ui/3d-card";
 import { useState } from "react";
 import UserModal from "./UserModal";
 
@@ -11,38 +11,30 @@ export function CustomCard({ user, shouldOpenModal = false }) {
     }
   };
 
-	return (
-		<div onClick={handleOpenModal} className="scrollAnimation">
-			<UserModal open={open} setOpen={setOpen} user={user} />
-			{/* <CardContainer className="mb-10 h-60 mx-auto mt-8">
-				<CardBody className="card h-52 w-60 border px-2 mx-2 rounded-lg flex-col flex items-center text-black bg-[#F1EDFF] shadow-xl hover:shadow">
-					
-					<CardItem translateZ="64" className="w-full">
-					
-						<img
-							className="mx-auto -mt-36 w-36 rounded-full border-8 border-white outline-none "
-							alt="thumbnail"
-							src="/images/Binit.jpg"
-						/>
-					</CardItem>
-					
-					<CardItem
-						translateZ="60"
-						className="text-black text-lg max-w-sm mt-2 text-center font-semibold">
-						<div className="flex flex-col justify-center items-center">
-							<span className="font-bold text-xl">{user && user.Name}</span>
-							<span className="font-thin text-lg">@developer</span>
-							<span className="font-normal">Issue Count</span>
-							<span className="text-green-800">200</span>
-						</div>
-					</CardItem>
-				</CardBody>
-			</CardContainer> */}
-			<div className="flex flex-col justify-center m-8 text-center">
-				<img alt="" className="self-center flex-shrink-0 w-24 h-24 mb-4 bg-center bg-cover rounded-full dark:bg-gray-500" src="/images/Binit.jpg" />
-				<span className="text-xl font-semibold leading-tight">{user && user.Name}</span>
-				<span className="dark:text-gray-600">@developer</span>
-			</div>
-		</div>
-	);
+  return (
+    <div onClick={handleOpenModal} className="scrollAnimation">
+      <UserModal open={open} setOpen={setOpen} user={user} />
+
+      <CardContainer className="flex flex-col mx-auto w-full justify-center m-8 text-center">
+        <CardItem translateZ="60">
+          <img
+            alt=""
+            className="self-center flex-shrink-0 w-24 h-24 mb-4 bg-center bg-cover rounded-full dark:bg-gray-500"
+            src="/images/Binit.jpg"
+          />
+        </CardItem>
+
+        <CardItem
+          translateZ="60"
+          className="text-black  text-lg max-w-sm   text-center font-semibold"
+        >
+          <span className="text-xl flex flex-col font-semibold leading-tight">
+            {user && user.Name}
+          </span>
+          <span className="dark:text-gray-600">@developer</span>
+          <div className="dark:text-gray-600">@Score</div>
+        </CardItem>
+      </CardContainer>
+    </div>
+  );
 }

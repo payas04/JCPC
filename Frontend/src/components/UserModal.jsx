@@ -4,6 +4,7 @@ import CustomPieChart from "./CustomPieChart";
 export default function UserModal({
   open,
   setOpen,
+  user,
   heading,
   blocker,
   critical,
@@ -21,7 +22,7 @@ export default function UserModal({
 
       <div className="fixed inset-0 z-10 w-full overflow-y-auto">
         <div className="flex min-h-full w-full max-w-3xl mx-auto items-center justify-center p-4">
-          <Dialog.Panel className="w-full rounded-lg bg-white shadow-xl">
+          <DialogPanel className="w-full rounded-lg bg-white shadow-xl">
             <div className="h-32 w-full bg-gray-800"></div>
             <div className="px-4">
               <div className="relative px-4 pb-4">
@@ -32,13 +33,10 @@ export default function UserModal({
                     alt="Profile picture"
                   />
                 </div>
-                <div className="pt-16 text-nowrap">
-                  <h1 className="text-2xl font-bold">Nishad Khare</h1>
+                <div className="pt-16 ">
+                  <h1 className="text-2xl font-bold">{user.Name}</h1>
                   <p className="text-gray-600">@Tester</p>
-                  <p className="mt-2 text-gray-700">
-                    Versatile team player who delivers value through innovative
-                    problem-solving and initiative.
-                  </p>
+                  <p className="mt-2 text-gray-700 ">{user["About me"]}</p>
                   <div className="mt-7 flex flex-col md:flex-row gap-3">
                     <div className="flex-1">
                       <h2 className="text-lg font-semibold mt-2">
@@ -73,7 +71,7 @@ export default function UserModal({
                 </button>
               </div>
             </div>
-          </Dialog.Panel>
+          </DialogPanel>
         </div>
       </div>
     </Dialog>
