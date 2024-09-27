@@ -5,6 +5,7 @@ import { Users, Bug, BugOff, Star } from "lucide-react";
 import JioPcObservation from "./JioPcObservation";
 import AreaChart from "../../components/charts/AreaGraph";
 import Typewriter from "typewriter-effect";
+import { issuePieChart, openIssuePieChart, totalIssuePieChart } from "../../db/data";
 const Dashboard = () => {
 	return (
 		<div className="flex h-screen bg-gray-100 text-black ">
@@ -47,6 +48,7 @@ const Dashboard = () => {
 							value="277"
 							color="bg-emerald-500"
 							icon={BugOff}
+							pieData={totalIssuePieChart}
 							shouldOpenModal={true}
 						/>
 						<StatCard
@@ -54,6 +56,7 @@ const Dashboard = () => {
 							value="338"
 							color="bg-purple-500"
 							icon={Bug}
+							pieData={openIssuePieChart}
 							shouldOpenModal={true}
 						/>
 						<StatCard
@@ -73,7 +76,7 @@ const Dashboard = () => {
 						<div className="mb-4 font-bold text-2xl flex items-center justify-center text-black ">
 							ISSUE CHART
 						</div>
-						<CustomPieChart />
+						<CustomPieChart  data={issuePieChart}/>
 					</div>
 				</div>
 

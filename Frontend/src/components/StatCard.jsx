@@ -7,11 +7,7 @@ const StatCard = ({
 	value,
 	color,
 	icon: Icon,
-	blocker,
-	critical,
-	major,
-	normal,
-	minor,
+	pieData,
 	shouldOpenModal = false,
 }) => {
 	const [open, setOpen] = useState(false);
@@ -34,11 +30,7 @@ const StatCard = ({
 				open={open}
 				setOpen={setOpen}
 				heading={title}
-				blocker
-				critical
-				major
-				normal
-				minor
+				pieData={pieData}
 			/>
 			<div className="flex justify-between items-start mb-4">
 				<div>
