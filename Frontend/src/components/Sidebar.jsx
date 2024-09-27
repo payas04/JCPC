@@ -7,7 +7,7 @@ import { FaTasks } from "react-icons/fa";
 
 const Sidebar = () => {
 	return (
-		<aside className="w-1/7 min-w-52 bg-blue-800 text-white pt-12  flex flex-col justify-between m-2 rounded-lg ">
+		<aside className="w-1/7 min-w-52 bg-blue-800 text-white pt-12  flex flex-col justify-between m-2 rounded-lg mb-14">
 			<div>
 				<div className="text-2xl font-bold mb-8 px-3 py-2 text-center">
 					JioCloudPC

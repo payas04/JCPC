@@ -1,11 +1,7 @@
 import { PieChart } from "@mui/x-charts/PieChart";
 
 export default function CustomPieChart({
-  blocker,
-  critical,
-  major,
-  normal,
-  minor,
+	data
 }) {
   return (
     <PieChart
@@ -32,4 +28,5 @@ export default function CustomPieChart({
       height={250}
     />
   );
+>>>>>>> 733f1b80820e6d2ff42258f540dc8e50e14297c2
 }

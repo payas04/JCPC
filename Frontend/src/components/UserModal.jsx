@@ -1,4 +1,5 @@
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
+import { IoCloseCircleSharp } from "react-icons/io5";
 import CustomPieChart from "./CustomPieChart";
 
 export default function UserModal({
