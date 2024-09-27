@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaRegCircle } from "react-icons/fa";
 import { GoMoon } from "react-icons/go";
 import { IoPower } from "react-icons/io5";
-import { VscDebugRestart } from "react-icons/vsc";
+
 import { useAuth } from "../context/auth";
 
 function Power() {
@@ -35,6 +35,7 @@ function Power() {
   }
 
   function handleShut() {
+    navigate("/");
     setIsShutdown(true);
     // setTimeout(() => {}, 2700);
   }
