@@ -14,9 +14,10 @@ const JioCloudPc = () => {
             Our team
           </h1>
           <p className="max-w-2xl text-center dark:text-gray-600">
-            At a assumenda quas cum earum ut itaque commodi saepe rem aspernatur
-            quam natus quis nihil quod, hic explicabo doloribus magnam neque,
-            exercitationem eius sunt!
+            As we continue working towards our goals, I want to take a moment to
+            acknowledge the incredible dedication, creativity, and energy each
+            of you brings to the table. We’ve faced challenges, overcome
+            obstacles, and learned along the way—together.
           </p>
           <div className="flex flex-row justify-center gap-8 w-full">
             <div className="flex flex-col justify-center  text-center w-48">
