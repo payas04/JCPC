@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./WorkItemTile.css";
 import ReactCardFlip from "react-card-flip";
 
 const WorkItemTile = ({ type, title, count, color }) => {

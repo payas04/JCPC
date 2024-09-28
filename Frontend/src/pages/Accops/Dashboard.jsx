@@ -9,6 +9,9 @@ import {
 	issuePieChart,
 	openIssuePieChart,
 	totalIssuePieChart,
+	jioPcWorkItems,
+	hpWorkItems,
+	lenovoWorkItems,
 } from "../../db/data";
 const Dashboard = () => {
 	return (
@@ -87,15 +90,18 @@ const Dashboard = () => {
 				{/* Tasks Activity Table */}
 
 				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10">
-					<JioPcObservation title="JioPC" />
+					<JioPcObservation title="JioPC" workItems={jioPcWorkItems} />
 					<AreaChart title="Issues Raised (May 2024 - Present)" />
 				</section>
 				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10">
-					<JioPcObservation title="HP Chromebook" />
+					<JioPcObservation title="HP Chromebook" workItems={hpWorkItems} />
 					<AreaChart title="Issues Raised (May 2024 - Present)" />
 				</section>
 				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10">
-					<JioPcObservation title="Lenovo Chromebook" />
+					<JioPcObservation
+						title="Lenovo Chromebook"
+						workItems={lenovoWorkItems}
+					/>
 					<AreaChart title="Issues Raised (May 2024 - Present)" />
 				</section>
 				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10"></section>
