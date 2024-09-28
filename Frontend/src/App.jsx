@@ -1,13 +1,16 @@
+import { lazy, Suspense } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import Dashboard from "./pages/Accops/Dashboard";
-import Lockscreen from "./pages/Lockscreen";
-import Test from "./pages/Test";
-import Profile from "./pages/Accops/Profile";
-import Header from "./components/Header";
-import JioCloudPc from "./pages/Accops/JioCloudPc";
-import Activities from "./pages/Accops/Activities";
+import Loader from "./components/Loader";
+
+const Dashboard = lazy(() => import("./pages/Accops/Dashboard"));
+const Home = lazy(() => import("./pages/Home"));
+const Lockscreen = lazy(() => import("./pages/Lockscreen"));
+const Test = lazy(() => import("./pages/Test"));
+const JioCloudPc = lazy(() => import("./pages/Accops/JioCloudPc"));
+const Header = lazy(() => import("./components/Header"));
+const Footer = lazy(() => import("./components/Footer"));
+const Profile = lazy(() => import("./pages/Accops/Profile"));
+const Activities = lazy(() => import("./pages/Accops/Activities"));
 
 const App = () => {
 	return (
@@ -15,16 +18,17 @@ const App = () => {
 			<div className="relative w-screen h-screen">
 				<Header />
 				{/* Left sidebar */}
-				<Routes>
-					<Route path="/" element={<Lockscreen />} />
-					<Route path="/home" element={<Home />} />
-					<Route path="/accops/dashboard" element={<Dashboard />} />
-					<Route path="/accops/jiocloudpc" element={<JioCloudPc />} />
-					<Route path="/accops/profile" element={<Profile />} />
-					<Route path="/accops/settings" element={<Test />} />
-					<Route path="/accops/activities" element={<Activities />} />
-				</Routes>
-
+				<Suspense fallback={<Loader />}>
+					<Routes>
+						<Route path="/" element={<Lockscreen />} />
+						<Route path="/home" element={<Home />} />
+						<Route path="/accops/dashboard" element={<Dashboard />} />
+						<Route path="/accops/jiocloudpc" element={<JioCloudPc />} />
+						<Route path="/accops/profile" element={<Profile />} />
+						<Route path="/accops/settings" element={<Test />} />
+						<Route path="/accops/activities" element={<Activities />} />
+					</Routes>
+				</Suspense>
 				<Footer />
 			</div>
 		</Router>
