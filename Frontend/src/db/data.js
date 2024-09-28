@@ -1,20 +1,23 @@
 export const issuePieChart = [
-	{ id: 0, value: 50, label: "JioPC", color: "#A04747" },
-	{ id: 1, value: 50, label: "HP", color: "#FABC3F" },
-	{ id: 2, value: 69, label: "Lenovo", color: "#87A2FF" },
+	{ id: 0, value: 150, label: "JioPC", color: "#187498" }, //#20236D
+	{ id: 1, value: 75, label: "HP", color: "#B43144" },
+	{ id: 2, value: 30, label: "Lenovo", color: "#F3B95F" },
 	// { id: 4, value:  50, label: "Minor", color: "green" },
 ];
 
 export const totalIssuePieChart = [
-	{ id: 0, value: 50, label: "JioPC", color: "#C40C0C" },
-	{ id: 1, value: 50, label: "HP", color: "#FABC3F" },
-	{ id: 2, value: 69, label: "Lenovo", color: "#87A2FF" },
+	{ id: 0, value: 50, label: "Blocker", color: "#800000" },
+	{ id: 1, value: 25, label: "Critical", color: "#E14D2A" },
+	{ id: 2, value: 69, label: "Major", color: "#FFB84C" },
+	{ id: 3, value: 40, label: "Normal", color: "#3E6D9C" },
+	{ id: 4, value: 100, label: "Minor", color: "#337357" },
 ];
 export const openIssuePieChart = [
-	{ id: 0, value: 50, label: "JioPC", color: "#C40C0C" },
-	{ id: 1, value: 50, label: "HP", color: "#FABC3F" },
-	{ id: 2, value: 69, label: "Lenovo", color: "#87A2FF" },
-	{ id: 2, value: 69, label: "Lenovo", color: "#87A2FF" },
+	{ id: 0, value: 50, label: "Blocker", color: "#800000" },
+	{ id: 1, value: 25, label: "Critical", color: "#E14D2A" },
+	{ id: 2, value: 69, label: "Major", color: "#FFB84C" },
+	{ id: 3, value: 40, label: "Normal", color: "#3E6D9C" },
+	{ id: 4, value: 100, label: "Minor", color: "#337357" },
 ];
 
 export const jioPcWorkItems = [

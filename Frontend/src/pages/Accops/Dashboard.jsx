@@ -1,4 +1,4 @@
-import CustomPieChart from "../../components/CustomPieChart";
+import CustomPieChart from "../../components/charts/CustomPieChart";
 import Sidebar from "../../components/Sidebar";
 import StatCard from "../../components/StatCard";
 import { Users, Bug, BugOff, Star } from "lucide-react";
@@ -86,7 +86,7 @@ const Dashboard = () => {
 						<div className="mb-4 font-bold text-2xl flex items-center justify-center text-black ">
 							ISSUE CHART
 						</div>
-						<CustomPieChart data={issuePieChart} />
+						<CustomPieChart data={issuePieChart} radiusValue={0} />
 					</div>
 				</div>
 
