@@ -25,7 +25,7 @@ const App = () => {
 					<Route path="/accops/activities" element={<Activities />} />
 				</Routes>
 
-				<Footer />
+				{/* <Footer /> */}
 			</div>
 		</Router>
 	);

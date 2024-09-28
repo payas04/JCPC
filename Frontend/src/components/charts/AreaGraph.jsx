@@ -10,12 +10,6 @@ import {
 
 const data = [
 	{
-		name: "Apr 24",
-		uv: 300,
-		pv: 250,
-		// amt: 2400,
-	},
-	{
 		name: "May 24",
 		uv: 200,
 		pv: 139,
