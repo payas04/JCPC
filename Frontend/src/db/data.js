@@ -41,3 +41,87 @@ export const lenovoWorkItems = [
 	{ title: "Ready for Test", count: 2, color: "bg-blue-400" },
 	{ title: "JioPC Accops Issues", count: 6, color: "bg-red-500" },
 ];
+
+export const jioPcAreaChartData = [
+	{
+		name: "May 24",
+		uv: 200,
+		pv: 139,
+	},
+	{
+		name: "Jun 24",
+		uv: 220,
+		pv: 98,
+	},
+	{
+		name: "Jul 24",
+		uv: 278,
+		pv: 390,
+	},
+	{
+		name: "Aug 24",
+		uv: 189,
+		pv: 480,
+	},
+	{
+		name: "Sep 24",
+		uv: 239,
+		pv: 380,
+	},
+];
+
+export const hpAreaChartData = [
+	{
+		name: "May 24",
+		uv: 400,
+		pv: 539,
+	},
+	{
+		name: "Jun 24",
+		uv: 520,
+		pv: 98,
+	},
+	{
+		name: "Jul 24",
+		uv: 278,
+		pv: 390,
+	},
+	{
+		name: "Aug 24",
+		uv: 149,
+		pv: 480,
+	},
+	{
+		name: "Sep 24",
+		uv: 269,
+		pv: 380,
+	},
+];
+
+export const lenovoAreaChartData = [
+	{
+		name: "May 24",
+		uv: 204,
+		pv: 149,
+	},
+	{
+		name: "Jun 24",
+		uv: 224,
+		pv: 958,
+	},
+	{
+		name: "Jul 24",
+		uv: 248,
+		pv: 340,
+	},
+	{
+		name: "Aug 24",
+		uv: 188,
+		pv: 440,
+	},
+	{
+		name: "Sep 24",
+		uv: 249,
+		pv: 340,
+	},
+];
