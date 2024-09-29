@@ -1,17 +1,48 @@
+import { useState } from "react";
 import { CustomCard } from "../../components/CustomCard";
 import Sidebar from "../../components/Sidebar";
 import data from "../../db.json";
+import testData from "../../test.json";
 import { LuArrowUpDown } from "react-icons/lu";
 import { TbUsers } from "react-icons/tb";
 import { FaRegStar } from "react-icons/fa";
+import { AiOutlineSortAscending } from "react-icons/ai";
+import { TbSortAscending, TbSortDescending } from "react-icons/tb";
+
+const sortByNameAscending = (array) =>
+	[...array].sort((a, b) => a.Name.localeCompare(b.Name));
+
+const sortByScore = (array, order = "asc") => {
+	return [...array].sort((a, b) =>
+		order === "asc" ? a.score - b.score : b.score - a.score
+	);
+};
 
 const JioCloudPc = () => {
+	const [data, setData] = useState(sortByScore(testData, "desc"));
+	const [activeSort, setActiveSort] = useState("High");
+
+	const handleSortByName = () => {
+		setData(sortByNameAscending(testData));
+		setActiveSort("Name");
+	};
+
+	const handleSortByScoreAsc = () => {
+		setData(sortByScore(testData, "asc"));
+		setActiveSort("Low");
+	};
+
+	const handleSortByScoreDesc = () => {
+		setData(sortByScore(testData, "desc"));
+		setActiveSort("High");
+	};
 	return (
 		<div className="flex h-screen w-full flex-1 bg-gray-100">
 			{/* Sidebar */}
 			<Sidebar />
 
-			<section className="py-6  w-full bg-gray-100 text-gray-800 overflow-y-scroll pb-52">
+			{/* Team List */}
+			<section className="py-6  w-full bg-gray-100 text-gray-800 overflow-y-scroll pb-44 mb-12">
 				<div className="container w-full flex flex-col items-center justify-center p-4 mx-auto space-y-8 sm:p-10">
 					<h1 className="text-4xl font-bold leading-none text-center sm:text-5xl">
 						Our team
@@ -42,21 +73,41 @@ const JioCloudPc = () => {
 					</div>
 				</div>
 			</section>
+
+			{/* Sorting Bar */}
 			<section className="w-1/4 bg-white shadow-lg">
 				<div className="px-4">
 					<h3 className="font-semibold text-xl mt-6 mb-2 ">Sort By</h3>
 					<ul className="space-y-4 py-4">
-						<li className="flex gap-2 py-2 px-4 items-center rounded-md bg-gray-100 shadow-lg">
-							<LuArrowUpDown />
+						<li
+							className="flex gap-2 py-2 px-4 items-center rounded-md bg-gray-200 shadow-lg cursor-pointer"
+							style={{
+								backgroundColor: activeSort === "Name" ? "#1e40af" : "",
+								color: activeSort === "Name" ? "white" : "",
+							}}
+							onClick={handleSortByName}>
+							<AiOutlineSortAscending size={25} />
 							Name
 						</li>
-						<li className="flex gap-2 py-2 px-4 items-center rounded-md bg-gray-100 shadow-lg">
-							<TbUsers />
-							Count
+						<li
+							className="flex gap-2 py-2 px-4 items-center rounded-md bg-gray-200 shadow-lg cursor-pointer"
+							style={{
+								backgroundColor: activeSort === "High" ? "#1e40af" : "",
+								color: activeSort === "High" ? "white" : "",
+							}}
+							onClick={handleSortByScoreDesc}>
+							<TbSortDescending size={25} />
+							High to Low
 						</li>
-						<li className="flex gap-2 py-2 px-4 items-center rounded-md bg-gray-100 shadow-lg">
-							<FaRegStar />
-							Rating
+						<li
+							className="flex gap-2 py-2 px-4 items-center rounded-md bg-gray-200 shadow-lg cursor-pointer"
+							style={{
+								backgroundColor: activeSort === "Low" ? "#1e40af" : "",
+								color: activeSort === "Low" ? "white" : "",
+							}}
+							onClick={handleSortByScoreAsc}>
+							<TbSortAscending size={25} />
+							Low to High
 						</li>
 					</ul>
 				</div>
