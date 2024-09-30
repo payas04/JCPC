@@ -1,15 +1,21 @@
 import express from "express";
-import { createServer } from "http";
+
+import userRoutes from "./routes/userRoutes.js";
+import Connection from "./database/db.js";
 
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-const httpServer = createServer(app);
+const mongoURI =
+  "mongodb+srv://sameepvishwakarma:X7ftDE9PDREbN8In@clusterjcpc.wkqzb.mongodb.net/";
 
-httpServer.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`server is running successfully on port ${PORT}`);
 });
 
 app.get("/", (req, res) => {
-  res.send(`chat-app-server`);
+  res.send(`jcpc server`);
 });
+
+Connection(mongoURI);
+app.use("/api/user/" ,userRoutes) ;
