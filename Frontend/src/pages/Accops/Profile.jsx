@@ -109,20 +109,22 @@ const Profile = () => {
                   Teams Under Management
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                  {["JPMA", "JCPC", "Asset Management"].map((team) => (
-                    <div
-                      key={team}
-                      className="bg-white rounded-lg shadow-sm p-3 border-2 border-gray-200 text-center hover:shadow-md transition-shadow"
-                    >
-                      <Briefcase className="w-6 h-6 text-blue-500 mx-auto mb-2" />
-                      <h3 className="text-base font-semibold text-gray-800 mb-1">
-                        {team}
-                      </h3>
-                      <p className="text-xs text-gray-600">
-                        Leading professionals to deliver exceptional results.
-                      </p>
-                    </div>
-                  ))}
+                  {["JPMA", "JCPC", " AI Bot & Asset Management"].map(
+                    (team) => (
+                      <div
+                        key={team}
+                        className="bg-white rounded-lg shadow-sm p-3 border-2 border-gray-200 text-center hover:shadow-md transition-shadow"
+                      >
+                        <Briefcase className="w-6 h-6 text-blue-500 mx-auto mb-2" />
+                        <h3 className="text-base font-semibold text-gray-800 mb-1">
+                          {team}
+                        </h3>
+                        <p className="text-xs text-gray-600">
+                          Leading professionals to deliver exceptional results.
+                        </p>
+                      </div>
+                    )
+                  )}
                 </div>
               </section>
 

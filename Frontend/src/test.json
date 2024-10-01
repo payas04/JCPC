@@ -7,7 +7,12 @@
     "TAGS": "Tester",
     "bitemoji": "https://rilcloud-my.sharepoint.com/:i:/g/personal/aniruddh_ghewade_ril_com/Ecx31ii52ZRNpTCgi51nGZEBTMLuBf1oaaWhUC0G8ax4Yg?e=yeDrln",
     "profilephoto": "https://rilcloud-my.sharepoint.com/:i:/g/personal/aniruddh_ghewade_ril_com/EbGQYrHmqoRNmzRE2wcKJcoB87X3UNiHgg7uEuldoqiySQ?e=YEpbXf",
-    "score": 30
+    "score": 30,
+    "Blocker": 69,
+    "Critical": 456,
+    "Major": 89,
+    "Normal": 0,
+    "Minor": 12
   },
   {
     "Name": "Kirtikumar.C",
@@ -17,17 +22,27 @@
     "TAGS": "Tester",
     "bitemoji": "https://www.jiocloud.com/l/?u=7Cfjq3cNB6nUQOsxq9nxI2cE9Lfhc5dqIpmlWkHu5w4%3Do8v",
     "profilephoto": "https://www.jiocloud.com/l/?u=G09XC95H8jvmW8sxo97HHBnZWA9DVAJfFT-kGXu9VVQ%3DNL3",
-    "score": 45
+    "score": 45,
+    "Blocker": 69,
+    "Critical": 456,
+    "Major": 89,
+    "Normal": 0,
+    "Minor": 12
   },
   {
-    "Name": "Megha1.Jain",
+    "Name": "Megha Jain",
     "About me": "Driven by curiosity and determination, with a passion for new ideas and effective teamwork.",
     "Extra Activites": "IDE Evaluation for Chromebook",
     "Courses Completed": "Ongoing:\n1. Introduction to DevOps\n2. Front-End Web Development with React\n\nCompleted: \n1. UX Foundations: Prototyping\n2. Basics of Javascript",
     "TAGS": "Tester",
     "bitemoji": "https://rilcloud-my.sharepoint.com/:i:/g/personal/megha1_jain_ril_com/ESdO42r8-jtInT3PkcH4kN8Bhdq20316oqgSbHAsguBOYw?e=hbouPd",
     "profilephoto": "https://rilcloud-my.sharepoint.com/:i:/g/personal/megha1_jain_ril_com/EXCgvNC4bRBOn5ibdJxAQVoB1sxBQGjBBxwKwd6RfjuOVA?e=iAci5E",
-    "score": 34
+    "score": 34,
+    "Blocker": 69,
+    "Critical": 456,
+    "Major": 89,
+    "Normal": 0,
+    "Minor": 12
   },
   {
     "Name": "Payas.Patel",
@@ -37,7 +52,12 @@
     "TAGS": "AIBotLead",
     "bitemoji": "https://www.jiocloud.com/l/?u=YGqkROL1E4A7-Nts7HFd6_es531JWiyY71USDNcZRDU=XPz",
     "profilephoto": "https://www.jiocloud.com/l/?u=_6X-Wo91vfIqwwT4ksOquvrJp8zB713ZH69ZNom1JBk=o8v",
-    "score": 50
+    "score": 50,
+    "Blocker": 69,
+    "Critical": 456,
+    "Major": 89,
+    "Normal": 0,
+    "Minor": 12
   },
   {
     "Name": "Sakshi1.Khare",
@@ -47,7 +67,12 @@
     "TAGS": "Tester",
     "bitemoji": "https://www.jiocloud.com/l/?u=qBMcNjNCVd1RvPR_hheC5a7uFWzo35psN-zkJNI0HHU=PrF",
     "profilephoto": "https://www.jiocloud.com/l/?u=0I1-lY7N742CBl15ywz2JDL3WEgcBUx9SNALrPYv0cM=NL3",
-    "score": 32
+    "score": 32,
+    "Blocker": 69,
+    "Critical": 456,
+    "Major": 89,
+    "Normal": 0,
+    "Minor": 12
   },
   {
     "Name": "Varisha.Usmani",
@@ -67,7 +92,12 @@
     "TAGS": "Tester",
     "bitemoji": "https://www.jiocloud.com/l/?u=RREATc-ueV9mR2aX44n4xz6Le9Z93WBa5umkN7ERquU=PuU",
     "profilephoto": "https://www.jiocloud.com/l/?u=TE79vypu9DXrpGp9T3x0CpYPYbM6OT4D8qwsEzHHy3g=MHW",
-    "score": 42
+    "score": 42,
+    "Blocker": 69,
+    "Critical": 456,
+    "Major": 89,
+    "Normal": 0,
+    "Minor": 12
   },
   {
     "Name": "Yash.Amin",
@@ -77,7 +107,12 @@
     "TAGS": "Validator",
     "bitemoji": "https://www.jiocloud.com/l/?u=xXDNH2cJzlfqTAe_itQ9j8WaDVkFaW1kozZkP0nqXXk=Oe5",
     "profilephoto": "https://www.jiocloud.com/l/?u=J2fxBIxFf7fUQpQgKirQuuSxzMQgv2yi2Vawx7sQ9YU=PuU",
-    "score": 20
+    "score": 20,
+    "Blocker": 69,
+    "Critical": 456,
+    "Major": 89,
+    "Normal": 0,
+    "Minor": 12
   },
   {
     "Name": "Jagruti.Zawar",
@@ -87,6 +122,11 @@
     "TAGS": "Tester",
     "bitemoji": "https://rilcloud-my.sharepoint.com/:i:/g/personal/jagruti_zawar_ril_com/EdtoBlNfkblHmWvS33hbMusBv_9pZy82RsjJ8dicQFzvig?e=bjz1hm",
     "profilephoto": "https://rilcloud-my.sharepoint.com/:i:/g/personal/jagruti_zawar_ril_com/EQs9TWF5THBHuxxeSRi1JMYBahB2QHWk7g7a0xsnpQHygw?e=A86Uv5",
-    "score": 50
+    "score": 50,
+    "Blocker": 69,
+    "Critical": 456,
+    "Major": 89,
+    "Normal": 0,
+    "Minor": 12
   }
 ]
