@@ -1,11 +1,7 @@
 import { useState } from "react";
 import { CustomCard } from "../../components/CustomCard";
 import Sidebar from "../../components/Sidebar";
-import data from "../../db.json";
 import testData from "../../test.json";
-import { LuArrowUpDown } from "react-icons/lu";
-import { TbUsers } from "react-icons/tb";
-import { FaRegStar } from "react-icons/fa";
 import { AiOutlineSortAscending } from "react-icons/ai";
 import { TbSortAscending, TbSortDescending } from "react-icons/tb";
 
@@ -42,7 +38,7 @@ const JioCloudPc = () => {
       <Sidebar />
 
       {/* Team List */}
-      <section className="  w-full bg-gray-100 text-gray-800 overflow-y-scroll pb-44 mb-12">
+      <section className="  w-full bg-gray-100 text-gray-800 overflow-y-scroll pb-44 mb-12  bg-[url('/images/blue.jpg')] bg-cover">
         <div className="container w-full flex flex-col items-center justify-center  mx-auto space-y-8 py-6">
           <h1 className="text-4xl font-bold leading-none text-center sm:text-5xl">
             Our team
@@ -66,7 +62,7 @@ const JioCloudPc = () => {
               <p className="dark:text-gray-600">Program Manager</p>
             </div>
           </div>
-          <div className="w-full grid grid-cols-4 ">
+          <div className="w-full grid grid-cols-4 gap-2">
             {data.map((user, index) => {
               return <CustomCard key={index} user={user} />;
             })}
@@ -75,12 +71,12 @@ const JioCloudPc = () => {
       </section>
 
       {/* Sorting Bar */}
-      <section className="w-1/4 bg-white shadow-lg">
+      <section className="w-1/4   bg-contain shadow-lg">
         <div className="px-4">
           <h3 className="font-semibold text-xl mt-6 mb-2 ">Sort By</h3>
           <ul className="space-y-4 py-4">
             <li
-              className="flex gap-2 py-2 px-4 items-center rounded-md bg-gray-200 shadow-lg cursor-pointer"
+              className="flex gap-2 py-2 px-4 items-center rounded-md  shadow-lg cursor-pointer"
               style={{
                 backgroundColor: activeSort === "Name" ? "#1e40af" : "",
                 color: activeSort === "Name" ? "white" : "",
@@ -99,7 +95,7 @@ const JioCloudPc = () => {
               onClick={handleSortByScoreDesc}
             >
               <TbSortDescending size={25} />
-              High to Low
+              Points
             </li>
             <li
               className="flex gap-2 py-2 px-4 items-center rounded-md bg-gray-200 shadow-lg cursor-pointer"
@@ -110,7 +106,7 @@ const JioCloudPc = () => {
               onClick={handleSortByScoreAsc}
             >
               <TbSortAscending size={25} />
-              Low to High
+              Points
             </li>
           </ul>
         </div>
@@ -120,7 +116,6 @@ const JioCloudPc = () => {
             Today (2)
           </h4>
           <div className="Birthday max-h-[135px] overflow-y-scroll pb-4 h-fit">
-            {/* <p className="font-light">No Birthday Events Today</p> */}
             <div className="flex mt-2">
               <img
                 src="/images/Binit.jpg"
@@ -162,7 +157,6 @@ const JioCloudPc = () => {
             Upcoming (4)
           </h4>
           <div className="Birthday h-fit max-h-[135px] overflow-y-scroll pb-4">
-            {/* <p className="font-light">No Upcoming Events Today</p> */}
             <div className="flex mt-2">
               <img
                 src="/images/Binit.jpg"
