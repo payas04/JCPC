@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/auth";
+import { MdBackspace } from "react-icons/md";
 
 export default function LoginScreen() {
   const [pin, setPin] = useState("");
@@ -14,6 +15,13 @@ export default function LoginScreen() {
   const navigate = useNavigate();
   const { user, login } = useAuth();
 
+  const handleDelete = (e) => {
+    e.preventDefault();
+    console.log("iran");
+
+    setPin((prev) => prev.slice(0, -1));
+  };
+
   useEffect(() => {
     if (user) {
       navigate("/home");
@@ -22,18 +30,19 @@ export default function LoginScreen() {
 
   async function handleLogin(e) {
     e.preventDefault();
+
     try {
-      if (pin !== "000000") {
+      if (pin === "000000" || pin === "admin") {
+        setLoading(true);
+
+        setTimeout(() => {
+          login(true); // Assuming `login(true)` sets the user to a logged-in state
+          navigate(`/home`);
+          setLoading(false);
+        }, 1500);
+      } else {
         setError("Incorrect password");
-        return;
       }
-      setLoading(true);
-      // Simulating a delay for demonstration purposes
-      setTimeout(() => {
-        login(true); // Assuming `login(true)` sets the user to a logged-in state
-        navigate(`/home`);
-        setLoading(false);
-      }, 3000);
     } catch (err) {
       console.error(err);
       setError("Failed to log in. Please try again later.");
@@ -69,7 +78,7 @@ export default function LoginScreen() {
           </div>
           <div className="space-y-2">
             <h2 className="text-2xl font-semibold">Rahul Bhandari</h2>
-            {error && <div className="text-white">{error}</div>}
+            {error && <div className="text-red-500">{error}</div>}
           </div>
           <div className="relative">
             <input
@@ -92,23 +101,34 @@ export default function LoginScreen() {
             {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
               <button
                 key={num}
-                onClick={() => handleNumberClick(num.toString())}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNumberClick(num.toString());
+                }}
                 className="p-2  rounded-md hover:bg-gray-100 focus:outline-none font-semibold text-xl focus:ring-2 focus:ring-blue-500"
               >
                 {num}
               </button>
             ))}
-            <button
-              className="p-2  rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            <div
+              className="p-2  rounded-md cursor-default"
               aria-label="Delete"
-            ></button>
+            ></div>
             <button
-              onClick={() => handleNumberClick("0")}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNumberClick("0");
+              }}
               className="p-2 text-xl font-semibold rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               0
             </button>
-            <button disabled className="p-2  rounded-md opacity-50"></button>
+            <button
+              onClick={handleDelete}
+              className="p-2  rounded-md opacity-50 flex items-center justify-center"
+            >
+              <MdBackspace />
+            </button>
           </div>
         </div>
         <div className="fixed bottom-4 left-4 space-x-4">
