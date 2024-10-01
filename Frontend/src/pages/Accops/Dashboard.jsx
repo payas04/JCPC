@@ -1,7 +1,7 @@
 import CustomPieChart from "../../components/charts/CustomPieChart";
 import Sidebar from "../../components/Sidebar";
 import StatCard from "../../components/StatCard";
-import { Users, Bug, BugOff, Star, BadgeAlert } from "lucide-react";
+import { Users, Bug, BugOff, Star } from "lucide-react";
 import JioPcObservation from "./JioPcObservation";
 import AreaChart from "../../components/charts/AreaGraph";
 import Typewriter from "typewriter-effect";
@@ -16,6 +16,7 @@ import {
   hpAreaChartData,
   lenovoAreaChartData,
 } from "../../db/data";
+
 const Dashboard = () => {
   return (
     <div className="flex h-screen bg-gray-100 text-black ">
