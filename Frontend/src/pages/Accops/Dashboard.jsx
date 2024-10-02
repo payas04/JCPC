@@ -16,8 +16,11 @@ import {
 	hpAreaChartData,
 	lenovoAreaChartData,
 } from "../../db/data";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+	const navigate = useNavigate();
+
 	return (
 		<div className="flex h-screen bg-gray-100 text-black ">
 			{/* Sidebar */}
@@ -42,13 +45,15 @@ const Dashboard = () => {
 							Track your team progress here
 						</p>
 					</div>
-					<div className="flex space-x-4 items-center">
-						<img
-							className="w-20 h-20 rounded-full"
-							src="/images/avtar.png"
-							alt="Profile"
-						/>
-					</div>
+
+					<img
+						className="w-14 h-14 rounded-full"
+						src="/images/profile/rb.jpg"
+						alt="Profile"
+						onClick={() => {
+							navigate("/accops/profile");
+						}}
+					/>
 				</header>
 
 				{/* Project Overview Section */}

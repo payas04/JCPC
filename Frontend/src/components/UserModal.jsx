@@ -79,7 +79,7 @@ export default function UserModal({ open, setOpen, user, heading }) {
 									</div>
 								</div>
 							</div>
-							<div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+							<div className=" px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
 								<button
 									type="button"
 									onClick={() => setOpen(false)}

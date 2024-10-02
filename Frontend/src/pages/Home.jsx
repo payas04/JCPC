@@ -1,5 +1,4 @@
 import Draggable from "react-draggable";
-import Logo from "../assets/JioCloudPC.png";
 import { useNavigate } from "react-router-dom";
 import { MdShortcut } from "react-icons/md";
 import { useAuth } from "../context/auth";
@@ -62,7 +61,7 @@ const Home = () => {
 							navigate("/accops/dashboard");
 						}}>
 						<img
-							src={Logo}
+							src="/images/icons/JioCloudPc.png"
 							alt="JioCloudPc logo"
 							className="w-[50px] h-[50px] rounded-lg block mx-auto mb-3 "
 						/>
@@ -81,7 +80,7 @@ const Home = () => {
 							setChromeOpen(true);
 						}}>
 						<img
-							src={"/images/Chrome.png"}
+							src="/images/icons/Chrome.png"
 							alt="Chrome logo"
 							className="w-[50px] h-[50px] rounded-lg block  mx-auto mb-3 "
 						/>

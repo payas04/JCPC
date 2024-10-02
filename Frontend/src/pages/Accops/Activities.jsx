@@ -95,7 +95,7 @@ const Activities = () => {
 					/>
 					{selectedCard === "AI" && (
 						<div className="card-details">
-							<h3>Selfie Module</h3>
+							<h3>AI Bots</h3>
 							<p>Lorem ipsum dolor sit amet...</p>
 							<button className="close-btn" onClick={handleCloseClick}>
 								&times;

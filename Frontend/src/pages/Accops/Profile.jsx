@@ -82,7 +82,7 @@ const Profile = () => {
 							{/* Hero Section */}
 							<section className="flex items-center mb-6">
 								<img
-									src="/images/rb_image.jpg"
+									src="/images/profile/rb.jpg"
 									alt="Project Manager"
 									className="rounded-full mr-4 border-2 border-blue-500 shadow-md"
 									width={100}

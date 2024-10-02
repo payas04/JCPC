@@ -45,7 +45,7 @@ const JioCloudPc = () => {
 			<Sidebar />
 
 			{/* Team List */}
-			<section className="  w-full bg-gray-100 text-gray-800 overflow-y-scroll pb-44 mb-12  bg-[url('/images/blue.jpg')] bg-cover">
+			<section className="  w-full bg-gray-100 text-gray-800 overflow-y-scroll pb-44 mb-12  bg-[url('/images/background/blue.jpg')] bg-cover">
 				<div className="container w-full flex flex-col items-center justify-center  mx-auto space-y-8 py-6">
 					<h1 className="text-4xl font-bold leading-none text-center sm:text-5xl">
 						Our team
@@ -61,7 +61,7 @@ const JioCloudPc = () => {
 							<img
 								alt=""
 								className="self-center flex-shrink-0 w-32 h-32  bg-center bg-cover rounded-full dark:bg-gray-500"
-								src="/images/rb_image.jpg"
+								src="/images/profile/rb.jpg"
 							/>
 							<p className="text-xl font-semibold leading-tight">
 								Rahul Bhandari
@@ -147,7 +147,7 @@ const JioCloudPc = () => {
 							upcomingBirthday.map((btd, index) => (
 								<div className="flex mt-2" key={index}>
 									<img
-										src="/images/Binit.jpg"
+										src="/images/Pranav.Patne.jpg"
 										alt="member"
 										width={50}
 										className="rounded-full h-14"
