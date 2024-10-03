@@ -27,7 +27,10 @@ export default function UserModal({ open, setOpen, user, heading }) {
 								<div className="absolute -top-12 left-4">
 									<img
 										className="w-24 h-24 rounded-full border-4 border-white"
-										src="/images/Binit.jpg"
+										src={`/images/members/${user.Domain}.jpg`}
+										onError={(e) => {
+											e.target.src = "/images/profile/default.png";
+										}}
 										alt="Profile picture"
 									/>
 								</div>
@@ -38,11 +41,11 @@ export default function UserModal({ open, setOpen, user, heading }) {
 											<p className="text-gray-600">@Tester</p>
 										</div>
 										<div className="text-center rounded-lg overflow-hidden border-2 h-fit">
-											<p>{user.score}</p>
+											<p className="font-bold text-xl ">{user.Total_score}</p>
 											<p className="bg-gray-800 text-white px-2">Total Score</p>
 										</div>
 									</div>
-									<p className="mt-2 text-gray-700 ">{user["About me"]}</p>
+									<p className="mt-2 text-gray-700 ">{user["About"]}</p>
 									<div className="mt-7 flex gap-3 justify-between">
 										<div>
 											{user["Courses Completed"] !== "" && (
@@ -50,25 +53,27 @@ export default function UserModal({ open, setOpen, user, heading }) {
 													<h2 className="text-lg font-semibold mt-2">
 														Courses Completed:
 													</h2>
-													<ul className="list-disc text-gray-700 px-4">
+													<ul className="text-gray-700">
 														{user["Courses Completed"]
 															.split("\n")
-															.map((text) => (
-																<li>{text}</li>
+															.map((text, index) => (
+																<li key={index}>{text}</li>
 															))}
 													</ul>
 												</>
 											)}
 
-											{user["Extra Activites"] !== "" && (
+											{user["Extra Activities"] !== "" && (
 												<>
 													<h2 className="text-lg font-semibold mt-4">
 														Extra Activities:
 													</h2>
-													<ul className="list-disc list-inside text-gray-700">
-														{user["Extra Activites"].split("\n").map((text) => (
-															<li>{text}</li>
-														))}
+													<ul className="list-inside text-gray-700">
+														{user["Extra Activities"]
+															.split("\n")
+															.map((text, index) => (
+																<li key={index}>{text}</li>
+															))}
 													</ul>
 												</>
 											)}

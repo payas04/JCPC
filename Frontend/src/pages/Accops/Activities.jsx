@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "../../styles/activities.css"; // Adjust path as necessary
 import Sidebar from "../../components/Sidebar";
 import Selfie from "../../components/extra/Selfie";
+import OsResearch from "../../components/extra/OsResearch";
+import AiBots from "../../components/extra/AiBots";
 
 const Activities = () => {
 	const [selectedCard, setSelectedCard] = useState(null);
@@ -42,15 +44,7 @@ const Activities = () => {
 						className="character"
 						alt="Dark Rider Character"
 					/> */}
-					{selectedCard === "OS" && (
-						<div className="card-details">
-							<h3>Zorion os</h3>
-							<p>Lorem ipsum dolor sit amet...</p>
-							<button className="close-btn" onClick={handleCloseClick}>
-								&times;
-							</button>
-						</div>
-					)}
+					{selectedCard === "OS" && <OsResearch close={handleCloseClick} />}
 				</div>
 
 				{/* AI Selfie Module */}
@@ -81,27 +75,19 @@ const Activities = () => {
 					} rounded-lg overflow-hidden`}
 					onClick={() => handleCardClick("AI")}>
 					<div className="wrapper">
-						{/* <img
+						<img
 							src="/images/extra/AI.jpg"
 							className="cover-image opacity-80"
 							alt="AI Bots Cover"
-						/> */}
-						<div className="cover-image bg-red-400"></div>
+						/>
+						{/* <div className="cover-image bg-red-400"></div> */}
 					</div>
 					<img
 						src="/images/extra/AIBots.png"
 						className="title"
 						alt="AI Bots Title"
 					/>
-					{selectedCard === "AI" && (
-						<div className="card-details">
-							<h3>AI Bots</h3>
-							<p>Lorem ipsum dolor sit amet...</p>
-							<button className="close-btn" onClick={handleCloseClick}>
-								&times;
-							</button>
-						</div>
-					)}
+					{selectedCard === "AI" && <AiBots close={handleCloseClick} />}
 				</div>
 			</div>
 		</div>

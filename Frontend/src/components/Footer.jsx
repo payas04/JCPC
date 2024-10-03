@@ -34,12 +34,12 @@ const Footer = () => {
 					: "rgba(0, 0, 0, 0.5)",
 				display: location.pathname == "/" ? "none" : "flex",
 			}}>
-			{/* <Browser
-        isAppOpen={isChromeOpen}
-        toggleBrowser={() => setChromeOpen(!isChromeOpen)}
-        bounds={bounds}
-      /> */}
 			<Power />
+			<Browser
+				isAppOpen={isChromeOpen}
+				toggleBrowser={() => setChromeOpen(!isChromeOpen)}
+				bounds={bounds}
+			/>
 			<div className="flex gap-4 justify-center items-center">
 				<span className="cursor-default bg-white bg-opacity-10 rounded-full w-[80px] h-[35px] flex justify-center items-center">
 					Desk 1

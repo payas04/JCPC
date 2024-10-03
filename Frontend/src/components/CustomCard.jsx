@@ -18,9 +18,12 @@ export function CustomCard({ user, shouldOpenModal = false }) {
 			<CardContainer className="flex flex-col mx-auto w-full justify-center m-8 text-center ">
 				<CardItem translateZ="60">
 					<img
-						alt=""
-						className="self-center flex-shrink-0 w-24 h-24 mb-4 bg-center bg-cover rounded-full "
-						src="/images/Pranav.Patne.jpg"
+						alt={user.Name}
+						className="self-center flex-shrink-0 w-24 h-24 mb-4 object-contain rounded-full border-2 border-white "
+						src={`/images/members/${user.Domain}.jpg`}
+						onError={(e) => {
+							e.target.src = "/images/profile/default.png";
+						}}
 					/>
 				</CardItem>
 
@@ -31,7 +34,7 @@ export function CustomCard({ user, shouldOpenModal = false }) {
 						{user && user.Name}
 					</span>
 					<span className="dark:text-gray-600">@developer</span>
-					<div className="text-green-600">{user.score}</div>
+					<div className="text-green-600">{user.Total_score}</div>
 				</CardItem>
 			</CardContainer>
 		</div>
