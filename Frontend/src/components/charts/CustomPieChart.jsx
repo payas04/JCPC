@@ -9,11 +9,18 @@ export default function CustomPieChart({ data, radiusValue, innerLabel }) {
         series={[
           {
             data,
+            arcLabel: (item) => `${item.value}`,
+            arcLabelMinAngle: 35,
+
+            arcLabelRadius: "60%",
             highlightScope: { fade: "global", highlight: "item" },
             faded: { innerRadius: 30, additionalRadius: -30, color: "gray" },
             innerRadius: radiusValue,
           },
         ]}
+        sx={{
+          color: "white",
+        }}
         width={430}
         height={250}
       />

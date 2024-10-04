@@ -17,7 +17,6 @@ import {
   lenovoAreaChartData,
 } from "../../db/data";
 import { useNavigate } from "react-router-dom";
-import { CgProductHunt } from "react-icons/cg";
 import JCPCProduct from "../../components/JCPCProduct";
 
 const Dashboard = () => {
@@ -89,7 +88,7 @@ const Dashboard = () => {
           </div>
           <div className="md:row-span-2 w-[36%] my-auto">
             <div className="mb-4 font-bold text-2xl flex items-center justify-center text-black ">
-              ISSUE CHART
+              Total Issues Raised
             </div>
             <CustomPieChart data={issuePieChart} />
           </div>

@@ -87,6 +87,7 @@ export default function Home() {
               alt="JioCloudPc logo"
               className="w-[50px] h-[50px] rounded-lg block mx-auto mb-3"
             />
+            <MdShortcut className="absolute top-10 left-5 bg-blue-600 rounded-sm w-5" />
             JioCloudPC
           </div>
         </Draggable>
@@ -107,6 +108,7 @@ export default function Home() {
               alt="Chrome logo"
               className="w-[50px] h-[50px] rounded-lg block mx-auto mb-3"
             />
+            <MdShortcut className="absolute top-10 left-5 bg-blue-600 rounded-sm w-5" />
             Chrome
           </div>
         </Draggable>
