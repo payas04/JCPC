@@ -16,8 +16,8 @@ const Selfie = ({ close }) => {
 				<div className="flex mt-10 justify-between  ">
 					<div className="">
 						<h4 className="font-semibold text-2xl mb-4">Selfie Guidelines</h4>
-						<p className=" text-xl">
-							Please follow these rules when taking your selfies
+						<p className=" text-lg">
+							Please follow these rules when taking your selfies -
 						</p>
 						<ul className="list-disc pl-6 text-lg leading-9">
 							<li>Do not wear your ID card in the selfie</li>

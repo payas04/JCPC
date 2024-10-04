@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CustomCard } from "../../components/CustomCard";
 import Sidebar from "../../components/Sidebar";
-import testData from "../../test.json";
+import TeamData from "../../TeamData.json";
 import { AiOutlineSortAscending } from "react-icons/ai";
 import { TbSortAscending, TbSortDescending } from "react-icons/tb";
 import {
@@ -14,29 +14,31 @@ const sortByNameAscending = (array) =>
 
 const sortByScore = (array, order = "asc") => {
 	return [...array].sort((a, b) =>
-		order === "asc" ? a.score - b.score : b.score - a.score
+		order === "asc"
+			? a.Total_score - b.Total_score
+			: b.Total_score - a.Total_score
 	);
 };
 
 const JioCloudPc = () => {
-	const [data, setData] = useState(sortByScore(testData, "desc"));
+	const [data, setData] = useState(sortByScore(TeamData, "desc"));
 	const [activeSort, setActiveSort] = useState("High");
-	const todayBirthday = getTodaysBirthdays(testData);
-	const upcomingBirthday = getUpcomingBirthdaysThisMonth(testData);
+	const todayBirthday = getTodaysBirthdays(TeamData);
+	const upcomingBirthday = getUpcomingBirthdaysThisMonth(TeamData);
 
 	const handleSortByName = () => {
-		setData(sortByNameAscending(testData));
+		setData(sortByNameAscending(TeamData));
 		setActiveSort("Name");
 		console.log(birthday);
 	};
 
 	const handleSortByScoreAsc = () => {
-		setData(sortByScore(testData, "asc"));
+		setData(sortByScore(TeamData, "asc"));
 		setActiveSort("Low");
 	};
 
 	const handleSortByScoreDesc = () => {
-		setData(sortByScore(testData, "desc"));
+		setData(sortByScore(TeamData, "desc"));
 		setActiveSort("High");
 	};
 	return (
@@ -114,13 +116,14 @@ const JioCloudPc = () => {
 						</li>
 					</ul>
 				</div>
+				{/* Birthday Event */}
 				<div className="px-4">
-					<h3 className="font-semibold text-2xl mt-6 mb-2 ">Birthday Events</h3>
+					<h3 className="font-semibold text-xl mt-6 mb-2 ">Birthday Events</h3>
 					<h4 className="font-normal text-lg mt-2 mb-2 border-b-[1px] border-gray-300">
 						Today ({todayBirthday.length})
 					</h4>
 					<div className="Birthday max-h-[135px] overflow-y-scroll pb-4 h-fit">
-						{todayBirthday ? (
+						{todayBirthday.length !== 0 ? (
 							todayBirthday.map((btd, index) => (
 								<div key={index} className="flex mt-2">
 									<img
@@ -143,7 +146,7 @@ const JioCloudPc = () => {
 						Upcoming ({upcomingBirthday.length})
 					</h4>
 					<div className="Birthday h-fit max-h-[135px] overflow-y-scroll pb-4">
-						{upcomingBirthday ? (
+						{upcomingBirthday.length !== 0 ? (
 							upcomingBirthday.map((btd, index) => (
 								<div className="flex mt-2" key={index}>
 									<img
