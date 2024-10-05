@@ -48,7 +48,7 @@ const Activities = () => {
 						/>
 						<CardContent>
 							<div className="p-4">
-								<p className="bg-black inline-block px-2 py-1 rounded-full text-white font-light font-mono text-xs">
+								<p className="hover:bg-[rgb(0,0,0,0.8)] bg-black inline-block  px-2 py-1 rounded-full text-white font-light font-mono text-xs">
 									RESEARCH
 								</p>
 								<h3 className="text-lg font-semibold mb-2">OS Research</h3>
@@ -71,7 +71,7 @@ const Activities = () => {
 						<CardMedia sx={{ height: 200 }} image="/images/extra/Selfie.jpg" />
 						<CardContent>
 							<div className="p-4">
-								<p className="bg-black inline-block px-2 py-1 rounded-full text-white font-light font-mono text-xs">
+								<p className="hover:bg-[rgb(0,0,0,0.8)] bg-black inline-block px-2 py-1 rounded-full text-white font-light font-mono text-xs">
 									AI
 								</p>
 
@@ -94,7 +94,7 @@ const Activities = () => {
 						<CardMedia sx={{ height: 200 }} image="/images/extra/AI.jpg" />
 						<CardContent>
 							<div className="p-4">
-								<p className="bg-black inline-block px-2 py-1 rounded-full text-white font-light font-mono text-xs">
+								<p className="hover:bg-[rgb(0,0,0,0.8)] bg-black inline-block px-2 py-1 rounded-full text-white font-light font-mono text-xs">
 									AI BOT
 								</p>
 								<h3 className="text-lg font-semibold mb-2">

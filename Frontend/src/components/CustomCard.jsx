@@ -12,29 +12,31 @@ export function CustomCard({ user, shouldOpenModal = false }) {
 	};
 
 	return (
-		<div onClick={handleOpenModal} className="scrollAnimation  ">
+		<div
+			onClick={handleOpenModal}
+			className="scrollAnimation group bg-[#F8F9FA] rounded-lg shadow-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
 			<UserModal open={open} setOpen={setOpen} user={user} />
 
-			<CardContainer className="flex flex-col mx-auto w-full justify-center m-8 text-center ">
-				<CardItem translateZ="60">
+			<CardContainer className="flex flex-col mx-auto w-full justify-center m-4 text-center  ">
+				<CardItem
+					translateZ="60"
+					className="flex flex-col justify-center items-center w-full">
 					<img
 						alt={user.Name}
-						className="self-center flex-shrink-0 w-24 h-24 mb-4 object-contain rounded-full border-2 border-white "
+						className="w-24 h-24 mb-4 object-contain rounded-full ring-2 ring-black ring-offset-2 transition-all duration-300 group-hover:ring-4"
 						src={`/images/members/${user.Domain}.jpg`}
 						onError={(e) => {
 							e.target.src = "/images/profile/default.png";
 						}}
 					/>
-				</CardItem>
 
-				<CardItem
-					translateZ="60"
-					className="text-black  text-lg max-w-sm   text-center font-semibold">
-					<span className="text-xl flex flex-col font-semibold leading-tight">
+					<span className="text-lg flex flex-col font-semibold leading-tight">
 						{user && user.Name}
 					</span>
-					<span className="dark:text-gray-600">@developer</span>
-					<div className="text-green-600">{user.Total_score}</div>
+					<span className="text-sm font-normal text-gray-600">Tester</span>
+					<div className="mt-4 bg-black text-white rounded-full px-3 py-1 text-sm font-medium w-fit self-center">
+						Score: {user.Total_score}
+					</div>
 				</CardItem>
 			</CardContainer>
 		</div>

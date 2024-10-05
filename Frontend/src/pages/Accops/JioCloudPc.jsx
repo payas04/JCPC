@@ -47,7 +47,7 @@ const JioCloudPc = () => {
 			<Sidebar />
 
 			{/* Team List */}
-			<section className="  w-full bg-gray-100 text-gray-800 overflow-y-scroll pb-44 mb-12">
+			<section className="w-full bg-gray-100 text-gray-800 overflow-y-scroll pb-44 mb-12 px-10">
 				<div className="container w-full flex flex-col items-center justify-center  mx-auto space-y-8 py-6">
 					<h1 className="text-4xl font-bold leading-none text-center sm:text-5xl">
 						Our Team
@@ -71,7 +71,7 @@ const JioCloudPc = () => {
 							<sub className="text-sm">Program Manager</sub>
 						</div>
 					</div>
-					<div className="w-full grid grid-cols-4 gap-2">
+					<div className="w-full grid grid-cols-4 gap-8">
 						{data.map((user, index) => {
 							return <CustomCard key={index} user={user} />;
 						})}
