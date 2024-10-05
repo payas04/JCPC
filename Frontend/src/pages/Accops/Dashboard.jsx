@@ -1,6 +1,8 @@
 import CustomPieChart from "../../components/charts/CustomPieChart";
 import Sidebar from "../../components/Sidebar";
 import StatCard from "../../components/StatCard";
+import { AiOutlineIssuesClose } from "react-icons/ai";
+import TeamData from "../../TeamData.json";
 import { Users, Bug, BugOff, Star } from "lucide-react";
 import JioPcObservation from "./JioPcObservation";
 import AreaChart from "../../components/charts/AreaGraph";
@@ -61,10 +63,10 @@ const Dashboard = () => {
 				<div className=" bg-white mb-4 p-6 rounded-md flex gap-10">
 					<div className="grid grid-cols-2 md:grid-cols-2 gap-6 w-[64%]">
 						<StatCard
-							title="Total Issues"
+							title="Total Bugs and Enhancements"
 							value="277"
 							color="bg-emerald-500"
-							icon={BugOff}
+							icon={AiOutlineIssuesClose}
 							pieData={totalIssuePieChart}
 							shouldOpenModal={true}
 						/>
@@ -78,7 +80,7 @@ const Dashboard = () => {
 						/>
 						<StatCard
 							title="Total Members"
-							value="90"
+							value={TeamData.length}
 							color="bg-sky-500"
 							icon={Users}
 						/>
