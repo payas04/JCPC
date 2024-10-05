@@ -127,7 +127,7 @@ const JioCloudPc = () => {
 							todayBirthday.map((btd, index) => (
 								<div key={index} className="flex mt-2">
 									<img
-										src="/images/Binit.jpg"
+										src={`/images/members/${btd.Domain}.jpg`}
 										alt="member"
 										width={50}
 										className="rounded-full h-14"
@@ -150,7 +150,7 @@ const JioCloudPc = () => {
 							upcomingBirthday.map((btd, index) => (
 								<div className="flex mt-2" key={index}>
 									<img
-										src="/images/Pranav.Patne.jpg"
+										src={`/images/members/${btd.Domain}.jpg`}
 										alt="member"
 										width={50}
 										className="rounded-full h-14"

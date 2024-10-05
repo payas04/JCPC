@@ -27,12 +27,12 @@ const Activities = () => {
 					} rounded-lg overflow-hidden`}
 					onClick={() => handleCardClick("OS")}>
 					<div className="wrapper">
-						{/* <img
-							src="/images/extra/OS.jpg"
+						<img
+							src="/images/extra/OS_Image.webp"
 							className="cover-image opacity-80"
 							alt="Dark Rider Cover"
-						/> */}
-						<div className="cover-image bg-blue-400"></div>
+						/>
+						{/* <div className="cover-image bg-blue-400"></div> */}
 					</div>
 					<img
 						src="/images/extra/test.png"
