@@ -36,7 +36,7 @@ export default function LoginScreen() {
         setLoading(true);
 
         setTimeout(() => {
-          login(true); // Assuming `login(true)` sets the user to a logged-in state
+          login(true);
           navigate(`/home`);
           setLoading(false);
         }, 1500);

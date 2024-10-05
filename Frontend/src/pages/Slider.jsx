@@ -60,8 +60,8 @@ export default function Slider({ isMenuOpen, toggleMenu }) {
           <div className="font-semibold text-4xl mt-5">
             {formatDate(currentTime)}
           </div>
-          <div className="font-semibold text-xl mt-52 w-92 flex flex-col items-center">
-            Press anywhere on screen to continue
+          <div className="font-semibold text-xl mt-52 w-92 flex flex-col items-center mx-auto uppercase">
+            Click anywhere on screen to continue
           </div>
         </div>
       </div>

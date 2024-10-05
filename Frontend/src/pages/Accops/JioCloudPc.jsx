@@ -25,11 +25,11 @@ const JioCloudPc = () => {
 	const [activeSort, setActiveSort] = useState("High");
 	const todayBirthday = getTodaysBirthdays(TeamData);
 	const upcomingBirthday = getUpcomingBirthdaysThisMonth(TeamData);
+	console.log({ upcomingBirthday });
 
 	const handleSortByName = () => {
 		setData(sortByNameAscending(TeamData));
 		setActiveSort("Name");
-		console.log(birthday);
 	};
 
 	const handleSortByScoreAsc = () => {
@@ -50,7 +50,7 @@ const JioCloudPc = () => {
 			<section className="  w-full bg-gray-100 text-gray-800 overflow-y-scroll pb-44 mb-12  bg-[url('/images/background/blue.jpg')] bg-cover">
 				<div className="container w-full flex flex-col items-center justify-center  mx-auto space-y-8 py-6">
 					<h1 className="text-4xl font-bold leading-none text-center sm:text-5xl">
-						Our team
+						Our Team
 					</h1>
 					<p className="max-w-2xl text-center dark:text-gray-600">
 						As we continue working towards our goals, I want to take a moment to
@@ -68,7 +68,7 @@ const JioCloudPc = () => {
 							<p className="text-xl font-semibold leading-tight">
 								Rahul Bhandari
 							</p>
-							<p className="dark:text-gray-600">Program Manager</p>
+							<sub className="text-sm">Program Manager</sub>
 						</div>
 					</div>
 					<div className="w-full grid grid-cols-4 gap-2">

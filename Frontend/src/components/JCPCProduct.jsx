@@ -104,7 +104,7 @@ export default function Component() {
 
 const DeviceCard = ({ product }) => {
   return (
-    <div className="w-full flex flex-col  rounded overflow-hidden border-2 border-gray-300">
+    <div className="w-full flex flex-col  rounded overflow-hidden border-2 px-2 border-gray-300">
       <div className="font-bold text-xl mb-2 ">{product.name}</div>
       <img
         className="w-80 h-80 object-contain mx-auto "
@@ -113,9 +113,7 @@ const DeviceCard = ({ product }) => {
         src={`/images/devices/${product.img}.jpg`}
         alt="img"
       />
-      <div className="px-6 ">
-        <p className="text-gray-700 text-base">{product.description}</p>
-      </div>
+
       <h3 className="font-bold text-xl mt-6 mb-5 ">Specifications:</h3>
       <ul className="list-disc pl-9 mb-5 text-left space-y-1">
         {product.specs.map((spec, specIndex) => (

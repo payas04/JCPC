@@ -17,15 +17,20 @@ const Header = () => {
       }}
     >
       <div
+        className="cursor-pointer"
         onClick={() => {
           window.location.reload();
         }}
       >
         <IoMdRefresh color="black" size={15} />
       </div>
-      <div className="flex space-x-2">
+      <div className="flex space-x-2 cursor-pointer">
         <Link to={"/home"}>
-          <IoClose color="black" size={15} />
+          <IoClose
+            color="black"
+            size={15}
+            className="hover:bg-red-500 hover:rounded-full "
+          />
         </Link>
       </div>
     </div>

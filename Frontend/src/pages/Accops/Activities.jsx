@@ -60,11 +60,11 @@ const Activities = () => {
 							alt="Force Mage Cover"
 						/>
 					</div>
-					<img
-						src="/images/extra/SelfieModule.png"
-						className="title"
-						alt="Force Mage Title"
-					/>
+					{/* <img
+            src="/images/extra/SelfieModule.png"
+            className="title"
+            alt="Force Mage Title"
+          /> */}
 					{selectedCard === "Selfie" && <Selfie close={handleCloseClick} />}
 				</div>
 
@@ -82,11 +82,11 @@ const Activities = () => {
 						/>
 						{/* <div className="cover-image bg-red-400"></div> */}
 					</div>
-					<img
-						src="/images/extra/AIBots.png"
-						className="title"
-						alt="AI Bots Title"
-					/>
+					{/* <img
+            src="/images/extra/AIBots.png"
+            className="title"
+            alt="AI Bots Title"
+          /> */}
 					{selectedCard === "AI" && <AiBots close={handleCloseClick} />}
 				</div>
 			</div>
