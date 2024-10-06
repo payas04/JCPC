@@ -12,7 +12,7 @@ const OsResearch = ({ close }) => {
 			<div>
 				<h2 className="font-bold text-4xl text-center mb-4">OS Research</h2>
 				<IoClose
-					onClick={() => setOpen(false)}
+					onClick={close}
 					color="black"
 					size={26}
 					className="fixed right-3 top-2 hover:bg-red-500 hover:rounded-full p-1"

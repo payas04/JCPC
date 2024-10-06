@@ -4,18 +4,13 @@ import Sidebar from "../../components/Sidebar";
 import Selfie from "../../components/extra/Selfie";
 import OsResearch from "../../components/extra/OsResearch";
 import AiBots from "../../components/extra/AiBots";
-import {
-	Badge,
-	Card,
-	CardActions,
-	CardContent,
-	CardMedia,
-	Typography,
-} from "@mui/material";
-import { Button } from "@headlessui/react";
+import { Card, CardContent, CardMedia } from "@mui/material";
+import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
+import { IoClose } from "react-icons/io5";
 
 const Activities = () => {
 	const [selectedCard, setSelectedCard] = useState(null);
+	const [open, setOpen] = useState(false);
 
 	const handleCardClick = (cardId) => {
 		setSelectedCard(selectedCard === cardId ? null : cardId); // Toggle the card
@@ -40,8 +35,10 @@ const Activities = () => {
 						sx={{ width: 350 }}
 						className={`card ${
 							selectedCard === "OS" ? "active enlarged" : ""
-						} rounded-lg overflow-hidden`}
-						onClick={() => handleCardClick("OS")}>
+						} rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-2`}
+						onClick={() => handleCardClick("OS")}
+						// onClick={() => setOpen(true)}
+					>
 						<CardMedia
 							sx={{ height: 200 }}
 							image="/images/extra/OS_Image.webp"
@@ -66,13 +63,13 @@ const Activities = () => {
 						sx={{ width: 350 }}
 						className={`card ${
 							selectedCard === "Selfie" ? "active enlarged" : ""
-						} rounded-lg overflow-hidden`}
+						} rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-2`}
 						onClick={() => handleCardClick("Selfie")}>
 						<CardMedia sx={{ height: 200 }} image="/images/extra/Selfie.jpg" />
 						<CardContent>
 							<div className="p-4">
 								<p className="hover:bg-[rgb(0,0,0,0.8)] bg-black inline-block px-2 py-1 rounded-full text-white font-light font-mono text-xs">
-									AI
+									SELFIE
 								</p>
 
 								<h3 className="text-lg font-semibold mb-2">AI Selfie Module</h3>
@@ -89,7 +86,7 @@ const Activities = () => {
 						sx={{ width: 350 }}
 						className={`card ${
 							selectedCard === "AI" ? "active enlarged" : ""
-						} rounded-lg overflow-hidden`}
+						} rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-2`}
 						onClick={() => handleCardClick("AI")}>
 						<CardMedia sx={{ height: 200 }} image="/images/extra/AI.jpg" />
 						<CardContent>
