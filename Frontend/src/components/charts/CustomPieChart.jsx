@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material";
 
 export default function CustomPieChart({ data, radiusValue, innerLabel }) {
   return (
-    <Box position="relative" display="inline-block">
+    <Box position="relative" display="inline-block" color="white">
       <PieChart
         colors={["#D91656", "orange", "yellow", "blue", "green"]}
         series={[
