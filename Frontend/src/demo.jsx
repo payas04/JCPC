@@ -21,9 +21,9 @@ export default function UserModal({ open, setOpen, user, heading }) {
 			<div className="fixed inset-0 bg-black/30 " aria-hidden="true" />
 
 			<div className="fixed inset-0 flex z-10 w-full ">
-				<div className="flex  w-full max-w-4xl mx-auto items-center justify-center p-4">
+				<div className="flex  w-fit max-w-3xl  mx-auto items-center justify-center p-4">
 					<DialogPanel className="w-full rounded-lg bg-white shadow-xl overflow-hidden h-fit ">
-						<div className="h-24 w-full bg-gray-800 flex justify-end">
+						<div className="h-24 w-full bg-gradient-to-br from-blue-600 via-blue-400 to-cyan-300 flex justify-end">
 							<IoClose
 								onClick={() => setOpen(false)}
 								color="white"
@@ -33,7 +33,7 @@ export default function UserModal({ open, setOpen, user, heading }) {
 						</div>
 						<div className="px-4">
 							<div className="relative px-4 pb-4">
-								<div className="absolute -top-12 left-4">
+								<div className="absolute -top-12 left-[43%]">
 									<img
 										className="w-24 h-24 rounded-full border-4 border-white"
 										src={`/images/members/${user.Domain}.jpg`}
@@ -43,19 +43,18 @@ export default function UserModal({ open, setOpen, user, heading }) {
 										alt="Profile picture"
 									/>
 								</div>
-								<div className="pt-16 ">
-									<div className="flex justify-between items-center">
-										<div>
-											<h1 className="text-2xl font-bold">{user.Name}</h1>
-											<p className="text-gray-600">@Tester</p>
-										</div>
-										<div className="text-center rounded-lg overflow-hidden border-2 h-fit">
-											<p className="font-bold text-xl ">{user.Total_score}</p>
-											<p className="bg-gray-800 text-white px-2">Total Score</p>
-										</div>
+								<div className="pt-12 ">
+									<div className="flex flex-col justify-center items-center">
+										<h1 className="text-2xl font-bold">{user.Name}</h1>
+										<p className="text-gray-600">Tester</p>
+										<p className=" bg-gray-200  rounded-full px-3 py-1 text-sm font-medium w-fit text-center">
+											Total Score: {user.Total_score}
+										</p>
+										<p className="mt-2 text-gray-700 w-[80%] max-w-2xl text-center">
+											{user["About"]}
+										</p>
 									</div>
-									<p className="mt-2 text-gray-700 ">{user["About"]}</p>
-									<div className="mt-7 flex gap-3 justify-between">
+									<div className="flex gap-3 justify-between">
 										<div>
 											{user["Courses Completed"] !== "" && (
 												<>
@@ -87,7 +86,10 @@ export default function UserModal({ open, setOpen, user, heading }) {
 												</>
 											)}
 										</div>
-										<div className="flex justify-center items-center">
+										<div className="text-center">
+											{/* <h3 className="text-lg font-semibold">
+                      Issue Distribution
+                    </h3> */}
 											<CustomPieChart data={issue} radiusValue={30} />
 										</div>
 									</div>
