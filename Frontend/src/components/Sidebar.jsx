@@ -11,7 +11,7 @@ const Sidebar = () => {
 		<aside className="w-1/7 min-w-52 bg-blue-800 text-white pt-12  flex flex-col justify-between m-2 rounded-lg mb-14">
 			<div>
 				<div className="text-2xl font-bold mb-8 px-3 py-2 text-center">
-					JioCloudPC
+					JioCloud PC
 				</div>
 				<nav>
 					<ul className="space-y-4">
@@ -27,12 +27,12 @@ const Sidebar = () => {
 							location={location}
 							Icon={<RiTeamFill />}
 						/>
-						<Li
+						{/* <Li
 							url="/accops/profile"
 							title="Profile"
 							location={location}
 							Icon={<CgProfile />}
-						/>
+						/> */}
 						{/* <Li
 							url="/accops/settings"
 							title="Settings"

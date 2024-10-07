@@ -4,7 +4,7 @@
 		"Name": "Abhin Shetty",
 		"About": "A tech enthusiast whose passion lies in exploring new technologies and understanding their potential.",
 		"Courses Completed": "1. Blockchain Basics\n2. Supervised Machine Learning",
-		"Extra Activities": "1. OS Research and Testing\n2. AI Bot(Managed WiFi Solutions)\n3. AI Selfie Module",
+		"Extra Activities": "1. OS Research and Testing\n2. AI Bot (Managed WiFi)\n3. AI Selfie Module",
 		"linkedin": "https://linkedin.com/in/abhin-shetty-a0a816228",
 		"DOB": "7th September",
 		"Blocker": 0,
@@ -12,7 +12,8 @@
 		"Major": 1,
 		"Normal": 2,
 		"Minor": 1,
-		"Total_score": 12
+		"Total_score": 12,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Akshada.Wadekar",
@@ -27,14 +28,15 @@
 		"Major": 0,
 		"Normal": 1,
 		"Minor": 1,
-		"Total_score": 12
+		"Total_score": 12,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Aman11.Tiwari",
 		"Name": "Aman Tiwari",
 		"About": "Aspiring developer with a passion for learning coding and problem-solving.My goal is to continuously improve my skills and contribute to impactful projects.",
 		"Courses Completed": "1. Node JS Essential training",
-		"Extra Activities": "1. AI Bot (Managed WiFi\n Soltuions)\n2. AI Selfie Module",
+		"Extra Activities": "1. AI Bot (Managed WiFi)\n2. AI Selfie Module",
 		"linkedin": "https://www.linkedin.com/in/aman-tiwari-6643ab20b/",
 		"DOB": "31st March",
 		"Blocker": 0,
@@ -42,29 +44,31 @@
 		"Major": 2,
 		"Normal": 4,
 		"Minor": 0,
-		"Total_score": 22
+		"Total_score": 22,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Ananyaa.Sridhar",
 		"Name": "Ananyaa Sridhar",
 		"About": "",
-		"Courses Completed": "",
-		"Extra Activities": "1. AI Selfie Module\n2. AI Bot(Managed WiFi Solutions)",
-		"linkedin": "",
+		"Courses Completed": "1. Blender tutorial 4\n2. Augmented Reality Tutorial (The AI university)",
+		"Extra Activities": "1. AI Selfie Module\n2. AI Bot (Managed WiFi )",
+		"linkedin": "https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F",
 		"DOB": "30th September",
 		"Blocker": 0,
 		"Critical": 0,
 		"Major": 2,
 		"Normal": 2,
 		"Minor": 1,
-		"Total_score": 17
+		"Total_score": 17,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Anirudh.Bhardwaj",
 		"Name": "Anirudh Bhardwaj",
 		"About": "A focused individual and a team player, determined to achieve my goals",
 		"Courses Completed": "1. JavaScript\n2. MERN Stack (beginner)",
-		"Extra Activities": "1. OS Research\n2. AI Bot (Managed Wi-Fi solutions)\n3. AI Selfie Module",
+		"Extra Activities": "1. OS Research\n2. AI Bot (Managed Wi-Fi )\n3. AI Selfie Module",
 		"linkedin": "https://www.linkedin.com/in/anirudh-bhardwaj-255ab421b/",
 		"DOB": "26th May",
 		"Blocker": 0,
@@ -72,14 +76,15 @@
 		"Major": 5,
 		"Normal": 3,
 		"Minor": 0,
-		"Total_score": 34
+		"Total_score": 34,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Anubhav.V",
 		"Name": "Anubhav Vishwakarma",
 		"About": "Eager learner with a strong passion for technology, always striving to enhance my skills",
 		"Courses Completed": "1. JavaScript\n2. React Basics",
-		"Extra Activities": "1. AI Selfie Module\n2. AI Bot(Managed WiFi Solutions)",
+		"Extra Activities": "1. AI Selfie Module\n2. AI Bot (Managed WiFi )",
 		"linkedin": "https://www.linkedin.com/in/anubhav-vishwakarma-14273929a/",
 		"DOB": "20th June",
 		"Blocker": 0,
@@ -87,14 +92,15 @@
 		"Major": 4,
 		"Normal": 3,
 		"Minor": 2,
-		"Total_score": 39
+		"Total_score": 39,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Atharv.Deshpande",
 		"Name": "Atharv Deshpande",
 		"About": "Driven professional with a strong focus and a commitment to continuous improvement.",
 		"Courses Completed": "1. DBMS\n2. React",
-		"Extra Activities": "1. Asset Management \n2. AI Bot(Managed Wifi Solution)\n3. AI Selfie Module",
+		"Extra Activities": "1. Asset Management \n2. AI Bot (Managed WiFi)\n3. AI Selfie Module",
 		"linkedin": "",
 		"DOB": "29th November",
 		"Blocker": 0,
@@ -102,7 +108,8 @@
 		"Major": 3,
 		"Normal": 4,
 		"Minor": 0,
-		"Total_score": 27
+		"Total_score": 27,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Binitkumar.S",
@@ -117,14 +124,15 @@
 		"Major": 3,
 		"Normal": 5,
 		"Minor": 0,
-		"Total_score": 38
+		"Total_score": 38,
+		"Tags": "Validator"
 	},
 	{
 		"Domain": "Dhanvi.Mange",
 		"Name": "Dhanvi Mange",
-		"About": "Enthusiastic person passionate about exploring new ideas, and developing innovative solutions.",
+		"About": "Enthusiastic person passionate about exploring new ideas, and developing innovative .",
 		"Courses Completed": "1. Blockchain Basis",
-		"Extra Activities": "1. AI Selfie Module\n2. AI Bots (Managed WiFi Solutions)",
+		"Extra Activities": "1. AI Selfie Module\n2. AI Bot (Managed WiFi )",
 		"linkedin": "http://www.linkedin.com/in/dhanvi-anil-mange-800b31198",
 		"DOB": "19th November",
 		"Blocker": 1,
@@ -132,14 +140,15 @@
 		"Major": 1,
 		"Normal": 0,
 		"Minor": 0,
-		"Total_score": 23
+		"Total_score": 23,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Hamza5.Shaikh",
 		"Name": "Hamza Shaikh",
 		"About": "A continuous and consistent learner with a passion for software development, always seeking to enhance skills and knowledge in the ever-evolving world of technology.",
 		"Courses Completed": "1. Express.js for backend development",
-		"Extra Activities": "1. Managed AI Selfie Module Task\n2. AI Bot (Managed WiFi Solutions)",
+		"Extra Activities": "1. Managed AI Selfie Module Task\n2. AI Bot (Managed WiFi )",
 		"linkedin": "http://www.linkedin.com/in/hamza-shaikh-33564b1b4",
 		"DOB": "16th May",
 		"Blocker": 0,
@@ -147,14 +156,15 @@
 		"Major": 1,
 		"Normal": 6,
 		"Minor": 1,
-		"Total_score": 24
+		"Total_score": 24,
+		"Tags": "Validator"
 	},
 	{
 		"Domain": "Jagruti.Zawar",
-		"Name": "Jagruti.Zawar",
+		"Name": "Jagruti Zawar",
 		"About": "Enthusiastic and curious, I embrace computer science challenges with a problem-solving mindset and joyful spirit.",
 		"Courses Completed": "1. Introduction to DevOps\n2. Frontend development using React",
-		"Extra Activities": "1. AI Bot (Managed WiFi Solutions)\n2. AI Selfie Module",
+		"Extra Activities": "1. AI Bot (Managed WiFi )\n2. AI Selfie Module",
 		"linkedin": "https://www.linkedin.com/in/jagruti-zawar-2292ab223/",
 		"DOB": "24th July",
 		"Blocker": 0,
@@ -162,14 +172,15 @@
 		"Major": 4,
 		"Normal": 6,
 		"Minor": 1,
-		"Total_score": 55
+		"Total_score": 55,
+		"Tags": "Validator"
 	},
 	{
 		"Domain": "Jay.Pandit",
 		"Name": "Jay Prakash Pandit",
 		"About": "Passionate, focused on achieving my goals.",
 		"Courses Completed": "1. Become a Data Analyst",
-		"Extra Activities": "1. AI Selfie Module\n2. AI Bot (Managed WiFi Solutions)",
+		"Extra Activities": "1. AI Selfie Module\n2. AI Bot (Managed WiFi )",
 		"linkedin": "https://linkedin.com/in/jay-prakash-pandit-b30418246/",
 		"DOB": "30th April",
 		"Blocker": 0,
@@ -177,14 +188,15 @@
 		"Major": 5,
 		"Normal": 3,
 		"Minor": 0,
-		"Total_score": 42
+		"Total_score": 42,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Jeevan.Mitra",
 		"Name": "Jeevan Mitra",
 		"About": "A motivated learner with a deep passion for technology, constantly seeking to improve my skills.",
 		"Courses Completed": "1. ReactJS \n2. React Material UI",
-		"Extra Activities": "1. AI Bot (Managed WiFi Soltuions)\n2. Selfie module",
+		"Extra Activities": "1. AI Bot (Managed WiFi)\n2. Selfie module",
 		"linkedin": "https://www.linkedin.com/in/jeevan-mitra-reddi-3518541b7/",
 		"DOB": "",
 		"Blocker": 0,
@@ -192,13 +204,14 @@
 		"Major": 3,
 		"Normal": 3,
 		"Minor": 0,
-		"Total_score": 32
+		"Total_score": 32,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Kapil.Chouksey",
-		"Name": "Kapil.Chouksey",
+		"Name": "Kapil Chouksey",
 		"About": "A continuous learner who looks for new ways to finish the task in the allotted time",
-		"Courses Completed": "1. Introduction to Generative AI",
+		"Courses Completed": "1.  Introduction to Generative AI",
 		"Extra Activities": "1. AI Bot \n2. Asset Management\n3. Selfie Module\n4. Ubuntu, Zorin and Zorin light Installation on different devices and Testing",
 		"linkedin": "",
 		"DOB": "11th September",
@@ -207,7 +220,8 @@
 		"Major": 2,
 		"Normal": 0,
 		"Minor": 0,
-		"Total_score": 10
+		"Total_score": 10,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Karthik19.R",
@@ -222,14 +236,15 @@
 		"Major": 3,
 		"Normal": 0,
 		"Minor": 2,
-		"Total_score": 17
+		"Total_score": 17,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Kaushal.Saple",
 		"Name": "Kaushal Saple",
 		"About": "Passionate learner with a keen interest in technology, constantly seeking new ways to improve myself",
 		"Courses Completed": "1. Core Java\n2. React Basics\n3. Express.js &MongoDB",
-		"Extra Activities": "1. AI Bot (Managed WiFi Solutions)\n2. AI Selfie Module",
+		"Extra Activities": "1. AI Bot (Managed WiFi)\n2. AI Selfie Module",
 		"linkedin": "https://www.linkedin.com/in/kaushal-saple-334058201/",
 		"DOB": "11th April",
 		"Blocker": 0,
@@ -237,14 +252,15 @@
 		"Major": 3,
 		"Normal": 0,
 		"Minor": 1,
-		"Total_score": 16
+		"Total_score": 16,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Kewal.Chaudhari",
 		"Name": "Kewal Chaudhari",
 		"About": "Efficient and focused coder, passionate about learning and tackling significant challenges.",
 		"Courses Completed": "1. SQL: Data Reporting and Analysis\n2. Python for Data Analysis: Pandas & NumPy",
-		"Extra Activities": "1. AI Bot (Managed WiFi Soltuions)\n2. AI Selfie Module",
+		"Extra Activities": "1. AI Bot (Managed WiFi)\n2. AI Selfie Module",
 		"linkedin": "",
 		"DOB": "13th September",
 		"Blocker": 0,
@@ -252,11 +268,12 @@
 		"Major": 4,
 		"Normal": 9,
 		"Minor": 2,
-		"Total_score": 49
+		"Total_score": 49,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Kirtikumar.C",
-		"Name": "Kirtikumar chittapur",
+		"Name": "Kirtikumar Chittapur",
 		"About": "Passionate, Energetic and Determined person who loves coding  for fun.",
 		"Courses Completed": "1. SQL: Data Reporting and Analysis \n2. Learning Data Analytics Part 2: Extending and Applying Core Knowledge",
 		"Extra Activities": "1. Asset Management\n2. AI Bot",
@@ -267,7 +284,8 @@
 		"Major": 1,
 		"Normal": 0,
 		"Minor": 0,
-		"Total_score": 29
+		"Total_score": 29,
+		"Tags": "Validator"
 	},
 	{
 		"Domain": "Manali.Surve",
@@ -282,29 +300,31 @@
 		"Major": 2,
 		"Normal": 7,
 		"Minor": 1,
-		"Total_score": 32
+		"Total_score": 32,
+		"Tags": "Validator"
 	},
 	{
 		"Domain": "Megha1.Jain",
 		"Name": "Megha Jain",
-		"About": "",
-		"Courses Completed": "",
-		"Extra Activities": "",
-		"linkedin": "",
-		"DOB": "",
+		"About": "Driven by curiosity and determination, thriving in teamwork and passionate about learning and exploring  development field",
+		"Courses Completed": "1. Javascript basics\n2. Web development with ReactJS",
+		"Extra Activities": "1. AI Selfie Module Task Lead\n2. AI Bot (Managed Wifi )",
+		"linkedin": "www.linkedin.com/in/megha-jain-84602920b",
+		"DOB": "9th february",
 		"Blocker": 0,
 		"Critical": 0,
 		"Major": 3,
 		"Normal": 10,
 		"Minor": 0,
-		"Total_score": 45
+		"Total_score": 45,
+		"Tags": "Validator"
 	},
 	{
 		"Domain": "Nishad.Khare",
 		"Name": "Nishad Khare",
 		"About": "A passionate individual about coding and UI/UX�always learning and creating.",
 		"Courses Completed": "1. Introduction to ReactJS",
-		"Extra Activities": "1. OS Research and Testing \n2. AI Bot (Managed WiFi Solutions)\n3. Selfie Module",
+		"Extra Activities": "1. OS Research and Testing \n2. AI Bot (Managed WiFi )\n3. Selfie Module",
 		"linkedin": "http://www.linkedin.com/in/nishadkhare",
 		"DOB": "15th November",
 		"Blocker": 0,
@@ -312,7 +332,8 @@
 		"Major": 3,
 		"Normal": 3,
 		"Minor": 1,
-		"Total_score": 33
+		"Total_score": 33,
+		"Tags": "Validator"
 	},
 	{
 		"Domain": "Payas.Patel",
@@ -327,14 +348,15 @@
 		"Major": 5,
 		"Normal": 6,
 		"Minor": 1,
-		"Total_score": 44
+		"Total_score": 44,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Piyush2.B",
 		"Name": "Piyush Barhanpurkar",
 		"About": "A Focused and goal-driven individual who thrives in a fast-paced environment.",
 		"Courses Completed": "1. Mastering backend with Nginx and Docker.\n2. System design , study and architecture of chess.com & Google drive.",
-		"Extra Activities": "Team-lead for the Wifi-Manage chatbot task.",
+		"Extra Activities": "1. Team-lead for the Wifi-Manage chatbot task.",
 		"linkedin": "https://www.linkedin.com/in/piyush-barhanpurkar/",
 		"DOB": "",
 		"Blocker": 0,
@@ -342,11 +364,12 @@
 		"Major": 10,
 		"Normal": 5,
 		"Minor": 0,
-		"Total_score": 73
+		"Total_score": 73,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Pranav.Patne",
-		"Name": "Pranav.Patne",
+		"Name": "Pranav Patne",
 		"About": "Eager learner with a positive attitude, collaborative, adaptable, and growth-focused in all tasks.",
 		"Courses Completed": "1. Foundations of User Experience (UX) Design",
 		"Extra Activities": "1. OS Research\n2. OS testing\n3. AI Bot (Managed WiFi Soltuions)\n4. AI Selfie Module",
@@ -357,11 +380,12 @@
 		"Major": 6,
 		"Normal": 6,
 		"Minor": 0,
-		"Total_score": 56
+		"Total_score": 56,
+		"Tags": "Validator"
 	},
 	{
 		"Domain": "Purva.Tongale",
-		"Name": "Purva.Tongale",
+		"Name": "Purva Tongale",
 		"About": "A driven and curious UI/UX \nenthusiast, always seeking fresh\n ideas and new skills",
 		"Courses Completed": "1. UI/UX bootcamp",
 		"Extra Activities": "1. AI Bot(Managed WiFi Solution)",
@@ -372,14 +396,15 @@
 		"Major": 0,
 		"Normal": 7,
 		"Minor": 0,
-		"Total_score": 21
+		"Total_score": 21,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Rohit.Rawate",
 		"Name": "Rohit Rawate",
 		"About": "Aspiring Software developer with passion for technology and solid fundamentals in Spring framework and strong technical and problem solving skills .",
 		"Courses Completed": "1. Introduction to Spring Framework\n2. Spring Ecosystem and Core",
-		"Extra Activities": "1. Device Specifications\n2. AI Bot(Managed WiFi Solutions\n3. AI Selfie Module",
+		"Extra Activities": "1. Device Specifications\n2. AI Bot(Managed WiFi \n3. AI Selfie Module",
 		"linkedin": "https://www.linkedin.com/in/rohitrawate/",
 		"DOB": "23rd Jan",
 		"Blocker": 0,
@@ -387,7 +412,8 @@
 		"Major": 1,
 		"Normal": 1,
 		"Minor": 3,
-		"Total_score": 19
+		"Total_score": 19,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Ronit.Patil",
@@ -402,12 +428,13 @@
 		"Major": 0,
 		"Normal": 1,
 		"Minor": 0,
-		"Total_score": 11
+		"Total_score": 11,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Ronit1.Dey",
 		"Name": "Ronit Dey",
-		"About": "Passionate about data science, with strong problem-solving skills and a focus on delivering efficient and effective solutions",
+		"About": "Passionate about data science, with strong problem-solving skills and a focus on delivering efficient and effective",
 		"Courses Completed": "1. Jio Certified Blockchain Professional Foundation (All courses)",
 		"Extra Activities": "1. OS Research\n2. AI Bot (Managed WiFi Soltuions)\n3. Zorin OS testing",
 		"linkedin": "https://www.linkedin.com/in/ronit-dey-2413b51b4",
@@ -417,7 +444,8 @@
 		"Major": 2,
 		"Normal": 2,
 		"Minor": 0,
-		"Total_score": 32
+		"Total_score": 32,
+		"Tags": "Validator"
 	},
 	{
 		"Domain": "Sameep.Vishwakarma",
@@ -432,14 +460,15 @@
 		"Major": 5,
 		"Normal": 2,
 		"Minor": 1,
-		"Total_score": 48
+		"Total_score": 48,
+		"Tags": "Validator"
 	},
 	{
 		"Domain": "Sanyukta.Khadilkar",
 		"Name": "Sanyukta Khadilkar",
 		"About": "Detail-oriented and innovative learner, focused on developing and refining analytical abilities.",
 		"Courses Completed": "1. Google data analytics certificate (coursera - ongoing)\n2. Java - Beginner (Youtube)",
-		"Extra Activities": "1. AI Bot (Managed WiFi Solutions) \n2. AI Selfie Module",
+		"Extra Activities": "1. AI Bot (Managed WiFi ) \n2. AI Selfie Module",
 		"linkedin": "https://www.linkedin.com/in/sanyukta-khadilkar-92426a21b",
 		"DOB": "22nd May",
 		"Blocker": 0,
@@ -447,14 +476,15 @@
 		"Major": 0,
 		"Normal": 2,
 		"Minor": 2,
-		"Total_score": 8
+		"Total_score": 8,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Sejal1.Agrawal",
 		"Name": "Sejal Agrawal",
 		"About": "A focused and attentive individual, eager to learn new things to enhance my knowledge",
 		"Courses Completed": "1. Big Data with Hadoop and Apache Spark",
-		"Extra Activities": "1. AI Bot (Managed WiFi Solutions)\n2. AI Selfie Module",
+		"Extra Activities": "1. AI Bot (Managed WiFi )\n2. AI Selfie Module",
 		"linkedin": "https://www.linkedin.com/in/sejal-agrawal-931765211/",
 		"DOB": "22nd January",
 		"Blocker": 0,
@@ -462,14 +492,15 @@
 		"Major": 1,
 		"Normal": 3,
 		"Minor": 0,
-		"Total_score": 30
+		"Total_score": 30,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Shivani1.Sahu",
 		"Name": "Shivani Sahu",
 		"About": "Composed and reflective, embracing challenges with determination and a strategic mindset to achieve success.",
-		"Courses Completed": "1.Project Initiation: Starting a Successful Project",
-		"Extra Activities": "1. AI Bot (Managed WiFi Solutions)\n2. AI Selfie Module",
+		"Courses Completed": "1. Project Initiation: Starting a Successful Project",
+		"Extra Activities": "1. AI Bot (Managed WiFi )\n2. AI Selfie Module",
 		"linkedin": "https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BaftCYlgjT6mD6faQ7XQu5w%3D%3D",
 		"DOB": "24th March",
 		"Blocker": 0,
@@ -477,14 +508,15 @@
 		"Major": 4,
 		"Normal": 1,
 		"Minor": 0,
-		"Total_score": 23
+		"Total_score": 23,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Shivee.Yadav",
 		"Name": "Shivee Yadav",
 		"About": "A dedicated and tenacious individual with a passion for coding, driven by a love for continuous learning and problem-solving.",
-		"Courses Completed": "Completed:\n1. Introduction to Java\n2. Introduction to Web development",
-		"Extra Activities": "1. AI Selfie Module Task Lead\n2. AI Bot (Managed Wifi Solutions)",
+		"Courses Completed": "1. Introduction to Java\n2. Introduction to Web development",
+		"Extra Activities": "1. AI Selfie Module Task Lead\n2. AI Bot (Managed Wifi )",
 		"linkedin": "https://www.linkedin.com/in/yshivee/",
 		"DOB": "30th March",
 		"Blocker": 0,
@@ -492,14 +524,15 @@
 		"Major": 3,
 		"Normal": 4,
 		"Minor": 2,
-		"Total_score": 37
+		"Total_score": 37,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Shreyansh.Gholse",
 		"Name": "Shreyansh Gholse",
 		"About": "Curious mind passionate about coding, motion graphics, animation and digital art � always learning, always creating.",
 		"Courses Completed": "1. Introduction to Postman",
-		"Extra Activities": "1. OS Research\n2. AI Bot (Managed WiFi Solutions)",
+		"Extra Activities": "1. OS Research\n2. AI Bot (Managed WiFi )",
 		"linkedin": "https://www.linkedin.com/in/shreyansh-gholse-242997196/",
 		"DOB": "27th January",
 		"Blocker": 0,
@@ -507,14 +540,15 @@
 		"Major": 1,
 		"Normal": 1,
 		"Minor": 0,
-		"Total_score": 8
+		"Total_score": 8,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Shrinidhi.V",
-		"Name": "Shrinidhi.V",
+		"Name": "Shrinidhi V",
 		"About": "Eager to leverage my technical skills and collaborative mindset to dive into new projects and work with great teams",
-		"Courses Completed": "1. Advanced SQL",
-		"Extra Activities": "1. AI Selfie Module\n2. AI Bot (Managed WiFi Solutions)",
+		"Courses Completed": "1.  Advanced SQL",
+		"Extra Activities": "1. AI Selfie Module\n2. AI Bot(Managed WiFi )",
 		"linkedin": "https://www.linkedin.com/in/shrinidhi-v",
 		"DOB": "21st November",
 		"Blocker": 0,
@@ -522,14 +556,15 @@
 		"Major": 1,
 		"Normal": 0,
 		"Minor": 0,
-		"Total_score": 21
+		"Total_score": 21,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Siddharth2.Chauhan",
 		"Name": "Siddharth Chauhan",
 		"About": "I'm a passionate learner, eager to embrace new learning opportunities and create innovative digital experiences.",
 		"Courses Completed": "1. Fundamentals of Program Management\n2. Agile Project Management",
-		"Extra Activities": "1. Assest Management \n2. AI Bot\n3. AI selfie",
+		"Extra Activities": "1. Assest Management        \n2. AI Bot\n3. AI selfie",
 		"linkedin": "https://www.linkedin.com/in/siddharth2119chauhan/",
 		"DOB": "",
 		"Blocker": 0,
@@ -537,7 +572,8 @@
 		"Major": 2,
 		"Normal": 2,
 		"Minor": 1,
-		"Total_score": 25
+		"Total_score": 25,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Trivesh.Patel",
@@ -552,14 +588,15 @@
 		"Major": 2,
 		"Normal": 3,
 		"Minor": 1,
-		"Total_score": 44
+		"Total_score": 44,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Tushar.Borawake",
 		"Name": "Tushar Borawake",
 		"About": "A dedicated, passionate, and fast-learning individual who loves to do coding.",
 		"Courses Completed": "1. Programming with JavaScript\n2. Introduction to Front-end development\n3. React Basics",
-		"Extra Activities": "1. AI Bot (Managed WiFi Solutions) \n2. AI Selfie Module",
+		"Extra Activities": "1. AI Bot (Managed WiFi ) \n2. AI Selfie Module",
 		"linkedin": "https://in.linkedin.com/in/tushar-borawake",
 		"DOB": "22nd June",
 		"Blocker": 0,
@@ -567,14 +604,15 @@
 		"Major": 3,
 		"Normal": 1,
 		"Minor": 1,
-		"Total_score": 19
+		"Total_score": 19,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Uday1.Gaikwad",
 		"Name": "Uday Gaikwad",
 		"About": "Curious and passionate about computer science field, approach any situation with problem solving mindset and always excited to take new opportunities to upskill",
 		"Courses Completed": "1. Introduction to Generative AI\n2. Agile Project Management",
-		"Extra Activities": "1. OS Research\n2. AI Bot (Managed Wi-Fi solutions)\n3. AI Selfie Module",
+		"Extra Activities": "1. OS Research\n2. AI Bot (Managed Wi-Fi )\n3. AI Selfie Module",
 		"linkedin": "https://www.linkedin.com/in/uday-gaikwad-6660981b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
 		"DOB": "9th January",
 		"Blocker": 0,
@@ -582,14 +620,15 @@
 		"Major": 3,
 		"Normal": 3,
 		"Minor": 2,
-		"Total_score": 26
+		"Total_score": 26,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Vaishnavi.Konale",
 		"Name": "Vaishnavi Konale",
 		"About": "A dedicated learner and coding enthusiast, eager to expand the skills through hands on projects.",
-		"Courses Completed": "1.Spring Boot with \nembedded database\n2.Frontend development using React",
-		"Extra Activities": "1.AI Selfie Module\n2.AI Bot(Managed WiFi Solutions)",
+		"Courses Completed": "1. Spring Boot with \nembedded database\n2. Frontend development using React",
+		"Extra Activities": "1. AI Selfie Module\n2. AI Bot(Managed WiFi )",
 		"linkedin": "https://www.linkedin.com/in/vaishnavi-konale-ba58b6255/?originalSubdomain=in",
 		"DOB": "27th August",
 		"Blocker": 0,
@@ -597,13 +636,14 @@
 		"Major": 0,
 		"Normal": 3,
 		"Minor": 1,
-		"Total_score": 10
+		"Total_score": 10,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Varun.Chandwani",
 		"Name": "Varun Chandwani",
 		"About": "A hardworking problem solver, determined to overcome challenges, consistently delivering high-quality results ahead of deadlines with a proactive approach.",
-		"Courses Completed": "React Basics",
+		"Courses Completed": "1. React Basics",
 		"Extra Activities": "1.  OS Research and Testing\n2. Printer Testing",
 		"linkedin": "https://www.linkedin.com/in/varun-chandwani/",
 		"DOB": "",
@@ -612,7 +652,8 @@
 		"Major": 3,
 		"Normal": 0,
 		"Minor": 0,
-		"Total_score": 23
+		"Total_score": 23,
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Yash.Amin",
@@ -627,12 +668,13 @@
 		"Major": 3,
 		"Normal": 0,
 		"Minor": 0,
-		"Total_score": 23
+		"Total_score": 23,
+		"Tags": "Validator"
 	},
 	{
 		"Domain": "Yuvraj.Achrekar",
 		"Name": "Yuvraj Achrekar",
-		"About": "Dedicated developer focused on delivering innovative, scalable solutions through efficient coding practices and user-driven design.",
+		"About": "Dedicated developer focused on delivering innovative, scalable  through efficient coding practices and user-driven design.",
 		"Courses Completed": "1. Building React Web Application\n2. Building RESTfull API with Express and Node.js",
 		"Extra Activities": "1. Managed AI Selfie Module Task\n2. OS Research \n3. Developed Biweekly Website",
 		"linkedin": "http://www.linkedin.com/in/yuvraj-achrekar-213a10259",
@@ -642,6 +684,7 @@
 		"Major": 2,
 		"Normal": 7,
 		"Minor": 0,
-		"Total_score": 31
+		"Total_score": 31,
+		"Tags": "Validator"
 	}
 ]

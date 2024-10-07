@@ -72,7 +72,10 @@ const Dashboard = () => {
 						/>
 						<StatCard
 							title="Open Issues"
-							value="338"
+							value={openIssuePieChart.reduce(
+								(acc, item) => acc + item.value,
+								0
+							)}
 							color="bg-purple-500"
 							icon={Bug}
 							pieData={openIssuePieChart}
@@ -89,8 +92,8 @@ const Dashboard = () => {
 						<JCPCProduct />
 					</div>
 					<div className="md:row-span-2 w-[36%] my-auto">
-						<div className="mb-4 font-bold text-2xl flex items-center justify-center text-black ">
-							Total Issues Raised
+						<div className="mb-4 font-bold text-xl flex items-center justify-center text-black ">
+							Total Issues Raised (23th Aug - 30th Sep)
 						</div>
 						<CustomPieChart data={issuePieChart} />
 					</div>
@@ -112,7 +115,7 @@ const Dashboard = () => {
 						areaChartData={hpAreaChartData}
 					/>
 				</section>
-				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10">
+				{/* <section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10">
 					<JioPcObservation
 						title="Lenovo Chromebook"
 						workItems={lenovoWorkItems}
@@ -121,8 +124,7 @@ const Dashboard = () => {
 						title="Issues Raised (May 2024 - Present)"
 						areaChartData={lenovoAreaChartData}
 					/>
-				</section>
-				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10"></section>
+				</section> */}
 			</main>
 		</div>
 	);

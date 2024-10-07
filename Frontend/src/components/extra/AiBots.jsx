@@ -4,23 +4,22 @@ const AiBots = ({ close }) => {
 	return (
 		<div className="card-details">
 			<h2 className="font-bold text-4xl text-center mb-4">
-				AI Bot (Managed WiFi Solutions)
+				AI Bot (Managed WiFi)
 			</h2>
 			<div>
-				<h4 className="font-semibold text-2xl mb-4">Task Overview</h4>
-				<p className="text-lg font-normal">
-					We were tasked with creating distinct questions related to WiFi. THese
-					questions should how users would naturally interact with an AI bot,
-					asking about WiFi issues, queries, or services. The questions must
-					reflect two segments of users
+				<h4 className="font-bold text-2xl mb-4">Task Overview</h4>
+				<p className="text-lg font-semibold">
+					Our team successfully completed the task of creating distinct
+					questions related to WiFi, simulating how users would naturally
+					interact with an AI bot regarding WiFi issues, queries, or services.
+					We generated over 900 indents that reflect two user segments.
 				</p>
 				<div className="flex mt-10 justify-between  ">
 					<div className="">
-						<h4 className="font-semibold text-2xl mb-4">Non-Technical Users</h4>
-						{/* <p className=" text-lg">
-							Please follow these rules when taking your selfies -
-						</p> */}
-						<ul className="list-disc pl-6 text-lg leading-6">
+						<h4 className="font-bold text-center text-2xl mb-4">
+							Non-Technical Users
+						</h4>
+						<ul className="list-disc pl-6 text-lg font-semibold leading-6">
 							<li>These users would ask simple, basic questions about WiFi</li>
 							<li>
 								They might be confused or unsure about technical terms and rely
@@ -29,13 +28,10 @@ const AiBots = ({ close }) => {
 						</ul>
 					</div>
 					<div className="">
-						<h4 className="font-semibold text-2xl mb-4">
+						<h4 className="font-bold text-center text-2xl mb-4">
 							Semi-Technical users
 						</h4>
-						{/* <p className=" text-lg">
-							Please follow these rules when taking your selfies -
-						</p> */}
-						<ul className="list-disc pl-6 text-lg leading-6">
+						<ul className="list-disc pl-6 text-lg font-semibold leading-6">
 							<li>
 								These users might be slightly familiar with WiFi concepts but
 								may not know advanced details

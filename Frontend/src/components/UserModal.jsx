@@ -28,14 +28,14 @@ export default function UserModal({ open, setOpen, user, heading }) {
 								onClick={() => setOpen(false)}
 								color="white"
 								size={15}
-								className="hover:bg-red-500 hover:rounded-full mr-4 mt-4"
+								className="hover:bg-red-500 hover:rounded-full mr-4 mt-4 cursor-pointer"
 							/>
 						</div>
 						<div className="px-4">
 							<div className="relative px-4 pb-4">
 								<div className="absolute -top-12 left-4">
 									<img
-										className="w-24 h-24 rounded-full border-4 border-white"
+										className="w-28 h-28 rounded-full border-4 border-white"
 										src={`/images/members/${user.Domain}.jpg`}
 										onError={(e) => {
 											e.target.src = "/images/profile/default.png";
@@ -47,7 +47,7 @@ export default function UserModal({ open, setOpen, user, heading }) {
 									<div className="flex justify-between items-center">
 										<div>
 											<h1 className="text-2xl font-bold">{user.Name}</h1>
-											<p className="text-gray-600">@Tester</p>
+											<p className="text-gray-600">{user.Tags}</p>
 										</div>
 										<div className="text-center rounded-lg overflow-hidden border-2 h-fit">
 											<p className="font-bold text-xl ">{user.Total_score}</p>
@@ -55,7 +55,7 @@ export default function UserModal({ open, setOpen, user, heading }) {
 										</div>
 									</div>
 									<p className="mt-2 text-gray-700 ">{user["About"]}</p>
-									<div className="mt-7 flex gap-3 justify-between">
+									<div className="mt-7 flex justify-between">
 										<div>
 											{user["Courses Completed"] !== "" && (
 												<>

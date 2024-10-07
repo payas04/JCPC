@@ -50,7 +50,7 @@ const Activities = () => {
 								</p>
 								<h3 className="text-lg font-semibold mb-2">OS Research</h3>
 								<p className="text-sm text-gray-600">
-									Explore the latest in operating system technology and Linux
+									Exploring low end operating system technology with Linux
 									distributions.
 								</p>
 							</div>
@@ -95,7 +95,7 @@ const Activities = () => {
 									AI BOT
 								</p>
 								<h3 className="text-lg font-semibold mb-2">
-									AI Bot (Managed WiFi Solutions)
+									AI Bot (Managed WiFi)
 								</h3>
 								<p className="text-sm text-gray-600">
 									Create distinct, natural-sounding questions that users might

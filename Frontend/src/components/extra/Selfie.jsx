@@ -1,33 +1,27 @@
 import React from "react";
 import "../../styles/activities.css";
+import BarGraph from "../charts/BarGraph";
+import { selfieBarData } from "../../db/data";
 
 const Selfie = ({ close }) => {
 	return (
 		<div className="card-details">
 			<h2 className="font-bold text-4xl text-center mb-4">AI Selfie Module</h2>
 			<div>
-				<h4 className="font-semibold text-2xl mb-4">Task Overview</h4>
-				<p className="text-lg font-normal">
-					Our team has been tasked with creating a dataset of selfies to train
-					an AI model. We need both portrait and landscape selfies from all team
-					members, following specific guidelines to ensure consistency and
-					quality in the dataset.
+				<h4 className="font-bold text-2xl mb-4">Task Overview</h4>
+				<p className="text-lg font-semibold">
+					Our team successfully completed the task of creating a dataset of
+					selfies, generating a total over 3,000 selfies in both portrait and
+					landscape orientations. The following are the detailed statistics of
+					the work completed.
 				</p>
 				<div className="flex mt-10 justify-between  ">
-					<div className="">
-						<h4 className="font-semibold text-2xl mb-4">Selfie Guidelines</h4>
-						<p className=" text-lg">
-							Please follow these rules when taking your selfies -
-						</p>
-						<ul className="list-disc pl-6 text-lg leading-9">
-							<li>Do not wear your ID card in the selfie</li>
-							<li>Ensure no one else is visible in the background</li>
-							<li>Take selfies from different angles</li>
-							<li>Make sure your face is clearly visible</li>
-						</ul>
+					<div className="text-center">
+						<h4 className="font-bold text-2xl mb-4">Task Statistics</h4>
+						<BarGraph barData={selfieBarData} />
 					</div>
 					<div className="text-center">
-						<h4 className="font-semibold text-2xl mb-4">Selfie Types</h4>
+						<h4 className="font-bold text-2xl mb-4">Selfie Types</h4>
 						<div className="flex gap-4">
 							<div className="w-1/2">
 								<img

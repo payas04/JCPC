@@ -4,11 +4,6 @@ import "../../styles/activities.css";
 const OsResearch = ({ close }) => {
 	return (
 		<div className="card-details relative max-h-screen">
-			{/* <p
-				className="close-btn absolute bg-black text-white z-50 p-2"
-				onClick={close}>
-				&times;
-			</p> */}
 			<div>
 				<h2 className="font-bold text-4xl text-center mb-4">OS Research</h2>
 				<IoClose
