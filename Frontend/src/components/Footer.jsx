@@ -7,6 +7,7 @@ import { useState } from "react";
 import Browser from "../pages/Browser";
 import Clock from "./Clock";
 import Calender from "./Calender";
+import { MdOutlineBatteryFull, MdOutlineSignalWifi4Bar } from "react-icons/md";
 
 const Footer = () => {
 	const navigate = useNavigate();
@@ -86,6 +87,10 @@ const Footer = () => {
 				</span>
 				<Calender />
 				<Clock />
+				<span className=" bg-white bg-opacity-10 rounded-s-md rounded-se-3xl rounded-ee-md w-fit flex justify-center items-center gap-1 px-2">
+					<MdOutlineSignalWifi4Bar size={20} />
+					<MdOutlineBatteryFull size={20} />
+				</span>
 			</div>
 		</div>
 	);

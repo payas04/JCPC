@@ -27,11 +27,13 @@ const Selfie = ({ open, setOpen }) => {
 								AI Selfie Module
 							</h2>
 						</div>
-						<div>
+						<div
+							className="px-8
+						">
 							<h4 className="font-bold text-2xl mb-4">Task Overview</h4>
 							<p className="text-lg font-semibold">
 								Our team successfully completed the task of creating a dataset
-								of selfies, generating a total over 3,000 selfies in both
+								of selfies, generating a total over 2,000 selfies in both
 								portrait and landscape orientations. The following are the
 								detailed statistics of the work completed.
 							</p>
@@ -43,19 +45,19 @@ const Selfie = ({ open, setOpen }) => {
 								<div className="text-center">
 									<h4 className="font-bold text-2xl mb-4">Selfie Types</h4>
 									<div className="flex gap-4">
-										<div className="w-1/2">
+										<div className="w-1/2 flex flex-col justify-center">
 											<img
-												src="/images/extra/portrait.jpg"
+												src="/images/extra/Portrait_Selfie.jpg"
 												alt="Portrait Image"
 												width={200}
 												srcset=""
-												className=" mx-auto"
+												className="my-auto"
 											/>
 											<p className="font-semibold">Portrait Selfie</p>
 										</div>
 										<div className="w-1/2">
 											<img
-												src="/images/extra/Landscape.png"
+												src="/images/extra/Landscape_Selfie.jpg"
 												alt="Landscape Image"
 												srcset=""
 												width={200}

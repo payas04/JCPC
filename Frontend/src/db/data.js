@@ -233,17 +233,17 @@ export const lenovoAreaChartData = [
 export const selfieBarData = [
 	{
 		name: "Phase 1",
-		portrait: 526,
-		landscape: 526,
+		Portrait: 462,
+		Landscape: 458,
 	},
 	{
 		name: "Phase 2",
-		portrait: 1023,
-		landscape: 1023,
+		Portrait: 669,
+		Landscape: 674,
 	},
 	{
 		name: "Total",
-		portrait: 1549,
-		landscape: 1549,
+		Portrait: 1131,
+		Landscape: 1132,
 	},
 ];

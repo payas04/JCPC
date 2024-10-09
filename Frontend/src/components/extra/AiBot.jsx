@@ -24,7 +24,7 @@ const AiBot = ({ open, setOpen }) => {
 								AI Bot (Managed WiFi)
 							</h2>
 						</div>
-						<div>
+						<div className="px-8">
 							<h4 className="font-bold text-2xl mb-4">Task Overview</h4>
 							<p className="text-lg font-semibold">
 								Our team successfully completed the task of creating distinct

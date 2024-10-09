@@ -14,7 +14,6 @@ export default function CustomCard({ user, shouldOpenModal = false }) {
 	return (
 		<div
 			onClick={handleOpenModal}
-			//add scrollAnimation inside classname laggy scroll
 			className="group bg-[#F8F9FA] rounded-lg border cursor-pointer shadow-lg transition-all duration-300  hover:-translate-y-2">
 			<UserModal open={open} setOpen={setOpen} user={user} />
 
