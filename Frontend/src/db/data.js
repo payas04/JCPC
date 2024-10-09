@@ -25,7 +25,7 @@ export const jioPcWorkItems = [
 		count: 11,
 		color: "bg-red-600",
 		definition:
-			"Launch critical are the issues which are needed to be fixed before launching the project.",
+			"Launch critical are the issues which are needed to be fixed before launching the product.",
 	},
 	{
 		title: "Open Blocker",
@@ -45,14 +45,15 @@ export const jioPcWorkItems = [
 		title: "Product Confirmation",
 		count: 7,
 		color: "bg-purple-400",
-		definition: "It is more of a task than a bug.",
+		definition:
+			"Issues awaiting confirmation from the product team on whether they will be included in the scope of the project.",
 	},
 	{
 		title: "Ready for Test",
 		count: 6,
 		color: "bg-blue-400",
 		definition:
-			"Issues which have been raised and has  been solved by developers and are ready for testing.",
+			"Issues which have been raised and has  been resolved by developers and are ready for testing.",
 	},
 	{
 		title: "JioPC Accops Issues",
@@ -67,7 +68,7 @@ export const hpWorkItems = [
 		count: 1,
 		color: "bg-red-600",
 		definition:
-			"Launch critical are the issues which are needed to be fixed before launching the project.",
+			"Launch critical are the issues which are needed to be fixed before launching the product.",
 	},
 	{
 		title: "Open Blocker",
@@ -87,117 +88,81 @@ export const hpWorkItems = [
 		title: "Product Confirmation",
 		count: 0,
 		color: "bg-purple-400",
-		definition: "It is more of a task than a bug.",
+		definition:
+			"Issues awaiting confirmation from the product team on whether they will be included in the scope of the project.",
 	},
 	{
 		title: "Ready for Test",
 		count: 0,
 		color: "bg-blue-400",
 		definition:
-			"Issues which have been raised and has  been solved by developers and are ready for testing.",
+			"Issues which have been raised and has  been resolved by developers and are ready for testing.",
 	},
 	{
-		title: "JioPC Accops Issues",
+		title: "HP Accops Issues",
 		count: 0,
 		color: "bg-red-500",
-		definition: "Issues which are raised for accops in JioPC.",
-	},
-];
-export const lenovoWorkItems = [
-	{
-		title: "Launch Critical",
-		count: 1,
-		color: "bg-red-600",
-		definition:
-			"Launch critical are the issues which are needed to be fixed before launching the project. ",
-	},
-	{
-		title: "Open Blocker",
-		count: 1,
-		color: "bg-red-800",
-		definition:
-			"Open blockers are the issue which are in new state and are of severity blocker.",
-	},
-	{
-		title: "Open Critical",
-		count: 3,
-		color: "bg-orange-500",
-		definition:
-			"Open critical are the issue which are in new state and are of severity critical.",
-	},
-	{
-		title: "Product Confirmation",
-		count: 4,
-		color: "bg-purple-400",
-		definition: "It is more of a task than a bug.",
-	},
-	{
-		title: "Ready for Test",
-		count: 2,
-		color: "bg-blue-400",
-		definition:
-			"Issues which have been raised and has  been solved by developers and are ready for testing.",
-	},
-	{
-		title: "JioPC Accops Issues",
-		count: 6,
-		color: "bg-red-500",
-		definition: "Issues which are raised for accops in JioPC.",
+		definition: "Issues which are raised for accops in HP Chromebook.",
 	},
 ];
 
 export const jioPcAreaChartData = [
 	{
-		name: "May 24",
-		uv: 200,
+		name: "Week 1",
+		Issues: 200,
 		pv: 139,
 	},
 	{
-		name: "Jun 24",
-		uv: 220,
+		name: "Week 2",
+		Issues: 220,
 		pv: 98,
 	},
 	{
-		name: "Jul 24",
-		uv: 278,
+		name: "Week 3",
+		Issues: 278,
 		pv: 390,
 	},
 	{
-		name: "Aug 24",
-		uv: 189,
+		name: "Week 4",
+		Issues: 189,
 		pv: 480,
 	},
 	{
-		name: "Sep 24",
-		uv: 239,
+		name: "Week 5",
+		Issues: 239,
 		pv: 380,
 	},
 ];
 
 export const hpAreaChartData = [
 	{
-		name: "May 24",
-		uv: 400,
+		name: "Week 1",
+		Issues: 400,
 		pv: 539,
 	},
 	{
-		name: "Jun 24",
-		uv: 520,
+		name: "Week 2",
+		Issues: 520,
 		pv: 98,
 	},
 	{
-		name: "Jul 24",
-		uv: 278,
+		name: "Week 3",
+		Issues: 278,
 		pv: 390,
 	},
 	{
-		name: "Aug 24",
-		uv: 149,
+		name: "Week 4",
+		Issues: 149,
 		pv: 480,
 	},
 	{
-		name: "Sep 24",
-		uv: 269,
+		name: "Week 5",
+		Issues: 269,
+		pv: 380,
+	},
+	{
+		name: "Week 6",
+		Issues: 239,
 		pv: 380,
 	},
 ];

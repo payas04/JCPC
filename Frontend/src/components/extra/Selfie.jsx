@@ -23,9 +23,9 @@ const Selfie = ({ open, setOpen }) => {
 								size={26}
 								className="absolute top-2 right-2 hover:bg-red-500 hover:rounded-full p-1 cursor-pointer"
 							/>
-							<h2 className="font-bold text-4xl text-center py-2">
+							<p className="font-bold text-4xl text-center py-2">
 								AI Selfie Module
-							</h2>
+							</p>
 						</div>
 						<div
 							className="px-8

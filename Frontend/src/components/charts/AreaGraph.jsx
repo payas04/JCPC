@@ -44,7 +44,7 @@ const AreaGraph = ({ title, areaChartData }) => {
 				/> */}
 				<Area
 					type="monotone"
-					dataKey="uv"
+					dataKey="Issues"
 					stroke="#82ca9d"
 					fillOpacity={1}
 					fill="url(#colorUv)"

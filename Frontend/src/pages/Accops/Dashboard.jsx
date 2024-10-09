@@ -13,10 +13,8 @@ import {
 	totalIssuePieChart,
 	jioPcWorkItems,
 	hpWorkItems,
-	lenovoWorkItems,
 	jioPcAreaChartData,
 	hpAreaChartData,
-	lenovoAreaChartData,
 } from "../../db/data";
 import { useNavigate } from "react-router-dom";
 import JCPCProduct from "../../components/JCPCProduct";
