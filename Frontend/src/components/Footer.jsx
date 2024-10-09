@@ -71,22 +71,6 @@ const Footer = () => {
 						className="w-[30px] h-full rounded-lg block mx-auto"
 					/>
 				</span>
-				<span
-					className="text-white text-2xl cursor-pointer p-1 rounded-sm border-white"
-					style={{
-						borderBottomWidth: FilesPath ? 2 : 0,
-					}}
-					// onClick={() => {
-					// 	if (JioCloudPath) navigate("/home");
-					// 	else navigate("/accops/dashboard");
-					// }}
-				>
-					<img
-						src="/images/icons/files.png"
-						alt="Files logo"
-						className="w-[30px] h-full rounded-lg block mx-auto"
-					/>
-				</span>
 			</div>
 
 			<div className="flex gap-1">

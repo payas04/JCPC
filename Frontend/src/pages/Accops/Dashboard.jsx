@@ -104,27 +104,17 @@ const Dashboard = () => {
 				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10">
 					<JioPcObservation title="JioPC" workItems={jioPcWorkItems} />
 					<AreaChart
-						title="Issues Raised (May 2024 - Present)"
+						title="Issues Raised (23th Aug - 30th Sep)"
 						areaChartData={jioPcAreaChartData}
 					/>
 				</section>
 				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10">
 					<JioPcObservation title="HP Chromebook" workItems={hpWorkItems} />
 					<AreaChart
-						title="Issues Raised (May 2024 - Present)"
+						title="Issues Raised (23th Aug - 30th Sep)"
 						areaChartData={hpAreaChartData}
 					/>
 				</section>
-				{/* <section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10">
-					<JioPcObservation
-						title="Lenovo Chromebook"
-						workItems={lenovoWorkItems}
-					/>
-					<AreaChart
-						title="Issues Raised (May 2024 - Present)"
-						areaChartData={lenovoAreaChartData}
-					/>
-				</section> */}
 			</main>
 		</div>
 	);

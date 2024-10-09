@@ -5,7 +5,6 @@ import Loader from "./components/Loader";
 const Dashboard = lazy(() => import("./pages/Accops/Dashboard"));
 const Home = lazy(() => import("./pages/Home"));
 const Lockscreen = lazy(() => import("./pages/Lockscreen"));
-const Test = lazy(() => import("./pages/Test"));
 const JioCloudPc = lazy(() => import("./pages/Accops/JioCloudPc"));
 const Header = lazy(() => import("./components/Header"));
 const Footer = lazy(() => import("./components/Footer"));
@@ -17,7 +16,6 @@ const App = () => {
 		<Router>
 			<div className="relative w-screen h-screen">
 				<Header />
-				{/* Left sidebar */}
 				<Suspense fallback={<Loader />}>
 					<Routes>
 						<Route path="/" element={<Lockscreen />} />
@@ -25,7 +23,6 @@ const App = () => {
 						<Route path="/accops/dashboard" element={<Dashboard />} />
 						<Route path="/accops/jiocloudpc" element={<JioCloudPc />} />
 						<Route path="/accops/profile" element={<Profile />} />
-						{/* <Route path="/accops/settings" element={<Test />} /> */}
 						<Route path="/accops/activities" element={<Activities />} />
 					</Routes>
 				</Suspense>

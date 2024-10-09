@@ -3,22 +3,14 @@ import "../../styles/activities.css"; // Adjust path as necessary
 import Sidebar from "../../components/Sidebar";
 import Selfie from "../../components/extra/Selfie";
 import OsResearch from "../../components/extra/OsResearch";
-import AiBots from "../../components/extra/AiBots";
+import AiBot from "../../components/extra/AiBot";
 import { Card, CardContent, CardMedia } from "@mui/material";
-import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
-import { IoClose } from "react-icons/io5";
 
 const Activities = () => {
 	const [selectedCard, setSelectedCard] = useState(null);
 	const [open, setOpen] = useState(false);
-
-	const handleCardClick = (cardId) => {
-		setSelectedCard(selectedCard === cardId ? null : cardId); // Toggle the card
-	};
-
-	const handleCloseClick = () => {
-		setSelectedCard(null); // Close the card
-	};
+	const [openSelfie, setOpenSelfie] = useState(false);
+	const [openAi, setOpenAi] = useState(false);
 
 	return (
 		<div className="flex h-screen bg-gray-100">
@@ -33,12 +25,9 @@ const Activities = () => {
 					{/* OS research */}
 					<Card
 						sx={{ width: 350 }}
-						className={`card ${
-							selectedCard === "OS" ? "active enlarged" : ""
-						} rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-2`}
-						onClick={() => handleCardClick("OS")}
-						// onClick={() => setOpen(true)}
-					>
+						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg"
+						onClick={() => setOpen(true)}>
+						<OsResearch open={open} setOpen={setOpen} heading={"hiii"} />
 						<CardMedia
 							sx={{ height: 200 }}
 							image="/images/extra/OS_Image.webp"
@@ -55,16 +44,14 @@ const Activities = () => {
 								</p>
 							</div>
 						</CardContent>
-						{selectedCard === "OS" && <OsResearch close={handleCloseClick} />}
 					</Card>
 
 					{/* AI Selfie Module */}
 					<Card
 						sx={{ width: 350 }}
-						className={`card ${
-							selectedCard === "Selfie" ? "active enlarged" : ""
-						} rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-2`}
-						onClick={() => handleCardClick("Selfie")}>
+						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg"
+						onClick={() => setOpenSelfie(true)}>
+						<Selfie open={openSelfie} setOpen={setOpenSelfie} heading={"hii"} />
 						<CardMedia sx={{ height: 200 }} image="/images/extra/Selfie.jpg" />
 						<CardContent>
 							<div className="p-4">
@@ -78,16 +65,14 @@ const Activities = () => {
 								</p>
 							</div>
 						</CardContent>
-						{selectedCard === "Selfie" && <Selfie close={handleCloseClick} />}
 					</Card>
 
 					{/* AI Bots */}
 					<Card
 						sx={{ width: 350 }}
-						className={`card ${
-							selectedCard === "AI" ? "active enlarged" : ""
-						} rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-2`}
-						onClick={() => handleCardClick("AI")}>
+						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg"
+						onClick={() => setOpenAi(true)}>
+						<AiBot open={openAi} setOpen={setOpenAi} heading={"hii"} />
 						<CardMedia sx={{ height: 200 }} image="/images/extra/AI.jpg" />
 						<CardContent>
 							<div className="p-4">
@@ -103,7 +88,6 @@ const Activities = () => {
 								</p>
 							</div>
 						</CardContent>
-						{selectedCard === "AI" && <AiBots close={handleCloseClick} />}
 					</Card>
 				</div>
 				<div className="relative mb-4">
