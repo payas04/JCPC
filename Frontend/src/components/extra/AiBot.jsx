@@ -25,16 +25,18 @@ const AiBot = ({ open, setOpen }) => {
 							</h2>
 						</div>
 						<div className="px-8">
-							<h4 className="font-bold text-2xl mb-4">Task Overview</h4>
-							<p className="text-lg font-semibold">
-								Our team successfully completed the task of creating distinct
-								questions related to WiFi, simulating how users would naturally
-								interact with an AI bot regarding WiFi issues, queries, or
-								services. We generated over 900 indents that reflect two user
-								segments.
-							</p>
-							<div className="flex mt-10 justify-between  ">
-								<div className="">
+							<div className="shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md mt-2 p-2">
+								<h4 className="font-bold text-2xl mb-4">Task Overview</h4>
+								<p className="text-lg font-semibold">
+									Our team successfully completed the task of creating distinct
+									questions related to WiFi, simulating how users would
+									naturally interact with an AI bot regarding WiFi issues,
+									queries, or services. We generated over 900 indents that
+									reflect two user segments.
+								</p>
+							</div>
+							<div className="flex mt-10 justify-between gap-4">
+								<div className="shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md p-2">
 									<h4 className="font-bold text-center text-2xl mb-4">
 										Non-Technical Users
 									</h4>
@@ -48,7 +50,7 @@ const AiBot = ({ open, setOpen }) => {
 										</li>
 									</ul>
 								</div>
-								<div className="">
+								<div className="shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md p-2">
 									<h4 className="font-bold text-center text-2xl mb-4">
 										Semi-Technical users
 									</h4>
