@@ -32,7 +32,7 @@ const OsResearch = ({ open, setOpen }) => {
 
 						<div className="mt-3 text-center flex flex-col items-center gap-6">
 							<img
-								src="/images/extra/OS_Image.png"
+								src="/images/extra/OS_Research.png"
 								alt="OS Research Image"
 								className="object-contain w-full"
 								loading="lazy"

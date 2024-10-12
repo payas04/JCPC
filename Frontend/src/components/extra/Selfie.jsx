@@ -29,7 +29,7 @@ const Selfie = ({ open, setOpen }) => {
 							</p>
 						</div>
 						<div
-							className="px-8
+							className="p-8
 						">
 							<div className="shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md mt-2 p-2">
 								<h4 className="font-bold text-2xl mb-4">Task Overview</h4>
