@@ -14,20 +14,18 @@ const Activities = lazy(() => import("./pages/Accops/Activities"));
 const App = () => {
 	return (
 		<Router>
-			<div className="relative w-screen h-screen">
-				<Header />
-				<Suspense fallback={<Loader />}>
-					<Routes>
-						<Route path="/" element={<Lockscreen />} />
-						<Route path="/home" element={<Home />} />
-						<Route path="/accops/dashboard" element={<Dashboard />} />
-						<Route path="/accops/jiocloudpc" element={<JioCloudPc />} />
-						<Route path="/accops/profile" element={<Profile />} />
-						<Route path="/accops/activities" element={<Activities />} />
-					</Routes>
-				</Suspense>
-				<Footer />
-			</div>
+			<Header />
+			<Suspense fallback={<Loader />}>
+				<Routes>
+					<Route path="/" element={<Lockscreen />} />
+					<Route path="/home" element={<Home />} />
+					<Route path="/accops/dashboard" element={<Dashboard />} />
+					<Route path="/accops/jiocloudpc" element={<JioCloudPc />} />
+					<Route path="/accops/profile" element={<Profile />} />
+					<Route path="/accops/activities" element={<Activities />} />
+				</Routes>
+			</Suspense>
+			<Footer />
 		</Router>
 	);
 };

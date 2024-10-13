@@ -8,9 +8,9 @@ import Browser from "./Browser";
 export default function Home() {
 	const navigate = useNavigate();
 	const [fadeOut, setFadeOut] = useState(false);
-	const { isShutdown, setIsShutdown, logout } = useAuth();
+	const { isShutdown, setIsShutdown, logout, isChromeOpen, setChromeOpen } =
+		useAuth();
 
-	const [isChromeOpen, setChromeOpen] = useState(false);
 	const [selectedIcon, setSelectedIcon] = useState(null);
 
 	const screenWidth = typeof window !== "undefined" ? window.innerWidth : 1920;
@@ -61,7 +61,7 @@ export default function Home() {
 				</>
 			)}
 			<div
-				className="w-full text-white font-normal h-full bg-gradient-to-r from-red-500 via-orange-400 to-pink-600"
+				className="w-screen h-screen text-white font-normal  bg-gradient-to-r from-red-500 via-orange-400 to-pink-600"
 				onClick={handleBackgroundClick}>
 				<Browser
 					isAppOpen={isChromeOpen}

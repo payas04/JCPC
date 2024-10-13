@@ -10,6 +10,7 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthProvider = ({ children }) => {
 	const [user, setUser] = useState(null);
 	const [isShutdown, setIsShutdown] = useState(false);
+	const [isChromeOpen, setChromeOpen] = useState(false);
 
 	// Load user from localStorage when the app initializes
 	useEffect(() => {
@@ -33,7 +34,15 @@ export const AuthProvider = ({ children }) => {
 	};
 
 	// Authentication value provided to context consumers
-	const value = { user, login, logout, isShutdown, setIsShutdown };
+	const value = {
+		user,
+		login,
+		logout,
+		isShutdown,
+		setIsShutdown,
+		isChromeOpen,
+		setChromeOpen,
+	};
 
 	return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

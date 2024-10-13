@@ -8,23 +8,14 @@ import Browser from "../pages/Browser";
 import Clock from "./Clock";
 import Calender from "./Calender";
 import { MdOutlineBatteryFull, MdOutlineSignalWifi4Bar } from "react-icons/md";
+import { useAuth } from "../context/auth";
 
 const Footer = () => {
 	const navigate = useNavigate();
 	const location = useLocation();
 	const JioCloudPath = location.pathname.startsWith("/accops");
 	const ChromePath = location.pathname.startsWith("/chrome");
-	const FilesPath = location.pathname.startsWith("/files");
-
-	const [isChromeOpen, setChromeOpen] = useState(false);
-	const screenWidth = window.innerWidth;
-	const screenHeight = window.innerHeight;
-	const bounds = {
-		left: 0,
-		top: -900,
-		right: screenWidth - 1128,
-		bottom: 0,
-	};
+	const { isChromeOpen, setChromeOpen } = useAuth();
 
 	return (
 		<div
@@ -36,11 +27,6 @@ const Footer = () => {
 				display: location.pathname == "/" ? "none" : "flex",
 			}}>
 			<Power />
-			<Browser
-				isAppOpen={isChromeOpen}
-				toggleBrowser={() => setChromeOpen(!isChromeOpen)}
-				bounds={bounds}
-			/>
 			<div className="flex gap-4 justify-center items-center">
 				<span className="cursor-default bg-white bg-opacity-10 rounded-full w-[80px] h-[35px] flex justify-center items-center">
 					Desk 1
@@ -63,7 +49,7 @@ const Footer = () => {
 				<span
 					className="text-white text-2xl cursor-pointer p-1 rounded-sm border-white"
 					style={{
-						borderBottomWidth: ChromePath ? 2 : 0,
+						borderBottomWidth: isChromeOpen ? 2 : 0,
 					}}
 					onClick={() => setChromeOpen(!isChromeOpen)}>
 					<img
