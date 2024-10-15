@@ -5,11 +5,11 @@ export const issuePieChart = [
 ];
 
 export const totalIssuePieChart = [
-	{ id: 0, value: 50, label: "Blocker", color: "#FF0000" },
-	{ id: 1, value: 25, label: "Critical", color: "#FF4500" },
-	{ id: 2, value: 69, label: "Major", color: "#FFA500" },
-	{ id: 3, value: 40, label: "Normal", color: "#2196F3" },
-	{ id: 4, value: 100, label: "Minor", color: "#4CAF50" },
+	{ id: 0, value: 1, label: "Blocker", color: "#FF0000" },
+	{ id: 1, value: 32, label: "Critical", color: "#FF4500" },
+	{ id: 2, value: 129, label: "Major", color: "#FFA500" },
+	{ id: 3, value: 149, label: "Normal", color: "#2196F3" },
+	{ id: 4, value: 26, label: "Minor", color: "#4CAF50" },
 ];
 export const openIssuePieChart = [
 	{ id: 0, value: 10, label: "Blocker", color: "#FF0000" },
@@ -109,27 +109,27 @@ export const hpWorkItems = [
 export const jioPcAreaChartData = [
 	{
 		name: "Week 1",
-		Issues: 200,
+		Issues: 51,
 		pv: 139,
 	},
 	{
 		name: "Week 2",
-		Issues: 220,
+		Issues: 55,
 		pv: 98,
 	},
 	{
 		name: "Week 3",
-		Issues: 278,
+		Issues: 46,
 		pv: 390,
 	},
 	{
 		name: "Week 4",
-		Issues: 189,
+		Issues: 47,
 		pv: 480,
 	},
 	{
 		name: "Week 5",
-		Issues: 239,
+		Issues: 42,
 		pv: 380,
 	},
 ];
@@ -137,32 +137,27 @@ export const jioPcAreaChartData = [
 export const hpAreaChartData = [
 	{
 		name: "Week 1",
-		Issues: 400,
+		Issues: 30,
 		pv: 539,
 	},
 	{
 		name: "Week 2",
-		Issues: 520,
+		Issues: 5,
 		pv: 98,
 	},
 	{
 		name: "Week 3",
-		Issues: 278,
+		Issues: 8,
 		pv: 390,
 	},
 	{
 		name: "Week 4",
-		Issues: 149,
+		Issues: 27,
 		pv: 480,
 	},
 	{
 		name: "Week 5",
-		Issues: 269,
-		pv: 380,
-	},
-	{
-		name: "Week 6",
-		Issues: 239,
+		Issues: 26,
 		pv: 380,
 	},
 ];
