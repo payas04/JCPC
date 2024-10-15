@@ -1,6 +1,6 @@
 export const issuePieChart = [
-	{ id: 0, value: 261, label: "JioPC", color: "#0ea5e9" }, //#20236D
-	{ id: 1, value: 93, label: "HP", color: "#ef4444" },
+	{ id: 0, value: 241, label: "JioPC", color: "#0ea5e9" }, //#20236D
+	{ id: 1, value: 96, label: "HP", color: "#ef4444" },
 	{ id: 2, value: 0, label: "Lenovo", color: "#f59e0b" },
 ];
 
@@ -12,11 +12,11 @@ export const totalIssuePieChart = [
 	{ id: 4, value: 26, label: "Minor", color: "#4CAF50" },
 ];
 export const openIssuePieChart = [
-	{ id: 0, value: 10, label: "Blocker", color: "#FF0000" },
-	{ id: 1, value: 67, label: "Critical", color: "#FF4500" },
-	{ id: 2, value: 390, label: "Major", color: "#FFA500" },
-	{ id: 3, value: 195, label: "Normal", color: "#2196F3" },
-	{ id: 4, value: 53, label: "Minor", color: "#4CAF50" },
+	{ id: 0, value: 1, label: "Blocker", color: "#FF0000" },
+	{ id: 1, value: 18, label: "Critical", color: "#FF4500" },
+	{ id: 2, value: 53, label: "Major", color: "#FFA500" },
+	{ id: 3, value: 39, label: "Normal", color: "#2196F3" },
+	{ id: 4, value: 15, label: "Minor", color: "#4CAF50" },
 ];
 
 export const jioPcWorkItems = [
