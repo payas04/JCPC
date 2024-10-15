@@ -9,7 +9,6 @@ import {
 	MoreVertical,
 	X,
 } from "lucide-react";
-import { Alert } from "@mui/material";
 
 const TitleBar = ({ toggleBrowser }) => (
 	<div className="title-bar bg-gray-800 rounded-t-xl">

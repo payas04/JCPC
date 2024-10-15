@@ -1,7 +1,6 @@
 export const issuePieChart = [
 	{ id: 0, value: 241, label: "JioPC", color: "#0ea5e9" }, //#20236D
 	{ id: 1, value: 96, label: "HP", color: "#ef4444" },
-	{ id: 2, value: 0, label: "Lenovo", color: "#f59e0b" },
 ];
 
 export const totalIssuePieChart = [

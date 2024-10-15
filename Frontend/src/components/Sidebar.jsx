@@ -1,7 +1,4 @@
 import { MdSpaceDashboard } from "react-icons/md";
-import { FaCloud } from "react-icons/fa";
-import { CgProfile } from "react-icons/cg";
-import { IoSettings } from "react-icons/io5";
 import { RiTeamFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { FaTasks } from "react-icons/fa";
@@ -27,18 +24,6 @@ const Sidebar = () => {
 							location={location}
 							Icon={<RiTeamFill />}
 						/>
-						{/* <Li
-							url="/accops/profile"
-							title="Profile"
-							location={location}
-							Icon={<CgProfile />}
-						/> */}
-						{/* <Li
-							url="/accops/settings"
-							title="Settings"
-							location={location}
-							Icon={<IoSettings />}
-						/> */}
 						<Li
 							url="/accops/Activities"
 							title="Extra Activities"

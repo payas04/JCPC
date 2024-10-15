@@ -18,24 +18,24 @@ export default function UserModal({ open, setOpen, user, heading }) {
 			open={open}
 			onClose={() => setOpen(false)}
 			className="relative z-10">
-			<div className="fixed inset-0 bg-black/30 " aria-hidden="true" />
+			<div className="fixed inset-0 bg-black/80" aria-hidden="true" />
 
 			<div className="fixed inset-0 flex z-10 w-full ">
 				<div className="flex  w-full max-w-4xl mx-auto items-center justify-center p-4">
 					<DialogPanel className="w-full rounded-lg bg-white shadow-xl overflow-hidden h-fit ">
-						<div className="h-24 w-full bg-black-silver flex justify-end">
+						<div className="h-24 w-full bg-blue-grad flex justify-end">
 							<IoClose
 								onClick={() => setOpen(false)}
-								color="white"
-								size={15}
-								className="hover:bg-red-500 hover:rounded-full mr-4 mt-4 cursor-pointer"
+								color="black"
+								size={26}
+								className="hover:bg-red-500 hover:rounded-full mr-4 mt-4 cursor-pointer m-2"
 							/>
 						</div>
 						<div className="px-4">
 							<div className="relative px-4 pb-4">
-								<div className="absolute -top-12 left-4">
+								<div className="absolute -top-16 left-4">
 									<img
-										className="w-28 h-28 rounded-full border-4 border-white"
+										className="w-32 h-32 rounded-full border-4 border-black object-contain bg-white"
 										src={`/images/members/${user.Domain}.jpg`}
 										onError={(e) => {
 											e.target.src = "/images/profile/default.png";
@@ -49,9 +49,9 @@ export default function UserModal({ open, setOpen, user, heading }) {
 											<h1 className="text-2xl font-bold">{user.Name}</h1>
 											<p className="text-gray-600">{user.Tags}</p>
 										</div>
-										<div className="text-center rounded-lg overflow-hidden border-2 h-fit">
+										<div className="text-center rounded-lg overflow-hidden border-2 h-fit border-blue-800">
 											<p className="font-bold text-xl ">{user.Total_score}</p>
-											<p className="bg-gray-800 text-white px-2">Total Score</p>
+											<p className="bg-blue-800 text-white px-2">Total Score</p>
 										</div>
 									</div>
 									<p className="mt-2 text-gray-700 ">{user["About"]}</p>

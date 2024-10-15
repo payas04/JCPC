@@ -14,7 +14,7 @@ export default function CustomCard({ user, shouldOpenModal = false }) {
 	return (
 		<div
 			onClick={handleOpenModal}
-			className="group bg-[#F8F9FA] rounded-lg border cursor-pointer shadow-lg transition-all duration-300  hover:-translate-y-2">
+			className="group bg-[#F8F9FA] rounded-lg border cursor-pointer shadow-lg transition-all duration-300  hover:-translate-y-2 hover:bg-blue-300">
 			<UserModal open={open} setOpen={setOpen} user={user} />
 
 			<CardContainer className="flex flex-col w-full justify-center mx-2 my-4 text-center  ">
@@ -23,7 +23,7 @@ export default function CustomCard({ user, shouldOpenModal = false }) {
 					className="flex flex-col justify-center items-center w-full">
 					<img
 						alt={user.Name}
-						className="w-24 h-24 mb-4 object-contain rounded-full ring-2 ring-black ring-offset-2 transition-all duration-300 group-hover:ring-4 "
+						className="w-24 h-24 mb-4 object-contain rounded-full ring-2 ring-blue-800 ring-offset-2 transition-all duration-300 group-hover:ring-4 bg-white "
 						src={`/images/members/${user.Domain}.jpg`}
 						onError={(e) => {
 							e.target.src = "/images/profile/default.png";
@@ -34,7 +34,7 @@ export default function CustomCard({ user, shouldOpenModal = false }) {
 						{user && user.Name}
 					</span>
 					<span className="text-sm font-normal text-gray-600">{user.Tags}</span>
-					<div className="mt-4 bg-black text-white rounded-full px-3 py-1 text-sm font-medium w-fit self-center  duration-700">
+					<div className="mt-4 bg-blue-800 text-white rounded-full px-3 py-1 text-sm font-medium w-fit self-center duration-700">
 						Score: {user.Total_score}
 					</div>
 				</CardItem>

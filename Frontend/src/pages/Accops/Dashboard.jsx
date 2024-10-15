@@ -93,7 +93,7 @@ const Dashboard = () => {
 						<div className="mb-4 font-bold text-xl flex items-center justify-center text-black ">
 							Total Issues Raised (23th Aug - 30th Sep)
 						</div>
-						<CustomPieChart data={issuePieChart} />
+						<CustomPieChart data={issuePieChart} radiusValue={30} />
 					</div>
 				</div>
 
