@@ -62,7 +62,7 @@ const Dashboard = () => {
 					<div className="grid grid-cols-2 md:grid-cols-2 gap-6 w-[64%]">
 						<StatCard
 							title="Total Bugs and Enhancements"
-							value="277"
+							value="337"
 							color="bg-emerald-500"
 							icon={AiOutlineIssuesClose}
 							pieData={totalIssuePieChart}
