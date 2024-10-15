@@ -22,57 +22,14 @@ export const openIssuePieChart = [
 export const jioPcWorkItems = [
 	{
 		title: "Launch Critical",
-		count: 11,
+		count: 3,
 		color: "bg-red-600",
 		definition:
 			"Launch critical are the issues which are needed to be fixed before launching the product.",
 	},
 	{
 		title: "Open Blocker",
-		count: 10,
-		color: "bg-red-800",
-		definition:
-			"Open blockers are the issue which are in new state and are of severity blocker.",
-	},
-	{
-		title: "Open Critical",
-		count: 66,
-		color: "bg-orange-500",
-		definition:
-			"Open critical are the issue which are in new state and are of severity critical.",
-	},
-	{
-		title: "Product Confirmation",
-		count: 7,
-		color: "bg-purple-400",
-		definition:
-			"Issues awaiting confirmation from the product team on whether they will be included in the scope of the project.",
-	},
-	{
-		title: "Ready for Test",
-		count: 6,
-		color: "bg-blue-400",
-		definition:
-			"Issues which have been raised and has  been resolved by developers and are ready for testing.",
-	},
-	{
-		title: "JioPC Accops Issues",
-		count: 27,
-		color: "bg-red-500",
-		definition: "Issues which are raised for accops in JioPC.",
-	},
-];
-export const hpWorkItems = [
-	{
-		title: "Launch Critical",
-		count: 1,
-		color: "bg-red-600",
-		definition:
-			"Launch critical are the issues which are needed to be fixed before launching the product.",
-	},
-	{
-		title: "Open Blocker",
-		count: 4,
+		count: 0,
 		color: "bg-red-800",
 		definition:
 			"Open blockers are the issue which are in new state and are of severity blocker.",
@@ -99,8 +56,51 @@ export const hpWorkItems = [
 			"Issues which have been raised and has  been resolved by developers and are ready for testing.",
 	},
 	{
-		title: "HP Accops Issues",
+		title: "JioPC Accops Issues",
 		count: 0,
+		color: "bg-red-500",
+		definition: "Issues which are raised for accops in JioPC.",
+	},
+];
+export const hpWorkItems = [
+	{
+		title: "Launch Critical",
+		count: 0,
+		color: "bg-red-600",
+		definition:
+			"Launch critical are the issues which are needed to be fixed before launching the product.",
+	},
+	{
+		title: "Open Blocker",
+		count: 1,
+		color: "bg-red-800",
+		definition:
+			"Open blockers are the issue which are in new state and are of severity blocker.",
+	},
+	{
+		title: "Open Critical",
+		count: 6,
+		color: "bg-orange-500",
+		definition:
+			"Open critical are the issue which are in new state and are of severity critical.",
+	},
+	{
+		title: "Product Confirmation",
+		count: 0,
+		color: "bg-purple-400",
+		definition:
+			"Issues awaiting confirmation from the product team on whether they will be included in the scope of the project.",
+	},
+	{
+		title: "Ready for Test",
+		count: 0,
+		color: "bg-blue-400",
+		definition:
+			"Issues which have been raised and has  been resolved by developers and are ready for testing.",
+	},
+	{
+		title: "HP Accops Issues",
+		count: 4,
 		color: "bg-red-500",
 		definition: "Issues which are raised for accops in HP Chromebook.",
 	},
