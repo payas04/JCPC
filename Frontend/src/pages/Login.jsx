@@ -52,9 +52,7 @@ export default function LoginScreen() {
 	};
 
 	return (
-		<form
-			className="flex flex-col items-center justify-center min-h-screen w-full bg-gradient-to-r from-red-300 via-orange-200 to-pink-300"
-			onSubmit={handleLogin}>
+		<form className="flex flex-col items-center justify-center min-h-screen w-full bg-gradient-to-r from-red-300 via-orange-200 to-pink-300">
 			<div className="w-64 space-y-6 text-center">
 				<div className="relative w-20 h-20 mx-auto bg-blue-600 rounded-full flex items-center justify-center text-white text-3xl font-bold">
 					RB

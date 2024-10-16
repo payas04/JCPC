@@ -33,7 +33,9 @@ export default function CustomCard({ user, shouldOpenModal = false }) {
 					<span className="text-lg flex flex-col font-semibold leading-tight">
 						{user && user.Name}
 					</span>
-					<span className="text-sm font-normal text-gray-600">{user.Tags}</span>
+					<span className="text-sm font-semibold text-blue-800">
+						{user.Tags}
+					</span>
 					<div className="mt-4 bg-blue-800 text-white rounded-full px-3 py-1 text-sm font-medium w-fit self-center duration-700">
 						Score: {user.Total_score}
 					</div>

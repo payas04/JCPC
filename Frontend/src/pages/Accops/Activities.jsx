@@ -25,7 +25,7 @@ const Activities = () => {
 					{/* OS research */}
 					<Card
 						sx={{ width: 350 }}
-						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg"
+						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg hover:bg-blue-300 hover:text-white"
 						onClick={() => setOpen(true)}>
 						<OsResearch open={open} setOpen={setOpen} heading={"hiii"} />
 						<CardMedia
@@ -34,7 +34,7 @@ const Activities = () => {
 						/>
 						<CardContent>
 							<div className="p-4">
-								<p className="hover:bg-[rgb(0,0,0,0.8)] bg-black inline-block  px-2 py-1 rounded-full text-white font-light font-mono text-xs">
+								<p className="bg-blue-800 inline-block  px-2 py-1 rounded-full text-white font-light font-mono text-xs">
 									RESEARCH
 								</p>
 								<h3 className="text-lg font-semibold mb-2">OS Research</h3>
@@ -49,13 +49,13 @@ const Activities = () => {
 					{/* AI Selfie Module */}
 					<Card
 						sx={{ width: 350 }}
-						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg"
+						className="card rounded-lg overflow-hidden hover:-translate-y-2 hover:shadow-lg hover:bg-blue-300 hover:text-white"
 						onClick={() => setOpenSelfie(true)}>
-						<Selfie open={openSelfie} setOpen={setOpenSelfie} heading={"hii"} />
+						<Selfie open={openSelfie} setOpen={setOpenSelfie} />
 						<CardMedia sx={{ height: 200 }} image="/images/extra/Selfie.jpg" />
 						<CardContent>
 							<div className="p-4">
-								<p className="hover:bg-[rgb(0,0,0,0.8)] bg-black inline-block px-2 py-1 rounded-full text-white font-light font-mono text-xs">
+								<p className="bg-blue-800 inline-block px-2 py-1 rounded-full text-white font-light font-mono text-xs">
 									SELFIE
 								</p>
 
@@ -70,13 +70,13 @@ const Activities = () => {
 					{/* AI Bots */}
 					<Card
 						sx={{ width: 350 }}
-						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg"
+						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg hover:bg-blue-300 hover:text-white"
 						onClick={() => setOpenAi(true)}>
 						<AiBot open={openAi} setOpen={setOpenAi} heading={"hii"} />
 						<CardMedia sx={{ height: 200 }} image="/images/extra/AI.jpg" />
 						<CardContent>
 							<div className="p-4">
-								<p className="hover:bg-[rgb(0,0,0,0.8)] bg-black inline-block px-2 py-1 rounded-full text-white font-light font-mono text-xs">
+								<p className="bg-blue-800 inline-block px-2 py-1 rounded-full text-white font-light font-mono text-xs">
 									AI BOT
 								</p>
 								<h3 className="text-lg font-semibold mb-2">
@@ -92,35 +92,9 @@ const Activities = () => {
 				</div>
 				<div className="relative mb-4">
 					{/* Wave-like SVG pattern */}
-					<div className="absolute inset-x-0 top-0 h-16 opacity-10">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 1440 320"
-							className="w-full h-full">
-							<path
-								fill="#0099ff"
-								fillOpacity="1"
-								d="M0,32L48,37.3C96,43,192,53,288,80C384,107,480,149,576,154.7C672,160,768,128,864,112C960,96,1056,96,1152,101.3C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-						</svg>
-					</div>
 
 					{/* Floating technology-related icons */}
 					<div className="absolute inset-0 overflow-hidden">
-						<div className="absolute top-10 left-1/4 animate-float">
-							<svg
-								className="w-12 h-12 text-blue-500 opacity-50"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-								xmlns="http://www.w3.org/2000/svg">
-								<path
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth={2}
-									d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-								/>
-							</svg>
-						</div>
 						<div className="absolute top-20 right-1/3 animate-float-delayed">
 							<svg
 								className="w-10 h-10 text-green-500 opacity-50"
@@ -159,10 +133,10 @@ const Activities = () => {
 					{/* Inspirational quote */}
 					<div className="relative z-10 text-center py-12">
 						<blockquote className="text-xl font-semibold text-gray-700 italic ">
-							"The advance of technology is based on making it fit in so that
-							you don't really even notice it, so it's part of everyday life."
+							"If you work with determination and with perfection, success will
+							follow.”
 						</blockquote>
-						<cite className="block mt-4 text-gray-600">- Bill Gates</cite>
+						<cite className="block mt-4 text-gray-600">- Dhirubhai Ambani</cite>
 					</div>
 				</div>
 			</section>

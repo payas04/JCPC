@@ -23,7 +23,7 @@ const Dashboard = () => {
 	const navigate = useNavigate();
 
 	return (
-		<div className="flex h-screen bg-gray-100 text-black ">
+		<div className="flex h-screen bg-gray-100 text-black">
 			{/* Sidebar */}
 			<Sidebar />
 
@@ -62,8 +62,11 @@ const Dashboard = () => {
 					<div className="grid grid-cols-2 md:grid-cols-2 gap-6 w-[64%]">
 						<StatCard
 							title="Total Bugs and Enhancements"
-							value="337"
-							color="bg-emerald-500"
+							value={totalIssuePieChart.reduce(
+								(acc, item) => acc + item.value,
+								0
+							)}
+							color="bg-red-600"
 							icon={AiOutlineIssuesClose}
 							pieData={totalIssuePieChart}
 							shouldOpenModal={true}
@@ -74,7 +77,7 @@ const Dashboard = () => {
 								(acc, item) => acc + item.value,
 								0
 							)}
-							color="bg-purple-500"
+							color="bg-red-800"
 							icon={Bug}
 							pieData={openIssuePieChart}
 							shouldOpenModal={true}
@@ -82,7 +85,7 @@ const Dashboard = () => {
 						<StatCard
 							title="Total Members"
 							value={TeamData.length}
-							color="bg-sky-500"
+							color="bg-purple-500"
 							icon={Users}
 						/>
 
@@ -99,14 +102,14 @@ const Dashboard = () => {
 
 				{/* Tasks Activity Table */}
 
-				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10">
+				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10 ">
 					<JioPcObservation title="JioPC" workItems={jioPcWorkItems} />
 					<AreaChart
 						title="Issues Raised (23th Aug - 30th Sep)"
 						areaChartData={jioPcAreaChartData}
 					/>
 				</section>
-				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10">
+				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10 ">
 					<JioPcObservation title="HP Chromebook" workItems={hpWorkItems} />
 					<AreaChart
 						title="Issues Raised (23th Aug - 30th Sep)"

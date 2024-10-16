@@ -13,47 +13,48 @@ const TeamSection = ({ data }) => {
 	return (
 		<section className="w-full bg-gray-100 text-gray-800 overflow-y-scroll pb-44 mb-12 px-10">
 			<div className="container w-full flex flex-col mx-auto space-y-8 py-6">
-				<div className="flex flex-row justify-between items-center mt-6 w-full">
+				<div className="flex flex-row justify-between items-center mt-6 w-full bg-white px-6 py-4 rounded-md">
 					<div className="text-4xl font-bold  leading-none text-nowrap">
 						Our Team
 					</div>
 
 					{/* Search bar */}
-					<div className="flex items-center  w-6/12  text-white">
+					<div className="flex items-center w-6/12  text-white">
 						<div className="relative w-full">
 							<div className="absolute inset-y-0 start-0 text-white flex items-center ps-3 pointer-events-none">
-								<SearchIcon className="text-black" />
+								<SearchIcon className="text-black" color="blue" />
 							</div>
 							<input
 								type="text"
 								id="voice-search"
 								value={searchQuery} // Step 3: Bind input value to search query state
 								onChange={(e) => setSearchQuery(e.target.value)} // Step 4: Update search query on input change
-								className="bg-white text-black text-base rounded-lg placeholder:text-black block w-full ps-10 p-2.5 focus:outline focus:outline-blue-800"
+								className="bg-gray-200 text-blue-800 text-base rounded-lg placeholder:text-blue-800 block w-full ps-10 p-2.5 focus:outline focus:outline-blue-800"
 								placeholder="Search incredible minds here..."
 							/>
 						</div>
 					</div>
 				</div>
 
-				<div className="flex flex-row items-center  gap-8 w-full">
+				<div className="flex flex-row items-center justify-evenly gap-8 w-full">
 					<div className="flex flex-col  text-center w-48">
 						<img
 							alt=""
 							className="self-center flex-shrink-0 w-32 h-32  bg-center bg-cover rounded-full dark:bg-gray-500"
 							src="/images/profile/rb.jpg"
 						/>
-						<p className="text-xl font-semibold leading-tight">
+						<p className="text-xl font-bold leading-tight mt-2">
 							Rahul Bhandari
 						</p>
-						<sub className="text-sm">Program Manager</sub>
+						<sub className="text-sm font-semibold text-blue-800">
+							Program Manager
+						</sub>
 					</div>
 					<div>
-						<p className="max-w-2xl  dark:text-gray-600">
-							As we continue working towards our goals, I want to take a moment
-							to acknowledge the incredible dedication, creativity, and energy
-							each of you brings to the table. <br></br>{" "}
-							<div className="text-end mr-7">- Rahul Bhandari.</div>
+						<p className="max-w-2xl  dark:text-gray-800 font-bold">
+							Together as a team, our hard work, dedication, and passion are the
+							combined driving forces behind our shared success.
+							<div className="text-end mr-7">- Rahul Bhandari</div>
 						</p>
 					</div>
 				</div>

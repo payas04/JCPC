@@ -1,6 +1,6 @@
 import { MdSpaceDashboard } from "react-icons/md";
 import { RiTeamFill } from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FaTasks } from "react-icons/fa";
 
 const Sidebar = () => {
@@ -37,25 +37,31 @@ const Sidebar = () => {
 	);
 };
 
-const Li = ({ url, title, Icon, location }) => (
-	<li
-		style={{
-			backgroundColor: location.pathname.includes(url) ? "#f3f4f6" : "",
-			padding: "5px 12px",
-			borderTopLeftRadius: "50px",
-			borderBottomLeftRadius: "50px",
-			marginLeft: "20px",
-		}}>
-		<Link
-			className="text-lg font-medium flex items-center gap-2 text-teal-400"
-			to={url}
+const Li = ({ url, title, Icon, location }) => {
+	const navigate = useNavigate();
+	return (
+		<li
 			style={{
-				color: location.pathname.includes(url) ? "#1e1926" : "white",
+				backgroundColor: location.pathname.includes(url) ? "#f3f4f6" : "",
+				padding: "5px 12px",
+				borderTopLeftRadius: "50px",
+				borderBottomLeftRadius: "50px",
+				marginLeft: "20px",
+			}}
+			className="hover:bg-blue-950 cursor-pointer"
+			onClick={() => {
+				navigate(`${url}`);
 			}}>
-			{Icon}
-			{title}
-		</Link>
-	</li>
-);
+			<span
+				className="text-lg font-medium flex items-center gap-2"
+				style={{
+					color: location.pathname.includes(url) ? "#1e1926" : "white",
+				}}>
+				{Icon}
+				{title}
+			</span>
+		</li>
+	);
+};
 
 export default Sidebar;

@@ -5,7 +5,6 @@ export default function CustomPieChart({ data, radiusValue, innerLabel }) {
 	return (
 		<Box position="relative" display="inline-block">
 			<PieChart
-				colors={["#D91656", "orange", "yellow", "blue", "green"]}
 				series={[
 					{
 						data,

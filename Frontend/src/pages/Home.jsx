@@ -108,6 +108,23 @@ export default function Home() {
 						Chrome
 					</div>
 				</Draggable>
+				<Draggable defaultPosition={{ x: 25, y: 120 }}>
+					<div
+						className={`w-28 h-28 pt-1 text-center cursor-pointer ${
+							selectedIcon === "Devops"
+								? "bg-blue-500  bg-opacity-50 rounded-lg"
+								: ""
+						}`}
+						onClick={(e) => handleIconClick("Devops", e)}>
+						<img
+							src="/images/icons/Devops.webp"
+							alt="Devops logo"
+							className="w-[50px] h-[50px] rounded-lg block mx-auto mb-3"
+						/>
+						<MdShortcut className="absolute top-10 left-5 bg-blue-600 rounded-sm w-5" />
+						Azure Devops
+					</div>
+				</Draggable>
 				<img
 					src="/images/logo/JioCloudPC.svg"
 					alt="JioCloudPC logo"

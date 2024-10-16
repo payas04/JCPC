@@ -21,48 +21,53 @@ export default function UserModal({ open, setOpen, user, heading }) {
 			<div className="fixed inset-0 bg-black/80" aria-hidden="true" />
 
 			<div className="fixed inset-0 flex z-10 w-full ">
-				<div className="flex  w-full max-w-4xl mx-auto items-center justify-center p-4">
+				<div className="flex w-full max-w-4xl mx-auto items-center justify-center p-4">
 					<DialogPanel className="w-full rounded-lg bg-white shadow-xl overflow-hidden h-fit ">
-						<div className="h-24 w-full bg-blue-grad flex justify-end">
-							<IoClose
-								onClick={() => setOpen(false)}
-								color="black"
-								size={26}
-								className="hover:bg-red-500 hover:rounded-full mr-4 mt-4 cursor-pointer m-2"
-							/>
-						</div>
-						<div className="px-4">
+						<div className="relative px-4">
+							<span
+								className="absolute right-2 z-10"
+								onClick={() => setOpen(false)}>
+								<IoClose
+									color="black"
+									size={26}
+									className=" hover:bg-red-500 hover:rounded-full cursor-pointer"
+								/>
+							</span>
 							<div className="relative px-4 pb-4">
-								<div className="absolute -top-16 left-4">
+								<div className="flex mt-2 pt-2">
 									<img
-										className="w-32 h-32 rounded-full border-4 border-black object-contain bg-white"
+										className="w-32 h-32 rounded-full border-4 border-blue-800 object-contain bg-white"
 										src={`/images/members/${user.Domain}.jpg`}
 										onError={(e) => {
 											e.target.src = "/images/profile/default.png";
 										}}
 										alt="Profile picture"
 									/>
-								</div>
-								<div className="pt-16 ">
-									<div className="flex justify-between items-center">
+									<div className="flex justify-between items-center flex-grow pl-4">
 										<div>
-											<h1 className="text-2xl font-bold">{user.Name}</h1>
-											<p className="text-gray-600">{user.Tags}</p>
+											<h1 className="text-4xl font-bold mb-2">{user.Name}</h1>
+											<p className="text-blue-800 font-bold text-xl">
+												{user.Tags}
+											</p>
 										</div>
 										<div className="text-center rounded-lg overflow-hidden border-2 h-fit border-blue-800">
 											<p className="font-bold text-xl ">{user.Total_score}</p>
 											<p className="bg-blue-800 text-white px-2">Total Score</p>
 										</div>
 									</div>
-									<p className="mt-2 text-gray-700 ">{user["About"]}</p>
+								</div>
+								<div className="">
+									<p className="mt-4 text-gray-950 font-semibold">
+										{user["About"]}
+									</p>
 									<div className="mt-7 flex justify-between">
 										<div>
 											{user["Courses Completed"] !== "" && (
 												<>
-													<h2 className="text-lg font-semibold mt-2">
+													<h2 className="text-lg font-bold text-blue-800">
 														Courses Completed:
 													</h2>
-													<ul className="text-gray-700">
+													<ul className="text-gray-900 font-semibold">
 														{user["Courses Completed"]
 															.split("\n")
 															.map((text, index) => (
@@ -74,10 +79,10 @@ export default function UserModal({ open, setOpen, user, heading }) {
 
 											{user["Extra Activities"] !== "" && (
 												<>
-													<h2 className="text-lg font-semibold mt-4">
+													<h2 className="text-lg font-bold mt-4 text-blue-800">
 														Extra Activities:
 													</h2>
-													<ul className="list-inside text-gray-700">
+													<ul className="list-inside text-gray-900 font-semibold">
 														{user["Extra Activities"]
 															.split("\n")
 															.map((text, index) => (

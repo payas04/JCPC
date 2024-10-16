@@ -18,12 +18,12 @@ const OsResearch = ({ open, setOpen }) => {
 			<div className="fixed inset-0 z-10 w-screen h-screen overflow-y-auto ">
 				<div className="flex items-center justify-center text-center h-screen w-screen">
 					<DialogPanel className="relative w-[60%] h-[85%] overflow-scroll rounded-lg bg-white text-left shadow-xl transition-all mb-6">
-						<div className="sticky top-0 left-0 w-full bg-white z-20">
+						<div className="sticky top-0 left-0 w-full bg-blue-800 text-white z-20">
 							<IoClose
 								onClick={() => setOpen(false)}
-								color="black"
+								color="white"
 								size={26}
-								className="absolute top-2 right-2 hover:bg-red-500 hover:rounded-full p-1 cursor-pointer"
+								className="absolute top-2 right-3 hover:bg-red-500 hover:rounded-full p-1 cursor-pointer"
 							/>
 							<h2 className="font-bold text-4xl text-center py-2">
 								OS Research

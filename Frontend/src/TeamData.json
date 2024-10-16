@@ -52,7 +52,7 @@
 		"Name": "Ananyaa Sridhar",
 		"About": "",
 		"Courses Completed": "1. Blender tutorial 4\n2. Augmented Reality Tutorial (The AI university)",
-		"Extra Activities": "1. AI Selfie Module\n2. AI Bot (Managed WiFi )",
+		"Extra Activities": "1. AI Selfie Module\n2. AI Bot (Managed WiFi ).\n3. Tamil transcript validation",
 		"linkedin": "https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F",
 		"DOB": "30th September",
 		"Blocker": 0,
@@ -125,7 +125,7 @@
 		"Normal": 5,
 		"Minor": 0,
 		"Total_score": 38,
-		"Tags": "Validator"
+		"Tags": "Released"
 	},
 	{
 		"Domain": "Dhanvi.Mange",
@@ -141,7 +141,7 @@
 		"Normal": 0,
 		"Minor": 0,
 		"Total_score": 23,
-		"Tags": "Tester"
+		"Tags": "Lead"
 	},
 	{
 		"Domain": "Hamza5.Shaikh",
@@ -164,7 +164,7 @@
 		"Name": "Jagruti Zawar",
 		"About": "Enthusiastic and curious, I embrace computer science challenges with a problem-solving mindset and joyful spirit.",
 		"Courses Completed": "1. Introduction to DevOps\n2. Frontend development using React",
-		"Extra Activities": "1. AI Bot (Managed WiFi )\n2. AI Selfie Module",
+		"Extra Activities": "1. AI Bot (Managed WiFi )\n2. AI Selfie Module\n3. JioEducation UI Testing",
 		"linkedin": "https://www.linkedin.com/in/jagruti-zawar-2292ab223/",
 		"DOB": "24th July",
 		"Blocker": 0,
@@ -212,7 +212,7 @@
 		"Name": "Kapil Chouksey",
 		"About": "A continuous learner who looks for new ways to finish the task in the allotted time",
 		"Courses Completed": "1.  Introduction to Generative AI",
-		"Extra Activities": "1. AI Bot \n2. Asset Management\n3. Selfie Module\n4. Ubuntu, Zorin and Zorin light Installation on different devices and Testing",
+		"Extra Activities": "1. AI Bot \n2. Asset Management\n3. Selfie Module\n4. Ubuntu, Zorin and Zorin light Installation on different devices and Testing\n5. Located and Prepared devices for Indian Mobile Congress, Created Documentation and Edited Media for IMC ",
 		"linkedin": "",
 		"DOB": "11th September",
 		"Blocker": 0,
@@ -221,7 +221,7 @@
 		"Normal": 0,
 		"Minor": 0,
 		"Total_score": 10,
-		"Tags": "Tester"
+		"Tags": "AI Bot & Asset Management Lead"
 	},
 	{
 		"Domain": "Karthik19.R",
@@ -355,7 +355,7 @@
 		"Domain": "Piyush2.B",
 		"Name": "Piyush Barhanpurkar",
 		"About": "A Focused and goal-driven individual who thrives in a fast-paced environment.",
-		"Courses Completed": "1. Mastering backend with Nginx and Docker.\n2. System design , study and architecture of chess.com & Google drive.",
+		"Courses Completed": "1. Mastering backend with Nginx and Docker.\n2. System design , study and architecture of chess.com & Google drive.\n3. Mastering Backend with Java",
 		"Extra Activities": "1. Team-lead for the Wifi-Manage chatbot task.",
 		"linkedin": "https://www.linkedin.com/in/piyush-barhanpurkar/",
 		"DOB": "",
@@ -372,7 +372,7 @@
 		"Name": "Pranav Patne",
 		"About": "Eager learner with a positive attitude, collaborative, adaptable, and growth-focused in all tasks.",
 		"Courses Completed": "1. Foundations of User Experience (UX) Design",
-		"Extra Activities": "1. OS Research\n2. OS testing\n3. AI Bot (Managed WiFi Soltuions)\n4. AI Selfie Module",
+		"Extra Activities": "1. OS Research\n2. OS testing\n3. AI Bot (Managed WiFi Soltuions)\n4. AI Selfie Module\n5. JioEducation UI Testing",
 		"linkedin": "https://www.linkedin.com/in/pranav-patne/",
 		"DOB": "4th September",
 		"Blocker": 0,
@@ -525,14 +525,14 @@
 		"Normal": 4,
 		"Minor": 2,
 		"Total_score": 37,
-		"Tags": "Tester"
+		"Tags": "Released"
 	},
 	{
 		"Domain": "Shreyansh.Gholse",
 		"Name": "Shreyansh Gholse",
-		"About": "Curious mind passionate about coding, motion graphics, animation and digital art � always learning, always creating.",
+		"About": "Curious mind passionate about coding, motion graphics, animation and digital art always learning, always creating.",
 		"Courses Completed": "1. Introduction to Postman",
-		"Extra Activities": "1. OS Research\n2. AI Bot (Managed WiFi )",
+		"Extra Activities": "1. OS Research\n2. AI Bot (Managed WiFi )\n3. JioEducation UI Testing",
 		"linkedin": "https://www.linkedin.com/in/shreyansh-gholse-242997196/",
 		"DOB": "27th January",
 		"Blocker": 0,
@@ -557,7 +557,7 @@
 		"Normal": 0,
 		"Minor": 0,
 		"Total_score": 21,
-		"Tags": "Tester"
+		"Tags": "Validator"
 	},
 	{
 		"Domain": "Siddharth2.Chauhan",
@@ -653,7 +653,7 @@
 		"Normal": 0,
 		"Minor": 0,
 		"Total_score": 23,
-		"Tags": "Tester"
+		"Tags": "Lead"
 	},
 	{
 		"Domain": "Yash.Amin",
@@ -669,7 +669,7 @@
 		"Normal": 0,
 		"Minor": 0,
 		"Total_score": 23,
-		"Tags": "Validator"
+		"Tags": "Released"
 	},
 	{
 		"Domain": "Yuvraj.Achrekar",

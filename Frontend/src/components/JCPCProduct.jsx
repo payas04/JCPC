@@ -49,7 +49,7 @@ export default function JCPCProduct() {
 
 	return (
 		<div
-			className="rounded-lg p-6 text-white bg-amber-500 cursor-pointer"
+			className="rounded-lg p-6 text-white bg-blue-500 cursor-pointer"
 			onClick={() => setOpen(true)}>
 			<Dialog
 				open={open}

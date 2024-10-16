@@ -1,6 +1,6 @@
 export const issuePieChart = [
-	{ id: 0, value: 241, label: "JioPC", color: "#0ea5e9" }, //#20236D
-	{ id: 1, value: 96, label: "HP", color: "#ef4444" },
+	{ id: 0, value: 241, label: "JioPC", color: "#ef4444" }, //#20236D
+	{ id: 1, value: 96, label: "HP", color: "#f97316" },
 ];
 
 export const totalIssuePieChart = [
@@ -43,14 +43,14 @@ export const jioPcWorkItems = [
 	{
 		title: "Product Confirmation",
 		count: 0,
-		color: "bg-purple-400",
+		color: "bg-purple-500",
 		definition:
 			"Issues awaiting confirmation from the product team on whether they will be included in the scope of the project.",
 	},
 	{
 		title: "Ready for Test",
 		count: 0,
-		color: "bg-blue-400",
+		color: "bg-blue-500",
 		definition:
 			"Issues which have been raised and has  been resolved by developers and are ready for testing.",
 	},
@@ -86,14 +86,14 @@ export const hpWorkItems = [
 	{
 		title: "Product Confirmation",
 		count: 0,
-		color: "bg-purple-400",
+		color: "bg-purple-500",
 		definition:
 			"Issues awaiting confirmation from the product team on whether they will be included in the scope of the project.",
 	},
 	{
 		title: "Ready for Test",
 		count: 0,
-		color: "bg-blue-400",
+		color: "bg-blue-500",
 		definition:
 			"Issues which have been raised and has  been resolved by developers and are ready for testing.",
 	},
@@ -109,27 +109,22 @@ export const jioPcAreaChartData = [
 	{
 		name: "Week 1",
 		Issues: 51,
-		pv: 139,
 	},
 	{
 		name: "Week 2",
 		Issues: 55,
-		pv: 98,
 	},
 	{
 		name: "Week 3",
 		Issues: 46,
-		pv: 390,
 	},
 	{
 		name: "Week 4",
 		Issues: 47,
-		pv: 480,
 	},
 	{
 		name: "Week 5",
 		Issues: 42,
-		pv: 380,
 	},
 ];
 
@@ -137,55 +132,22 @@ export const hpAreaChartData = [
 	{
 		name: "Week 1",
 		Issues: 30,
-		pv: 539,
 	},
 	{
 		name: "Week 2",
 		Issues: 5,
-		pv: 98,
 	},
 	{
 		name: "Week 3",
 		Issues: 8,
-		pv: 390,
 	},
 	{
 		name: "Week 4",
 		Issues: 27,
-		pv: 480,
 	},
 	{
 		name: "Week 5",
 		Issues: 26,
-		pv: 380,
-	},
-];
-
-export const lenovoAreaChartData = [
-	{
-		name: "May 24",
-		uv: 204,
-		pv: 149,
-	},
-	{
-		name: "Jun 24",
-		uv: 224,
-		pv: 958,
-	},
-	{
-		name: "Jul 24",
-		uv: 248,
-		pv: 340,
-	},
-	{
-		name: "Aug 24",
-		uv: 188,
-		pv: 440,
-	},
-	{
-		name: "Sep 24",
-		uv: 249,
-		pv: 340,
 	},
 ];
 
