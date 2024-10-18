@@ -8,6 +8,7 @@ import {
 	CartesianGrid,
 	Tooltip,
 	Legend,
+	ResponsiveContainer,
 } from "recharts";
 
 const BarGraph = ({ barData }) => {
@@ -30,13 +31,13 @@ const BarGraph = ({ barData }) => {
 				<Legend />
 				<Bar
 					dataKey="Portrait"
-					fill="#8884d8"
-					activeBar={<Rectangle fill="pink" stroke="blue" />}
+					fill="#1e40af"
+					// activeBar={<Rectangle fill="pink" stroke="blue" />}
 				/>
 				<Bar
 					dataKey="Landscape"
 					fill="#82ca9d"
-					activeBar={<Rectangle fill="gold" stroke="purple" />}
+					// activeBar={<Rectangle fill="gold" stroke="purple" />}
 				/>
 			</BarChart>
 		</div>

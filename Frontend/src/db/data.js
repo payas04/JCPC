@@ -4,18 +4,18 @@ export const issuePieChart = [
 ];
 
 export const totalIssuePieChart = [
-	{ id: 0, value: 1, label: "Blocker", color: "#FF0000" },
-	{ id: 1, value: 32, label: "Critical", color: "#FF4500" },
-	{ id: 2, value: 129, label: "Major", color: "#FFA500" },
-	{ id: 3, value: 149, label: "Normal", color: "#2196F3" },
-	{ id: 4, value: 26, label: "Minor", color: "#4CAF50" },
+	{ id: 0, value: 1, label: "Blocker", color: "#991B1B" },
+	{ id: 1, value: 32, label: "Critical", color: "#DC2626" },
+	{ id: 2, value: 129, label: "Major", color: "#F97316" },
+	{ id: 3, value: 149, label: "Normal", color: "#A855F7" },
+	{ id: 4, value: 26, label: "Minor", color: "#3B82F6" },
 ];
 export const openIssuePieChart = [
-	{ id: 0, value: 1, label: "Blocker", color: "#FF0000" },
-	{ id: 1, value: 18, label: "Critical", color: "#FF4500" },
-	{ id: 2, value: 53, label: "Major", color: "#FFA500" },
-	{ id: 3, value: 39, label: "Normal", color: "#2196F3" },
-	{ id: 4, value: 15, label: "Minor", color: "#4CAF50" },
+	{ id: 0, value: 1, label: "Blocker", color: "#991B1B" },
+	{ id: 1, value: 18, label: "Critical", color: "#DC2626" },
+	{ id: 2, value: 53, label: "Major", color: "#F97316" },
+	{ id: 3, value: 39, label: "Normal", color: "#A855F7" },
+	{ id: 4, value: 15, label: "Minor", color: "#3B82F6" },
 ];
 
 export const jioPcWorkItems = [
@@ -166,5 +166,11 @@ export const selfieBarData = [
 		name: "Total",
 		Portrait: 1131,
 		Landscape: 1132,
+	},
+];
+
+export const aiBotData = [
+	{
+		intent: 20,
 	},
 ];

@@ -6,11 +6,11 @@ import { IoClose } from "react-icons/io5";
 
 export default function UserModal({ open, setOpen, user, heading }) {
 	const issue = [
-		{ id: 0, value: user.Blocker, label: "Blocker", color: "#FF0000" },
-		{ id: 1, value: user.Critical, label: "Critical", color: "#FF4500" },
-		{ id: 2, value: user.Major, label: "Major", color: "#FFA500" },
-		{ id: 3, value: user.Normal, label: "Normal", color: "#2196F3" },
-		{ id: 4, value: user.Minor, label: "Minor", color: "#4CAF50" },
+		{ id: 0, value: user.Blocker, label: "Blocker", color: "#991B1B" },
+		{ id: 1, value: user.Critical, label: "Critical", color: "#DC2626" },
+		{ id: 2, value: user.Major, label: "Major", color: "#F97316" },
+		{ id: 3, value: user.Normal, label: "Normal", color: "#A855F7" },
+		{ id: 4, value: user.Minor, label: "Minor", color: "#3B82F6" },
 	];
 
 	return (

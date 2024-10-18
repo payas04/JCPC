@@ -35,3 +35,28 @@
 .custom {
 	transition: transform 0.5s ease, box-shadow 0.3s ease;
 }
+
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th {
+	background-color: #1e40af;
+	color: white;
+}
+
+td,
+th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+tr:last-child {
+	background-color: #82ca9d;
+}
+/* tr:nth-child(even) {
+	background-color: #dddddd;
+} */

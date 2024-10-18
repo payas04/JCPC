@@ -1,6 +1,8 @@
 import React from "react";
 import { IoClose } from "react-icons/io5";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
+import { selfieBarData } from "../../db/data";
+import BarGraph from "../charts/BarGraph";
 
 const AiBot = ({ open, setOpen }) => {
 	return (
@@ -35,33 +37,47 @@ const AiBot = ({ open, setOpen }) => {
 									reflect two user segments.
 								</p>
 							</div>
-							<div className="flex mt-10 justify-between gap-4">
-								<div className="shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md p-2">
-									<h4 className="font-bold text-center text-2xl mb-4">
-										Technical users
-									</h4>
-									<ul className="list-disc pl-6 text-lg font-semibold leading-6">
-										<li>
-											These users might be slightly familiar with WiFi concepts
-											but may not know advanced details
-										</li>
-										<li>
-											They might use basic tech terms but need more guidance.
-										</li>
-									</ul>
+							<div className="flex gap-2">
+								<div className="w-1/2 h-[100%] mt-10 shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md p-2">
+									<div>
+										<h4 className="font-bold text-center text-2xl mb-4">
+											Technical users
+										</h4>
+										<ul className="list-disc pl-6 text-lg font-semibold leading-6 mb-4">
+											<li>
+												These users might be slightly familiar with WiFi
+												concepts but may not know advanced details
+											</li>
+											<li>
+												They might use basic tech terms but need more guidance.
+											</li>
+										</ul>
+									</div>
+									<div>
+										<h4 className="font-bold text-center text-2xl mb-4">
+											Non-Technical Users
+										</h4>
+										<ul className="list-disc pl-6 text-lg font-semibold leading-6">
+											<li>
+												These users would ask simple, basic questions about WiFi
+											</li>
+											<li>
+												They might be confused or unsure about technical terms
+												and rely on plain language
+											</li>
+										</ul>
+									</div>
 								</div>
-								<div className="shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md p-2">
+								<div className="w-1/2 mt-10 shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md p-2">
 									<h4 className="font-bold text-center text-2xl mb-4">
-										Non-Technical Users
+										Data Summary
 									</h4>
 									<ul className="list-disc pl-6 text-lg font-semibold leading-6">
-										<li>
-											These users would ask simple, basic questions about WiFi
-										</li>
-										<li>
-											They might be confused or unsure about technical terms and
-											rely on plain language
-										</li>
+										<li>Technical Indents: 21</li>
+										<li>Technical Expressions: 300</li>
+										<li>Non Technical Indents: 20</li>
+										<li>Non Technical Expressions: 181</li>
+										<li>Total Expressions without filteration : 920</li>
 									</ul>
 								</div>
 							</div>

@@ -60,14 +60,19 @@ export default function JCPCProduct() {
 				<div className="fixed inset-0 z-10 w-screen overflow-y-auto">
 					<div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
 						<DialogPanel className="relative max-w-[80%] transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all ">
-							<IoClose
-								onClick={() => setOpen(false)}
-								color="black"
-								size={26}
-								className="absolute right-3 top-2 hover:bg-red-500 hover:rounded-full p-1"
-							/>
+							<div className="sticky top-0 left-0 w-full bg-blue-800 text-white z-20">
+								<IoClose
+									onClick={() => setOpen(false)}
+									color="white"
+									size={26}
+									className="absolute top-2 right-3 hover:bg-red-500 hover:rounded-full p-1 cursor-pointer"
+								/>
+								<p className="font-bold text-4xl text-center py-2">
+									Our Products
+								</p>
+							</div>
 
-							<div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+							<div className="bg-white px-4 pb-4 pt-5 ">
 								<div className="mt-3 text-center">
 									<div className="grid grid-cols-3 gap-4">
 										{products.map((product, index) => (
@@ -95,10 +100,10 @@ export default function JCPCProduct() {
 
 const DeviceCard = ({ product }) => {
 	return (
-		<div className="w-full flex flex-col  rounded overflow-hidden border-2 px-2 border-gray-300">
-			<div className="font-bold text-xl mb-2 ">{product.name}</div>
+		<div className="w-full flex flex-col  rounded overflow-hidden border-2 border-gray-300">
+			<div className="font-bold text-xl mb-2">{product.name}</div>
 			<img
-				className="w-80 h-80 object-contain mx-auto "
+				className="w-80 h-80 object-contain mx-auto px-2"
 				width={96}
 				sizes
 				src={`/images/devices/${product.img}.jpg`}
