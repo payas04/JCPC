@@ -30,32 +30,30 @@ const Dashboard = () => {
 			{/* Main Content */}
 			<main className="flex-1 p-6 pt-12 overflow-y-auto mb-8">
 				{/* Header */}
-				<header className="flex justify-between items-center bg-white rounded-md mb-4 px-6">
-					<div>
-						<h1 className="text-4xl font-bold text-black">
-							<Typewriter
-								onInit={(typewriter) => {
-									typewriter
-										.typeString("Welcome, Rahul Bhandari")
-										.pauseFor(2500)
-										.start();
-								}}
-							/>
-						</h1>
-					</div>
+				<header className="mb-4 px-6">
+					<h1 className="text-4xl font-bold text-black">
+						<Typewriter
+							onInit={(typewriter) => {
+								typewriter
+									.typeString("Welcome, Rahul Bhandari")
+									.pauseFor(2500)
+									.start();
+							}}
+						/>
+					</h1>
 
-					<img
+					{/* <img
 						className="w-14 h-14 rounded-full"
 						src="/images/profile/rb.jpg"
 						alt="Profile"
 						onClick={() => {
 							navigate("/accops/profile");
 						}}
-					/>
+					/> */}
 				</header>
 
 				{/* Project Overview Section */}
-				<div className=" bg-white mb-4 p-6 rounded-md flex gap-10">
+				<div className="  mb-4 p-6 rounded-md flex gap-10 ">
 					<div className="grid grid-cols-2 md:grid-cols-2 gap-6 w-[64%]">
 						<StatCard
 							title="Total Bugs and Enhancements"
@@ -104,14 +102,14 @@ const Dashboard = () => {
 
 				{/* Tasks Activity Table */}
 
-				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10 ">
+				<section className=" text-black mb-4 p-6 rounded-lg flex gap-10 ">
 					<JioPcObservation title="JioPC" workItems={jioPcWorkItems} />
 					<AreaChart
 						title="Issues Raised (23th Aug - 15th Oct)"
 						areaChartData={jioPcAreaChartData}
 					/>
 				</section>
-				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10 ">
+				<section className=" text-black mb-4 p-6 rounded-lg flex gap-10 ">
 					<JioPcObservation title="HP Chromebook" workItems={hpWorkItems} />
 					<AreaChart
 						title="Issues Raised (23th Aug - 15th Oct)"

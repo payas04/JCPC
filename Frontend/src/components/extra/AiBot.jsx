@@ -14,7 +14,7 @@ const AiBot = ({ open, setOpen }) => {
 
 			<div className="fixed inset-0 z-10 w-screen h-screen overflow-y-auto ">
 				<div className="flex items-center justify-center text-center h-screen w-screen">
-					<DialogPanel className="relative w-[60%] h-[85%] overflow-scroll rounded-lg bg-white text-left shadow-xl transition-all mb-6">
+					<DialogPanel className="relative w-[60%] h-fit overflow-scroll rounded-lg bg-white text-left shadow-xl transition-all mb-6">
 						<div className="sticky top-0 left-0 w-full bg-blue-800 text-white z-20">
 							<IoClose
 								onClick={() => setOpen(false)}
@@ -39,8 +39,8 @@ const AiBot = ({ open, setOpen }) => {
 							</div>
 							<div className="flex gap-2">
 								<div className="w-1/2 h-[100%] mt-10 shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md p-2">
-									<div>
-										<h4 className="font-bold text-center text-2xl mb-4">
+									<div className="mb-6">
+										<h4 className="font-bold text-2xl mb-2 text-center">
 											Technical users
 										</h4>
 										<ul className="list-disc pl-6 text-lg font-semibold leading-6 mb-4">
@@ -54,7 +54,7 @@ const AiBot = ({ open, setOpen }) => {
 										</ul>
 									</div>
 									<div>
-										<h4 className="font-bold text-center text-2xl mb-4">
+										<h4 className="font-bold text-center text-2xl ">
 											Non-Technical Users
 										</h4>
 										<ul className="list-disc pl-6 text-lg font-semibold leading-6">
@@ -73,9 +73,9 @@ const AiBot = ({ open, setOpen }) => {
 										Data Summary
 									</h4>
 									<ul className="list-disc pl-6 text-lg font-semibold leading-6">
-										<li>Technical Indents: 21</li>
+										<li>Technical Intents: 21</li>
 										<li>Technical Expressions: 300</li>
-										<li>Non Technical Indents: 20</li>
+										<li>Non Technical Intents: 20</li>
 										<li>Non Technical Expressions: 181</li>
 										<li>Total Expressions without filteration : 920</li>
 									</ul>

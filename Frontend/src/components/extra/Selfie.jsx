@@ -42,8 +42,8 @@ const Selfie = ({ open, setOpen }) => {
 							<div className="flex mt-10 justify-evenly text-center shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md ">
 								<div className="flex flex-col">
 									<h4 className="font-bold text-2xl mb-4">Data Summary</h4>
-									<div className="flex-grow flex justify-center pb-4">
-										<table className="">
+									<div className="h-full pb-4">
+										<table className="h-full">
 											<tr>
 												<th>Phase</th>
 												<th>Portrait</th>
