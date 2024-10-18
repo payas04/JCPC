@@ -42,9 +42,6 @@ const Dashboard = () => {
 								}}
 							/>
 						</h1>
-						<p className="text-lg text-gray-400 my-2">
-							Track your team progress here
-						</p>
 					</div>
 
 					<img
@@ -66,7 +63,8 @@ const Dashboard = () => {
 								(acc, item) => acc + item.value,
 								0
 							)}
-							color="bg-red-600"
+							color="bg-emerald-100"
+							textColor="text-emerald-800"
 							icon={AiOutlineIssuesClose}
 							pieData={totalIssuePieChart}
 							shouldOpenModal={true}
@@ -77,7 +75,8 @@ const Dashboard = () => {
 								(acc, item) => acc + item.value,
 								0
 							)}
-							color="bg-red-800"
+							color="bg-amber-100"
+							textColor="text-amber-800"
 							icon={Bug}
 							pieData={openIssuePieChart}
 							shouldOpenModal={true}
@@ -85,18 +84,21 @@ const Dashboard = () => {
 						<StatCard
 							title="Total Members"
 							value={TeamData.length}
-							color="bg-purple-500"
+							color="bg-purple-100"
+							textColor="text-purple-800"
 							icon={Users}
 						/>
 
 						{/* JCPC productss */}
 						<JCPCProduct />
 					</div>
-					<div className="md:row-span-2 w-[36%] my-auto">
-						<div className="mb-4 font-bold text-xl flex items-center justify-center text-black ">
-							Total Issues Raised (23th Aug - 30th Sep)
+					<div className="md:row-span-2 w-[36%]">
+						<div className="mb-4 font-semibold text-xl flex items-center justify-center text-black ">
+							Total Issues Raised (23th Aug - 15th Oct)
 						</div>
-						<CustomPieChart data={issuePieChart} radiusValue={30} />
+						<div className="w-full flex items-center justify-center">
+							<CustomPieChart data={issuePieChart} radiusValue={30} />
+						</div>
 					</div>
 				</div>
 
@@ -105,14 +107,14 @@ const Dashboard = () => {
 				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10 ">
 					<JioPcObservation title="JioPC" workItems={jioPcWorkItems} />
 					<AreaChart
-						title="Issues Raised (23th Aug - 30th Sep)"
+						title="Issues Raised (23th Aug - 15th Oct)"
 						areaChartData={jioPcAreaChartData}
 					/>
 				</section>
 				<section className="bg-white text-black mb-4 p-6 rounded-lg flex gap-10 ">
 					<JioPcObservation title="HP Chromebook" workItems={hpWorkItems} />
 					<AreaChart
-						title="Issues Raised (23th Aug - 30th Sep)"
+						title="Issues Raised (23th Aug - 15th Oct)"
 						areaChartData={hpAreaChartData}
 					/>
 				</section>

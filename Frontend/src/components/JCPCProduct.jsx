@@ -49,7 +49,7 @@ export default function JCPCProduct() {
 
 	return (
 		<div
-			className="rounded-lg p-6 text-white bg-blue-500 cursor-pointer"
+			className="rounded-lg p-6 text-sky-800 bg-sky-100 cursor-pointer"
 			onClick={() => setOpen(true)}>
 			<Dialog
 				open={open}
@@ -87,8 +87,8 @@ export default function JCPCProduct() {
 			</Dialog>
 			<div className="flex justify-between items-start mb-4">
 				<div>
-					<h3 className="text-lg font-medium">Our Products</h3>
-					<p className="text-4xl font-bold mt-2">3</p>
+					<h3 className="text-lg font-normal">Our Products</h3>
+					<p className="text-4xl font-semibold mt-2">3</p>
 				</div>
 				<div className="p-2 bg-white bg-opacity-30 rounded-lg">
 					<FaProductHunt size={24} />

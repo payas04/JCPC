@@ -61,8 +61,9 @@ const Selfie = ({ open, setOpen }) => {
 										</table>
 									</div>
 								</div>
-								<div className="">
+								<div className="relative">
 									<h4 className="font-bold text-2xl mb-4">Task Statistics</h4>
+									{/* <p className="absolute  -rotate-90">Selfie Count</p> */}
 									<BarGraph barData={selfieBarData} />
 								</div>
 

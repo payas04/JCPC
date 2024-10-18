@@ -43,8 +43,8 @@ table {
 }
 
 th {
-	background-color: #1e40af;
-	color: white;
+	/* background-color: #1e40af; */
+	/* color: white; */
 }
 
 td,
@@ -53,9 +53,13 @@ th {
 	text-align: left;
 	padding: 8px;
 }
+tr {
+	/* background-color: #82ca9d; */
+}
 
 tr:last-child {
-	background-color: #82ca9d;
+	/* background-color: #1e40af; */
+	/* color: white; */
 }
 /* tr:nth-child(even) {
 	background-color: #dddddd;

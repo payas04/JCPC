@@ -9,6 +9,7 @@ const StatCard = ({
 	icon: Icon,
 	pieData,
 	shouldOpenModal = false,
+	textColor,
 }) => {
 	const [open, setOpen] = useState(false);
 	const navigate = useNavigate();
@@ -24,7 +25,7 @@ const StatCard = ({
 
 	return (
 		<div
-			className={`rounded-lg p-6 text-white ${color} cursor-pointer`}
+			className={`rounded-lg p-6 ${textColor} ${color} cursor-pointer`}
 			onClick={handleOpenModal}>
 			<CustomModal
 				open={open}
@@ -34,8 +35,8 @@ const StatCard = ({
 			/>
 			<div className="flex justify-between items-start mb-4">
 				<div>
-					<h3 className="text-lg font-medium">{title}</h3>
-					<p className="text-4xl font-bold mt-2">{value}</p>
+					<h3 className="text-lg font-normal">{title}</h3>
+					<p className="text-4xl font-semibold mt-2">{value}</p>
 				</div>
 				<div className="p-2 bg-white bg-opacity-30 rounded-lg">
 					<Icon size={24} />

@@ -25,7 +25,7 @@ const Activities = () => {
 					{/* OS research */}
 					<Card
 						sx={{ width: 350 }}
-						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg hover:bg-blue-300 hover:text-white"
+						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg hover:bg-blue-300 hover:text-blue-800"
 						onClick={() => setOpen(true)}>
 						<OsResearch open={open} setOpen={setOpen} heading={"hiii"} />
 						<CardMedia
@@ -34,10 +34,10 @@ const Activities = () => {
 						/>
 						<CardContent>
 							<div className="p-4">
-								<p className="bg-blue-800 inline-block  px-2 py-1 rounded-full text-white font-light font-mono text-xs">
+								<p className="bg-blue-100 inline-block px-2 py-1 rounded-full text-blue-800 font-light font-mono text-xs mb-2">
 									RESEARCH
 								</p>
-								<h3 className="text-lg font-semibold mb-2">OS Research</h3>
+								<h3 className="text-lg font-semibold">OS Research</h3>
 								<p className="text-sm text-gray-600">
 									Exploring low end operating system technology with Linux
 									distributions.
@@ -49,17 +49,17 @@ const Activities = () => {
 					{/* AI Selfie Module */}
 					<Card
 						sx={{ width: 350 }}
-						className="card rounded-lg overflow-hidden hover:-translate-y-2 hover:shadow-lg hover:bg-blue-300 hover:text-white"
+						className="card rounded-lg overflow-hidden hover:-translate-y-2 hover:shadow-lg hover:bg-blue-300 hover:text-blue-800"
 						onClick={() => setOpenSelfie(true)}>
 						<Selfie open={openSelfie} setOpen={setOpenSelfie} />
 						<CardMedia sx={{ height: 200 }} image="/images/extra/Selfie.jpg" />
 						<CardContent>
 							<div className="p-4">
-								<p className="bg-blue-800 inline-block px-2 py-1 rounded-full text-white font-light font-mono text-xs">
+								<p className="bg-blue-100 inline-block px-2 py-1 rounded-full text-blue-800 font-light font-mono text-xs mb-2">
 									SELFIE
 								</p>
 
-								<h3 className="text-lg font-semibold mb-2">AI Selfie Module</h3>
+								<h3 className="text-lg font-semibold">AI Selfie Module</h3>
 								<p className="text-sm text-gray-600">
 									Creating a dataset of selfies to train an AI model.
 								</p>
@@ -70,18 +70,16 @@ const Activities = () => {
 					{/* AI Bots */}
 					<Card
 						sx={{ width: 350 }}
-						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg hover:bg-blue-300 hover:text-white"
+						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg hover:bg-blue-300 hover:text-blue-800"
 						onClick={() => setOpenAi(true)}>
 						<AiBot open={openAi} setOpen={setOpenAi} heading={"hii"} />
 						<CardMedia sx={{ height: 200 }} image="/images/extra/AI.jpg" />
 						<CardContent>
 							<div className="p-4">
-								<p className="bg-blue-800 inline-block px-2 py-1 rounded-full text-white font-light font-mono text-xs">
+								<p className="bg-blue-100 inline-block px-2 py-1 rounded-full text-blue-800 font-light font-mono text-xs mb-2">
 									AI BOT
 								</p>
-								<h3 className="text-lg font-semibold mb-2">
-									AI Bot (Managed WiFi)
-								</h3>
+								<h3 className="text-lg font-semibold">AI Bot (Managed WiFi)</h3>
 								<p className="text-sm text-gray-600">
 									Create distinct, natural-sounding questions that users might
 									ask an AI bot about WiFi.
