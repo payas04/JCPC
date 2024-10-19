@@ -53,7 +53,7 @@ const Dashboard = () => {
 				</header>
 
 				{/* Project Overview Section */}
-				<div className="  mb-4 p-6 rounded-md flex gap-10 ">
+				<div className=" mb-4 p-6 rounded-md flex gap-10 ">
 					<div className="grid grid-cols-2 md:grid-cols-2 gap-6 w-[64%]">
 						<StatCard
 							title="Total Bugs and Enhancements"
@@ -61,7 +61,7 @@ const Dashboard = () => {
 								(acc, item) => acc + item.value,
 								0
 							)}
-							color="bg-emerald-100"
+							color="bg-emerald-200"
 							textColor="text-emerald-800"
 							icon={AiOutlineIssuesClose}
 							pieData={totalIssuePieChart}
@@ -73,7 +73,7 @@ const Dashboard = () => {
 								(acc, item) => acc + item.value,
 								0
 							)}
-							color="bg-amber-100"
+							color="bg-amber-200"
 							textColor="text-amber-800"
 							icon={Bug}
 							pieData={openIssuePieChart}
@@ -82,7 +82,7 @@ const Dashboard = () => {
 						<StatCard
 							title="Total Members"
 							value={TeamData.length}
-							color="bg-purple-100"
+							color="bg-purple-200"
 							textColor="text-purple-800"
 							icon={Users}
 						/>

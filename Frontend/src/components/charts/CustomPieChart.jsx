@@ -11,6 +11,7 @@ export default function CustomPieChart({ data, radiusValue, innerLabel }) {
 						arcLabel: (item) => `${item.value}`,
 						arcLabelMinAngle: 1,
 						arcLabelRadius: "60%",
+						cx: "40%",
 						highlightScope: { fade: "global", highlight: "item" },
 						faded: { innerRadius: 30, additionalRadius: -30, color: "gray" },
 						innerRadius: radiusValue,
@@ -27,7 +28,7 @@ export default function CustomPieChart({ data, radiusValue, innerLabel }) {
 					sx={{
 						position: "absolute",
 						top: "50%",
-						left: "39%",
+						left: "31%",
 						transform: "translate(-50%, -50%)",
 						fontWeight: 700,
 						pointerEvents: "none", // Ensures the label doesn’t interfere with pie chart interaction

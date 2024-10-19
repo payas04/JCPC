@@ -11,9 +11,9 @@ const TeamSection = ({ data }) => {
 	);
 
 	return (
-		<section className="w-full bg-gray-100 text-gray-800 overflow-y-scroll pb-44 mb-12 px-10">
+		<section className="w-full  overflow-y-scroll pb-20 p-6">
 			<div className="container w-full flex flex-col mx-auto space-y-8 py-6">
-				<div className="flex flex-row justify-between items-center mt-6 w-full bg-white px-6 py-4 rounded-md">
+				<div className="flex justify-between items-center w-full px-6 ">
 					<div className="text-4xl font-bold  leading-none text-nowrap">
 						Our Team
 					</div>
@@ -29,7 +29,7 @@ const TeamSection = ({ data }) => {
 								id="voice-search"
 								value={searchQuery} // Step 3: Bind input value to search query state
 								onChange={(e) => setSearchQuery(e.target.value)} // Step 4: Update search query on input change
-								className="bg-gray-200 text-blue-800 text-base rounded-lg placeholder:text-blue-800 block w-full ps-10 p-2.5 focus:outline focus:outline-blue-800"
+								className="bg-white text-blue-800 text-base rounded-lg placeholder:text-blue-800 block w-full ps-10 p-2.5 focus:outline focus:outline-blue-800"
 								placeholder="Search incredible minds here..."
 							/>
 						</div>
@@ -37,7 +37,7 @@ const TeamSection = ({ data }) => {
 				</div>
 
 				<div className="flex flex-row items-center justify-evenly gap-8 w-full">
-					<div className="flex flex-col  text-center w-48">
+					<div className="flex flex-col  text-center">
 						<img
 							alt=""
 							className="self-center flex-shrink-0 w-32 h-32  bg-center bg-cover rounded-full dark:bg-gray-500"
@@ -58,7 +58,7 @@ const TeamSection = ({ data }) => {
 						</p>
 					</div>
 				</div>
-				<div className="w-full grid grid-cols-4 gap-8">
+				<div className="w-full grid grid-cols-4 gap-8 p-6">
 					{filteredData.length > 0 ? (
 						filteredData.map((user, index) => {
 							return <CustomCard key={index} user={user} />;

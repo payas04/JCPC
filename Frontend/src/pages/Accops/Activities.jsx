@@ -15,17 +15,14 @@ const Activities = () => {
 	return (
 		<div className="flex h-screen bg-gray-100">
 			<Sidebar />
-			<section className="w-full flex flex-col pt-12 p-6">
-				<header className=" bg-white rounded-md mb-4 px-6">
-					<h2 className="text-4xl font-bold text-gray-800 py-4">
-						Extra Activities
-					</h2>
+			<section className="w-full pt-12 p-6 flex flex-col h-full">
+				<header className="mb-4 px-6">
+					<h2 className="text-4xl font-bold">Extra Activities</h2>
 				</header>
-				<div className="flex-grow flex justify-evenly items-center">
+				<div className="flex-grow flex justify-center items-center gap-6 p-6 ">
 					{/* OS research */}
 					<Card
-						sx={{ width: 350 }}
-						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg hover:bg-blue-300 hover:text-blue-800"
+						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg hover:bg-blue-300 hover:text-blue-800 flex-1 h-full max-h-[390px]"
 						onClick={() => setOpen(true)}>
 						<OsResearch open={open} setOpen={setOpen} heading={"hiii"} />
 						<CardMedia
@@ -45,11 +42,9 @@ const Activities = () => {
 							</div>
 						</CardContent>
 					</Card>
-
 					{/* AI Selfie Module */}
 					<Card
-						sx={{ width: 350 }}
-						className="card rounded-lg overflow-hidden hover:-translate-y-2 hover:shadow-lg hover:bg-blue-300 hover:text-blue-800"
+						className="card rounded-lg overflow-hidden hover:-translate-y-2 hover:shadow-lg hover:bg-blue-300 hover:text-blue-800 flex-1 h-full max-h-[390px]"
 						onClick={() => setOpenSelfie(true)}>
 						<Selfie open={openSelfie} setOpen={setOpenSelfie} />
 						<CardMedia sx={{ height: 200 }} image="/images/extra/Selfie.jpg" />
@@ -66,11 +61,9 @@ const Activities = () => {
 							</div>
 						</CardContent>
 					</Card>
-
 					{/* AI Bots */}
 					<Card
-						sx={{ width: 350 }}
-						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg hover:bg-blue-300 hover:text-blue-800"
+						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg hover:bg-blue-300 hover:text-blue-800 flex-1 h-full max-h-[390px]"
 						onClick={() => setOpenAi(true)}>
 						<AiBot open={openAi} setOpen={setOpenAi} heading={"hii"} />
 						<CardMedia sx={{ height: 200 }} image="/images/extra/AI.jpg" />
@@ -80,6 +73,25 @@ const Activities = () => {
 									AI BOT
 								</p>
 								<h3 className="text-lg font-semibold">AI Bot (Managed WiFi)</h3>
+								<p className="text-sm text-gray-600">
+									Create distinct, natural-sounding questions that users might
+									ask an AI bot about WiFi.
+								</p>
+							</div>
+						</CardContent>
+					</Card>
+					{/* JioEducation Testing */}
+					<Card
+						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg hover:bg-blue-300 hover:text-blue-800 flex-1 h-full max-h-[390px]"
+						onClick={() => setOpenAi(true)}>
+						<AiBot open={openAi} setOpen={setOpenAi} heading={"hii"} />
+						<CardMedia sx={{ height: 200 }} image="/images/extra/AI.jpg" />
+						<CardContent>
+							<div className="p-4">
+								<p className="bg-blue-100 inline-block px-2 py-1 rounded-full text-blue-800 font-light font-mono text-xs mb-2">
+									AI BOT
+								</p>
+								<h3 className="text-lg font-semibold">Jio Education Testing</h3>
 								<p className="text-sm text-gray-600">
 									Create distinct, natural-sounding questions that users might
 									ask an AI bot about WiFi.

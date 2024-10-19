@@ -2,7 +2,11 @@ import { useState } from "react";
 import { FaProductHunt } from "react-icons/fa";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 import { IoClose } from "react-icons/io5";
-
+import Tab from "@mui/material/Tab";
+import TabContext from "@mui/lab/TabContext";
+import TabList from "@mui/lab/TabList";
+import TabPanel from "@mui/lab/TabPanel";
+import { Box } from "@mui/material";
 const products = [
 	{
 		name: "JioPC",
@@ -46,10 +50,15 @@ const products = [
 
 export default function JCPCProduct() {
 	const [open, setOpen] = useState(false);
+	const [value, setValue] = useState("0");
+
+	const handleChange = (event, newValue) => {
+		setValue(newValue);
+	};
 
 	return (
 		<div
-			className="rounded-lg p-6 text-sky-800 bg-sky-100 cursor-pointer"
+			className="rounded-lg p-6 text-sky-800 bg-sky-200 cursor-pointer"
 			onClick={() => setOpen(true)}>
 			<Dialog
 				open={open}
@@ -72,14 +81,67 @@ export default function JCPCProduct() {
 								</p>
 							</div>
 
-							<div className="bg-white px-4 pb-4 pt-5 ">
-								<div className="mt-3 text-center">
+							<div className="px-4 pb-4 pt-5 ">
+								{/* <div className="mt-3 text-center">
 									<div className="grid grid-cols-3 gap-4">
 										{products.map((product, index) => (
 											<DeviceCard key={index} product={product} />
 										))}
 									</div>
-								</div>
+								</div> */}
+								<TabContext value={value}>
+									<Box
+										sx={{
+											borderBottom: 1,
+											borderColor: "divider",
+											display: "flex",
+											justifyContent: "center",
+										}}>
+										<TabList onChange={handleChange}>
+											<Tab label="Jio PC" value="0" />
+											<Tab label="HP Chromebook" value="1" />
+											<Tab label="Lenovo Chrombook" value="2" />
+										</TabList>
+									</Box>
+									{products.map((product, index) => (
+										<TabPanel key={product.name} value={`${index}`}>
+											<div className="flex flex-col md:flex-row gap-6">
+												<div className="w-full md:w-1/2">
+													<img
+														src={`/images/devices/${product.img}.jpg`}
+														alt={product.name}
+														className="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+													/>
+												</div>
+												<div className="w-full md:w-1/2">
+													<h3 className="text-xl font-semibold mb-4">
+														{product.name} Specifications
+													</h3>
+													<ul className="space-y-2">
+														{product.specs.map((spec, index) => (
+															<li key={index} className="flex items-center">
+																<svg
+																	className="w-4 h-4 mr-2 text-green-500"
+																	fill="none"
+																	stroke="currentColor"
+																	viewBox="0 0 24 24"
+																	xmlns="http://www.w3.org/2000/svg">
+																	<path
+																		strokeLinecap="round"
+																		strokeLinejoin="round"
+																		strokeWidth={2}
+																		d="M5 13l4 4L19 7"
+																	/>
+																</svg>
+																{spec}
+															</li>
+														))}
+													</ul>
+												</div>
+											</div>
+										</TabPanel>
+									))}
+								</TabContext>
 							</div>
 						</DialogPanel>
 					</div>
