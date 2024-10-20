@@ -3,15 +3,18 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import CustomPieChart from "./charts/CustomPieChart";
 
 import { IoClose } from "react-icons/io5";
+import { Badge } from "@mui/material";
 
 export default function UserModal({ open, setOpen, user, heading }) {
 	const issue = [
-		{ id: 0, value: user.Blocker, label: "Blocker", color: "#991B1B" },
-		{ id: 1, value: user.Critical, label: "Critical", color: "#DC2626" },
-		{ id: 2, value: user.Major, label: "Major", color: "#F97316" },
-		{ id: 3, value: user.Normal, label: "Normal", color: "#A855F7" },
-		{ id: 4, value: user.Minor, label: "Minor", color: "#3B82F6" },
+		{ value: user.Blocker, label: "Blocker" },
+		{ value: user.Critical, label: "Critical" },
+		{ value: user.Major, label: "Major" },
+		{ value: user.Normal, label: "Normal" },
+		{ value: user.Minor, label: "Minor" },
 	];
+	const maxValue = Math.max(...issue.map((item) => item.value));
+	const totalIssues = issue.reduce((sum, item) => sum + item.value, 0);
 
 	return (
 		<Dialog
@@ -56,15 +59,15 @@ export default function UserModal({ open, setOpen, user, heading }) {
 										</div>
 									</div>
 								</div>
-								<div className="">
-									<p className="mt-4 text-gray-950 font-semibold">
-										{user["About"]}
-									</p>
-									<div className="mt-7 flex justify-between">
+								<div className="flex gap-4 mt-4">
+									<div className="pr-4 border-r border-blue-800 flex-1">
+										<p className="text-lg text-gray-950 font-normal">
+											{user["About"]}
+										</p>
 										<div>
 											{user["Courses Completed"] !== "" && (
 												<>
-													<h2 className="text-lg font-bold text-blue-800">
+													<h2 className="text-lg font-bold mt-4 text-blue-800">
 														Courses Completed:
 													</h2>
 													<ul className="text-gray-900 font-semibold">
@@ -92,8 +95,37 @@ export default function UserModal({ open, setOpen, user, heading }) {
 												</>
 											)}
 										</div>
-										<div className="flex justify-center items-center">
-											<CustomPieChart data={issue} radiusValue={30} />
+									</div>
+
+									<div className="flex-1 space-y-4 h-full">
+										{/* <CustomPieChart data={issue} radiusValue={30} /> */}
+										<h3 className="text-lg font-bold text-blue-800 mb-4">
+											Issues Severity Distribution
+										</h3>
+										{issue.map((item) => (
+											<div
+												key={item.name}
+												className="flex items-center group transition-all duration-300 ease-in-out hover:scale-105">
+												<div className="w-24 text-sm font-semibold group-hover:font-bold">
+													{item.label}
+												</div>
+												<div className="flex-1 h-6 bg-gray-200 rounded-full overflow-hidden transition-all duration-300 ease-in-out">
+													<div
+														className="h-full bg-blue-800"
+														style={{
+															width: `${(item.value / maxValue) * 100}%`,
+														}}
+													/>
+												</div>
+												<div className="w-12 text-right font-bold text-lg group-hover:text-lg transition-all duration-300 ease-in-out">
+													{item.value}
+												</div>
+											</div>
+										))}
+										<div className="mt-4 text-center">
+											<p className="text-lg py-1 bg-gray-300 inline-block rounded-full text-gray-800 font-bold px-2">
+												Total Issues: {totalIssues}
+											</p>
 										</div>
 									</div>
 								</div>

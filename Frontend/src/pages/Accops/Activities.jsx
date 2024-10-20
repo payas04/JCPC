@@ -5,12 +5,14 @@ import Selfie from "../../components/extra/Selfie";
 import OsResearch from "../../components/extra/OsResearch";
 import AiBot from "../../components/extra/AiBot";
 import { Card, CardContent, CardMedia } from "@mui/material";
+import JioEducation from "../../components/extra/JioEducation";
 
 const Activities = () => {
 	const [selectedCard, setSelectedCard] = useState(null);
 	const [open, setOpen] = useState(false);
 	const [openSelfie, setOpenSelfie] = useState(false);
 	const [openAi, setOpenAi] = useState(false);
+	const [openJio, setOpenJio] = useState(false);
 
 	return (
 		<div className="flex h-screen bg-gray-100">
@@ -66,7 +68,7 @@ const Activities = () => {
 						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg hover:bg-blue-300 hover:text-blue-800 flex-1 h-full max-h-[390px]"
 						onClick={() => setOpenAi(true)}>
 						<AiBot open={openAi} setOpen={setOpenAi} heading={"hii"} />
-						<CardMedia sx={{ height: 200 }} image="/images/extra/AI.jpg" />
+						<CardMedia sx={{ height: 200 }} image="/images/extra/AI.webp" />
 						<CardContent>
 							<div className="p-4">
 								<p className="bg-blue-100 inline-block px-2 py-1 rounded-full text-blue-800 font-light font-mono text-xs mb-2">
@@ -83,8 +85,8 @@ const Activities = () => {
 					{/* JioEducation Testing */}
 					<Card
 						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg hover:bg-blue-300 hover:text-blue-800 flex-1 h-full max-h-[390px]"
-						onClick={() => setOpenAi(true)}>
-						<AiBot open={openAi} setOpen={setOpenAi} heading={"hii"} />
+						onClick={() => setOpenJio(true)}>
+						<JioEducation open={openJio} setOpen={setOpenJio} heading={"hii"} />
 						<CardMedia sx={{ height: 200 }} image="/images/extra/IMC.webp" />
 						<CardContent>
 							<div className="p-4">
@@ -93,8 +95,8 @@ const Activities = () => {
 								</p>
 								<h3 className="text-lg font-semibold">JioEducation Testing</h3>
 								<p className="text-sm text-gray-600">
-									JioEducation is an application that was showcased at the
-									Indian Mobile Congress.
+									JioEducation is an application that was showcased at the India
+									Mobile Congress.
 								</p>
 							</div>
 						</CardContent>

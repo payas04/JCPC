@@ -27,9 +27,7 @@ const Selfie = ({ open, setOpen }) => {
 								AI Selfie Module
 							</p>
 						</div>
-						<div
-							className="p-8
-						">
+						<div className="p-8">
 							<div className="shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md mt-2 p-2">
 								<h4 className="font-bold text-2xl mb-4">Task Overview</h4>
 								<p className="text-lg font-semibold">
@@ -39,8 +37,8 @@ const Selfie = ({ open, setOpen }) => {
 									detailed statistics of the work completed.
 								</p>
 							</div>
-							<div className="flex mt-10 justify-evenly text-center shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md ">
-								<div className="flex flex-col">
+							<div className="flex mt-10 justify-evenly shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md">
+								<div className="flex flex-col border-r border-blue-800 pr-4 my-2">
 									<h4 className="font-bold text-2xl mb-4">Data Summary</h4>
 									<div className="h-full pb-4">
 										<table className="h-full">
@@ -61,8 +59,10 @@ const Selfie = ({ open, setOpen }) => {
 										</table>
 									</div>
 								</div>
-								<div className="relative">
-									<h4 className="font-bold text-2xl mb-4">Task Statistics</h4>
+								<div className="relative my-2">
+									<h4 className="font-bold text-2xl mb-4 pl-4">
+										Task Statistics
+									</h4>
 									{/* <p className="absolute  -rotate-90">Selfie Count</p> */}
 									<BarGraph barData={selfieBarData} />
 								</div>

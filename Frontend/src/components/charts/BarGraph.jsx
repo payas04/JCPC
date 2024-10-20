@@ -31,12 +31,12 @@ const BarGraph = ({ barData }) => {
 				<Legend />
 				<Bar
 					dataKey="Portrait"
-					fill="#E4C087"
+					fill="#82B7CA" //#E4C087
 					// activeBar={<Rectangle fill="pink" stroke="blue" />}
 				/>
 				<Bar
 					dataKey="Landscape"
-					fill="#BC7C7C"
+					fill="#82ca9d" //#BC7C7C
 					// activeBar={<Rectangle fill="gold" stroke="purple" />}
 				/>
 			</BarChart>

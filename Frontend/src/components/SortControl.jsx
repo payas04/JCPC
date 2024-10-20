@@ -8,8 +8,10 @@ const SortControls = ({
 	handleSortByScoreDesc,
 }) => {
 	return (
-		<div className="px-4">
-			<h3 className="font-semibold text-blue-800 text-xl mt-6 mb-2">Sort By</h3>
+		<div className="px-4 mt-6">
+			<h3 className="font-semibold text-blue-800 text-xl mt-12 mb-2">
+				Sort By
+			</h3>
 			<ul className="space-y-4 py-4">
 				<li
 					className="flex gap-2 py-2 px-4 items-center rounded-md bg-gray-200 shadow-lg cursor-pointer"

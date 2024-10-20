@@ -1,7 +1,6 @@
 import React from "react";
 import { IoClose } from "react-icons/io5";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
-import { selfieBarData } from "../../db/data";
 import BarGraph from "../charts/BarGraph";
 
 const AiBot = ({ open, setOpen }) => {
@@ -40,7 +39,7 @@ const AiBot = ({ open, setOpen }) => {
 							<div className="flex gap-2">
 								<div className="w-1/2 h-[100%] mt-10 shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md p-2">
 									<div className="mb-6">
-										<h4 className="font-bold text-2xl mb-2 text-center">
+										<h4 className="font-bold text-2xl mb-2 ">
 											Technical users
 										</h4>
 										<ul className="list-disc pl-6 text-lg font-semibold leading-6 mb-4">
@@ -54,7 +53,7 @@ const AiBot = ({ open, setOpen }) => {
 										</ul>
 									</div>
 									<div>
-										<h4 className="font-bold text-center text-2xl ">
+										<h4 className="font-bold  text-2xl ">
 											Non-Technical Users
 										</h4>
 										<ul className="list-disc pl-6 text-lg font-semibold leading-6">
@@ -69,9 +68,7 @@ const AiBot = ({ open, setOpen }) => {
 									</div>
 								</div>
 								<div className="w-1/2 mt-10 shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md p-2">
-									<h4 className="font-bold text-center text-2xl mb-4">
-										Data Summary
-									</h4>
+									<h4 className="font-bold  text-2xl mb-4">Data Summary</h4>
 									<ul className="list-disc pl-6 text-lg font-semibold leading-6">
 										<li>Technical Intents: 21</li>
 										<li>Technical Expressions: 300</li>
