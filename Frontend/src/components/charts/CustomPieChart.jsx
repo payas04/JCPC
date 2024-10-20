@@ -1,14 +1,15 @@
-import { PieChart } from "@mui/x-charts/PieChart";
+import { pieArcLabelClasses, PieChart } from "@mui/x-charts/PieChart";
 import { Box, Typography } from "@mui/material";
+import { ResponsiveChartContainer } from "@mui/x-charts";
 
-export default function CustomPieChart({ data, radiusValue, innerLabel }) {
+export default function CustomPieChart({ data, radiusValue, label, legend }) {
 	return (
 		<Box position="relative" display="inline-block">
 			<PieChart
 				series={[
 					{
 						data,
-						arcLabel: (item) => `${item.value}`,
+						arcLabel: label ? (item) => `${item.value}` : "",
 						arcLabelMinAngle: 1,
 						arcLabelRadius: "60%",
 						cx: "40%",
@@ -17,6 +18,13 @@ export default function CustomPieChart({ data, radiusValue, innerLabel }) {
 						innerRadius: radiusValue,
 					},
 				]}
+				slotProps={{ legend: { hidden: legend ? true : false } }}
+				sx={{
+					[`& .${pieArcLabelClasses.root}`]: {
+						fill: "white",
+						fontSize: 14,
+					},
+				}}
 				width={430}
 				height={250}
 			/>

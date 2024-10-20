@@ -1,14 +1,14 @@
 export const issuePieChart = [
-	{ id: 0, value: 241, label: "JioPC", color: "#2E8B57" }, //#20236D
-	{ id: 1, value: 96, label: "HP Chromebook", color: "#D2691E" },
+	{ id: 0, value: 241, label: "JioPC", color: "#82B7CA" }, //#20236D
+	{ id: 1, value: 96, label: "HP Chromebook", color: "#82ca9d" },
 ];
 
 export const totalIssuePieChart = [
-	{ id: 0, value: 1, label: "Blocker", color: "#991B1B" },
-	{ id: 1, value: 32, label: "Critical", color: "#DC2626" },
-	{ id: 2, value: 129, label: "Major", color: "#F97316" },
-	{ id: 3, value: 149, label: "Normal", color: "#A855F7" },
-	{ id: 4, value: 26, label: "Minor", color: "#3B82F6" },
+	{ id: 0, value: 1, label: "Blocker", color: "#ef4444" },
+	{ id: 1, value: 32, label: "Critical", color: "#fb923c" },
+	{ id: 2, value: 129, label: "Major", color: "#facc15" },
+	{ id: 3, value: 149, label: "Normal", color: "#0ea5e9" },
+	{ id: 4, value: 26, label: "Minor", color: "#a855f7" },
 ];
 export const openIssuePieChart = [
 	{ id: 0, value: 1, label: "Blocker", color: "#991B1B" },
@@ -22,7 +22,7 @@ export const jioPcWorkItems = [
 	{
 		title: "Launch Critical",
 		count: 3,
-		color: "bg-red-300",
+		color: "bg-red-200",
 		text: "text-red-800",
 		definition:
 			"Launch critical are the issues which are needed to be fixed before launching the product.",
@@ -54,8 +54,8 @@ export const jioPcWorkItems = [
 	{
 		title: "Ready for Test",
 		count: 0,
-		color: "bg-blue-200",
-		text: "text-blue-800",
+		color: "bg-sky-200",
+		text: "text-sky-800",
 		definition:
 			"Issues which have been raised and has  been resolved by developers and are ready for testing.",
 	},
@@ -103,8 +103,8 @@ export const hpWorkItems = [
 	{
 		title: "Ready for Test",
 		count: 0,
-		color: "bg-blue-200",
-		text: "text-blue-800",
+		color: "bg-sky-200",
+		text: "text-sky-800",
 		definition:
 			"Issues which have been raised and has  been resolved by developers and are ready for testing.",
 	},

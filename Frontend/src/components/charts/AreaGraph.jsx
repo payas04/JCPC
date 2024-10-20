@@ -11,7 +11,7 @@ import {
 
 const AreaGraph = ({ title, areaChartData }) => {
 	return (
-		<div style={{ width: "58%", height: 310 }}>
+		<div style={{ width: "58%", height: 310, maxWidth: 800 }}>
 			<h2 className="text-center font-semibold text-xl mb-5 pt-1">{title}</h2>
 
 			<ResponsiveContainer>

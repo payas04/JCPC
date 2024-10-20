@@ -82,13 +82,6 @@ export default function JCPCProduct() {
 							</div>
 
 							<div className="px-4 pb-4 pt-5 ">
-								{/* <div className="mt-3 text-center">
-									<div className="grid grid-cols-3 gap-4">
-										{products.map((product, index) => (
-											<DeviceCard key={index} product={product} />
-										))}
-									</div>
-								</div> */}
 								<TabContext value={value}>
 									<Box
 										sx={{
@@ -108,6 +101,7 @@ export default function JCPCProduct() {
 											<div className="flex flex-col md:flex-row gap-6">
 												<div className="w-full md:w-1/2">
 													<img
+														loading="eager"
 														src={`/images/devices/${product.img}.jpg`}
 														alt={product.name}
 														className="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"

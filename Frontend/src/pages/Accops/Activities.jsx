@@ -85,16 +85,16 @@ const Activities = () => {
 						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg hover:bg-blue-300 hover:text-blue-800 flex-1 h-full max-h-[390px]"
 						onClick={() => setOpenAi(true)}>
 						<AiBot open={openAi} setOpen={setOpenAi} heading={"hii"} />
-						<CardMedia sx={{ height: 200 }} image="/images/extra/AI.jpg" />
+						<CardMedia sx={{ height: 200 }} image="/images/extra/IMC.webp" />
 						<CardContent>
 							<div className="p-4">
 								<p className="bg-blue-100 inline-block px-2 py-1 rounded-full text-blue-800 font-light font-mono text-xs mb-2">
-									AI BOT
+									IMC
 								</p>
-								<h3 className="text-lg font-semibold">Jio Education Testing</h3>
+								<h3 className="text-lg font-semibold">JioEducation Testing</h3>
 								<p className="text-sm text-gray-600">
-									Create distinct, natural-sounding questions that users might
-									ask an AI bot about WiFi.
+									JioEducation is an application that was showcased at the
+									Indian Mobile Congress.
 								</p>
 							</div>
 						</CardContent>

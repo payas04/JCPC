@@ -5,22 +5,26 @@ import {
 	DialogTitle,
 } from "@headlessui/react";
 import CustomPieChart from "./charts/CustomPieChart";
-import { IoClose } from "react-icons/io5";
+import { IoClose, IoDownloadSharp } from "react-icons/io5";
 
-export default function CustomModal({ open, setOpen, heading, pieData }) {
+export default function CustomModal({
+	open,
+	setOpen,
+	heading,
+	pieData = [],
+	totalIssues,
+}) {
 	return (
-		<Dialog open={open} onClose={setOpen} className="relative z-10">
-			<DialogBackdrop
-				transition
-				className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
-			/>
+		<Dialog
+			open={open}
+			onClose={() => setOpen(false)}
+			className="relative z-10">
+			<DialogBackdrop className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
 
 			<div className="fixed inset-0 z-10 w-screen overflow-y-auto">
 				<div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-					<DialogPanel
-						transition
-						className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:w-full sm:max-w-lg data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95">
-						<div className="absolute right-4 top-4 flex justify-end  ">
+					<DialogPanel className="relative max-w-[80%] transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all ">
+						<div className="absolute right-4 top-4 flex justify-end cursor-pointer">
 							<IoClose
 								onClick={() => setOpen(false)}
 								color="black"
@@ -30,14 +34,55 @@ export default function CustomModal({ open, setOpen, heading, pieData }) {
 						</div>
 
 						<div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-							<div className="mt-3 text-center flex flex-col items-center gap-6">
+							<div className="mt-3 flex flex-col items-center gap-6">
 								<DialogTitle
 									as="h3"
 									className="text-3xl font-semibold leading-6 text-gray-900">
 									{heading}
+									<p className="text-base font-normal mt-2">
+										Distribution of issues by severity
+									</p>
 								</DialogTitle>
-
-								<CustomPieChart data={pieData} radiusValue={30} />
+								<div className="grid grid-cols-2 gap-4 text-left w-full">
+									<span className="bg-gray-100 text-gray-800 rounded-lg px-2 py-4">
+										<p className="font-bold text-3xl">{totalIssues}</p>
+										<p className="font-normal">Total Issues</p>
+									</span>
+									<span className="bg-red-100 text-red-800 rounded-lg px-2 py-4">
+										<p className="font-bold text-3xl">1</p>
+										<p className="font-normal">Blocker Issues</p>
+									</span>
+								</div>
+								<div className="flex relative">
+									<div className="">
+										<CustomPieChart data={pieData} legend={"false"} />
+									</div>
+									<div className="absolute space-y-4 right-0 top-[15%] ">
+										{pieData.map((item) => (
+											<div
+												key={item.id}
+												className="flex justify-between items-center gap-4">
+												<div className="flex items-center">
+													<div
+														className="w-4 h-4 mr-2 rounded-md"
+														style={{ backgroundColor: item.color }}
+													/>
+													<span className="text-sm font-medium">
+														{item.label}
+													</span>
+												</div>
+												<div className="flex gap-1">
+													<span className="ml-auto text-sm font-bold">
+														{item.value}
+													</span>
+													<span className="text-sm text-muted-foreground">
+														({((item.value / totalIssues) * 100).toFixed(1)}%)
+													</span>
+												</div>
+											</div>
+										))}
+									</div>
+								</div>
 							</div>
 						</div>
 					</DialogPanel>

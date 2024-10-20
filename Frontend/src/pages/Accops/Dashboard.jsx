@@ -95,7 +95,11 @@ const Dashboard = () => {
 							Total Issues Raised (23th Aug - 15th Oct)
 						</div>
 						<div className="w-full flex items-center justify-center">
-							<CustomPieChart data={issuePieChart} radiusValue={30} />
+							<CustomPieChart
+								data={issuePieChart}
+								radiusValue={30}
+								label={"true"}
+							/>
 						</div>
 					</div>
 				</div>

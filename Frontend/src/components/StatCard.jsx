@@ -32,6 +32,7 @@ const StatCard = ({
 				setOpen={setOpen}
 				heading={title}
 				pieData={pieData}
+				totalIssues={value}
 			/>
 			<div className="flex justify-between items-start mb-4">
 				<div>

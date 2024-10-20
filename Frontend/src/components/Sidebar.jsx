@@ -44,11 +44,8 @@ const Li = ({ url, title, Icon, location }) => {
 			style={{
 				backgroundColor: location.pathname.includes(url) ? "#f3f4f6" : "",
 				padding: "5px 12px",
-				borderTopLeftRadius: "50px",
-				borderBottomLeftRadius: "50px",
-				marginLeft: "20px",
 			}}
-			className="hover:bg-blue-950 cursor-pointer"
+			className="hover:bg-blue-950 cursor-pointer rounded-xl mx-4"
 			onClick={() => {
 				navigate(`${url}`);
 			}}>
