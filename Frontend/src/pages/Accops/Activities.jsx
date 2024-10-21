@@ -21,7 +21,7 @@ const Activities = () => {
 				<header className="mb-4 px-6">
 					<h2 className="text-4xl font-bold">Extra Activities</h2>
 				</header>
-				<div className="flex-grow flex justify-center items-center gap-6 p-6 ">
+				<div className="flex-grow flex justify-center items-center gap-6 p-6 mb-10">
 					{/* OS research */}
 					<Card
 						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg hover:bg-blue-300 hover:text-blue-800 flex-1 h-full max-h-[390px]"
@@ -101,55 +101,6 @@ const Activities = () => {
 							</div>
 						</CardContent>
 					</Card>
-				</div>
-				<div className="relative mb-4">
-					{/* Wave-like SVG pattern */}
-
-					{/* Floating technology-related icons */}
-					<div className="absolute inset-0 overflow-hidden">
-						<div className="absolute top-20 right-1/3 animate-float-delayed">
-							<svg
-								className="w-10 h-10 text-green-500 opacity-50"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-								xmlns="http://www.w3.org/2000/svg">
-								<path
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth={2}
-									d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-								/>
-							</svg>
-						</div>
-						<div className="absolute bottom-10 left-1/3 animate-float">
-							<svg
-								className="w-8 h-8 text-purple-500 opacity-50"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-								xmlns="http://www.w3.org/2000/svg">
-								<path
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth={2}
-									d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
-								/>
-							</svg>
-						</div>
-					</div>
-
-					{/* Subtle grid pattern */}
-					<div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-
-					{/* Inspirational quote */}
-					<div className="relative z-10 text-center py-12">
-						<blockquote className="text-xl font-semibold text-gray-700 italic ">
-							"If you work with determination and with perfection, success will
-							follow.”
-						</blockquote>
-						<cite className="block mt-4 text-gray-600">- Dhirubhai Ambani</cite>
-					</div>
 				</div>
 			</section>
 		</div>

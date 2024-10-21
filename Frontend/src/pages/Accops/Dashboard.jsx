@@ -92,7 +92,7 @@ const Dashboard = () => {
 					</div>
 					<div className="md:row-span-2 w-[36%]">
 						<div className="mb-4 font-semibold text-xl flex items-center justify-center text-black ">
-							Total Issues Raised (23th Aug - 15th Oct)
+							Total Issues Raised (23rd Aug - 15th Oct)
 						</div>
 						<div className="w-full flex items-center justify-center">
 							<CustomPieChart
@@ -109,14 +109,14 @@ const Dashboard = () => {
 				<section className=" text-black mb-4 p-6 rounded-lg flex gap-10 ">
 					<JioPcObservation title="JioPC" workItems={jioPcWorkItems} />
 					<AreaChart
-						title="Issues Raised (23th Aug - 15th Oct)"
+						title="Issues Raised (23rd Aug - 15th Oct)"
 						areaChartData={jioPcAreaChartData}
 					/>
 				</section>
 				<section className=" text-black mb-4 p-6 rounded-lg flex gap-10 ">
 					<JioPcObservation title="HP Chromebook" workItems={hpWorkItems} />
 					<AreaChart
-						title="Issues Raised (23th Aug - 15th Oct)"
+						title="Issues Raised (23rd Aug - 15th Oct)"
 						areaChartData={hpAreaChartData}
 					/>
 				</section>

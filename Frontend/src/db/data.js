@@ -21,7 +21,7 @@ export const openIssuePieChart = [
 export const jioPcWorkItems = [
 	{
 		title: "Launch Critical",
-		count: 3,
+		count: 15,
 		color: "bg-red-200",
 		text: "text-red-800",
 		definition:
@@ -29,7 +29,7 @@ export const jioPcWorkItems = [
 	},
 	{
 		title: "Open Blocker",
-		count: 0,
+		count: 9,
 		color: "bg-orange-200",
 		text: "text-orange-800",
 		definition:
@@ -37,7 +37,7 @@ export const jioPcWorkItems = [
 	},
 	{
 		title: "Open Critical",
-		count: 12,
+		count: 74,
 		color: "bg-yellow-200",
 		text: "text-yellow-800",
 		definition:
@@ -45,7 +45,7 @@ export const jioPcWorkItems = [
 	},
 	{
 		title: "Product Confirmation",
-		count: 0,
+		count: 8,
 		color: "bg-purple-200",
 		text: "text-purple-800",
 		definition:
@@ -61,7 +61,7 @@ export const jioPcWorkItems = [
 	},
 	{
 		title: "JioPC Accops Issues",
-		count: 0,
+		count: 27,
 		color: "bg-green-200",
 		text: "text-green-800",
 		definition: "Issues which are raised for accops in JioPC.",
@@ -70,7 +70,7 @@ export const jioPcWorkItems = [
 export const hpWorkItems = [
 	{
 		title: "Launch Critical",
-		count: 0,
+		count: 1,
 		color: "bg-red-200",
 		text: "text-red-800",
 		definition:
@@ -78,7 +78,7 @@ export const hpWorkItems = [
 	},
 	{
 		title: "Open Blocker",
-		count: 1,
+		count: 4,
 		color: "bg-orange-200",
 		text: "text-orange-800",
 		definition:
@@ -86,7 +86,7 @@ export const hpWorkItems = [
 	},
 	{
 		title: "Open Critical",
-		count: 6,
+		count: 13,
 		color: "bg-yellow-200",
 		text: "text-yellow-800",
 		definition:
@@ -98,7 +98,7 @@ export const hpWorkItems = [
 		color: "bg-purple-200",
 		text: "text-purple-800",
 		definition:
-			"Issues awaiting confirmation from the product team on whether they will be included in the scope of the project.",
+			"Issues awaiting product team confirmation for project scope inclusion.",
 	},
 	{
 		title: "Ready for Test",
@@ -110,7 +110,7 @@ export const hpWorkItems = [
 	},
 	{
 		title: "HP Accops Issues",
-		count: 4,
+		count: 39,
 		color: "bg-green-200",
 		text: "text-green-800",
 		definition: "Issues which are raised for accops in HP Chromebook.",
@@ -181,8 +181,15 @@ export const selfieBarData = [
 	},
 ];
 
-export const aiBotData = [
+export const aiBotBarData = [
 	{
-		intent: 20,
+		name: "Technical",
+		intents: 21,
+		expressions: 300,
+	},
+	{
+		name: "Non Technical",
+		intents: 20,
+		expressions: 181,
 	},
 ];

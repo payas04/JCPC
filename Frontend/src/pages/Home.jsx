@@ -70,10 +70,10 @@ export default function Home() {
 				/>
 				<Draggable bounds="parent" defaultPosition={{ x: 25, y: 60 }}>
 					<div
-						className={`w-28 h-28 pt-1 text-center cursor-pointer ${
+						className={`w-28 h-28 pt-1 text-center cursor-pointer rounded-lg ${
 							selectedIcon === "JioCloudPC"
-								? "bg-blue-500  bg-opacity-50 rounded-lg"
-								: ""
+								? "bg-blue-500  bg-opacity-50 "
+								: "hover:bg-white/20 "
 						}`}
 						onClick={(e) => handleIconClick("JioCloudPC", e)}
 						onDoubleClick={() => {
@@ -90,10 +90,30 @@ export default function Home() {
 				</Draggable>
 				<Draggable defaultPosition={{ x: 25, y: 90 }}>
 					<div
-						className={`w-28 h-28 pt-1 text-center cursor-pointer ${
+						className={`w-28 h-28 pt-1 text-center cursor-pointer rounded-lg  ${
+							selectedIcon === "Devops"
+								? "bg-blue-500  bg-opacity-50 "
+								: "hover:bg-white/20"
+						}`}
+						onClick={(e) => handleIconClick("Devops", e)}
+						onDoubleClick={() => {
+							window.open(`${import.meta.env.VITE_DEVOPS_LINK}`, "_blank");
+						}}>
+						<img
+							src="/images/icons/Devops.webp"
+							alt="Devops logo"
+							className="w-[50px] h-[50px] rounded-lg block mx-auto mb-3"
+						/>
+						<MdShortcut className="absolute top-10 left-5 bg-blue-600 rounded-sm w-5" />
+						Azure Devops
+					</div>
+				</Draggable>
+				<Draggable defaultPosition={{ x: 25, y: 120 }}>
+					<div
+						className={`w-28 h-28 pt-1 text-center cursor-pointer rounded-lg ${
 							selectedIcon === "Chrome"
-								? "bg-blue-500  bg-opacity-50 rounded-lg"
-								: ""
+								? "bg-blue-500  bg-opacity-50"
+								: "hover:bg-white/20"
 						}`}
 						onClick={(e) => handleIconClick("Chrome", e)}
 						onDoubleClick={() => {
@@ -106,23 +126,6 @@ export default function Home() {
 						/>
 						<MdShortcut className="absolute top-10 left-5 bg-blue-600 rounded-sm w-5" />
 						Chrome
-					</div>
-				</Draggable>
-				<Draggable defaultPosition={{ x: 25, y: 120 }}>
-					<div
-						className={`w-28 h-28 pt-1 text-center cursor-pointer ${
-							selectedIcon === "Devops"
-								? "bg-blue-500  bg-opacity-50 rounded-lg"
-								: ""
-						}`}
-						onClick={(e) => handleIconClick("Devops", e)}>
-						<img
-							src="/images/icons/Devops.webp"
-							alt="Devops logo"
-							className="w-[50px] h-[50px] rounded-lg block mx-auto mb-3"
-						/>
-						<MdShortcut className="absolute top-10 left-5 bg-blue-600 rounded-sm w-5" />
-						Azure Devops
 					</div>
 				</Draggable>
 				<img

@@ -2,6 +2,17 @@ import React from "react";
 import { IoClose } from "react-icons/io5";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 import BarGraph from "../charts/BarGraph";
+import {
+	BarChart,
+	Bar,
+	XAxis,
+	YAxis,
+	CartesianGrid,
+	Tooltip,
+	Legend,
+	ResponsiveContainer,
+} from "recharts";
+import { aiBotBarData } from "../../db/data";
 
 const AiBot = ({ open, setOpen }) => {
 	return (
@@ -37,7 +48,7 @@ const AiBot = ({ open, setOpen }) => {
 								</p>
 							</div>
 							<div className="flex gap-2">
-								<div className="w-1/2 h-[100%] mt-10 shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md p-2">
+								<div className="flex-1  mt-10 shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md p-2">
 									<div className="mb-6">
 										<h4 className="font-bold text-2xl px-1 mb-2">
 											Technical users
@@ -67,15 +78,55 @@ const AiBot = ({ open, setOpen }) => {
 										</ol>
 									</div>
 								</div>
-								<div className="w-1/2 mt-10 shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md p-2">
+								<div className="flex-1 mt-10 shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md p-2 ">
 									<h4 className="font-bold text-2xl mb-2 px-1">Data Summary</h4>
 									<ul className="list-disc pl-6 text-lg font-semibold leading-6">
 										<li>Technical Intents: 21</li>
 										<li>Technical Expressions: 300</li>
 										<li>Non Technical Intents: 20</li>
 										<li>Non Technical Expressions: 181</li>
-										<li>Total Expressions without filteration : 920</li>
 									</ul>
+									<div className="py-4">
+										<h4 className="font-bold text-xl mb-2 px-1">
+											Intents and Expressions Comparison
+										</h4>
+										<p className="font-normal text-sm text-gray-500 px-1">
+											Technical vs Non-Technical
+										</p>
+									</div>
+									<div style={{ width: "100%", height: 200, maxWidth: 800 }}>
+										<ResponsiveContainer>
+											<BarChart
+												width={500}
+												height={300}
+												data={aiBotBarData}
+												margin={{
+													top: 5,
+													right: 30,
+													left: 20,
+													bottom: 5,
+												}}>
+												<CartesianGrid strokeDasharray="3 3" />
+												<XAxis dataKey="name" />
+												<YAxis />
+												<Tooltip />
+												<Legend />
+												<Bar
+													dataKey="intents"
+													fill="#82B7CA" //#E4C087
+													// activeBar={<Rectangle fill="pink" stroke="blue" />}
+												/>
+												<Bar
+													dataKey="expressions"
+													fill="#82ca9d" //#BC7C7C
+													// activeBar={<Rectangle fill="gold" stroke="purple" />}
+												/>
+											</BarChart>
+										</ResponsiveContainer>
+									</div>
+									<p className="px-2 text-center font-semibold">
+										Total Expressions without filteration : 920
+									</p>
 								</div>
 							</div>
 						</div>

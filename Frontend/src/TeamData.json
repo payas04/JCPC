@@ -141,7 +141,7 @@
 		"Normal": 1,
 		"Minor": 0,
 		"Total_score": 34,
-		"Tags": "Team Lead"
+		"Tags": "JCPC Lead"
 	},
 	{
 		"Domain": "Hamza5.Shaikh",
@@ -173,7 +173,7 @@
 		"Normal": 8,
 		"Minor": 1,
 		"Total_score": 61,
-		"Tags": "Validator"
+		"Tags": "Tester"
 	},
 	{
 		"Domain": "Jay.Pandit",
@@ -317,7 +317,7 @@
 		"Normal": 9,
 		"Minor": 0,
 		"Total_score": 47,
-		"Tags": "Validator"
+		"Tags": "Released"
 	},
 	{
 		"Domain": "Nishad.Khare",
@@ -653,7 +653,7 @@
 		"Normal": 1,
 		"Minor": 0,
 		"Total_score": 34,
-		"Tags": "Team Lead"
+		"Tags": "JCPC Lead"
 	},
 	{
 		"Domain": "Yash.Amin",

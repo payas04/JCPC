@@ -12,14 +12,16 @@ const WorkItemTile = ({ title, count, color, text, definition }) => {
 	return (
 		<div onMouseEnter={handleHover} onMouseLeave={handleHover}>
 			<ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal ">
-				<div className={`p-4 ${color} ${text} rounded-lg shadow-md h-36`}>
+				<div
+					className={`p-4 ${color} ${text} rounded-lg shadow-md h-36 min-w-[205px]`}>
 					<h2 className="text-lg font-normal mb-2">{title}</h2>
 					<p className="text-4xl font-semibold mb-2">{count}</p>
 					<p className="text-sm">Work items</p>
 				</div>
 
-				<div className={`p-4 ${color} ${text}  rounded-lg shadow-md h-36`}>
-					<h2 className="text-lg font-semibold mb-2">{title}</h2>
+				<div
+					className={`p-4 ${color} ${text}  rounded-lg shadow-md h-36 min-w-[205px]`}>
+					<h2 className="text-lg font-normal mb-2">{title}</h2>
 					<p className="text-sm font-normal mb-2">{definition}</p>
 				</div>
 			</ReactCardFlip>
