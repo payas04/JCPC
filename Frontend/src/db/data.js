@@ -49,7 +49,7 @@ export const jioPcWorkItems = [
 		color: "bg-purple-200",
 		text: "text-purple-800",
 		definition:
-			"Issues awaiting confirmation from the product team on whether they will be included in the scope of the project.",
+			"Issues awaiting product team confirmation for project scope inclusion.",
 	},
 	{
 		title: "Ready for Test",
