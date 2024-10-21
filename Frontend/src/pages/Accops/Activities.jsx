@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../styles/activities.css"; // Adjust path as necessary
+import "../../styles/activities.css";
 import Sidebar from "../../components/Sidebar";
 import Selfie from "../../components/extra/Selfie";
 import OsResearch from "../../components/extra/OsResearch";
@@ -17,7 +17,7 @@ const Activities = () => {
 	return (
 		<div className="flex h-screen bg-gray-100">
 			<Sidebar />
-			<section className="w-full pt-12 p-6 flex flex-col h-full">
+			<section className="w-full pt-12 p-6 flex flex-col h-full overflow-scroll">
 				<header className="mb-4 px-6">
 					<h2 className="text-4xl font-bold">Extra Activities</h2>
 				</header>
@@ -32,7 +32,7 @@ const Activities = () => {
 							image="/images/extra/OS_Image.webp"
 						/>
 						<CardContent>
-							<div className="p-4">
+							<div className="">
 								<p className="bg-blue-100 inline-block px-2 py-1 rounded-full text-blue-800 font-light font-mono text-xs mb-2">
 									RESEARCH
 								</p>
@@ -51,7 +51,7 @@ const Activities = () => {
 						<Selfie open={openSelfie} setOpen={setOpenSelfie} />
 						<CardMedia sx={{ height: 200 }} image="/images/extra/Selfie.jpg" />
 						<CardContent>
-							<div className="p-4">
+							<div className="">
 								<p className="bg-blue-100 inline-block px-2 py-1 rounded-full text-blue-800 font-light font-mono text-xs mb-2">
 									SELFIE
 								</p>
@@ -70,7 +70,7 @@ const Activities = () => {
 						<AiBot open={openAi} setOpen={setOpenAi} heading={"hii"} />
 						<CardMedia sx={{ height: 200 }} image="/images/extra/AI.webp" />
 						<CardContent>
-							<div className="p-4">
+							<div className="">
 								<p className="bg-blue-100 inline-block px-2 py-1 rounded-full text-blue-800 font-light font-mono text-xs mb-2">
 									AI BOT
 								</p>
@@ -89,7 +89,7 @@ const Activities = () => {
 						<JioEducation open={openJio} setOpen={setOpenJio} heading={"hii"} />
 						<CardMedia sx={{ height: 200 }} image="/images/extra/IMC.webp" />
 						<CardContent>
-							<div className="p-4">
+							<div className="">
 								<p className="bg-blue-100 inline-block px-2 py-1 rounded-full text-blue-800 font-light font-mono text-xs mb-2">
 									IMC
 								</p>

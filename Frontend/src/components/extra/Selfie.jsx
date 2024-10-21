@@ -38,7 +38,7 @@ const Selfie = ({ open, setOpen }) => {
 								</p>
 							</div>
 							<div className="flex mt-10 justify-evenly shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md">
-								<div className="flex flex-col border-r border-blue-800 pr-4 my-2">
+								<div className="flex-1 flex flex-col border-r border-blue-800 pr-4 m-2">
 									<h4 className="font-bold text-2xl mb-4">Data Summary</h4>
 									<div className="h-full pb-4">
 										<table className="h-full">
@@ -59,7 +59,7 @@ const Selfie = ({ open, setOpen }) => {
 										</table>
 									</div>
 								</div>
-								<div className="relative my-2">
+								<div className="relative my-2 flex-1">
 									<h4 className="font-bold text-2xl mb-4 pl-4">
 										Task Statistics
 									</h4>

@@ -7,6 +7,7 @@ const JioEducation = ({ open, setOpen }) => {
 		{ version: "4.0(10)", issues: 13 },
 		{ version: "4.0(14)", issues: 7 },
 		{ version: "4.0(15)", issues: 4 },
+		{ version: "Total", issues: 24 },
 	];
 
 	const maxIssues = Math.max(...buildData.map((build) => build.issues));

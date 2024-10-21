@@ -9,6 +9,7 @@ import Clock from "./Clock";
 import Calender from "./Calender";
 import { MdOutlineBatteryFull, MdOutlineSignalWifi4Bar } from "react-icons/md";
 import { useAuth } from "../context/auth";
+import { Tooltip } from "@mui/material";
 
 const Footer = () => {
 	const navigate = useNavigate();
@@ -61,22 +62,31 @@ const Footer = () => {
 			</div>
 
 			<div className="flex gap-1">
-				<span className=" bg-white bg-opacity-10 rounded-full w-[40px] h-[40px] flex justify-center items-center">
-					<LuListMusic size={20} />
-				</span>
-				<span className=" bg-white bg-opacity-10 rounded-s-3xl rounded-e-md w-[70px] h-[40px] flex justify-center items-center gap-1 px-5">
-					<FaArrowAltCircleUp size={20} className="min-w-[20px] min-h-[20px]" />
-					<PiNumberCircleTwoFill
-						size={50}
-						className="min-w-[23px] min-h-[20px]"
-					/>
-				</span>
+				<Tooltip title="Work In Progress">
+					<span className=" bg-white bg-opacity-10 rounded-s-3xl rounded-md w-[40px] h-[40px] flex justify-center items-center">
+						<LuListMusic size={20} />
+					</span>
+				</Tooltip>
+				<Tooltip title="File downloading...">
+					<span className=" bg-white bg-opacity-10 rounded-md w-[70px] h-[40px] flex justify-center items-center gap-1 px-5">
+						<FaArrowAltCircleUp
+							size={20}
+							className="min-w-[20px] min-h-[20px]"
+						/>
+						<PiNumberCircleTwoFill
+							size={50}
+							className="min-w-[23px] min-h-[20px]"
+						/>
+					</span>
+				</Tooltip>
 				<Calender />
 				<Clock />
-				<span className=" bg-white bg-opacity-10 rounded-s-md rounded-se-3xl rounded-ee-md w-fit flex justify-center items-center gap-1 px-2">
-					<MdOutlineSignalWifi4Bar size={20} />
-					<MdOutlineBatteryFull size={20} />
-				</span>
+				<Tooltip title="Make sure to connect your Wifi and keep your battery full">
+					<span className=" bg-white bg-opacity-10 rounded-md rounded-e-3xl w-fit flex justify-center items-center gap-1 px-2">
+						<MdOutlineSignalWifi4Bar size={20} />
+						<MdOutlineBatteryFull size={20} />
+					</span>
+				</Tooltip>
 			</div>
 		</div>
 	);
