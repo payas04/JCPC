@@ -68,7 +68,7 @@ const Dashboard = () => {
 							shouldOpenModal={true}
 						/>
 						<StatCard
-							title="Open Issues"
+							title="JioPC Open Issues"
 							value={openIssuePieChart.reduce(
 								(acc, item) => acc + item.value,
 								0

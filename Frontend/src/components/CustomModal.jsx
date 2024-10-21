@@ -34,7 +34,7 @@ export default function CustomModal({
 						</div>
 
 						<div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-							<div className="mt-3 flex flex-col items-center gap-6">
+							<div className="mt-3 flex flex-col  gap-6">
 								<DialogTitle
 									as="h3"
 									className="text-3xl font-semibold leading-6 text-gray-900 w-full">
@@ -53,7 +53,7 @@ export default function CustomModal({
 										<p className="font-normal">Blocker Issues</p>
 									</span>
 								</div>
-								<div className="flex relative">
+								<div className="relative">
 									<div className="">
 										<CustomPieChart
 											data={pieData}
@@ -61,7 +61,7 @@ export default function CustomModal({
 											radiusValue={60}
 										/>
 									</div>
-									<div className="absolute space-y-4 -right-14 top-[8%] ">
+									<div className="absolute space-y-4 right-5 top-[8%] ">
 										{pieData.map((item) => (
 											<div
 												key={item.id}
