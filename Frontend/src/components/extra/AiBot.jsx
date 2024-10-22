@@ -47,9 +47,9 @@ const AiBot = ({ open, setOpen }) => {
 									reflect two user segments.
 								</p>
 							</div>
-							<div className="flex gap-2">
-								<div className="flex-1  mt-10 shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md p-2">
-									<div className="mb-6">
+							<div className="flex gap-2 mt-10 shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md p-2">
+								<div className="flex-1 border-r-2 pr-2 ">
+									<div className="mb-3">
 										<h4 className="font-bold text-2xl px-1 mb-2">
 											Technical users
 										</h4>
@@ -78,7 +78,7 @@ const AiBot = ({ open, setOpen }) => {
 										</ol>
 									</div>
 								</div>
-								<div className="flex-1 mt-10 shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md p-2 ">
+								<div className="flex-1  ">
 									<h4 className="font-bold text-2xl mb-2 px-1">Data Summary</h4>
 									<ul className="list-disc pl-6 text-lg font-semibold leading-6">
 										<li>Technical Intents: 21</li>

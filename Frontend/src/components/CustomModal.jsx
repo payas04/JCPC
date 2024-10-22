@@ -75,11 +75,11 @@ export default function CustomModal({
 														{item.label}
 													</span>
 												</div>
-												<div className="flex gap-2">
+												<div className="flex">
 													<span className="ml-auto text-base font-bold bg-gray-200 rounded-md px-1 text-gray-800">
 														{item.value}
 													</span>
-													<span className="text-base text-muted-foreground">
+													<span className="text-base text-muted-foreground w-14 text-right">
 														({((item.value / totalIssues) * 100).toFixed(1)}%)
 													</span>
 												</div>

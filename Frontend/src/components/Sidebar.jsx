@@ -19,16 +19,16 @@ const Sidebar = () => {
 							Icon={<MdSpaceDashboard />}
 						/>
 						<Li
-							url="/accops/jiocloudpc"
-							title="Team"
-							location={location}
-							Icon={<RiTeamFill />}
-						/>
-						<Li
 							url="/accops/Activities"
 							title="Extra Activities"
 							location={location}
 							Icon={<FaTasks />}
+						/>
+						<Li
+							url="/accops/jiocloudpc"
+							title="Team"
+							location={location}
+							Icon={<RiTeamFill />}
 						/>
 					</ul>
 				</nav>

@@ -10,12 +10,19 @@ export const totalIssuePieChart = [
 	{ id: 3, value: 149, label: "Normal", color: "#60a5fa" },
 	{ id: 4, value: 26, label: "Minor", color: "#34d399" },
 ];
-export const openIssuePieChart = [
+export const jioPcOpenIssuePieChart = [
 	{ id: 0, value: 1, label: "Blocker", color: "#f87171" },
-	{ id: 1, value: 18, label: "Critical", color: "#fb923c" },
-	{ id: 2, value: 53, label: "Major", color: "#facc15" },
+	{ id: 1, value: 17, label: "Critical", color: "#fb923c" },
+	{ id: 2, value: 59, label: "Major", color: "#facc15" },
 	{ id: 3, value: 39, label: "Normal", color: "#60a5fa" },
 	{ id: 4, value: 15, label: "Minor", color: "#34d399" },
+];
+export const hpOpenIssuePieChart = [
+	{ id: 0, value: 1, label: "Blocker", color: "#f87171" },
+	{ id: 1, value: 6, label: "Critical", color: "#fb923c" },
+	{ id: 2, value: 4, label: "Major", color: "#facc15" },
+	{ id: 3, value: 1, label: "Normal", color: "#60a5fa" },
+	{ id: 4, value: 1, label: "Minor", color: "#34d399" },
 ];
 
 export const jioPcWorkItems = [

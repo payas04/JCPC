@@ -9,12 +9,13 @@ import AreaChart from "../../components/charts/AreaGraph";
 import Typewriter from "typewriter-effect";
 import {
 	issuePieChart,
-	openIssuePieChart,
 	totalIssuePieChart,
 	jioPcWorkItems,
 	hpWorkItems,
 	jioPcAreaChartData,
 	hpAreaChartData,
+	hpOpenIssuePieChart,
+	jioPcOpenIssuePieChart,
 } from "../../db/data";
 import { useNavigate } from "react-router-dom";
 import JCPCProduct from "../../components/JCPCProduct";
@@ -67,28 +68,40 @@ const Dashboard = () => {
 							pieData={totalIssuePieChart}
 							shouldOpenModal={true}
 						/>
+						<JCPCProduct />
 						<StatCard
 							title="JioPC Open Issues"
-							value={openIssuePieChart.reduce(
+							value={jioPcOpenIssuePieChart.reduce(
 								(acc, item) => acc + item.value,
 								0
 							)}
 							color="bg-amber-200"
 							textColor="text-amber-800"
 							icon={Bug}
-							pieData={openIssuePieChart}
+							pieData={jioPcOpenIssuePieChart}
 							shouldOpenModal={true}
 						/>
 						<StatCard
+							title="HP Chromebook Open Issues"
+							value={hpOpenIssuePieChart.reduce(
+								(acc, item) => acc + item.value,
+								0
+							)}
+							color="bg-purple-200"
+							textColor="text-purple-800"
+							icon={Bug}
+							pieData={hpOpenIssuePieChart}
+							shouldOpenModal={true}
+						/>
+						{/* <StatCard
 							title="Total Members"
 							value={TeamData.length}
 							color="bg-purple-200"
 							textColor="text-purple-800"
 							icon={Users}
-						/>
+						/> */}
 
 						{/* JCPC productss */}
-						<JCPCProduct />
 					</div>
 					<div className="md:row-span-2 w-[36%]">
 						<div className="mb-4 font-semibold text-xl flex items-center justify-center text-black ">
