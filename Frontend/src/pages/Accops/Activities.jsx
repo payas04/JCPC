@@ -44,25 +44,6 @@ const Activities = () => {
 							</div>
 						</CardContent>
 					</Card>
-					{/* AI Selfie Module */}
-					<Card
-						className="card rounded-lg overflow-hidden hover:-translate-y-2 hover:shadow-lg hover:bg-blue-300 hover:text-blue-800 flex-1 h-full max-h-[390px]"
-						onClick={() => setOpenSelfie(true)}>
-						<Selfie open={openSelfie} setOpen={setOpenSelfie} />
-						<CardMedia sx={{ height: 200 }} image="/images/extra/Selfie.jpg" />
-						<CardContent>
-							<div className="">
-								<p className="bg-blue-100 inline-block px-2 py-1 rounded-full text-blue-800 font-light font-mono text-xs mb-2">
-									SELFIE
-								</p>
-
-								<h3 className="text-lg font-semibold">AI Selfie Module</h3>
-								<p className="text-sm text-gray-600">
-									Creating a dataset of selfies to train an AI model.
-								</p>
-							</div>
-						</CardContent>
-					</Card>
 					{/* AI Bots */}
 					<Card
 						className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg hover:bg-blue-300 hover:text-blue-800 flex-1 h-full max-h-[390px]"
@@ -97,6 +78,25 @@ const Activities = () => {
 								<p className="text-sm text-gray-600">
 									JioEducation is an application that was showcased at the India
 									Mobile Congress.
+								</p>
+							</div>
+						</CardContent>
+					</Card>
+					{/* AI Selfie Module */}
+					<Card
+						className="card rounded-lg overflow-hidden hover:-translate-y-2 hover:shadow-lg hover:bg-blue-300 hover:text-blue-800 flex-1 h-full max-h-[390px]"
+						onClick={() => setOpenSelfie(true)}>
+						<Selfie open={openSelfie} setOpen={setOpenSelfie} />
+						<CardMedia sx={{ height: 200 }} image="/images/extra/Selfie.jpg" />
+						<CardContent>
+							<div className="">
+								<p className="bg-blue-100 inline-block px-2 py-1 rounded-full text-blue-800 font-light font-mono text-xs mb-2">
+									SELFIE
+								</p>
+
+								<h3 className="text-lg font-semibold">AI Selfie Module</h3>
+								<p className="text-sm text-gray-600">
+									Creating a dataset of selfies to train an AI model.
 								</p>
 							</div>
 						</CardContent>

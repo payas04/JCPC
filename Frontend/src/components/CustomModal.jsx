@@ -49,7 +49,7 @@ export default function CustomModal({
 										<p className="font-normal">Total Issues</p>
 									</span>
 									<span className="bg-red-100 text-red-800 rounded-lg px-2 py-4">
-										<p className="font-bold text-3xl">1</p>
+										<p className="font-bold text-3xl">{pieData[0].value}</p>
 										<p className="font-normal">Blocker Issues</p>
 									</span>
 								</div>

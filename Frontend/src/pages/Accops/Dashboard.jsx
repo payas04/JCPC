@@ -56,19 +56,19 @@ const Dashboard = () => {
 				{/* Project Overview Section */}
 				<div className=" mb-4 p-6 rounded-md flex gap-10 ">
 					<div className="grid grid-cols-2 md:grid-cols-2 gap-6 w-[64%]">
+						<JCPCProduct />
 						<StatCard
 							title="Total Bugs and Enhancements"
 							value={totalIssuePieChart.reduce(
 								(acc, item) => acc + item.value,
 								0
 							)}
-							color="bg-emerald-200"
-							textColor="text-emerald-800"
+							color="bg-sky-200"
+							textColor="text-sky-800"
 							icon={AiOutlineIssuesClose}
 							pieData={totalIssuePieChart}
 							shouldOpenModal={true}
 						/>
-						<JCPCProduct />
 						<StatCard
 							title="JioPC Open Issues"
 							value={jioPcOpenIssuePieChart.reduce(
