@@ -68,7 +68,7 @@ export default function UserModal({ open, setOpen, user, heading }) {
 											{user["Courses Completed"] !== "" && (
 												<>
 													<h2 className="text-lg font-bold mt-4 text-blue-800">
-														Courses Completed:
+														Courses :
 													</h2>
 													<ul className="text-gray-900 font-semibold">
 														{user["Courses Completed"]
