@@ -93,7 +93,7 @@ export default function JCPCProduct() {
 										<TabList onChange={handleChange}>
 											<Tab label="Jio PC" value="0" />
 											<Tab label="HP Chromebook" value="1" />
-											<Tab label="Lenovo Chrombook" value="2" />
+											<Tab label="Lenovo Chromebook" value="2" />
 										</TabList>
 									</Box>
 									{products.map((product, index) => (

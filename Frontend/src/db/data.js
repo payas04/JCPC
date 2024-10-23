@@ -1,14 +1,14 @@
 export const issuePieChart = [
-	{ id: 0, value: 241, label: "JioPC", color: "#82B7CA" }, //#20236D
-	{ id: 1, value: 96, label: "HP Chromebook", color: "#82ca9d" },
+	{ id: 0, value: 350, label: "JioPC", color: "#82B7CA" }, //#20236D
+	{ id: 1, value: 106, label: "HP Chromebook", color: "#82ca9d" },
 ];
 
 export const totalIssuePieChart = [
-	{ id: 0, value: 1, label: "Blocker", color: "#f87171" },
-	{ id: 1, value: 32, label: "Critical", color: "#fb923c" },
-	{ id: 2, value: 129, label: "Major", color: "#facc15" },
-	{ id: 3, value: 149, label: "Normal", color: "#60a5fa" },
-	{ id: 4, value: 26, label: "Minor", color: "#34d399" },
+	{ id: 0, value: 2, label: "Blocker", color: "#f87171" },
+	{ id: 1, value: 45, label: "Critical", color: "#fb923c" },
+	{ id: 2, value: 165, label: "Major", color: "#facc15" },
+	{ id: 3, value: 206, label: "Normal", color: "#60a5fa" },
+	{ id: 4, value: 38, label: "Minor", color: "#34d399" },
 ];
 export const jioPcOpenIssuePieChart = [
 	{ id: 0, value: 1, label: "Blocker", color: "#f87171" },
@@ -68,7 +68,7 @@ export const jioPcWorkItems = [
 	},
 	{
 		title: "JioPC Accops Issues",
-		count: 27,
+		count: 57,
 		color: "bg-green-200",
 		text: "text-green-800",
 		definition: "Issues which are raised for accops in JioPC.",
@@ -145,6 +145,14 @@ export const jioPcAreaChartData = [
 		name: "Week 5",
 		Issues: 42,
 	},
+	{
+		name: "Week 6",
+		Issues: 57,
+	},
+	{
+		name: "Week 7",
+		Issues: 52,
+	},
 ];
 
 export const hpAreaChartData = [
@@ -167,6 +175,14 @@ export const hpAreaChartData = [
 	{
 		name: "Week 5",
 		Issues: 26,
+	},
+	{
+		name: "Week 6",
+		Issues: 2,
+	},
+	{
+		name: "Week 7",
+		Issues: 8,
 	},
 ];
 
