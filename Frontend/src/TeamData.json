@@ -26,9 +26,9 @@
 		"Blocker": 0,
 		"Critical": 1,
 		"Major": 0,
-		"Normal": 3,
+		"Normal": 4,
 		"Minor": 2,
-		"Total_score": 19,
+		"Total_score": 22,
 		"Tags": "Tester"
 	},
 	{
@@ -40,11 +40,11 @@
 		"linkedin": "https://www.linkedin.com/in/aman-tiwari-6643ab20b/",
 		"DOB": "31st March",
 		"Blocker": 0,
-		"Critical": 0,
-		"Major": 2,
-		"Normal": 3,
+		"Critical": 1,
+		"Major": 6,
+		"Normal": 4,
 		"Minor": 1,
-		"Total_score": 20,
+		"Total_score": 51,
 		"Tags": "Tester"
 	},
 	{
@@ -56,11 +56,11 @@
 		"linkedin": "https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F",
 		"DOB": "30th September",
 		"Blocker": 0,
-		"Critical": 1,
+		"Critical": 3,
 		"Major": 1,
 		"Normal": 2,
-		"Minor": 1,
-		"Total_score": 20,
+		"Minor": 2,
+		"Total_score": 37,
 		"Tags": "Tester"
 	},
 	{
@@ -232,11 +232,11 @@
 		"linkedin": "https://www.linkedin.com/in/karthik-r-282597279/",
 		"DOB": "27th December",
 		"Blocker": 0,
-		"Critical": 0,
+		"Critical": 1,
 		"Major": 3,
-		"Normal": 2,
+		"Normal": 3,
 		"Minor": 2,
-		"Total_score": 23,
+		"Total_score": 34,
 		"Tags": "Tester"
 	},
 	{
@@ -297,10 +297,10 @@
 		"DOB": "28th October",
 		"Blocker": 0,
 		"Critical": 0,
-		"Major": 4,
-		"Normal": 12,
+		"Major": 5,
+		"Normal": 16,
 		"Minor": 1,
-		"Total_score": 57,
+		"Total_score": 74,
 		"Tags": "Validator"
 	},
 	{
@@ -408,11 +408,11 @@
 		"linkedin": "https://www.linkedin.com/in/rohitrawate/",
 		"DOB": "23rd Jan",
 		"Blocker": 0,
-		"Critical": 1,
+		"Critical": 2,
 		"Major": 2,
-		"Normal": 2,
+		"Normal": 4,
 		"Minor": 2,
-		"Total_score": 26,
+		"Total_score": 40,
 		"Tags": "Tester"
 	},
 	{
@@ -420,7 +420,7 @@
 		"Name": "Ronit Patil",
 		"About": "Curious mind who aspires to became ui/ux desginer who provides solution to the user through design",
 		"Courses Completed": "1. Figma essential training\n2. Foundations of UX Design\n3. UX design process (empathize, define, ideate)",
-		"Extra Activities": "1. AI Bot (Managed WiFi Soltuions)",
+		"Extra Activities": "1. AI Bot (Managed WiFi Soltuions)\n2. JSON files validation ( Total= 1,100 files.)\n3. labelling(Tagging) for attires , gestures, objects ( Total= 500+)\n4. Data collection of multiple of categories ( Total = 1000+)\n5. Data collection task for DAM and other internal teams such AI/ML\n6. Performed/helped other teams by collaborating for other tasks such as \n7. prompt creation and Testing Various LLM models for NAMO AI.",
 		"linkedin": "",
 		"DOB": "10th April",
 		"Blocker": 0,
@@ -490,9 +490,9 @@
 		"Blocker": 0,
 		"Critical": 1,
 		"Major": 1,
-		"Normal": 5,
-		"Minor": 1,
-		"Total_score": 29,
+		"Normal": 8,
+		"Minor": 3,
+		"Total_score": 40,
 		"Tags": "Tester"
 	},
 	{
@@ -505,10 +505,10 @@
 		"DOB": "24th March",
 		"Blocker": 0,
 		"Critical": 2,
-		"Major": 3,
-		"Normal": 3,
-		"Minor": 0,
-		"Total_score": 40,
+		"Major": 4,
+		"Normal": 4,
+		"Minor": 1,
+		"Total_score": 49,
 		"Tags": "Tester"
 	},
 	{
@@ -601,10 +601,10 @@
 		"DOB": "22nd June",
 		"Blocker": 0,
 		"Critical": 0,
-		"Major": 3,
+		"Major": 4,
 		"Normal": 2,
 		"Minor": 0,
-		"Total_score": 21,
+		"Total_score": 26,
 		"Tags": "Tester"
 	},
 	{
@@ -632,11 +632,11 @@
 		"linkedin": "https://www.linkedin.com/in/vaishnavi-konale-ba58b6255/?originalSubdomain=in",
 		"DOB": "27th August",
 		"Blocker": 0,
-		"Critical": 0,
-		"Major": 0,
-		"Normal": 2,
+		"Critical": 1,
+		"Major": 3,
+		"Normal": 4,
 		"Minor": 2,
-		"Total_score": 8,
+		"Total_score": 37,
 		"Tags": "Tester"
 	},
 	{
