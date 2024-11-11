@@ -1,22 +1,9 @@
-import Sidebar from "../../components/Sidebar";
 import { FaLinkedin } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";
-import {
-	Briefcase,
-	Mail,
-	Linkedin,
-	Twitter,
-	Calendar,
-	Award,
-	Lightbulb,
-	Target,
-} from "lucide-react";
+
 const Profile = () => {
 	return (
-		<div className="flex h-screen bg-gray-100 mb-3">
-			{/* Sidebar */}
-			<Sidebar />
-
+		<>
 			<div className="w-full bg-[url('/twinImage.jpg')] bg-cover m-2 rounded-lg mb-14 overflow-y-auto">
 				<div className="w-1/2 h-full bg-white bg-opacity-70 rounded-lg overflow-y-auto">
 					<div className="px-16 py-12 flex flex-col gap-12">
@@ -72,7 +59,7 @@ const Profile = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 

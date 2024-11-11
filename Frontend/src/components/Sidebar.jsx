@@ -2,6 +2,8 @@ import { MdSpaceDashboard } from "react-icons/md";
 import { RiTeamFill } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import { FaTasks } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";
+import { MdAdminPanelSettings } from "react-icons/md";
 
 const Sidebar = () => {
 	return (
@@ -29,6 +31,18 @@ const Sidebar = () => {
 							title="Team"
 							location={location}
 							Icon={<RiTeamFill />}
+						/>
+						<Li
+							url="/accops/profile"
+							title="Profile"
+							location={location}
+							Icon={<CgProfile />}
+						/>
+						<Li
+							url="/accops/admin"
+							title="Admin"
+							location={location}
+							Icon={<MdAdminPanelSettings />}
 						/>
 					</ul>
 				</nav>
