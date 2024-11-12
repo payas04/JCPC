@@ -9,13 +9,6 @@ const Login = ({ email, setEmail, password, setPassword, handleLogin }) => {
   const leftGridRef = useRef(null);
   const rightGridRef = useRef(null);
 
-
-  const handleLoginClick = (e) => {
-    // handleLogin(e);
-    console.log("jbbh");
-    
-  }
-
   useEffect(() => {
     const tl = gsap.timeline();
 
@@ -113,7 +106,7 @@ const Login = ({ email, setEmail, password, setPassword, handleLogin }) => {
             <div className="flex justify-end pt-6">
               <button 
                 
-                onClick={handleLoginClick()}
+                onClick={handleLogin}
                 className="bg-indigo-700 hover:bg-indigo-800 text-white rounded-xl h-12 px-10 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
                 Login
