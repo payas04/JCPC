@@ -6,31 +6,33 @@ import AppHeader from "../../components/layouts/AppHeader";
 import Login from "../../components/ui/login";
 
 const AccopsLogin = () => {
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
-	const user = useSelector((state) => state.user.user);
-	const dispatch = useDispatch();
+  const [domainID, setDomainID] = useState("");
+  const [password, setPassword] = useState("");
+  const user = useSelector((state) => state.user.user);
+  const dispatch = useDispatch();
 
-	const handleLogin = (e) => {
-		e.preventDefault();
-		const userData = { email, password };
-		dispatch(setUser(userData));
-	};
+  console.log("domainId", domainID + "password", password);
 
-	if (user) return <Navigate to={"/accops/dashboard"} />;
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const userData = { domainID, password };
+    dispatch(setUser(userData));
+  };
 
-	return (
-		<>
-			<AppHeader />
-			<Login 
-				email={email}
-				setEmail={setEmail}
-				password={password}
-				setPassword={setPassword}
-				handleLogin={handleLogin}
-			/>
-		</>
-	);
+  if (user) return <Navigate to={"/accops/dashboard"} />;
+
+  return (
+    <>
+      <AppHeader />
+      <Login
+        domainID={domainID}
+        setDomainID={setDomainID}
+        password={password}
+        setPassword={setPassword}
+        handleLogin={handleLogin}
+      />
+    </>
+  );
 };
 
 export default AccopsLogin;

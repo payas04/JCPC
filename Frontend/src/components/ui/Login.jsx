@@ -3,7 +3,7 @@ import gsap from "gsap";
 import jio from "/images/logo/jio.svg";
 import Grid from "./grid";
 
-const Login = ({ email, setEmail, password, setPassword, handleLogin }) => {
+const Login = ({ domainID, setDomainID, password, setPassword, handleLogin }) => {
   const logoRef = useRef(null);
   const cardRef = useRef(null);
   const leftGridRef = useRef(null);
@@ -85,8 +85,8 @@ const Login = ({ email, setEmail, password, setPassword, handleLogin }) => {
               </label>
               <input
                 type="text"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={domainID}
+                onChange={(e) => setDomainID(e.target.value)}
                 required
                 className="w-full bg-gray-50 rounded-xl h-12 px-4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
