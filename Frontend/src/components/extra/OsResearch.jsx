@@ -5,7 +5,6 @@ import {
 	DialogPanel,
 	DialogTitle,
 } from "@headlessui/react";
-import "../../styles/activities.css";
 
 const OsResearch = ({ open, setOpen }) => {
 	return (

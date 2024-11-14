@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../../styles/activities.css";
 import Selfie from "../../components/extra/Selfie";
 import OsResearch from "../../components/extra/OsResearch";
 import AiBot from "../../components/extra/AiBot";

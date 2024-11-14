@@ -1,5 +1,4 @@
 import React from "react";
-import "../../styles/activities.css";
 import BarGraph from "../charts/BarGraph";
 import { selfieBarData } from "../../db/data";
 import { IoClose } from "react-icons/io5";

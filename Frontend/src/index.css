@@ -8,6 +8,11 @@
 	box-sizing: border-box;
 }
 
+:root {
+	--card-height: 450px;
+	--card-width: calc(var(--card-height) / 1.5);
+}
+
 ::-webkit-scrollbar {
 	display: none;
 }
@@ -64,3 +69,65 @@ tr:last-child {
 /* tr:nth-child(even) {
 	background-color: #dddddd;
 } */
+
+.card {
+	transition: transform 0.5s ease, box-shadow 0.3s ease; /* Transition for transform and shadow */
+	cursor: pointer;
+}
+
+.card.enlarged {
+	width: calc(100% - 250px);
+	height: calc(100% - 85px);
+	z-index: 999;
+	position: absolute;
+	top: 30px;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.5s ease;
+	overflow: hidden;
+}
+
+.card-details {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+	/* text-align: center; */
+	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+	z-index: 10;
+	/* max-width: 80%; */
+	width: 80%;
+	height: fit-content;
+	max-height: 90%;
+	overflow-y: auto;
+	transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.close-btn {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	background: none;
+	border: none;
+	font-size: 30px;
+	color: black;
+	cursor: pointer;
+	transition: color 0.3s; /* Smooth color transition */
+}
+
+.close-btn:hover {
+	color: red;
+}
+
+.card:not(.enlarged) {
+	transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth shrink transition */
+}
+
+.card.active {
+	transform: scale(1); /* Ensure it scales correctly */
+}

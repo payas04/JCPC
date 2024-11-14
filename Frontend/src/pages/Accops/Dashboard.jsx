@@ -1,7 +1,7 @@
 import CustomPieChart from "../../components/charts/CustomPieChart";
 import StatCard from "../../components/StatCard";
 import { AiOutlineIssuesClose } from "react-icons/ai";
-import TeamData from "../../TeamData.json";
+import TeamData from "../../db/TeamData.json";
 import { Bug } from "lucide-react";
 import JioPcObservation from "./JioPcObservation";
 import AreaChart from "../../components/charts/AreaGraph";
@@ -22,16 +22,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { setAllProfiles } from "../../store/profilesSlice";
 import { clearUser } from "../../store/userSlice";
 import { Navigate } from "react-router-dom";
+import { getUsers } from "../../lib/api";
 
 const Dashboard = () => {
 	const profiles = useSelector((state) => state.profile.profiles);
-	const uswer = useSelector((state) => state.user.user);
+	// const uswer = useSelector((state) => state.user.user);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(setAllProfiles(TeamData));
-		console.log(profiles);
-	}, [profiles]);
+		getUsers().then((res) => {
+			console.log(res.data);
+			dispatch(setAllProfiles(res.data));
+		});
+	}, []);
 
 	return (
 		<main className="flex-1 p-6 pt-12 overflow-y-auto mb-8">

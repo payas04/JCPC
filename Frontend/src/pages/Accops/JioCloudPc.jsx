@@ -1,5 +1,5 @@
 import { useState } from "react";
-import TeamData from "../../TeamData.json";
+import TeamData from "../../db/TeamData.json";
 
 import {
 	getTodaysBirthdays,
