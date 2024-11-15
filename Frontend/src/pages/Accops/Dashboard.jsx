@@ -22,19 +22,25 @@ import { useDispatch, useSelector } from "react-redux";
 import { setAllProfiles } from "../../store/profilesSlice";
 import { clearUser } from "../../store/userSlice";
 import { Navigate } from "react-router-dom";
-import { getUsers } from "../../lib/api";
+import { getUsers, logoutUser } from "../../lib/api";
+import { useAuth } from "../../context/auth";
 
 const Dashboard = () => {
 	const profiles = useSelector((state) => state.profile.profiles);
-	// const uswer = useSelector((state) => state.user.user);
-	const dispatch = useDispatch();
+	// const user = useSelector((state) => state.user.user);
+	const { isAuthenticated, user, logout } = useAuth();
+	// const dispatch = useDispatch();
 
 	useEffect(() => {
-		getUsers().then((res) => {
-			console.log(res.data);
-			dispatch(setAllProfiles(res.data));
-		});
+		// getUsers().then((res) => {
+		// 	console.log(res.data);
+		// 	dispatch(setAllProfiles(res.data));
+		// });
 	}, []);
+
+	const logoutHandler = () => {
+		logout();
+	};
 
 	return (
 		<main className="flex-1 p-6 pt-12 overflow-y-auto mb-8">
@@ -44,20 +50,15 @@ const Dashboard = () => {
 					<Typewriter
 						onInit={(typewriter) => {
 							typewriter
-								.typeString("Welcome, Rahul Bhandari")
+								.typeString(`Welcome, ${user.domainID}`)
 								.pauseFor(2500)
 								.start();
 						}}
 					/>
 				</h1>
-				<p
-					className="cursor-pointer"
-					onClick={() => {
-						dispatch(clearUser());
-						<Navigate to={"/accops/login"} />;
-					}}>
+				<span className="cursor-pointer" onClick={logoutHandler}>
 					Logout
-				</p>
+				</span>
 			</header>
 
 			{/* Project Overview Section */}

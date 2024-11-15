@@ -12,25 +12,25 @@ export default function LoginScreen() {
 
 	const [error, setError] = useState("");
 	const navigate = useNavigate();
-	const { user, login } = useAuth();
+	// const { user, login } = useAuth();
 
 	const handleDelete = (e) => {
 		e.preventDefault();
 		setPin((prev) => prev.slice(0, -1));
 	};
 
-	useEffect(() => {
-		if (user) {
-			navigate("/home");
-		}
-	}, [user, navigate]);
+	// useEffect(() => {
+	// 	if (user) {
+	// 		navigate("/home");
+	// 	}
+	// }, [user, navigate]);
 
 	async function handleLogin(e) {
 		e.preventDefault();
 
 		try {
 			if (pin === "000000" || pin === "admin") {
-				login(true);
+				// login(true);
 				navigate(`/home`);
 			} else {
 				setError("Incorrect password");

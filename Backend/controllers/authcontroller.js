@@ -39,7 +39,6 @@ const logout = (req, res) => {
 
 const getMyDetails = (req, res) => {
 	const { user } = req;
-
 	res.status(200).json({
 		success: true,
 		user,
