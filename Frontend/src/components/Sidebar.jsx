@@ -35,19 +35,18 @@ const Sidebar = () => {
 							location={location}
 							Icon={<RiTeamFill />}
 						/>
-						{isAdmin ? (
+						<Li
+							url={`/accops/profile/${user._id}`}
+							title="Profile"
+							location={location}
+							Icon={<CgProfile />}
+						/>
+						{isAdmin && (
 							<Li
 								url="/accops/admin"
 								title="Admin"
 								location={location}
 								Icon={<MdAdminPanelSettings />}
-							/>
-						) : (
-							<Li
-								url="/accops/profile"
-								title="Profile"
-								location={location}
-								Icon={<CgProfile />}
 							/>
 						)}
 					</ul>

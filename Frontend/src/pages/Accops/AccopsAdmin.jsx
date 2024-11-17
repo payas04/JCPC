@@ -108,7 +108,7 @@ export default function AccopsAdmin() {
 	return (
 		<main className="h-screen w-full flex flex-col p-6 pt-12">
 			{/* Fixed Header */}
-			<div className="mb-6">
+			<div className="mb-6 px-6">
 				<div className="flex justify-between items-center">
 					<h1 className="text-3xl font-bold">Team Management</h1>
 					<div className="flex items-center gap-4">
@@ -138,7 +138,7 @@ export default function AccopsAdmin() {
 
 			{/* Scrollable Content */}
 			{/* <div className="flex-1 overflow-y-scroll p-6"> */}
-			<div className="flex-1 overflow-y-auto pb-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+			<div className="flex-1 overflow-y-auto p-6 pb-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 				{members.map((member) => (
 					<div key={member.id} className="bg-white rounded-lg shadow-md">
 						<div className="p-6">
@@ -148,6 +148,9 @@ export default function AccopsAdmin() {
 										src={member.image}
 										alt={member.name}
 										className="rounded-full w-16 h-16 object-cover"
+										onError={(e) => {
+											e.target.src = "/images/profile/default.png";
+										}}
 									/>
 									<div>
 										<h3 className="font-semibold text-lg">{member.name}</h3>

@@ -13,7 +13,7 @@ const Activities = () => {
 	const [openJio, setOpenJio] = useState(false);
 
 	return (
-		<section className="w-full pt-12 p-6 flex flex-col h-full overflow-scroll">
+		<section className="container pt-12 p-6 flex flex-col h-full overflow-scroll">
 			<header className="mb-4 px-6">
 				<h2 className="text-4xl font-bold">Extra Activities</h2>
 			</header>

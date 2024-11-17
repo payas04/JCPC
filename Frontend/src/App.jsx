@@ -21,9 +21,9 @@ const protectedRoutes = [
 	// { path: "login", component: AccopsLogin },
 	{ path: "dashboard", component: Dashboard },
 	{ path: "jiocloudpc", component: JioCloudPc },
-	{ path: "profile", component: Profile },
 	{ path: "activities", component: Activities },
 	{ path: "admin", component: AccopsAdmin },
+	{ path: "profile/:id", component: Profile },
 ];
 
 const App = () => {
@@ -35,17 +35,15 @@ const App = () => {
 					<Route path="/home" element={<Home />} />
 					<Route path="/accops/login" element={<AccopsLogin />} />
 					// Routes of accops with protected route
-					<Route path="/accops" element={<AccopsLayout />}>
+					<Route
+						path="/accops"
+						element={
+							<ProtectedRoute>
+								<AccopsLayout />
+							</ProtectedRoute>
+						}>
 						{protectedRoutes.map(({ path, component: Component }) => (
-							<Route
-								key={path}
-								path={path}
-								element={
-									<ProtectedRoute>
-										<Component />
-									</ProtectedRoute>
-								}
-							/>
+							<Route key={path} path={path} element={<Component />} />
 						))}
 					</Route>
 					<Route path="*" element={<PageNotFound />} />

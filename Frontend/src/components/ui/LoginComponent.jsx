@@ -4,7 +4,7 @@ import gsap from "gsap";
 import jio from "/images/logo/jio.svg";
 import Grid from "./grid";
 
-const Login = ({
+const LoginComponent = ({
 	domainID,
 	setDomainID,
 	password,
@@ -148,4 +148,4 @@ const Login = ({
 	);
 };
 
-export default Login;
+export default LoginComponent;

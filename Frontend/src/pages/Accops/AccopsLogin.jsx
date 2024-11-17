@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
-import { setUser } from "../../store/userSlice";
 import AppHeader from "../../components/layouts/AppHeader";
-import Login from "../../components/ui/login";
-import { loginUser } from "../../lib/api";
+import LoginComponent from "../../components/ui/LoginComponent";
 import { useAuth } from "../../context/auth";
 
 const AccopsLogin = () => {
@@ -35,7 +32,7 @@ const AccopsLogin = () => {
 	return (
 		<>
 			<AppHeader />
-			<Login
+			<LoginComponent
 				domainID={domainID}
 				setDomainID={setDomainID}
 				password={password}
