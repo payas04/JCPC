@@ -2,7 +2,7 @@ import { createContext, useState, useEffect, useContext } from "react";
 import { getMyDetails, loginUser, logoutUser } from "../lib/api";
 import axios from "axios";
 import toast from "react-hot-toast";
-const BASE_URL = "http://localhost:5001";
+const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
 const AuthContext = createContext();
 
