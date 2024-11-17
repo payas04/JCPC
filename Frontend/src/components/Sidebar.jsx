@@ -4,8 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { FaTasks } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { MdAdminPanelSettings } from "react-icons/md";
+import { useAuth } from "../context/auth";
 
 const Sidebar = () => {
+	const { user } = useAuth();
+	const isAdmin = user?.isAdmin;
 	return (
 		<aside className="w-1/7 min-w-52 bg-blue-800 text-white pt-12  flex flex-col justify-between m-2 rounded-lg mb-14">
 			<div>
@@ -32,18 +35,21 @@ const Sidebar = () => {
 							location={location}
 							Icon={<RiTeamFill />}
 						/>
-						<Li
-							url="/accops/profile"
-							title="Profile"
-							location={location}
-							Icon={<CgProfile />}
-						/>
-						<Li
-							url="/accops/admin"
-							title="Admin"
-							location={location}
-							Icon={<MdAdminPanelSettings />}
-						/>
+						{isAdmin ? (
+							<Li
+								url="/accops/admin"
+								title="Admin"
+								location={location}
+								Icon={<MdAdminPanelSettings />}
+							/>
+						) : (
+							<Li
+								url="/accops/profile"
+								title="Profile"
+								location={location}
+								Icon={<CgProfile />}
+							/>
+						)}
 					</ul>
 				</nav>
 			</div>

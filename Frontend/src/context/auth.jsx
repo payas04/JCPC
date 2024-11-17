@@ -1,8 +1,8 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { getMyDetails, loginUser, logoutUser } from "../lib/api";
-import { useDispatch } from "react-redux";
-import { clearUser } from "../store/userSlice";
 import axios from "axios";
+import toast from "react-hot-toast";
+const BASE_URL = "http://localhost:5001";
 
 const AuthContext = createContext();
 
@@ -25,8 +25,9 @@ export const AuthProvider = ({ children }) => {
 
 	const checkAuthStatus = async () => {
 		try {
-			const response = await getMyDetails();
-			console.log("checkAuthStatus", response);
+			const response = await axios.get(BASE_URL + "/api/auth/user/me", {
+				withCredentials: true,
+			});
 
 			if (response.data.success) {
 				setIsAuthenticated(true);
@@ -43,15 +44,26 @@ export const AuthProvider = ({ children }) => {
 	// Login function
 	const login = async (credentials) => {
 		try {
-			const response = await loginUser(credentials);
+			const response = await axios.post(
+				BASE_URL + "/api/auth/user/login",
+				credentials,
+				{
+					headers: {
+						"Content-Type": "application/json",
+					},
+					withCredentials: true,
+				}
+			);
 			console.log(response);
 
 			if (response.data.success) {
+				toast.success(`${response.data.message}`);
 				setIsAuthenticated(true);
 				setUser(response.data.user);
 				return { success: true };
 			}
 		} catch (error) {
+			toast.error(`${error.response?.data?.message}`);
 			return {
 				success: false,
 				error: error.response?.data?.message || "Login failed",
@@ -63,9 +75,10 @@ export const AuthProvider = ({ children }) => {
 	// Logout function
 	const logout = async () => {
 		try {
-			await logoutUser();
+			const response = await logoutUser();
 			setIsAuthenticated(false);
 			setUser(null);
+			toast.success(`${response.data.message}`);
 		} catch (error) {
 			console.error("Logout failed:", error);
 		}

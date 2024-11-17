@@ -17,15 +17,16 @@ const AccopsLogin = () => {
 
 	const handleLogin = async (e) => {
 		e.preventDefault();
-		const userData = { domainID, password };
-		const result = await login(userData);
-		console.log(result);
+		try {
+			const userData = { domainID, password };
+			const result = await login(userData);
 
-		if (result.success) {
-			navigate("/accops/dashboard");
-		} else {
-			// Handle error
-			alert(result.error.message);
+			if (result.success) {
+				navigate("/accops/dashboard");
+			}
+		} catch (error) {
+			// alert(error);
+			console.log(error);
 		}
 	};
 

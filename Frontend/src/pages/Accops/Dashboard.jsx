@@ -27,9 +27,8 @@ import { useAuth } from "../../context/auth";
 
 const Dashboard = () => {
 	const profiles = useSelector((state) => state.profile.profiles);
-	// const user = useSelector((state) => state.user.user);
 	const { isAuthenticated, user, logout } = useAuth();
-	// const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		// getUsers().then((res) => {

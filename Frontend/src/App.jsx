@@ -4,12 +4,15 @@ import Loader from "./components/Loader";
 import AccopsLayout from "./components/layouts/AccopsLayout";
 import ProtectedRoute from "./components/layouts/ProtectedRoute";
 import AccopsLogin from "./pages/Accops/AccopsLogin";
+import { Toaster } from "react-hot-toast";
 
 const Dashboard = lazy(() => import("./pages/Accops/Dashboard"));
 const Home = lazy(() => import("./pages/Home"));
 const Lockscreen = lazy(() => import("./pages/Lockscreen"));
 const JioCloudPc = lazy(() => import("./pages/Accops/JioCloudPc"));
 const Footer = lazy(() => import("./components/Footer"));
+
+const AccopsAdmin = lazy(() => import("./pages/Accops/AccopsAdmin"));
 const Profile = lazy(() => import("./pages/Accops/Profile"));
 const Activities = lazy(() => import("./pages/Accops/Activities"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
@@ -20,6 +23,7 @@ const protectedRoutes = [
 	{ path: "jiocloudpc", component: JioCloudPc },
 	{ path: "profile", component: Profile },
 	{ path: "activities", component: Activities },
+	{ path: "admin", component: AccopsAdmin },
 ];
 
 const App = () => {
@@ -48,6 +52,7 @@ const App = () => {
 				</Routes>
 			</Suspense>
 			<Footer />
+			<Toaster />
 		</Router>
 	);
 };
