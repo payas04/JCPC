@@ -4,7 +4,7 @@ import { Camera, Mail, Hash, Tag, BookOpen, Activity } from "lucide-react";
 // Initial user data
 const initialUserData = {
 	domainID: "user123",
-	isAdmin: false,
+	isAdmin: true,
 	role: "Developer",
 	name: "John Doe",
 	email: "john.doe@example.com",
@@ -25,9 +25,11 @@ const initialUserData = {
 const Profile = () => {
 	const [isEditing, setIsEditing] = useState(false);
 	const [userData, setUserData] = useState(initialUserData);
+	const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
 
 	const handleInputChange = (field, value) => {
 		setUserData((prev) => ({ ...prev, [field]: value }));
+		setHasUnsavedChanges(true);
 	};
 
 	const handleIssueChange = (issueType, value) => {
@@ -35,6 +37,7 @@ const Profile = () => {
 			...prev,
 			issues: { ...prev.issues, [issueType]: value },
 		}));
+		setHasUnsavedChanges(true);
 	};
 
 	const handleSave = () => {
@@ -52,11 +55,31 @@ const Profile = () => {
 							Manage your account settings and preferences
 						</p>
 					</div>
-					<button
-						onClick={isEditing ? handleSave : () => setIsEditing(true)}
-						className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors">
-						{isEditing ? "Save Changes" : "Edit Profile"}
-					</button>
+					<div className="space-x-2">
+						{isEditing ? (
+							<>
+								<button
+									className="px-4 py-2 rounded-md border border-black hover:bg-gray-300 transition-colors"
+									onClick={() => {
+										setUserData(initialUserData);
+										setIsEditing(false);
+									}}>
+									Cancel
+								</button>
+								<button
+									className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+									onClick={handleSave}>
+									Save Changes
+								</button>
+							</>
+						) : (
+							<button
+								className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+								onClick={() => setIsEditing(true)}>
+								Edit Profile
+							</button>
+						)}
+					</div>
 				</div>
 
 				<div className="grid gap-6 md:grid-cols-2">
@@ -249,7 +272,7 @@ const Profile = () => {
 									</label>
 									<textarea
 										id="bio"
-										className="w-full px-3 py-2 border rounded-md min-h-[100px] disabled:bg-gray-100"
+										className="w-full resize-none px-3 py-2 border rounded-md min-h-[100px] disabled:bg-gray-100"
 										value={userData.bio}
 										onChange={(e) => handleInputChange("bio", e.target.value)}
 										disabled={!isEditing}

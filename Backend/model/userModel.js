@@ -3,11 +3,11 @@ let mongoose = require("mongoose");
 let userSchema = mongoose.Schema(
 	{
 		domainID: { type: String, required: true, unique: true },
+		email: { type: String, required: true, unique: true },
 		password: { type: String, required: true },
 		isAdmin: { type: Boolean, required: true },
 		role: { type: String, default: "" },
 		name: { type: String, default: "" },
-		email: { type: String, unique: true },
 		image: { type: String, default: "" },
 		issues: {
 			blocker: { type: String, default: 0 },

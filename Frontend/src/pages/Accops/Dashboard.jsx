@@ -19,8 +19,6 @@ import {
 import JCPCProduct from "../../components/JCPCProduct";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setAllProfiles } from "../../store/profilesSlice";
-import { clearUser } from "../../store/userSlice";
 import { Navigate } from "react-router-dom";
 import { getUsers, logoutUser } from "../../lib/api";
 import { useAuth } from "../../context/auth";
@@ -28,14 +26,6 @@ import { useAuth } from "../../context/auth";
 const Dashboard = () => {
 	const profiles = useSelector((state) => state.profile.profiles);
 	const { isAuthenticated, user, logout } = useAuth();
-	const dispatch = useDispatch();
-
-	useEffect(() => {
-		// getUsers().then((res) => {
-		// 	console.log(res.data);
-		// 	dispatch(setAllProfiles(res.data));
-		// });
-	}, []);
 
 	const logoutHandler = () => {
 		logout();

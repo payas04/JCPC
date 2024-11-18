@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Edit, PlusCircle, Search } from "lucide-react";
+import { Edit, PlusCircle, Search, Trash2 } from "lucide-react";
 
 export default function AccopsAdmin() {
 	const [members, setMembers] = useState([
@@ -32,63 +32,63 @@ export default function AccopsAdmin() {
 			image: "/placeholder.svg?height=100&width=100",
 		},
 		{
-			id: 4,
+			id: 5,
 			name: "Jagruti Zawar",
 			role: "Tester",
 			score: 61,
 			image: "/placeholder.svg?height=100&width=100",
 		},
 		{
-			id: 4,
+			id: 6,
 			name: "Jagruti Zawar",
 			role: "Tester",
 			score: 61,
 			image: "/placeholder.svg?height=100&width=100",
 		},
 		{
-			id: 4,
+			id: 7,
 			name: "Jagruti Zawar",
 			role: "Tester",
 			score: 61,
 			image: "/placeholder.svg?height=100&width=100",
 		},
 		{
-			id: 4,
+			id: 8,
 			name: "Jagruti Zawar",
 			role: "Tester",
 			score: 61,
 			image: "/placeholder.svg?height=100&width=100",
 		},
 		{
-			id: 4,
+			id: 9,
 			name: "Jagruti Zawar",
 			role: "Tester",
 			score: 61,
 			image: "/placeholder.svg?height=100&width=100",
 		},
 		{
-			id: 4,
+			id: 10,
 			name: "Jagruti Zawar",
 			role: "Tester",
 			score: 61,
 			image: "/placeholder.svg?height=100&width=100",
 		},
 		{
-			id: 4,
+			id: 11,
 			name: "Jagruti Zawar",
 			role: "Tester",
 			score: 61,
 			image: "/placeholder.svg?height=100&width=100",
 		},
 		{
-			id: 4,
+			id: 12,
 			name: "Jagruti Zawar",
 			role: "Tester",
 			score: 61,
 			image: "/placeholder.svg?height=100&width=100",
 		},
 		{
-			id: 4,
+			id: 13,
 			name: "Jagruti Zawar",
 			role: "Tester",
 			score: 61,
@@ -158,12 +158,20 @@ export default function AccopsAdmin() {
 										<p className="text-sm mt-1">Score: {member.score}</p>
 									</div>
 								</div>
-								<button
-									onClick={() => openEditModal(member)}
-									className="p-2 text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100">
-									<Edit className="h-4 w-4" />
-									<span className="sr-only">Edit team member</span>
-								</button>
+								<div className="space-x-2">
+									<button
+										onClick={() => openEditModal(member)}
+										className="p-2 text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100">
+										<Edit className="h-4 w-4" />
+										<span className="sr-only">Edit team member</span>
+									</button>
+									<button
+										onClick={() => openEditModal(member)}
+										className="p-2 text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100">
+										<Trash2 className="h-4 w-4" />
+										<span className="sr-only">Edit team member</span>
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>

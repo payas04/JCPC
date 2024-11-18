@@ -6,7 +6,7 @@ const {
 	logout,
 	getMyDetails,
 } = require("../controllers/authcontroller");
-const isAuthenticated = require("../middleware/auth");
+const { isAuthenticated } = require("../middleware/auth");
 
 authRouter.route("/login").post(loginUser);
 authRouter.route("/logout").get(logout);

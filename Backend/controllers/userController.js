@@ -3,7 +3,7 @@ let User = require("../model/userModel");
 
 const registerUser = async (req, res) => {
 	try {
-		const { domainID, password, isAdmin } = req.body;
+		const { domainID, password, isAdmin, email } = req.body;
 		const userExists = await User.findOne({ domainID });
 		if (userExists) {
 			res.status(400);
@@ -13,17 +13,17 @@ const registerUser = async (req, res) => {
 		// const salt = await bcrypt.genSalt(10);
 		// const hashedPassword = await bcrypt.hash(password, 10); // 2nd arg is by-default is salt
 		let user = {
-			domainID: domainID,
-			password: password,
-			isAdmin: isAdmin,
+			domainID,
+			password,
+			isAdmin,
+			email,
 		};
 
-		const newUser = new User(user); //varifying schema of user
+		const newUser = new User(user);
 		if (newUser) {
 			user = newUser;
 			await user.save();
 			return res.status(200).json(user);
-			// .json({ user , token: generateToken(user._id) });
 		} else {
 			throw new Error("User schema didn't match");
 		}

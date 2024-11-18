@@ -19,9 +19,7 @@ const Activities = () => {
 			</header>
 			<div className="flex-grow flex justify-center items-center gap-6 p-6 mb-10">
 				{/* OS research */}
-				<Card
-					className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg hover:bg-blue-300 hover:text-blue-800 flex-1 h-full max-h-[390px]"
-					onClick={() => setOpen(true)}>
+				<Card className="activityCard" onClick={() => setOpen(true)}>
 					<OsResearch open={open} setOpen={setOpen} heading={"hiii"} />
 					<CardMedia sx={{ height: 200 }} image="/images/extra/OS_Image.webp" />
 					<CardContent>
@@ -38,9 +36,7 @@ const Activities = () => {
 					</CardContent>
 				</Card>
 				{/* AI Bots */}
-				<Card
-					className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg hover:bg-blue-300 hover:text-blue-800 flex-1 h-full max-h-[390px]"
-					onClick={() => setOpenAi(true)}>
+				<Card className="activityCard" onClick={() => setOpenAi(true)}>
 					<AiBot open={openAi} setOpen={setOpenAi} heading={"hii"} />
 					<CardMedia sx={{ height: 200 }} image="/images/extra/AI.webp" />
 					<CardContent>
@@ -57,9 +53,7 @@ const Activities = () => {
 					</CardContent>
 				</Card>
 				{/* JioEducation Testing */}
-				<Card
-					className="card hover:-translate-y-2 rounded-lg overflow-hidden hover:shadow-lg hover:bg-blue-300 hover:text-blue-800 flex-1 h-full max-h-[390px]"
-					onClick={() => setOpenJio(true)}>
+				<Card className="activityCard" onClick={() => setOpenJio(true)}>
 					<JioEducation open={openJio} setOpen={setOpenJio} heading={"hii"} />
 					<CardMedia sx={{ height: 200 }} image="/images/extra/IMC.webp" />
 					<CardContent>
@@ -76,9 +70,7 @@ const Activities = () => {
 					</CardContent>
 				</Card>
 				{/* AI Selfie Module */}
-				<Card
-					className="card rounded-lg overflow-hidden hover:-translate-y-2 hover:shadow-lg hover:bg-blue-300 hover:text-blue-800 flex-1 h-full max-h-[390px]"
-					onClick={() => setOpenSelfie(true)}>
+				<Card className="activityCard" onClick={() => setOpenSelfie(true)}>
 					<Selfie open={openSelfie} setOpen={setOpenSelfie} />
 					<CardMedia sx={{ height: 200 }} image="/images/extra/Selfie.jpg" />
 					<CardContent>

@@ -1,3 +1,4 @@
+import { LogOut } from "lucide-react";
 import { MdSpaceDashboard } from "react-icons/md";
 import { RiTeamFill } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
@@ -7,50 +8,58 @@ import { MdAdminPanelSettings } from "react-icons/md";
 import { useAuth } from "../context/auth";
 
 const Sidebar = () => {
-	const { user } = useAuth();
+	const { user, logout } = useAuth();
 	const isAdmin = user?.isAdmin;
 	return (
-		<aside className="w-1/7 min-w-52 bg-blue-800 text-white pt-12  flex flex-col justify-between m-2 rounded-lg mb-14">
-			<div>
-				<div className="text-2xl font-bold mb-8 px-3 py-2 text-center">
-					JioCloud PC
-				</div>
-				<nav>
-					<ul className="space-y-4">
+		<aside className="w-1/7 min-w-52 bg-blue-800 text-white pt-12 pb-2 flex flex-col justify-between m-2 rounded-lg mb-14">
+			<div className="text-2xl font-bold mb-8 px-3 py-2 text-center">
+				JioCloud PC
+			</div>
+			<nav className="flex-grow">
+				<ul className="space-y-4">
+					<Li
+						url="/accops/dashboard"
+						title="Dashboard"
+						location={location}
+						Icon={<MdSpaceDashboard />}
+					/>
+					<Li
+						url="/accops/Activities"
+						title="Extra Activities"
+						location={location}
+						Icon={<FaTasks />}
+					/>
+					<Li
+						url="/accops/jiocloudpc"
+						title="Team"
+						location={location}
+						Icon={<RiTeamFill />}
+					/>
+					<Li
+						url={`/accops/profile/${user._id}`}
+						title="Profile"
+						location={location}
+						Icon={<CgProfile />}
+					/>
+					{isAdmin && (
 						<Li
-							url="/accops/dashboard"
-							title="Dashboard"
+							url="/accops/admin"
+							title="Admin"
 							location={location}
-							Icon={<MdSpaceDashboard />}
+							Icon={<MdAdminPanelSettings />}
 						/>
-						<Li
-							url="/accops/Activities"
-							title="Extra Activities"
-							location={location}
-							Icon={<FaTasks />}
-						/>
-						<Li
-							url="/accops/jiocloudpc"
-							title="Team"
-							location={location}
-							Icon={<RiTeamFill />}
-						/>
-						<Li
-							url={`/accops/profile/${user._id}`}
-							title="Profile"
-							location={location}
-							Icon={<CgProfile />}
-						/>
-						{isAdmin && (
-							<Li
-								url="/accops/admin"
-								title="Admin"
-								location={location}
-								Icon={<MdAdminPanelSettings />}
-							/>
-						)}
-					</ul>
-				</nav>
+					)}
+				</ul>
+			</nav>
+			<div
+				className="hover:bg-blue-950 cursor-pointer rounded-xl mx-4 py-[5px] px-[12px]"
+				onClick={() => {
+					logout();
+				}}>
+				<span className="text-lg font-medium flex items-center gap-2">
+					<LogOut />
+					Logout
+				</span>
 			</div>
 		</aside>
 	);

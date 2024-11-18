@@ -1,18 +1,20 @@
-let express = require("express");
-
-let userRouter = express.Router(); //creating a router that has variables that conatin controller function
-let {
-  updateUser,
-  getUsers,
-  getUser,
-  deleteUser,
-  registerUser
+const express = require("express");
+const userRouter = express.Router();
+const {
+	updateUser,
+	getUsers,
+	getUser,
+	deleteUser,
+	registerUser,
 } = require("../controllers/userController");
-//Getting functions from controller
+const { isAdmin } = require("../middleware/auth");
 
-userRouter.route("/register").post(registerUser) ;
+userRouter.route("/register").post(isAdmin, registerUser);
 userRouter.route("/").get(getUsers);
-//routes having variables that conatin controller function which are imported from ContactController.js
-userRouter.route("/:id").put(updateUser).get(getUser).delete(deleteUser);
+userRouter
+	.route("/:id")
+	.put(updateUser)
+	.get(getUser)
+	.delete(isAdmin, deleteUser);
 
 module.exports = userRouter;

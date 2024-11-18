@@ -84,8 +84,8 @@ const JioEducation = ({ open, setOpen }) => {
 												<th>Build Version</th>
 												<th>Issue Count</th>
 											</tr>
-											{buildData.map((item) => (
-												<tr>
+											{buildData.map((item, index) => (
+												<tr key={index}>
 													<td>{item.version}</td>
 													<td>{item.issues}</td>
 												</tr>
