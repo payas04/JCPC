@@ -53,3 +53,11 @@ export const getMyDetails = async () => {
 		console.log(error, "GetMyDetails error");
 	}
 };
+
+export const uploadImageApi = async(data) =>{
+    try{
+        return await axios.post("https://api.cloudinary.com/v1_1/sameepVishwakarma/image/upload" ,data) ;
+    }catch(error){
+        console.log("Error while calling uploadImageApi" ,error);
+    }
+}
