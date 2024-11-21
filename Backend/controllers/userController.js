@@ -3,7 +3,7 @@ let User = require("../model/userModel");
 
 const registerUser = async (req, res) => {
 	try {
-		const { domainID, password, isAdmin, email } = req.body;
+		const { domainID, password, isAdmin, email, name } = req.body;
 		const userExists = await User.findOne({ domainID });
 		if (userExists) {
 			res.status(400);
@@ -17,18 +17,20 @@ const registerUser = async (req, res) => {
 			password,
 			isAdmin,
 			email,
+			name,
 		};
 
 		const newUser = new User(user);
 		if (newUser) {
-			user = newUser;
-			await user.save();
-			return res.status(200).json(user);
+			await newUser.save();
+			return res
+				.status(200)
+				.json({ success: true, message: "New User Created", newUser });
 		} else {
 			throw new Error("User schema didn't match");
 		}
 	} catch (error) {
-		res.status(400).json({ message: error.message });
+		res.status(400).json({ success: false, message: error.message });
 	}
 };
 
@@ -43,21 +45,33 @@ let getUser = asynHandler(async (req, res) => {
 	if (!user) {
 		res.status(404);
 	}
-	res.status(200).json(user);
+	res.status(200).json({ success: true, user });
 });
 
 const updateUser = asynHandler(async (req, res) => {
 	try {
-		let user = await User.findById(req.params.id);
+		const user = await User.findById(req.params.id);
 		if (!user) {
 			res.status(404).json({ message: "User not found" });
 		}
-		const updatedUser = await User.findByIdAndUpdate(user, req.body, {
-			new: true,
+		// const updatedUser = await User.findByIdAndUpdate(user, req.body, {
+		// 	new: true,
+		// 	runValidators: true,
+		// });
+		// res.status(200).json(updatedUser);
+
+		// Copies all properties from req.body to the user object.
+		// If req.body has a property that already exists in user, it overwrites the value in user.
+		// If req.body has a property that does not exist in user, it adds the new property to user.
+		Object.assign(user, req.body);
+		const updatedUser = await user.save();
+		res.status(200).json({
+			success: true,
+			message: `${user.domainID} profile updated successfully`,
+			updatedUser,
 		});
-		res.status(200).json(updatedUser);
 	} catch (error) {
-		res.status(400).json({ message: error.message });
+		res.status(400).json({ success: false, message: error.message });
 	}
 });
 

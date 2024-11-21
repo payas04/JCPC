@@ -1,5 +1,16 @@
-import React, { useState } from "react";
-import { Camera, Mail, Hash, Tag, BookOpen, Activity } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import {
+	Camera,
+	Mail,
+	Hash,
+	Tag,
+	BookOpen,
+	Activity,
+	Contact,
+} from "lucide-react";
+import { Switch } from "@mui/material";
+import { useAuth } from "../../context/auth";
 
 // Initial user data
 const initialUserData = {
@@ -23,9 +34,14 @@ const initialUserData = {
 };
 
 const Profile = () => {
+	const { user } = useAuth();
 	const [isEditing, setIsEditing] = useState(false);
-	const [userData, setUserData] = useState(initialUserData);
+	const [isAdmin, setIsAdmin] = useState(user.isAdmin);
+	const [userData, setUserData] = useState(user);
 	const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
+	const { id } = useParams();
+
+	useEffect(() => {}, []);
 
 	const handleInputChange = (field, value) => {
 		setUserData((prev) => ({ ...prev, [field]: value }));
@@ -45,6 +61,8 @@ const Profile = () => {
 		setIsEditing(false);
 	};
 
+	// console.log(!isAdminStat);
+
 	return (
 		<div className="container mx-auto pt-12 p-6">
 			<div className="space-y-6">
@@ -61,7 +79,7 @@ const Profile = () => {
 								<button
 									className="px-4 py-2 rounded-md border border-black hover:bg-gray-300 transition-colors"
 									onClick={() => {
-										setUserData(initialUserData);
+										setUserData(user);
 										setIsEditing(false);
 									}}>
 									Cancel
@@ -125,14 +143,19 @@ const Profile = () => {
 										className="block text-sm font-medium mb-1">
 										Full Name
 									</label>
-									<input
-										id="name"
-										type="text"
-										className="w-full px-3 py-2 border rounded-md disabled:bg-gray-100"
-										value={userData.name}
-										onChange={(e) => handleInputChange("name", e.target.value)}
-										disabled={!isEditing}
-									/>
+									<div className="flex items-center gap-2">
+										<Contact className="h-4 w-4 text-gray-500" />
+										<input
+											id="name"
+											type="text"
+											className="w-full px-3 py-2 border rounded-md disabled:bg-gray-100 cursor-not-allowed"
+											value={userData.name}
+											onChange={(e) =>
+												handleInputChange("name", e.target.value)
+											}
+											disabled={true}
+										/>
+									</div>
 								</div>
 
 								<div>
@@ -146,12 +169,12 @@ const Profile = () => {
 										<input
 											id="email"
 											type="email"
-											className="w-full px-3 py-2 border rounded-md disabled:bg-gray-100"
+											className="w-full px-3 py-2 border rounded-md disabled:bg-gray-100 cursor-not-allowed"
 											value={userData.email}
 											onChange={(e) =>
 												handleInputChange("email", e.target.value)
 											}
-											disabled={!isEditing}
+											disabled={true}
 										/>
 									</div>
 								</div>
@@ -167,7 +190,7 @@ const Profile = () => {
 										<input
 											id="domainID"
 											type="text"
-											className="w-full px-3 py-2 border rounded-md bg-gray-100"
+											className="w-full px-3 py-2 border rounded-md disabled:bg-gray-100 cursor-not-allowed"
 											value={userData.domainID}
 											disabled={true}
 										/>
@@ -175,11 +198,8 @@ const Profile = () => {
 								</div>
 
 								<div className="flex items-center gap-2">
-									<label htmlFor="isAdmin" className="text-sm font-medium">
-										Admin Status
-									</label>
 									<div className="relative inline-flex items-center cursor-pointer">
-										<input
+										{/* <input
 											type="checkbox"
 											id="isAdmin"
 											className="sr-only peer"
@@ -188,8 +208,19 @@ const Profile = () => {
 												handleInputChange("isAdmin", e.target.checked)
 											}
 											disabled={!isEditing}
+										/> */}
+
+										<label
+											htmlFor="isAdmin"
+											className="block text-sm font-medium mb-1">
+											Admin Status
+										</label>
+										<Switch
+											id="isAdmin"
+											checked={userData.isAdmin}
+											disabled
+											className="cursor-not-allowed"
 										/>
-										<div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
 									</div>
 								</div>
 							</div>
@@ -217,10 +248,10 @@ const Profile = () => {
 									<input
 										id="role"
 										type="text"
-										className="w-full px-3 py-2 border rounded-md disabled:bg-gray-100"
+										className="w-full px-3 py-2 border rounded-md disabled:bg-gray-100 cursor-not-allowed"
 										value={userData.role}
 										onChange={(e) => handleInputChange("role", e.target.value)}
-										disabled={!isEditing}
+										disabled={true}
 									/>
 								</div>
 
@@ -312,6 +343,7 @@ const Profile = () => {
 							</div>
 
 							<div className="space-y-4">
+								{/* Converts an object into an array of [key, value] pairs. */}
 								{Object.entries(userData.issues).map(([issueType, count]) => (
 									<div
 										key={issueType}
@@ -321,11 +353,12 @@ const Profile = () => {
 										</span>
 										<input
 											type="number"
+											min={0}
 											value={count}
 											onChange={(e) =>
-												handleIssueChange(issueType, e.target.value)
+												handleIssueChange(issueType, e.target.valueAsNumber)
 											}
-											disabled={!isEditing}
+											disabled={!isEditing || !user.isAdmin}
 											className="w-20 px-3 py-2 border rounded-md text-right disabled:bg-gray-100"
 										/>
 									</div>

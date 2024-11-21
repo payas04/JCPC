@@ -54,7 +54,6 @@ export const AuthProvider = ({ children }) => {
 					withCredentials: true,
 				}
 			);
-			console.log(response);
 
 			if (response.data.success) {
 				toast.success(`${response.data.message}`);
