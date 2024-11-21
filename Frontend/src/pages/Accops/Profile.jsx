@@ -11,6 +11,10 @@ import {
 } from "lucide-react";
 import { Switch } from "@mui/material";
 import { useAuth } from "../../context/auth";
+import React, { useState } from "react";
+import { Camera, Mail, Hash, Tag, BookOpen, Activity } from "lucide-react";
+
+import { uploadImageApi } from "../../lib/api";
 
 // Initial user data
 const initialUserData = {
@@ -122,10 +126,21 @@ const Profile = () => {
 										}}
 									/>
 									{isEditing && (
-										<button className="absolute -bottom-2 -right-2 p-2 bg-white rounded-full shadow-md hover:bg-gray-50">
-											<Camera className="h-4 w-4" />
-											<span className="sr-only">Change profile photo</span>
-										</button>
+										<>
+											<button
+												onClick={() => console.log("clicked")}
+												className="absolute -bottom-2 -right-2 p-2 bg-white rounded-full shadow-md hover:bg-gray-50">
+												<Camera className="h-4 w-4" />
+												<span className="sr-only">Change profile photo</span>
+											</button>
+											<input
+												type="file"
+												name="profileImage"
+												accept="image/*"
+												placeholder="Add your image"
+												onChange={(e) => handleProfileImageChange(e)}
+											/>
+										</>
 									)}
 								</div>
 								<div>
