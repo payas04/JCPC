@@ -11,8 +11,6 @@ import {
 } from "lucide-react";
 import { Switch } from "@mui/material";
 import { useAuth } from "../../context/auth";
-import React, { useState } from "react";
-import { Camera, Mail, Hash, Tag, BookOpen, Activity } from "lucide-react";
 
 import { uploadImageApi } from "../../lib/api";
 
