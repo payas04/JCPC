@@ -3,7 +3,7 @@ const BASE_URL = "http://localhost:5001";
 
 export const getUsers = async () => {
 	try {
-		const response = await axios.get("http://localhost:5001/api/user", {
+		const response = await axios.get(BASE_URL + "/api/user", {
 			withCredentials: true,
 			headers: {
 				"Content-Type": "application/json",
@@ -54,10 +54,13 @@ export const getMyDetails = async () => {
 	}
 };
 
-export const uploadImageApi = async(data) =>{
-    try{
-        return await axios.post("https://api.cloudinary.com/v1_1/sameepVishwakarma/image/upload" ,data) ;
-    }catch(error){
-        console.log("Error while calling uploadImageApi" ,error);
-    }
-}
+export const uploadImageApi = async (data) => {
+	try {
+		return await axios.post(
+			"https://api.cloudinary.com/v1_1/sameepVishwakarma/image/upload",
+			data
+		);
+	} catch (error) {
+		console.log("Error while calling uploadImageApi", error);
+	}
+};
