@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SearchIcon } from "lucide-react";
 import CustomCard from "./CustomCard";
 
@@ -7,7 +7,7 @@ const TeamSection = ({ data }) => {
 
 	// Step 2: Filter the data based on the search query
 	const filteredData = data.filter((user) =>
-		user.Name.toLowerCase().includes(searchQuery.toLowerCase())
+		user.name.toLowerCase().includes(searchQuery.toLowerCase())
 	);
 
 	return (

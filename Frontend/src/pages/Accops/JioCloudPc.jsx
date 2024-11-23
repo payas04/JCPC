@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TeamData from "../../db/TeamData.json";
 
 import {
@@ -9,29 +9,37 @@ import {
 import TeamSection from "../../components/TeamSection";
 import SortControls from "../../components/SortControl";
 import BirthdaySection from "../../components/BirthdaySection";
+import { useSelector } from "react-redux";
 
 const JioCloudPc = () => {
 	const sortByNameAscending = (array) =>
-		[...array].sort((a, b) => a.Name.localeCompare(b.Name));
+		[...array].sort((a, b) => a.name.localeCompare(b.name));
 
 	const sortByScore = (array, order = "asc") => {
 		return [...array].sort((a, b) => {
-			if (a.Total_score === b.Total_score) {
+			if (a.score.current === b.score.current) {
 				// If scores are equal, sort by Name
-				return a.Name.localeCompare(b.Name);
+				return a.name.localeCompare(b.name);
 			}
 			// Otherwise, sort by score
 			return order === "asc"
-				? a.Total_score - b.Total_score
-				: b.Total_score - a.Total_score;
+				? a.score.current - b.score.current
+				: b.score.current - a.score.current;
 		});
 	};
-
-	const [data, setData] = useState(sortByScore(TeamData, "desc"));
+	const profiles = useSelector((state) => state.profile.profiles);
+	// const [data, setData] = useState(sortByScore(profiles, "desc"));
+	const [data, setData] = useState(profiles);
 	const [activeSort, setActiveSort] = useState("High");
 	const todayBirthday = getTodaysBirthdays(TeamData);
 	const upcomingBirthday = getUpcomingBirthdaysThisMonth(TeamData);
 
+	useEffect(() => {
+		if (profiles) {
+			setData(profiles);
+			// setIsLoading(false);
+		}
+	}, [profiles]);
 	const handleSortByName = () => {
 		setData(sortByNameAscending(TeamData));
 		setActiveSort("Name");
@@ -46,6 +54,8 @@ const JioCloudPc = () => {
 		setData(sortByScore(TeamData, "desc"));
 		setActiveSort("High");
 	};
+
+	console.log(data);
 
 	return (
 		<div className="flex h-screen w-full flex-1 bg-gray-100">

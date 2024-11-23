@@ -22,7 +22,7 @@ export default function CustomCard({ user, shouldOpenModal = false }) {
 					translateZ="60"
 					className="flex flex-col justify-center items-center w-full">
 					<img
-						alt={user.Name}
+						alt={user.name}
 						className="w-24 h-24 mb-4 object-contain rounded-full ring-2 ring-blue-800 ring-offset-2 transition-all duration-300 group-hover:ring-4 bg-white "
 						src={`/images/members/${user.Domain}.jpg`}
 						onError={(e) => {
@@ -31,16 +31,16 @@ export default function CustomCard({ user, shouldOpenModal = false }) {
 					/>
 
 					<span className="text-lg flex flex-col font-semibold leading-tight">
-						{user && user.Name}
+						{user && user.name}
 					</span>
 					<span
 						className={` text-sm font-semibold ${
-							user.Tags === "Released" ? "text-gray-500" : "text-blue-800"
+							user.tag === "Released" ? "text-gray-500" : "text-blue-800"
 						} `}>
-						{user.Tags}
+						{user.tag}
 					</span>
 					<div className="mt-4 bg-blue-800 text-white rounded-full px-3 py-1 text-sm font-medium w-fit self-center duration-700">
-						Score: {user.Total_score}
+						Score: {user.score.current}
 					</div>
 				</CardItem>
 			</CardContainer>

@@ -7,14 +7,14 @@ import { Badge } from "@mui/material";
 
 export default function UserModal({ open, setOpen, user, heading }) {
 	const issue = [
-		{ value: user.Blocker, label: "Blocker" },
-		{ value: user.Critical, label: "Critical" },
-		{ value: user.Major, label: "Major" },
-		{ value: user.Normal, label: "Normal" },
-		{ value: user.Minor, label: "Minor" },
+		{ value: user.issues.blocker, label: "Blocker" },
+		{ value: user.issues.critical, label: "Critical" },
+		{ value: user.issues.major, label: "Major" },
+		{ value: user.issues.normal, label: "Normal" },
+		{ value: user.issues.minor, label: "Minor" },
 	];
 	const maxValue = Math.max(...issue.map((item) => item.value));
-	const totalIssues = issue.reduce((sum, item) => sum + item.value, 0);
+	// const totalIssues = issue.reduce((sum, item) => sum + item.value, 0);
 
 	return (
 		<Dialog
@@ -40,7 +40,7 @@ export default function UserModal({ open, setOpen, user, heading }) {
 								<div className="flex mt-2 pt-2">
 									<img
 										className="w-32 h-32 rounded-full border-4 border-blue-800 object-contain bg-white"
-										src={`/images/members/${user.Domain}.jpg`}
+										src={`/images/members/${user.domainID}.jpg`}
 										onError={(e) => {
 											e.target.src = "/images/profile/default.png";
 										}}
@@ -48,13 +48,13 @@ export default function UserModal({ open, setOpen, user, heading }) {
 									/>
 									<div className="flex justify-between items-center flex-grow pl-4">
 										<div>
-											<h1 className="text-4xl font-bold mb-2">{user.Name}</h1>
+											<h1 className="text-4xl font-bold mb-2">{user.name}</h1>
 											<p className="text-blue-800 font-bold text-xl">
-												{user.Tags}
+												{user.tag}
 											</p>
 										</div>
 										<div className="text-center rounded-lg overflow-hidden border-2 h-fit border-blue-800">
-											<p className="font-bold text-xl ">{user.Total_score}</p>
+											<p className="font-bold text-xl ">{user.score.current}</p>
 											<p className="bg-blue-800 text-white px-2">Total Score</p>
 										</div>
 									</div>
@@ -62,31 +62,29 @@ export default function UserModal({ open, setOpen, user, heading }) {
 								<div className="flex gap-4 mt-4">
 									<div className="pr-4 border-r border-blue-800 flex-1">
 										<p className="text-lg text-gray-950 font-normal">
-											{user["About"]}
+											{user["bio"]}
 										</p>
 										<div>
-											{user["Courses Completed"] !== "" && (
+											{user["courses"] !== "" && (
 												<>
 													<h2 className="text-lg font-bold mt-4 text-blue-800">
 														Courses :
 													</h2>
 													<ul className="text-gray-900 font-semibold">
-														{user["Courses Completed"]
-															.split("\n")
-															.map((text, index) => (
-																<li key={index}>{text}</li>
-															))}
+														{user["courses"].split("\n").map((text, index) => (
+															<li key={index}>{text}</li>
+														))}
 													</ul>
 												</>
 											)}
 
-											{user["Extra Activities"] !== "" && (
+											{user["extraActivites"] !== "" && (
 												<>
 													<h2 className="text-lg font-bold mt-4 text-blue-800">
 														Extra Activities:
 													</h2>
 													<ul className="list-inside text-gray-900 font-semibold">
-														{user["Extra Activities"]
+														{user["extraActivites"]
 															.split("\n")
 															.map((text, index) => (
 																<li key={index}>{text}</li>
@@ -122,9 +120,12 @@ export default function UserModal({ open, setOpen, user, heading }) {
 												</div>
 											</div>
 										))}
-										<div className="mt-4 text-center">
+										<div className="mt-4 space-x-2 text-center">
 											<p className="text-lg py-1 bg-gray-300 inline-block rounded-full text-gray-800 font-bold px-2">
-												Total Issues: {totalIssues}
+												Previous Score: {user.score.previous}
+											</p>
+											<p className="text-lg py-1 bg-gray-300 inline-block rounded-full text-gray-800 font-bold px-2">
+												Current Score: {user.score.current}
 											</p>
 										</div>
 									</div>

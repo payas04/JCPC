@@ -14,6 +14,7 @@ export const AuthProvider = ({ children }) => {
 	const [user, setUser] = useState(null);
 	const [isShutdown, setIsShutdown] = useState(false);
 	const [isChromeOpen, setChromeOpen] = useState(false);
+	const [trigger, setTrigger] = useState(false);
 
 	useEffect(() => {
 		// const storedUser = localStorage.getItem("user");
@@ -21,7 +22,7 @@ export const AuthProvider = ({ children }) => {
 		// 	setUser(JSON.parse(storedUser));
 		// }
 		checkAuthStatus();
-	}, []);
+	}, [trigger]);
 
 	const checkAuthStatus = async () => {
 		try {
@@ -105,6 +106,7 @@ export const AuthProvider = ({ children }) => {
 		login,
 		logout,
 		checkAuthStatus,
+		setTrigger,
 	};
 
 	return (
