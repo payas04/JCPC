@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState } from "react";
 import {
 	Camera,
 	Mail,
@@ -16,6 +15,7 @@ const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 import { uploadImageApi } from "../../lib/api";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { useOutletContext } from "react-router-dom";
 
 // Initial user data
 const initialUserData = {
@@ -40,13 +40,11 @@ const initialUserData = {
 
 const Profile = () => {
 	const { user, setTrigger } = useAuth();
+	const { setRefreshTrigger } = useOutletContext();
 	const [isEditing, setIsEditing] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 	const [userData, setUserData] = useState(user);
 	const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
-	const { id } = useParams();
-
-	useEffect(() => {}, []);
 
 	const handleInputChange = (field, value) => {
 		setUserData((prev) => ({ ...prev, [field]: value }));
@@ -65,7 +63,6 @@ const Profile = () => {
 		e.preventDefault();
 		try {
 			setIsLoading(true);
-			console.log("Saving user data:", userData);
 			const response = await axios.put(
 				BASE_URL + `/api/user/${user._id}`,
 				userData,
@@ -81,11 +78,11 @@ const Profile = () => {
 				toast.success(`${response?.data?.message}`);
 				setIsLoading(false);
 				setIsEditing(false);
-				setTrigger((prev) => !prev);
+				setTrigger((prev) => !prev); // triggers user data and fetches user details again
+				setRefreshTrigger((prev) => !prev); //refresh profiles data and makes the app to fetch the data from api again and update redux state
 			}
 		} catch (error) {
 			setIsLoading(false);
-			console.log(error);
 			setTrigger((prev) => !prev);
 		}
 	};

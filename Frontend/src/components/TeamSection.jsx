@@ -5,13 +5,15 @@ import UserModal from "./UserModal";
 
 const TeamSection = ({ data }) => {
 	const [searchQuery, setSearchQuery] = useState(""); // Step 1: Add search query state
-	const [selectedUser, setSelectedUser] = useState(null);
-	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [filteredData, setFilteredData] = useState([]);
 
-	// Step 2: Filter the data based on the search query
-	const filteredData = data.filter((user) =>
-		user.name.toLowerCase().includes(searchQuery.toLowerCase())
-	);
+	useEffect(() => {
+		// Step 2: Filter the data based on the search query
+		const filtered = data.filter((user) =>
+			user.name.toLowerCase().includes(searchQuery.toLowerCase())
+		);
+		setFilteredData(filtered);
+	}, [data, searchQuery]);
 
 	return (
 		<section className="w-full overflow-y-scroll pb-20 p-6">
@@ -65,29 +67,13 @@ const TeamSection = ({ data }) => {
 					{filteredData.length > 0 ? (
 						filteredData.map((user, index) => {
 							return (
-								<CustomCard
-									key={index}
-									user={user}
-									onClick={() => {
-										setSelectedUser(user);
-										setIsModalOpen(true);
-									}}
-								/>
+								<CustomCard key={index} user={user} allUsers={filteredData} />
 							);
 						})
 					) : (
 						<p className="text-center col-span-4">No Members found</p>
 					)}
 				</div>
-				{selectedUser && (
-					<UserModal
-						open={isModalOpen}
-						setOpen={setIsModalOpen}
-						setSelectedUser={setSelectedUser}
-						initialUser={selectedUser}
-						users={filteredData}
-					/>
-				)}
 			</div>
 		</section>
 	);

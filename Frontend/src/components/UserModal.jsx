@@ -2,33 +2,42 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { IoClose } from "react-icons/io5";
 import { useCarousel } from "../hooks/useCarousel";
+import { useEffect } from "react";
 
-export default function UserModal({
-	open,
-	setOpen,
-	initialUser,
-	users,
-	setSelectedUser,
-}) {
-	// const issue = [
-	// 	{ value: user.issues.blocker, label: "Blocker" },
-	// 	{ value: user.issues.critical, label: "Critical" },
-	// 	{ value: user.issues.major, label: "Major" },
-	// 	{ value: user.issues.normal, label: "Normal" },
-	// 	{ value: user.issues.minor, label: "Minor" },
-	// ];
-
+export default function UserModal({ open, setOpen, initialUser, users }) {
+	const initialIndex = users.findIndex(
+		(user) => user.name === initialUser.name
+	);
 	const {
 		currentItem: user,
 		prev,
 		next,
 		hasNext,
 		hasPrev,
-	} = useCarousel(
-		users,
-		users.findIndex((u) => u.id === initialUser.id)
-	);
-	// const maxValue = Math.max(...issue.map((item) => item.value));
+		currentIndex,
+		goTo,
+	} = useCarousel(users, initialIndex);
+
+	const issue = [
+		{ value: user.issues.blocker, label: "Blocker" },
+		{ value: user.issues.critical, label: "Critical" },
+		{ value: user.issues.major, label: "Major" },
+		{ value: user.issues.normal, label: "Normal" },
+		{ value: user.issues.minor, label: "Minor" },
+	];
+
+	const maxValue = Math.max(...issue.map((item) => item.value));
+
+	// Reset carousel position when modal opens with a new initial user
+	useEffect(() => {
+		if (open && initialUser) {
+			const newIndex = users.findIndex(
+				(user) => user.name === initialUser.name
+			);
+			goTo(newIndex);
+		}
+	}, [open, initialUser, users]);
+
 	if (!user) return null;
 	return (
 		<Dialog
@@ -43,11 +52,12 @@ export default function UserModal({
 				<div className="flex w-full max-w-4xl mx-auto items-center justify-center p-4">
 					<DialogPanel className="w-full rounded-lg bg-white shadow-xl overflow-hidden h-fit ">
 						{hasPrev && (
-							<div
-								className="absolute left-20 top-[40%] text-white"
+							<button
+								type="button"
+								className="absolute left-20 top-[40%] text-white hover:text-gray-400"
 								onClick={prev}>
 								<ChevronLeft size={"100"} strokeWidth={"3"} />
-							</div>
+							</button>
 						)}
 						<div className="relative px-4">
 							<span
@@ -120,10 +130,10 @@ export default function UserModal({
 
 									<div className="flex-1 space-y-4 h-full">
 										{/* <CustomPieChart data={issue} radiusValue={30} /> */}
-										<h3 className="text-lg font-bold text-blue-800 mb-4">
+										<h3 className="text-lg font-bold text-blue-800 mb-6">
 											Issues Severity Distribution
 										</h3>
-										{/* {issue.map((item) => (
+										{issue.map((item) => (
 											<div
 												key={item.name}
 												className="flex items-center group transition-all duration-300 ease-in-out hover:scale-105">
@@ -134,7 +144,10 @@ export default function UserModal({
 													<div
 														className="h-full bg-blue-800"
 														style={{
-															width: `${(item.value / maxValue) * 100}%`,
+															width:
+																item.value === 0
+																	? "0%"
+																	: `${(item.value / maxValue) * 100}%`,
 														}}
 													/>
 												</div>
@@ -142,8 +155,8 @@ export default function UserModal({
 													{item.value}
 												</div>
 											</div>
-										))} */}
-										<div className="mt-4 space-x-2 text-center">
+										))}
+										<div className="space-x-3 text-center">
 											<p className="text-lg py-1 bg-gray-300 inline-block rounded-full text-gray-800 font-bold px-2">
 												Previous Score: {user.score.previous}
 											</p>
@@ -153,14 +166,19 @@ export default function UserModal({
 										</div>
 									</div>
 								</div>
+
+								<div className="text-center text-sm text-gray-500 mt-2">
+									{currentIndex + 1} of {users.length}
+								</div>
 							</div>
 						</div>
 						{hasNext && (
-							<div
-								className="absolute right-20 top-[40%] text-white"
+							<button
+								type="button"
+								className="absolute right-20 top-[40%] text-white hover:text-gray-400 "
 								onClick={next}>
 								<ChevronRight size={"100"} strokeWidth={"3"} />
-							</div>
+							</button>
 						)}
 					</DialogPanel>
 				</div>
