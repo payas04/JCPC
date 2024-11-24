@@ -2,10 +2,9 @@ import { CardContainer, CardItem } from "../components/ui/3d-card";
 import { useState } from "react";
 import UserModal from "./UserModal";
 
-export default function CustomCard({ user, shouldOpenModal = false }) {
+export default function CustomCard({ user, onClick }) {
 	const [open, setOpen] = useState(false);
 	const handleOpenModal = () => {
-		console.log(open);
 		if (!shouldOpenModal) {
 			setOpen(true);
 		}
@@ -13,10 +12,8 @@ export default function CustomCard({ user, shouldOpenModal = false }) {
 
 	return (
 		<div
-			onClick={handleOpenModal}
+			onClick={onClick}
 			className="group bg-[#F8F9FA] rounded-lg border cursor-pointer shadow-lg transition-all duration-300  hover:-translate-y-2 hover:bg-blue-300">
-			<UserModal open={open} setOpen={setOpen} user={user} />
-
 			<CardContainer className="flex flex-col w-full justify-center mx-2 my-4 text-center  ">
 				<CardItem
 					translateZ="60"

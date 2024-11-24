@@ -28,34 +28,31 @@ const JioCloudPc = () => {
 		});
 	};
 	const profiles = useSelector((state) => state.profile.profiles);
-	// const [data, setData] = useState(sortByScore(profiles, "desc"));
-	const [data, setData] = useState(profiles);
+	const [data, setData] = useState(sortByScore(profiles, "desc"));
 	const [activeSort, setActiveSort] = useState("High");
 	const todayBirthday = getTodaysBirthdays(TeamData);
 	const upcomingBirthday = getUpcomingBirthdaysThisMonth(TeamData);
 
 	useEffect(() => {
 		if (profiles) {
-			setData(profiles);
+			setData(sortByScore(profiles, "desc"));
 			// setIsLoading(false);
 		}
 	}, [profiles]);
 	const handleSortByName = () => {
-		setData(sortByNameAscending(TeamData));
+		setData(sortByNameAscending(profiles));
 		setActiveSort("Name");
 	};
 
 	const handleSortByScoreAsc = () => {
-		setData(sortByScore(TeamData, "asc"));
+		setData(sortByScore(profiles, "asc"));
 		setActiveSort("Low");
 	};
 
 	const handleSortByScoreDesc = () => {
-		setData(sortByScore(TeamData, "desc"));
+		setData(sortByScore(profiles, "desc"));
 		setActiveSort("High");
 	};
-
-	console.log(data);
 
 	return (
 		<div className="flex h-screen w-full flex-1 bg-gray-100">

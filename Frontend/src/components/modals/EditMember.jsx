@@ -150,7 +150,7 @@ const EditMember = ({
 									onChange={(e) =>
 										setSelectedMember({
 											...selectedMember,
-											extraActivities: e.target.value,
+											extraActivites: e.target.value,
 										})
 									}
 								/>

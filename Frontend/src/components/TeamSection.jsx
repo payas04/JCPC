@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { SearchIcon } from "lucide-react";
 import CustomCard from "./CustomCard";
+import UserModal from "./UserModal";
 
 const TeamSection = ({ data }) => {
 	const [searchQuery, setSearchQuery] = useState(""); // Step 1: Add search query state
+	const [selectedUser, setSelectedUser] = useState(null);
+	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	// Step 2: Filter the data based on the search query
 	const filteredData = data.filter((user) =>
@@ -61,12 +64,30 @@ const TeamSection = ({ data }) => {
 				<div className="w-full grid grid-cols-4 gap-8 p-6">
 					{filteredData.length > 0 ? (
 						filteredData.map((user, index) => {
-							return <CustomCard key={index} user={user} />;
+							return (
+								<CustomCard
+									key={index}
+									user={user}
+									onClick={() => {
+										setSelectedUser(user);
+										setIsModalOpen(true);
+									}}
+								/>
+							);
 						})
 					) : (
 						<p className="text-center col-span-4">No Members found</p>
 					)}
 				</div>
+				{selectedUser && (
+					<UserModal
+						open={isModalOpen}
+						setOpen={setIsModalOpen}
+						setSelectedUser={setSelectedUser}
+						initialUser={selectedUser}
+						users={filteredData}
+					/>
+				)}
 			</div>
 		</section>
 	);

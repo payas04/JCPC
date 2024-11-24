@@ -1,31 +1,54 @@
 import { Dialog, DialogPanel } from "@headlessui/react";
-
-import CustomPieChart from "./charts/CustomPieChart";
-
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { IoClose } from "react-icons/io5";
-import { Badge } from "@mui/material";
+import { useCarousel } from "../hooks/useCarousel";
 
-export default function UserModal({ open, setOpen, user, heading }) {
-	const issue = [
-		{ value: user.issues.blocker, label: "Blocker" },
-		{ value: user.issues.critical, label: "Critical" },
-		{ value: user.issues.major, label: "Major" },
-		{ value: user.issues.normal, label: "Normal" },
-		{ value: user.issues.minor, label: "Minor" },
-	];
-	const maxValue = Math.max(...issue.map((item) => item.value));
-	// const totalIssues = issue.reduce((sum, item) => sum + item.value, 0);
+export default function UserModal({
+	open,
+	setOpen,
+	initialUser,
+	users,
+	setSelectedUser,
+}) {
+	// const issue = [
+	// 	{ value: user.issues.blocker, label: "Blocker" },
+	// 	{ value: user.issues.critical, label: "Critical" },
+	// 	{ value: user.issues.major, label: "Major" },
+	// 	{ value: user.issues.normal, label: "Normal" },
+	// 	{ value: user.issues.minor, label: "Minor" },
+	// ];
 
+	const {
+		currentItem: user,
+		prev,
+		next,
+		hasNext,
+		hasPrev,
+	} = useCarousel(
+		users,
+		users.findIndex((u) => u.id === initialUser.id)
+	);
+	// const maxValue = Math.max(...issue.map((item) => item.value));
+	if (!user) return null;
 	return (
 		<Dialog
 			open={open}
-			onClose={() => setOpen(false)}
+			onClose={() => {
+				setOpen(false);
+			}}
 			className="relative z-10">
 			<div className="fixed inset-0 bg-black/80" aria-hidden="true" />
 
 			<div className="fixed inset-0 flex z-10 w-full ">
 				<div className="flex w-full max-w-4xl mx-auto items-center justify-center p-4">
 					<DialogPanel className="w-full rounded-lg bg-white shadow-xl overflow-hidden h-fit ">
+						{hasPrev && (
+							<div
+								className="absolute left-20 top-[40%] text-white"
+								onClick={prev}>
+								<ChevronLeft size={"100"} strokeWidth={"3"} />
+							</div>
+						)}
 						<div className="relative px-4">
 							<span
 								className="absolute right-2 z-10"
@@ -70,11 +93,11 @@ export default function UserModal({ open, setOpen, user, heading }) {
 													<h2 className="text-lg font-bold mt-4 text-blue-800">
 														Courses :
 													</h2>
-													<ul className="text-gray-900 font-semibold">
-														{user["courses"].split("\n").map((text, index) => (
+													<ol className="text-gray-900 font-semibold list-inside list-decimal">
+														{user["courses"].split(";").map((text, index) => (
 															<li key={index}>{text}</li>
 														))}
-													</ul>
+													</ol>
 												</>
 											)}
 
@@ -83,13 +106,13 @@ export default function UserModal({ open, setOpen, user, heading }) {
 													<h2 className="text-lg font-bold mt-4 text-blue-800">
 														Extra Activities:
 													</h2>
-													<ul className="list-inside text-gray-900 font-semibold">
+													<ol className="text-gray-900 font-semibold list-inside list-decimal">
 														{user["extraActivites"]
-															.split("\n")
+															.split(";")
 															.map((text, index) => (
 																<li key={index}>{text}</li>
 															))}
-													</ul>
+													</ol>
 												</>
 											)}
 										</div>
@@ -100,7 +123,7 @@ export default function UserModal({ open, setOpen, user, heading }) {
 										<h3 className="text-lg font-bold text-blue-800 mb-4">
 											Issues Severity Distribution
 										</h3>
-										{issue.map((item) => (
+										{/* {issue.map((item) => (
 											<div
 												key={item.name}
 												className="flex items-center group transition-all duration-300 ease-in-out hover:scale-105">
@@ -119,7 +142,7 @@ export default function UserModal({ open, setOpen, user, heading }) {
 													{item.value}
 												</div>
 											</div>
-										))}
+										))} */}
 										<div className="mt-4 space-x-2 text-center">
 											<p className="text-lg py-1 bg-gray-300 inline-block rounded-full text-gray-800 font-bold px-2">
 												Previous Score: {user.score.previous}
@@ -132,6 +155,13 @@ export default function UserModal({ open, setOpen, user, heading }) {
 								</div>
 							</div>
 						</div>
+						{hasNext && (
+							<div
+								className="absolute right-20 top-[40%] text-white"
+								onClick={next}>
+								<ChevronRight size={"100"} strokeWidth={"3"} />
+							</div>
+						)}
 					</DialogPanel>
 				</div>
 			</div>
