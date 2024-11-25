@@ -1,4 +1,5 @@
 import axios from "axios";
+import toast from "react-hot-toast";
 const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
 export const getUsers = async () => {
@@ -54,13 +55,26 @@ export const getMyDetails = async () => {
 	}
 };
 
-export const uploadImageApi = async (data) => {
+export const uploadImageApi = async (imageFile, domainID) => {
 	try {
-		return await axios.post(
-			"https://api.cloudinary.com/v1_1/sameepVishwakarma/image/upload",
-			data
+		const formData = new FormData();
+		formData.append("file", imageFile);
+		formData.append(
+			"upload_preset",
+			import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET
 		);
+		// formData.append("public_id", `${domainID}_profile_image`);
+		const response = await axios.post(
+			import.meta.env.VITE_CLOUDINARY_URL +
+				`/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload`,
+			formData
+		);
+		toast.success("Image uploaded successfully!");
+		return response.data.secure_url;
 	} catch (error) {
-		console.log("Error while calling uploadImageApi", error);
+		console.error("Error uploading image:", error);
+		alert("Error uploading image. Please try again.");
+	} finally {
+		// setUploading(false);
 	}
 };

@@ -25,7 +25,7 @@ export default function CustomCard({ user, allUsers }) {
 						<img
 							alt={user.name}
 							className="w-24 h-24 mb-4 object-contain rounded-full ring-2 ring-blue-800 ring-offset-2 transition-all duration-300 group-hover:ring-4 bg-white "
-							src={`/images/members/${user.Domain}.jpg`}
+							src={user.image}
 							onError={(e) => {
 								e.target.src = "/images/profile/default.png";
 							}}

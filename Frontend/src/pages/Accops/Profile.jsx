@@ -44,11 +44,10 @@ const Profile = () => {
 	const [isEditing, setIsEditing] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 	const [userData, setUserData] = useState(user);
-	const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
-
+	const [preview, setPreview] = useState(null);
+	const [imageUrl, setImageUrl] = useState(null);
 	const handleInputChange = (field, value) => {
 		setUserData((prev) => ({ ...prev, [field]: value }));
-		setHasUnsavedChanges(true);
 	};
 
 	const handleIssueChange = (issueType, value) => {
@@ -56,16 +55,25 @@ const Profile = () => {
 			...prev,
 			issues: { ...prev.issues, [issueType]: value },
 		}));
-		setHasUnsavedChanges(true);
 	};
 
 	const handleSave = async (e) => {
 		e.preventDefault();
 		try {
 			setIsLoading(true);
+
+			const updatedUserData = { ...userData };
+
+			if (imageUrl) {
+				const image = await uploadImageApi(imageUrl, user.domainID);
+				updatedUserData.image = image;
+				setPreview(null);
+				setUserData((prev) => ({ ...prev, image: image }));
+			}
+
 			const response = await axios.put(
 				BASE_URL + `/api/user/${user._id}`,
-				userData,
+				updatedUserData,
 				{
 					headers: {
 						"Content-Type": "application/json",
@@ -78,13 +86,31 @@ const Profile = () => {
 				toast.success(`${response?.data?.message}`);
 				setIsLoading(false);
 				setIsEditing(false);
-				setTrigger((prev) => !prev); // triggers user data and fetches user details again
-				setRefreshTrigger((prev) => !prev); //refresh profiles data and makes the app to fetch the data from api again and update redux state
+				setTrigger((prev) => !prev); // refresh user data
+				setRefreshTrigger((prev) => !prev); //refresh profile data
 			}
 		} catch (error) {
 			setIsLoading(false);
 			setTrigger((prev) => !prev);
 		}
+	};
+
+	const handleImageUpload = async (e) => {
+		const imageFile = e.target.files[0];
+		if (!imageFile) return setPreview(null);
+		const reader = new FileReader();
+		reader.onload = (e) => {
+			setPreview(e.target.result);
+		};
+		reader.readAsDataURL(imageFile);
+		setImageUrl(imageFile);
+	};
+
+	const handleCancel = () => {
+		setUserData(user);
+		setIsEditing(false);
+		setPreview(null);
+		setImageUrl(null);
 	};
 
 	if (isLoading) {
@@ -115,10 +141,7 @@ const Profile = () => {
 									<button
 										className="px-4 py-2 rounded-md border border-black hover:bg-gray-300 transition-colors"
 										type="button"
-										onClick={() => {
-											setUserData(user);
-											setIsEditing(false);
-										}}>
+										onClick={handleCancel}>
 										Cancel
 									</button>
 									<button
@@ -152,28 +175,35 @@ const Profile = () => {
 							<div className="space-y-4">
 								<div className="flex items-center gap-4">
 									<div className="relative">
-										<img
-											alt="Profile picture"
-											className="rounded-full object-cover w-24 h-24"
-											src={userData.image}
-											onError={(e) => {
-												e.target.src = "/images/profile/default.png";
-											}}
-										/>
+										{preview ? (
+											<img
+												src={preview}
+												alt="Preview"
+												className="rounded-full object-cover w-24 h-24"
+											/>
+										) : (
+											<img
+												alt="Profile picture"
+												className="rounded-full object-cover w-24 h-24"
+												src={userData.image}
+												onError={(e) => {
+													e.target.src = "/images/profile/default.png";
+												}}
+											/>
+										)}
 										{isEditing && (
 											<>
-												<button
-													onClick={() => console.log("clicked")}
+												<label
+													htmlFor="image-upload"
 													className="absolute -bottom-2 -right-2 p-2 bg-white rounded-full shadow-md hover:bg-gray-50">
 													<Camera className="h-4 w-4" />
-													<span className="sr-only">Change profile photo</span>
-												</button>
+												</label>
 												<input
 													type="file"
-													name="profileImage"
+													id="image-upload"
 													accept="image/*"
-													placeholder="Add your image"
-													onChange={(e) => handleProfileImageChange(e)}
+													className="hidden"
+													onChange={handleImageUpload}
 												/>
 											</>
 										)}
@@ -295,16 +325,23 @@ const Profile = () => {
 											className="block text-sm font-medium mb-1">
 											Role
 										</label>
-										<input
+
+										<select
 											id="role"
-											type="text"
-											className="w-full px-3 py-2 border rounded-md disabled:bg-gray-100 cursor-not-allowed"
-											value={userData.role}
+											defaultValue={userData.role}
+											className={`w-full px-3 py-2 border rounded-md disabled:bg-gray-100 ${
+												!isEditing || !user.isAdmin ? "cursor-not-allowed" : ""
+											}`}
 											onChange={(e) =>
 												handleInputChange("role", e.target.value)
 											}
-											disabled={true}
-										/>
+											disabled={!isEditing || !user.isAdmin}>
+											<option value="">Select role</option>
+											<option value="Assistant Manager">Program Manager</option>
+											<option value="Team Lead">Team Lead</option>
+											<option value="Validator">Validator</option>
+											<option value="Tester">Tester</option>
+										</select>
 									</div>
 
 									<div>

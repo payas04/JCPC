@@ -178,11 +178,7 @@ export default function AccopsAdmin() {
 					{members?.map(
 						(member) =>
 							user._id !== member._id && (
-								<div
-									key={member._id}
-									className={`${
-										user._id === member._id ? "bg-green-300" : "bg-white"
-									} rounded-lg shadow-md`}>
+								<div key={member._id} className=" rounded-lg shadow-md">
 									<div className="p-6">
 										<div className="flex items-start justify-between">
 											<div className="flex items-center gap-4">
