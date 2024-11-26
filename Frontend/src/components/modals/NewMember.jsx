@@ -1,5 +1,9 @@
 import { Switch } from "@mui/material";
+import { FaEye, FaRegEyeSlash } from "react-icons/fa";
 import React from "react";
+import { useState } from "react";
+
+
 
 const NewMember = ({
 	formData,
@@ -7,6 +11,7 @@ const NewMember = ({
 	setIsNewUserModalOpen,
 	handleCreateNewUser,
 }) => {
+	const [showPassword, setShowPassword] = useState(false);
 	return (
 		<div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
 			<div className="bg-white p-6 rounded-lg w-[500px]">
@@ -72,7 +77,7 @@ const NewMember = ({
 								}
 							/>
 						</div>
-						<div>
+						<div className="relative">
 							<label
 								htmlFor="new-password"
 								className="block text-sm font-medium mb-1">
@@ -80,9 +85,9 @@ const NewMember = ({
 							</label>
 							<input
 								id="new-password"
-								type="password"
+								type={showPassword ? "text" : "password"}
 								autoComplete="current-password"
-								placeholder="Enter DomainID"
+								placeholder="Enter Password"
 								className="w-full p-2 border rounded-md"
 								required
 								value={formData.password}
@@ -90,6 +95,13 @@ const NewMember = ({
 									setFormData({ ...formData, password: e.target.value })
 								}
 							/>
+							<span
+								className="absolute right-3 top-9 cursor-pointer"
+								onClick={() => {
+									setShowPassword(!showPassword);
+								}}>
+								{showPassword ? <FaEye /> : <FaRegEyeSlash />}
+							</span>
 						</div>
 						<div>
 							<label
