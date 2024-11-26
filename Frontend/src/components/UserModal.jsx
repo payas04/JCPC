@@ -72,8 +72,8 @@ export default function UserModal({ open, setOpen, initialUser, users }) {
 							<div className="relative px-4 pb-4">
 								<div className="flex mt-2 pt-2">
 									<img
-										className="w-32 h-32 rounded-full border-4 border-blue-800 object-contain bg-white"
-										src={`/images/members/${user.domainID}.jpg`}
+										className="w-32 h-32 rounded-full border-4 border-blue-800 object-cover bg-white"
+										src={user.image}
 										onError={(e) => {
 											e.target.src = "/images/profile/default.png";
 										}}
