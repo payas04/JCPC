@@ -429,7 +429,7 @@ const Profile = () => {
 								<div className="mb-6">
 									<h2 className="text-xl font-bold">Issues Handled</h2>
 									<p className="text-gray-600 text-sm">
-										Summary of issues you've addressed
+										Summary of issues you've raised
 									</p>
 								</div>
 
@@ -454,6 +454,27 @@ const Profile = () => {
 											/>
 										</div>
 									))}
+								</div>
+								<div className="flex justify-between items-center mt-4 border bg-gray-100 p-2 rounded-md">
+									<span className="text-lg font-medium capitalize">
+										Previous Issues Score
+									</span>
+									<input
+										type="number"
+										min={0}
+										value={user.score.previous}
+										onChange={(e) =>
+											setUserData({
+												...userData,
+												score: {
+													...prevScore.score,
+													previous: e.target.valueAsNumber,
+												},
+											})
+										}
+										disabled={!isEditing || !user.isAdmin}
+										className="w-20 px-3 py-2 border bg-white rounded-md text-right"
+									/>
 								</div>
 							</div>
 						</div>

@@ -19,18 +19,14 @@ import {
 import JCPCProduct from "../../components/JCPCProduct";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { getUsers, logoutUser } from "../../lib/api";
 import { useAuth } from "../../context/auth";
 
 const Dashboard = () => {
 	const profiles = useSelector((state) => state.profile.profiles);
-	const { isAuthenticated, user, logout } = useAuth();
-
-	const logoutHandler = () => {
-		logout();
-	};
-
+	const { user, logout } = useAuth();
+	const navigate = useNavigate();
 	return (
 		<main className="flex-1 p-6 pt-12 overflow-y-auto mb-8">
 			{/* Header */}
@@ -39,14 +35,24 @@ const Dashboard = () => {
 					<Typewriter
 						onInit={(typewriter) => {
 							typewriter
-								.typeString(`Welcome, ${user.domainID}`)
+								.typeString(`Welcome, ${user.name}`)
 								.pauseFor(2500)
 								.start();
 						}}
 					/>
 				</h1>
-				<span className="cursor-pointer" onClick={logoutHandler}>
-					Logout
+				<span className="cursor-pointer">
+					<img
+						src={user.image}
+						alt={user.name}
+						onClick={() => {
+							navigate(`/accops/profile/${user._id}`);
+						}}
+						className="w-12 rounded-full"
+						onError={(e) => {
+							e.target.src = "/images/profile/default.png";
+						}}
+					/>
 				</span>
 			</header>
 

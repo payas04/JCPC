@@ -186,8 +186,28 @@ const EditMember = ({
 							)}
 						</div>
 					</div>
-					{/* Admin Status */}
+					{/* Admin Status and previous score */}
 					<div className="grid grid-cols-3 gap-6">
+						<div className="space-y-2">
+							<label htmlFor="prevScore" className="formLabel">
+								Previous Score
+							</label>
+							<input
+								type="number"
+								id="prevScore"
+								defaultValue={selectedMember.score.previous}
+								onChange={(e) =>
+									setSelectedMember({
+										...selectedMember,
+										score: {
+											...prevScore.score,
+											previous: e.target.valueAsNumber,
+										},
+									})
+								}
+								className="formInput"
+							/>
+						</div>
 						<div className="space-y-2">
 							<label htmlFor="isAdmin" className="formLabel">
 								Admin Status

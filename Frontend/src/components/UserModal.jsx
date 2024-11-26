@@ -38,6 +38,37 @@ export default function UserModal({ open, setOpen, initialUser, users }) {
 		}
 	}, [open, initialUser, users]);
 
+	useEffect(() => {
+		const handleKeyDown = (event) => {
+			if (!open) return;
+
+			switch (event.key) {
+				case "ArrowLeft":
+					if (hasPrev) {
+						event.preventDefault();
+						prev();
+					}
+					break;
+				case "ArrowRight":
+					if (hasNext) {
+						event.preventDefault();
+						next();
+					}
+					break;
+				case "Escape":
+					setOpen(false);
+					break;
+			}
+		};
+
+		window.addEventListener("keydown", handleKeyDown);
+
+		// Cleanup event listener
+		return () => {
+			window.removeEventListener("keydown", handleKeyDown);
+		};
+	}, [open, hasPrev, hasNext, prev, next, setOpen]);
+
 	if (!user) return null;
 	return (
 		<Dialog
