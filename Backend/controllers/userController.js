@@ -41,7 +41,6 @@ let getUsers = asynHandler(async (req, res) => {
 
 let getUser = asynHandler(async (req, res) => {
 	let user = await User.findById(req.params.id);
-	console.log(user);
 	if (!user) {
 		res.status(404);
 	}

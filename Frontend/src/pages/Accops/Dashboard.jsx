@@ -48,7 +48,7 @@ const Dashboard = () => {
 						onClick={() => {
 							navigate(`/accops/profile/${user._id}`);
 						}}
-						className="w-12 rounded-full"
+						className="w-12 h-12 rounded-full"
 						onError={(e) => {
 							e.target.src = "/images/profile/default.png";
 						}}

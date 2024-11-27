@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Edit, PlusCircle, Search, Trash2 } from "lucide-react";
-import { useDispatch, useSelector } from "react-redux";
+import { Edit, PlusCircle, Search, SearchIcon, Trash2 } from "lucide-react";
+import { useSelector } from "react-redux";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useOutletContext } from "react-router-dom";
@@ -18,6 +18,10 @@ export default function AccopsAdmin() {
 	const [isNewUserModalOpen, setIsNewUserModalOpen] = useState(false);
 	const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 	const [selectedMember, setSelectedMember] = useState(null);
+	// const [data, setData] = useState(sortByScore(profiles, "desc"));
+	// const [activeSort, setActiveSort] = useState("High");
+	const [searchQuery, setSearchQuery] = useState(""); // Step 1: Add search query state
+	const [filteredData, setFilteredData] = useState([]);
 	const [formData, setFormData] = useState({
 		name: "",
 		email: "",
@@ -34,14 +38,15 @@ export default function AccopsAdmin() {
 
 	useEffect(() => {
 		if (profiles) {
-			setMembers(profiles);
+			setMembers(
+				profiles.filter((user) =>
+					user.name.toLowerCase().includes(searchQuery.toLowerCase())
+				)
+			);
 			setIsLoading(false);
 		}
-	}, [profiles]);
+	}, [profiles, searchQuery]);
 
-	// const filteredData = members.filter((user) =>
-	// 	user?.Name?.toLowerCase().includes(searchQuery.toLowerCase())
-	// );
 	const openEditModal = (member) => {
 		setSelectedMember(member);
 		setIsEditModalOpen(true);
@@ -147,13 +152,15 @@ export default function AccopsAdmin() {
 					<h1 className="text-3xl font-bold">Team Management</h1>
 					<div className="flex items-center gap-4">
 						<div className="relative">
-							<Search className="absolute left-2 top-3 h-4 w-4 text-gray-500" />
+							<div className="absolute inset-y-0 start-0 text-white flex items-center ps-3 pointer-events-none">
+								<SearchIcon className="text-black" color="blue" />
+							</div>
 							<input
 								type="text"
-								// value={searchQuery} // Step 3: Bind input value to search query state
-								// onChange={(e) => setSearchQuery(e.target.value)} // Step 4: Update search query on input change
+								value={searchQuery} // Step 3: Bind input value to search query state
+								onChange={(e) => setSearchQuery(e.target.value)} // Step 4: Update search query on input change
 								placeholder="Search team members..."
-								className="pl-8 w-[300px] p-2 border rounded-md"
+								className="bg-white text-blue-800 text-base rounded-lg placeholder:text-blue-800 block w-full ps-10 p-2.5 focus:outline focus:outline-blue-800"
 							/>
 						</div>
 						<select className="w-[180px] p-2 border rounded-md">
@@ -175,51 +182,55 @@ export default function AccopsAdmin() {
 			{/* Scrollable Content */}
 			<div className="flex-1 overflow-y-scroll p-6">
 				<div className="flex-1 overflow-y-auto pb-8 grid grid-cols-3 gap-6">
-					{members?.map(
-						(member) =>
-							user._id !== member._id && (
-								<div key={member._id} className=" rounded-lg shadow-md">
-									<div className="p-6">
-										<div className="flex items-start justify-between">
-											<div className="flex items-center gap-4">
-												<img
-													src={member.image}
-													alt={member.domainID}
-													className="rounded-full w-16 h-16 object-cover"
-													onError={(e) => {
-														e.target.src = "/images/profile/default.png";
-													}}
-												/>
-												<div>
-													<h3 className="font-semibold text-lg">
-														{member.domainID}
-													</h3>
-													<p className="text-gray-600">{member.role}</p>
-													<p className="text-sm mt-1">
-														Score: {member.score.current}
-													</p>
+					{members.length > 0 ? (
+						members?.map(
+							(member) =>
+								user._id !== member._id && (
+									<div key={member._id} className=" rounded-lg shadow-md">
+										<div className="p-6">
+											<div className="flex items-start justify-between">
+												<div className="flex items-center gap-4">
+													<img
+														src={member.image}
+														alt={member.domainID}
+														className="rounded-full w-16 h-16 object-cover"
+														onError={(e) => {
+															e.target.src = "/images/profile/default.png";
+														}}
+													/>
+													<div>
+														<h3 className="font-semibold text-lg">
+															{member.domainID}
+														</h3>
+														<p className="text-gray-600">{member.role}</p>
+														<p className="text-sm mt-1">
+															Score: {member.score.current}
+														</p>
+													</div>
 												</div>
-											</div>
-											<div className="space-x-2">
-												<button
-													onClick={() => openEditModal(member)}
-													className="p-2 text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100">
-													<Edit className="h-4 w-4" />
-													<span className="sr-only">Edit team member</span>
-												</button>
-												{user._id !== member._id && (
+												<div className="space-x-2">
 													<button
-														onClick={() => handleDeleteUser(member._id)}
+														onClick={() => openEditModal(member)}
 														className="p-2 text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100">
-														<Trash2 className="h-4 w-4" />
+														<Edit className="h-4 w-4" />
 														<span className="sr-only">Edit team member</span>
 													</button>
-												)}
+													{user._id !== member._id && (
+														<button
+															onClick={() => handleDeleteUser(member._id)}
+															className="p-2 text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100">
+															<Trash2 className="h-4 w-4" />
+															<span className="sr-only">Edit team member</span>
+														</button>
+													)}
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-							)
+								)
+						)
+					) : (
+						<p className="text-center col-span-4">No Members found</p>
 					)}
 				</div>
 			</div>

@@ -1,7 +1,7 @@
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { IoClose } from "react-icons/io5";
-import { useCarousel } from "../hooks/useCarousel";
+import { useCarousel } from "../../hooks/useCarousel";
 import { useEffect } from "react";
 
 export default function UserModal({ open, setOpen, initialUser, users }) {

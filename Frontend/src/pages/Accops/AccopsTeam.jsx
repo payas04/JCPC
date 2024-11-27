@@ -11,7 +11,7 @@ import SortControls from "../../components/SortControl";
 import BirthdaySection from "../../components/BirthdaySection";
 import { useSelector } from "react-redux";
 
-const JioCloudPc = () => {
+const AccopsTeam = () => {
 	const sortByNameAscending = (array) =>
 		[...array].sort((a, b) => a.name.localeCompare(b.name));
 
@@ -73,4 +73,4 @@ const JioCloudPc = () => {
 	);
 };
 
-export default JioCloudPc;
+export default AccopsTeam;

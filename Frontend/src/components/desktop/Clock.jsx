@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { MdOutlineBatteryFull, MdOutlineSignalWifi4Bar } from "react-icons/md";
-import { GetDate } from "./GetDate";
+import { GetDate } from "../GetDate";
 import { AnalogClock } from "@hoseinh/react-analog-clock";
 import { useNavigate } from "react-router-dom";
 

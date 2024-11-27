@@ -1,6 +1,6 @@
 import { CardContainer, CardItem } from "../components/ui/3d-card";
 import { useState } from "react";
-import UserModal from "./UserModal";
+import UserModal from "./modals/UserModal";
 
 export default function CustomCard({ user, allUsers }) {
 	const [isOpen, setIsOpen] = useState(false);

@@ -19,7 +19,7 @@ const StatCard = ({
 			setOpen(true);
 		}
 		if (title === "Total Members") {
-			navigate("/accops/jiocloudpc");
+			navigate("/accops/myteam");
 		}
 	};
 

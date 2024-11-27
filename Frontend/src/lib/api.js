@@ -56,14 +56,14 @@ export const getMyDetails = async () => {
 };
 
 export const uploadImageApi = async (imageFile, domainID) => {
+	const formData = new FormData();
+	formData.append("file", imageFile);
+	formData.append(
+		"upload_preset",
+		import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET
+	);
+	formData.append("public_id", `${domainID}_profile_image`);
 	try {
-		const formData = new FormData();
-		formData.append("file", imageFile);
-		formData.append(
-			"upload_preset",
-			import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET
-		);
-		// formData.append("public_id", `${domainID}_profile_image`);
 		const response = await axios.post(
 			import.meta.env.VITE_CLOUDINARY_URL +
 				`/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload`,

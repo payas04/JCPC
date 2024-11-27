@@ -369,7 +369,7 @@ const Profile = () => {
 										<label
 											htmlFor="courses"
 											className="block text-sm font-medium mb-1">
-											Courses
+											Courses ( separate each course with semicolon )
 										</label>
 										<div className="flex items-center gap-2">
 											<BookOpen className="h-4 w-4 text-gray-500" />
@@ -378,6 +378,7 @@ const Profile = () => {
 												type="text"
 												className="w-full px-3 py-2 border rounded-md disabled:bg-gray-100"
 												value={userData.courses}
+												placeholder="separate each course with semicolon"
 												onChange={(e) =>
 													handleInputChange("courses", e.target.value)
 												}

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { SearchIcon } from "lucide-react";
 import CustomCard from "./CustomCard";
-import UserModal from "./UserModal";
 
 const TeamSection = ({ data }) => {
 	const [searchQuery, setSearchQuery] = useState(""); // Step 1: Add search query state
