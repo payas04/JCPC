@@ -56,17 +56,25 @@ export const getMyDetails = async () => {
 };
 
 export const uploadImageApi = async (imageFile, domainID) => {
-	const formData = new FormData();
-	formData.append("file", imageFile);
-	formData.append(
-		"upload_preset",
-		import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET
-	);
-	formData.append("public_id", `${domainID}_profile_image`);
 	try {
+		const signatureResponse = await axios.post(
+			BASE_URL + "/api/user/generate-signature",
+			{ domainID }
+		);
+
+		const { signature, timestamp, apiKey, cloudName, folder } =
+			signatureResponse.data;
+		const formData = new FormData();
+		formData.append("file", imageFile);
+		formData.append("public_id", domainID);
+		formData.append("api_key", apiKey);
+		formData.append("timestamp", timestamp);
+		formData.append("signature", signature);
+		if (folder) {
+			formData.append("folder", folder);
+		}
 		const response = await axios.post(
-			import.meta.env.VITE_CLOUDINARY_URL +
-				`/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload`,
+			`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
 			formData
 		);
 		toast.success("Image uploaded successfully!");

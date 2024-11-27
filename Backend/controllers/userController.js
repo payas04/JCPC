@@ -1,5 +1,6 @@
 let asynHandler = require("express-async-handler");
 let User = require("../model/userModel");
+const cloudinary = require("cloudinary").v2;
 
 const registerUser = async (req, res) => {
 	try {
@@ -92,10 +93,38 @@ const deleteUser = async (req, res) => {
 	}
 };
 
+const generateSignature = (req, res) => {
+	const { domainID } = req.body;
+
+	// Parameters to sign
+	const paramsToSign = {
+		public_id: domainID,
+		timestamp: Math.round(Date.now() / 1000),
+		overwrite: true, // Enable overwriting
+		invalidate: true, // Clear cached copies
+		folder: "profile_images", // Optional folder
+	};
+
+	// Generate signature
+	const signature = cloudinary.utils.api_sign_request(
+		paramsToSign,
+		process.env.CLOUDINARY_API_SECRET
+	);
+
+	res.json({
+		signature,
+		timestamp: paramsToSign.timestamp,
+		apiKey: process.env.CLOUDINARY_API_KEY,
+		cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+		folder: "profile_images", // Include folder info
+	});
+};
+
 module.exports = {
 	getUsers,
 	getUser,
 	updateUser,
 	deleteUser,
 	registerUser,
+	generateSignature,
 };
