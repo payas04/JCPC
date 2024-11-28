@@ -13,7 +13,7 @@ const sendCookie = (user, res, message, statusCode = 200) => {
 			domain:
 				process.env.NODE_ENV === "Development"
 					? "localhost"
-					: process.env.FRONTEND_URL,
+					: process.env.DOMAIN_NAME,
 		})
 		.json({
 			success: true,
