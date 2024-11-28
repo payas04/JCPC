@@ -3,22 +3,21 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Loader from "./components/Loader";
 import AccopsLayout from "./components/layouts/AccopsLayout";
 import ProtectedRoute from "./components/layouts/ProtectedRoute";
-import AccopsLogin from "./pages/accops/AccopsLogin";
+import AccopsLogin from "./pages/Accops/AccopsLogin";
 import { Toaster } from "react-hot-toast";
 
-const Dashboard = lazy(() => import("./pages/accops/Dashboard"));
+const Dashboard = lazy(() => import("./pages/Accops/Dashboard"));
 const Home = lazy(() => import("./pages/Home"));
 const Lockscreen = lazy(() => import("./pages/Lockscreen"));
-const AccopsTeam = lazy(() => import("./pages/accops/AccopsTeam"));
+const AccopsTeam = lazy(() => import("./pages/Accops/AccopsTeam"));
 const Footer = lazy(() => import("./components/Footer"));
 
-const AccopsAdmin = lazy(() => import("./pages/accops/AccopsAdmin"));
-const Profile = lazy(() => import("./pages/accops/Profile"));
-const Activities = lazy(() => import("./pages/accops/Activities"));
+const AccopsAdmin = lazy(() => import("./pages/Accops/AccopsAdmin"));
+const Profile = lazy(() => import("./pages/Accops/Profile"));
+const Activities = lazy(() => import("./pages/Accops/Activities"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 
 const protectedRoutes = [
-	// { path: "login", component: AccopsLogin },
 	{ path: "dashboard", component: Dashboard },
 	{ path: "myteam", component: AccopsTeam },
 	{ path: "activities", component: Activities },
