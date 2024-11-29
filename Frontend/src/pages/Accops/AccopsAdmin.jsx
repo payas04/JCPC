@@ -18,10 +18,7 @@ export default function AccopsAdmin() {
 	const [isNewUserModalOpen, setIsNewUserModalOpen] = useState(false);
 	const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 	const [selectedMember, setSelectedMember] = useState(null);
-	// const [data, setData] = useState(sortByScore(profiles, "desc"));
-	// const [activeSort, setActiveSort] = useState("High");
 	const [searchQuery, setSearchQuery] = useState(""); // Step 1: Add search query state
-	const [filteredData, setFilteredData] = useState([]);
 	const [formData, setFormData] = useState({
 		name: "",
 		email: "",
@@ -31,21 +28,19 @@ export default function AccopsAdmin() {
 		role: "",
 	});
 
-	// Step 1: Add search query state
-	// const [searchQuery, setSearchQuery] = useState("");
-
-	// Step 2: Filter the data based on the search query
-
 	useEffect(() => {
 		if (profiles) {
 			setMembers(
-				profiles.filter((user) =>
+				sortByNameAscending(profiles).filter((user) =>
 					user.name.toLowerCase().includes(searchQuery.toLowerCase())
 				)
 			);
 			setIsLoading(false);
 		}
 	}, [profiles, searchQuery]);
+
+	const sortByNameAscending = (array) =>
+		[...array].sort((a, b) => a.name.localeCompare(b.name));
 
 	const openEditModal = (member) => {
 		setSelectedMember(member);
@@ -163,12 +158,12 @@ export default function AccopsAdmin() {
 								className="bg-white text-blue-800 text-base rounded-lg placeholder:text-blue-800 block w-full ps-10 p-2.5 focus:outline focus:outline-blue-800"
 							/>
 						</div>
-						<select className="w-[180px] p-2 border rounded-md">
+						{/* <select className="w-[180px] p-2 border rounded-md">
 							<option value="name">Sort by Name</option>
 							<option value="score-high">Score: High to Low</option>
 							<option value="score-low">Score: Low to High</option>
 							<option value="role">Sort by Role</option>
-						</select>
+						</select> */}
 						<button
 							onClick={() => setIsNewUserModalOpen(true)}
 							className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
