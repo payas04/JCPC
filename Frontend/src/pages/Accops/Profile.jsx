@@ -406,7 +406,7 @@ const Profile = () => {
 										<label
 											htmlFor="extraActivities"
 											className="block text-sm font-medium mb-1">
-											Extra Activities
+											Extra Activities ( separate each activity with semicolon )
 										</label>
 										<div className="flex items-center gap-2">
 											<Activity className="h-4 w-4 text-gray-500" />
