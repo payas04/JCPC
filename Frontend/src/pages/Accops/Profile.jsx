@@ -128,7 +128,7 @@ const Profile = () => {
 					onSubmit={(e) => {
 						handleSave(e);
 					}}>
-					<div className="flex items-center justify-between px-6">
+					<div className="flex items-center justify-between px-6 mb-4">
 						<div>
 							<h1 className="text-3xl font-bold">Profile</h1>
 							<p className="text-gray-600">
@@ -161,7 +161,7 @@ const Profile = () => {
 						</div>
 					</div>
 
-					<div className="grid gap-6 md:grid-cols-2">
+					<div className="grid gap-6 md:grid-cols-2 px-6">
 						{/* Personal Information Card */}
 
 						<div className="bg-white rounded-lg shadow-md p-6 h-fit">
@@ -347,9 +347,12 @@ const Profile = () => {
 									<div>
 										<label
 											htmlFor="tag"
-											className="block text-sm font-medium mb-1">
+											className="inline-block text-sm font-medium mb-1">
 											Tag
 										</label>
+										<p className="inline-block text-red-500 font-normal text-sm">
+											(Characters left - {30 - userData.tag.length}/ 30)
+										</p>
 										<div className="flex items-center gap-2">
 											<Tag className="h-4 w-4 text-gray-500" />
 											<input
@@ -357,6 +360,7 @@ const Profile = () => {
 												type="text"
 												className="w-full px-3 py-2 border rounded-md disabled:bg-gray-100"
 												value={userData.tag}
+												maxLength={30}
 												onChange={(e) =>
 													handleInputChange("tag", e.target.value)
 												}
