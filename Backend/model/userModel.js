@@ -8,6 +8,7 @@ let userSchema = mongoose.Schema(
 		isAdmin: { type: Boolean, required: true },
 		name: { type: String, default: "", required: true },
 		role: { type: String, default: "" },
+		dob: { type: Date, default: "" },
 		image: { type: String, default: "" },
 		issues: {
 			blocker: { type: Number, default: 0 },

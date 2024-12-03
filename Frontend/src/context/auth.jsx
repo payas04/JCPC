@@ -17,10 +17,6 @@ export const AuthProvider = ({ children }) => {
 	const [trigger, setTrigger] = useState(false);
 
 	useEffect(() => {
-		// const storedUser = localStorage.getItem("user");
-		// if (storedUser) {
-		// 	setUser(JSON.parse(storedUser));
-		// }
 		checkAuthStatus();
 	}, [trigger]);
 
@@ -83,17 +79,6 @@ export const AuthProvider = ({ children }) => {
 			console.error("Logout failed:", error);
 		}
 	};
-
-	// const login = (username) => {
-	// 	const newUser = { username };
-	// 	setUser(newUser);
-	// 	localStorage.setItem("user", JSON.stringify(newUser));
-	// };
-
-	// const logout = () => {
-	// 	setUser(null);
-	// 	localStorage.removeItem("user");
-	// };
 
 	const value = {
 		isShutdown,

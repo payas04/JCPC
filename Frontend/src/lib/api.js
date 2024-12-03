@@ -62,7 +62,7 @@ export const uploadImageApi = async (imageFile, domainID) => {
 		"upload_preset",
 		import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET
 	);
-	formData.append("public_id", `${domainID}_profile_image`);
+	// formData.append("public_id", `${domainID}_profile_image`);
 	try {
 		const response = await axios.post(
 			import.meta.env.VITE_CLOUDINARY_URL +

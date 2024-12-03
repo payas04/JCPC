@@ -72,28 +72,12 @@ table {
 	width: 100%;
 }
 
-th {
-	/* background-color: #1e40af; */
-	/* color: white; */
-}
-
 td,
 th {
 	border: 1px solid #1e40af;
 	text-align: left;
 	padding: 8px;
 }
-tr {
-	/* background-color: #82ca9d; */
-}
-
-tr:last-child {
-	/* background-color: #1e40af; */
-	/* color: white; */
-}
-/* tr:nth-child(even) {
-	background-color: #dddddd;
-} */
 
 .card {
 	transition: transform 0.5s ease, box-shadow 0.3s ease; /* Transition for transform and shadow */

@@ -4,6 +4,7 @@ import { MdShortcut } from "react-icons/md";
 import { useAuth } from "../context/auth";
 import { useCallback, useState } from "react";
 import Browser from "./Browser";
+import Slider from "./Slider";
 
 export default function Home() {
 	const navigate = useNavigate();
@@ -22,6 +23,13 @@ export default function Home() {
 		right: screenWidth - 1128,
 		bottom: screenHeight - 624,
 	};
+
+	const [isMenuOpen, setIsMenuOpen] = useState(true);
+
+	// Use useCallback to memoize the function and avoid unnecessary re-renders
+	const toggleMenu = useCallback(() => {
+		setIsMenuOpen((prev) => !prev);
+	}, []);
 
 	function handleFadeOutClick() {
 		setIsShutdown(false);
@@ -135,6 +143,11 @@ export default function Home() {
 					className="absolute right-16 top-32 opacity-80"
 				/>
 			</div>
+			{/* <Slider
+				isMenuOpen={isMenuOpen}
+				setIsMenuOpen={setIsMenuOpen}
+				toggleMenu={toggleMenu}
+			/> */}
 		</>
 	);
 }
