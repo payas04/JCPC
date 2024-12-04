@@ -23,6 +23,7 @@ app.use(
 app.use(express.urlencoded({ extended: true })); //accepts form data from request body
 app.use(express.json()); //accept json data from request body
 app.use(cookieParser());
+app.use(express.json());
 app.use("/api/auth/user", authRoute);
 app.use("/api/user", userRoute);
 // app.use(errorHandler);
