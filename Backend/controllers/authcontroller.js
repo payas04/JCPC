@@ -3,7 +3,8 @@ const sendCookie = require("../utils/feature");
 
 const loginUser = async (req, res) => {
 	try {
-		const { domainID, password } = req.body;
+		let { domainID, password } = req.body;
+		domainID = domainID.toLowerCase();
 		const user = await User.findOne({ domainID });
 
 		if (!user)

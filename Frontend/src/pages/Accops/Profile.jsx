@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
 	Camera,
 	Mail,
@@ -46,6 +46,8 @@ const Profile = () => {
 	const [userData, setUserData] = useState(user);
 	const [preview, setPreview] = useState(null);
 	const [imageUrl, setImageUrl] = useState(null);
+	const [progress, setProgress] = useState(userData.tag.length);
+
 	const handleInputChange = (field, value) => {
 		setUserData((prev) => ({ ...prev, [field]: value }));
 	};
@@ -128,7 +130,7 @@ const Profile = () => {
 					onSubmit={(e) => {
 						handleSave(e);
 					}}>
-					<div className="flex items-center justify-between px-6">
+					<div className="flex items-center justify-between px-6 mb-4">
 						<div>
 							<h1 className="text-3xl font-bold">Profile</h1>
 							<p className="text-gray-600">
@@ -161,7 +163,7 @@ const Profile = () => {
 						</div>
 					</div>
 
-					<div className="grid gap-6 md:grid-cols-2">
+					<div className="grid gap-6 md:grid-cols-2 px-6">
 						{/* Personal Information Card */}
 
 						<div className="bg-white rounded-lg shadow-md p-6 h-fit">
@@ -279,17 +281,6 @@ const Profile = () => {
 
 									<div className="flex items-center gap-2">
 										<div className="relative inline-flex items-center cursor-pointer">
-											{/* <input
-											type="checkbox"
-											id="isAdmin"
-											className="sr-only peer"
-											checked={userData.isAdmin}
-											onChange={(e) =>
-												handleInputChange("isAdmin", e.target.checked)
-											}
-											disabled={!isEditing}
-										/> */}
-
 											<label
 												htmlFor="isAdmin"
 												className="block text-sm font-medium mb-1">
@@ -350,17 +341,31 @@ const Profile = () => {
 											className="block text-sm font-medium mb-1">
 											Tag
 										</label>
-										<div className="flex items-center gap-2">
-											<Tag className="h-4 w-4 text-gray-500" />
+
+										<div className="flex items-center gap-2 relative">
+											<Tag className="absolute left-2 h-4 w-4 text-gray-500" />
 											<input
 												id="tag"
 												type="text"
-												className="w-full px-3 py-2 border rounded-md disabled:bg-gray-100"
+												className="w-full px-8 py-2 border rounded-md disabled:bg-gray-100"
 												value={userData.tag}
-												onChange={(e) =>
-													handleInputChange("tag", e.target.value)
-												}
+												maxLength={30}
+												onChange={(e) => {
+													handleInputChange("tag", e.target.value);
+													setProgress(e.target.value.length);
+												}}
 												disabled={!isEditing}
+											/>
+											<span className="absolute right-3 top-3 text-gray-600 text-sm">
+												{30 - userData.tag.length}/30
+											</span>
+										</div>
+										<div className="w-full bg-gray-300 h-1 mt-1 rounded">
+											<div
+												className={`bg-black h-full rounded`}
+												style={{
+													width: `${(progress / 30) * 100}%`,
+												}}
 											/>
 										</div>
 									</div>
@@ -371,12 +376,12 @@ const Profile = () => {
 											className="block text-sm font-medium mb-1">
 											Courses ( separate each course with semicolon )
 										</label>
-										<div className="flex items-center gap-2">
-											<BookOpen className="h-4 w-4 text-gray-500" />
+										<div className="flex items-center gap-2 relative">
+											<BookOpen className="absolute left-2 h-4 w-4 text-gray-500" />
 											<input
 												id="courses"
 												type="text"
-												className="w-full px-3 py-2 border rounded-md disabled:bg-gray-100"
+												className="w-full px-8 py-2 border rounded-md disabled:bg-gray-100"
 												value={userData.courses}
 												placeholder="separate each course with semicolon"
 												onChange={(e) =>

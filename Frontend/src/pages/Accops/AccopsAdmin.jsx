@@ -203,21 +203,17 @@ export default function AccopsAdmin() {
 														</p>
 													</div>
 												</div>
-												<div className="space-x-2">
+												<div className="flex justify-between gap-2 sm:flex-col 2xl:flex-row">
 													<button
 														onClick={() => openEditModal(member)}
 														className="p-2 text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100">
 														<Edit className="h-4 w-4" />
-														<span className="sr-only">Edit team member</span>
 													</button>
-													{user._id !== member._id && (
-														<button
-															onClick={() => handleDeleteUser(member._id)}
-															className="p-2 text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100">
-															<Trash2 className="h-4 w-4" />
-															<span className="sr-only">Edit team member</span>
-														</button>
-													)}
+													<button
+														onClick={() => handleDeleteUser(member._id)}
+														className="p-2 text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100">
+														<Trash2 className="h-4 w-4" />
+													</button>
 												</div>
 											</div>
 										</div>
