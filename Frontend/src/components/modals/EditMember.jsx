@@ -24,8 +24,14 @@ const EditMember = ({
 									type="text"
 									id="domainId"
 									defaultValue={selectedMember.domainID}
-									className="formInput cursor-not-allowed"
+									onChange={(e) => {
+										setSelectedMember({
+											...selectedMember,
+											domainID: e.target.value,
+										});
+									}}
 									disabled
+									className="formInput cursor-not-allowed"
 								/>
 							</div>
 							<div className="space-y-2">
@@ -43,7 +49,6 @@ const EditMember = ({
 											...selectedMember,
 											name: e.target.value,
 										});
-										console.log(selectedMember.name);
 									}}
 									className="formInput"
 								/>

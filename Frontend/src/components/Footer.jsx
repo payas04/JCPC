@@ -18,12 +18,11 @@ const Footer = () => {
 
 	return (
 		<div
-			className="fixed bottom-0 w-full h-12 rounded-t-3xl justify-between items-center text-white space-x-6 px-1 z-40"
+			className="fixed bottom-0 w-full h-12 rounded-t-3xl flex justify-between items-center text-white space-x-6 px-1 z-40"
 			style={{
 				backgroundColor: JioCloudPath
 					? "rgba(0, 0, 0, 1)"
 					: "rgba(0, 0, 0, 0.5)",
-				display: location.pathname == "/" ? "none" : "flex",
 			}}>
 			<Power />
 			<div className="flex gap-4 justify-center items-center">
@@ -36,7 +35,7 @@ const Footer = () => {
 						borderBottomWidth: JioCloudPath ? 2 : 0,
 					}}
 					onClick={() => {
-						if (JioCloudPath) navigate("/home");
+						if (JioCloudPath) navigate("/");
 						else navigate("/accops/dashboard");
 					}}>
 					<img

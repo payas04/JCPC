@@ -13,7 +13,7 @@ const AppHeader = () => {
 				<IoMdRefresh color="black" size={15} />
 			</div>
 			<div className="flex space-x-2 cursor-pointer">
-				<Link to={"/home"}>
+				<Link to={"/"}>
 					<IoClose
 						color="black"
 						size={15}

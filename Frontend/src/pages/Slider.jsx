@@ -44,10 +44,6 @@ export default function Slider({ isMenuOpen, toggleMenu }) {
 			onClick={(e) => {
 				e.stopPropagation();
 				toggleMenu();
-			}}
-			onKeyPress={(e) => {
-				e.stopPropagation();
-				toggleMenu();
 			}}>
 			<div className="relative flex flex-col justify-center h-full text-primary">
 				<div className="absolute flex flex-col items-center w-full top-32 text-white">

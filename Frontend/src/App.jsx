@@ -8,7 +8,7 @@ import { Toaster } from "react-hot-toast";
 
 const Dashboard = lazy(() => import("./pages/Accops/Dashboard"));
 const Home = lazy(() => import("./pages/Home"));
-const Lockscreen = lazy(() => import("./pages/Lockscreen"));
+// const Lockscreen = lazy(() => import("./pages/Lockscreen"));
 const AccopsTeam = lazy(() => import("./pages/Accops/AccopsTeam"));
 const Footer = lazy(() => import("./components/Footer"));
 
@@ -30,8 +30,8 @@ const App = () => {
 		<Router>
 			<Suspense fallback={<Loader />}>
 				<Routes>
-					<Route path="/" element={<Lockscreen />} />
-					<Route path="/home" element={<Home />} />
+					{/* <Route path="/" element={<Lockscreen />} /> */}
+					<Route path="/" element={<Home />} />
 					<Route path="/accops/login" element={<AccopsLogin />} />
 					// Routes of accops with protected route
 					<Route
