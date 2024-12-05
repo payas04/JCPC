@@ -105,6 +105,8 @@ const uploadAndUpdateEmployees = async (req, res) => {
       return res.status(400).json({ message: "Invalid or empty data." });
     }
 
+    const notFoundUsers = []; // To track users not in DB
+
     // Process each user in the array
     for (const user of users) {
       const { domainID, issues } = user;
@@ -114,24 +116,35 @@ const uploadAndUpdateEmployees = async (req, res) => {
         continue; // Skip invalid entries
       }
 
-      // Update or insert user data based on `domainID`
-      await User.updateOne(
-        { domainID }, // Match by domainID
-        {
-          $set: {
-            issues, // Update issues field
-          },
-        },
-        { upsert: true } // Create a new document if it doesn't exist
-      );
+      // Check if user exists in the database
+      const existingUser = await User.findOne({ domainID });
+
+      if (existingUser) {
+        // Merge existing user data with the new input
+        const updatedData = {
+          issues: issues || existingUser.issues, // Use new or existing issues
+          email: existingUser.email, // Ensure unique field stays consistent
+          name: existingUser.name, // Retain original name
+          role: existingUser.role || user.role, // Retain or update role
+        };
+
+        // Update the user
+        await User.updateOne({ domainID }, { $set: updatedData });
+      } else {
+        // Add to not-found list if user doesn't exist
+        notFoundUsers.push(user);
+      }
     }
 
-    res.status(200).json({ message: "Bulk upload/update successful!" });
+    res.status(200).json({
+      message: "Bulk update completed.",
+      notFoundUsers,
+    });
   } catch (error) {
     console.error("Error during bulk update:", error);
     res
       .status(500)
-      .json({ message: "An error occurred while processing data." });
+      .json({ message: "An error occurred.", error: error.message });
   }
 };
 

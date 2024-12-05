@@ -138,7 +138,7 @@ export default function AccopsAdmin() {
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
-    console.log("File selected:", e.target.files[0]);
+    // console.log("File selected:", e.target.files[0]);
   };
 
   const parseFile = () => {
@@ -188,7 +188,7 @@ export default function AccopsAdmin() {
     const usersData = JSON.stringify(bulkUser);
 
     try {
-      console.log(usersData);
+      //   console.log(usersData);
       const response = await csvUploadApi(usersData);
       if (response.ok) {
         const result = await response.json();
