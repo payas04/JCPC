@@ -5,7 +5,7 @@ import {
 	DialogTitle,
 } from "@headlessui/react";
 import CustomPieChart from "./charts/CustomPieChart";
-import { IoClose, IoDownloadSharp } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 
 export default function CustomModal({
 	open,

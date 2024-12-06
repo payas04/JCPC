@@ -40,6 +40,14 @@ body {
 	.formLabel {
 		@apply block text-sm font-medium text-gray-700;
 	}
+
+	.modalBackdrop {
+		@apply fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity;
+	}
+
+	.modalPanel {
+		@apply relative min-w-[560px] min-h-10 h-fit max-h-[85%] transform overflow-scroll rounded-lg bg-white text-left shadow-xl transition-all mb-6;
+	}
 }
 
 @keyframes appear {

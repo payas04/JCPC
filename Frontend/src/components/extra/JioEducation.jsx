@@ -21,7 +21,7 @@ const JioEducation = ({ open, setOpen }) => {
 
 			<div className="fixed inset-0 z-10 w-screen h-screen overflow-y-auto ">
 				<div className="flex items-center justify-center text-center h-screen w-screen">
-					<DialogPanel className="relative w-[60%] h-fit overflow-scroll rounded-lg bg-white text-left shadow-xl transition-all mb-6">
+					<DialogPanel className="relative w-[60%] h-fit max-h-[85%] overflow-scroll rounded-lg bg-white text-left shadow-xl transition-all mb-6">
 						<div className="sticky top-0 left-0 w-full bg-blue-800 text-white z-20">
 							<IoClose
 								onClick={() => setOpen(false)}

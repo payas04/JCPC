@@ -9,6 +9,8 @@ import { useAuth } from "../../context/auth";
 import EditMember from "../../components/modals/EditMember";
 import NewMember from "../../components/modals/NewMember";
 import { csvUploadApi } from "../../lib/api";
+import CsvUpload from "../../components/modals/CsvUpload";
+import ModalLayout from "../../components/ModalLayout";
 const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
 export default function AccopsAdmin() {
@@ -19,6 +21,7 @@ export default function AccopsAdmin() {
 	const [members, setMembers] = useState(profiles);
 	const [isNewUserModalOpen, setIsNewUserModalOpen] = useState(false);
 	const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+	const [csvModalOpen, setCsvModalOpen] = useState(false);
 	const [selectedMember, setSelectedMember] = useState(null);
 	const [searchQuery, setSearchQuery] = useState(""); // Step 1: Add search query state
 	const [formData, setFormData] = useState({
@@ -243,15 +246,12 @@ export default function AccopsAdmin() {
 							Create New User
 						</button>
 
-						<div>
-							<input type="file" onChange={handleFileChange} />
-							<button
-								onClick={(e) => handleFileUpload(e)}
-								className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
-								<PlusCircle className="h-4 w-4" />
-								Upload CSV File
-							</button>
-						</div>
+						<button
+							onClick={(e) => setCsvModalOpen(true)}
+							className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+							<PlusCircle className="h-4 w-4" />
+							Upload CSV File
+						</button>
 					</div>
 				</div>
 			</div>
@@ -326,6 +326,12 @@ export default function AccopsAdmin() {
 					setSelectedMember={setSelectedMember}
 					handlerUpdateUser={handlerUpdateUser}
 				/>
+			)}
+
+			{csvModalOpen && (
+				<ModalLayout open={csvModalOpen} setOpen={setCsvModalOpen} width="60%">
+					<CsvUpload />
+				</ModalLayout>
 			)}
 		</main>
 	);
