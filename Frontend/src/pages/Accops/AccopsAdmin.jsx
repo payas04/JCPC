@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import * as XLSX from "xlsx";
 import { Edit, PlusCircle, Search, SearchIcon, Trash2 } from "lucide-react";
 import { useSelector } from "react-redux";
 import axios from "axios";
@@ -8,7 +7,6 @@ import { useOutletContext } from "react-router-dom";
 import { useAuth } from "../../context/auth";
 import EditMember from "../../components/modals/EditMember";
 import NewMember from "../../components/modals/NewMember";
-import { csvUploadApi } from "../../lib/api";
 import CsvUpload from "../../components/modals/CsvUpload";
 import ModalLayout from "../../components/ModalLayout";
 const BASE_URL = import.meta.env.VITE_BACKEND_URL;
@@ -32,9 +30,6 @@ export default function AccopsAdmin() {
 		password: "",
 		role: "",
 	});
-
-	const [file, setFile] = useState(null);
-	const [bulkUser, setBulkUser] = useState(null);
 
 	useEffect(() => {
 		if (profiles) {
@@ -136,73 +131,6 @@ export default function AccopsAdmin() {
 			toast.error(`${error.response?.data?.message}`);
 			setIsLoading(false);
 			console.log(error);
-		}
-	};
-
-	const handleFileChange = (e) => {
-		setFile(e.target.files[0]);
-		// console.log("File selected:", e.target.files[0]);
-	};
-
-	const parseFile = () => {
-		const reader = new FileReader();
-
-		reader.onload = (event) => {
-			const binaryStr = event.target.result;
-
-			// Parse Excel file using SheetJS
-			const workbook = XLSX.read(binaryStr, { type: "binary" });
-			const sheetName = workbook.SheetNames[0]; // Get the first sheet
-			const sheet = workbook.Sheets[sheetName];
-			const data = XLSX.utils.sheet_to_json(sheet);
-
-			//   console.log("Parsed Data:", data);
-
-			// Process data
-			const users = data.map((row) => ({
-				domainID: row.DomainID || "Unknown",
-				issues: {
-					blocker: parseInt(row.Blocker || 0),
-					critical: parseInt(row.Critical || 0),
-					major: parseInt(row.Major || 0),
-					normal: parseInt(row.Normal || 0),
-					minor: parseInt(row.Minor || 0),
-				},
-			}));
-
-			//   console.log("Processed Users:", users);
-			setBulkUser(users);
-		};
-		reader.onerror = (error) => {
-			console.error("Error reading file:", error);
-		};
-
-		reader.readAsBinaryString(file);
-	};
-
-	const handleFileUpload = async () => {
-		console.log("clicked");
-		if (!file) {
-			alert("Please select a file first.");
-			return;
-		}
-
-		await parseFile();
-		const usersData = JSON.stringify(bulkUser);
-
-		try {
-			//   console.log(usersData);
-			const response = await csvUploadApi(usersData);
-			if (response.ok) {
-				const result = await response.json();
-				alert("Upload successful!");
-				console.log("Server Response:", result);
-			} else {
-				alert("Failed to upload data.");
-				console.error("Error:", response.statusText);
-			}
-		} catch (error) {
-			console.error("Error uploading data:", error);
 		}
 	};
 

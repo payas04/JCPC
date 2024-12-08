@@ -10,8 +10,6 @@ const JioEducation = ({ open, setOpen }) => {
 		{ version: "Total", issues: 24 },
 	];
 
-	const maxIssues = Math.max(...buildData.map((build) => build.issues));
-
 	return (
 		<Dialog
 			open={open}

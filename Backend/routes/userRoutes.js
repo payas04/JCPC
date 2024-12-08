@@ -3,24 +3,24 @@ const express = require("express");
 
 const userRouter = express.Router();
 const {
-  updateUser,
-  getUsers,
-  getUser,
-  deleteUser,
-  registerUser,
-  uploadAndUpdateEmployees,
+	updateUser,
+	getUsers,
+	getUser,
+	deleteUser,
+	registerUser,
+	uploadAndUpdateEmployees,
 } = require("../controllers/userController");
-const { isAdmin } = require("../middleware/auth");
+const { isAdmin, isAuthenticated } = require("../middleware/auth");
 
 // const upload = multer({ dest: "uploads/" });
 
 userRouter.route("/register").post(isAdmin, registerUser);
 userRouter.route("/").get(getUsers);
 userRouter
-  .route("/:id")
-  .put(updateUser)
-  .get(getUser)
-  .delete(isAdmin, deleteUser);
-userRouter.route("/csv-upload").post(uploadAndUpdateEmployees);
+	.route("/:id")
+	.put(isAuthenticated, updateUser)
+	.get(getUser)
+	.delete(isAdmin, deleteUser);
+userRouter.route("/csv-upload").post(isAdmin, uploadAndUpdateEmployees);
 
 module.exports = userRouter;

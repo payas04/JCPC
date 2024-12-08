@@ -17,12 +17,15 @@ const ModalLayout = ({ children, open, setOpen, width }) => {
 			<div className="fixed inset-0 z-10 w-screen h-screen overflow-y-auto ">
 				<div className="flex items-center justify-center text-center h-screen w-screen">
 					<DialogPanel className={`modalPanel w-[${width}]`}>
-						<div className="absolute right-4 top-4 flex justify-end cursor-pointer">
+						<div className="absolute right-4 top-4 flex justify-end cursor-pointer z-10">
 							<IoClose
-								onClick={() => setOpen(false)}
+								onClick={() => {
+									setOpen(false);
+									console.log("close clicked");
+								}}
 								color="black"
 								size={18}
-								className="hover:bg-red-500 hover:rounded-full "
+								className="hover:bg-red-500 hover:rounded-full"
 							/>
 						</div>
 						{children}

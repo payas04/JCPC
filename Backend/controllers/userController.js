@@ -96,7 +96,6 @@ const deleteUser = async (req, res) => {
 const uploadAndUpdateEmployees = async (req, res) => {
 	try {
 		let users = req.body;
-		console.log(users);
 
 		if (!Array.isArray(users) || users.length === 0) {
 			return res.status(400).json({ message: "Invalid or empty data." });
@@ -124,7 +123,6 @@ const uploadAndUpdateEmployees = async (req, res) => {
 					name: existingUser.name, // Retain original name
 					role: existingUser.role || user.role, // Retain or update role
 				};
-
 				// Update the user
 				await User.updateOne({ domainID }, { $set: updatedData });
 			} else {
@@ -134,6 +132,7 @@ const uploadAndUpdateEmployees = async (req, res) => {
 		}
 
 		res.status(200).json({
+			success: true,
 			message: "Bulk update completed.",
 			usersNotFound: notFoundUsers,
 		});

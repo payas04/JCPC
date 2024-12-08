@@ -13,7 +13,7 @@ export const getUsers = async () => {
 		});
 		return response;
 	} catch (error) {
-		console.log(error);
+		return error;
 	}
 };
 
@@ -81,18 +81,18 @@ export const uploadImageApi = async (imageFile, domainID) => {
 
 export const csvUploadApi = async (usersData) => {
 	try {
-		console.log("Data being sent to backend:", usersData);
-		const resposne = await axios.post(
+		const response = await axios.post(
 			BASE_URL + "/api/user/csv-upload",
 			usersData,
 			{
 				headers: {
 					"Content-Type": "application/json",
 				},
+				withCredentials: true,
 			}
 		);
-		return resposne;
+		return response;
 	} catch (error) {
-		console.log(error);
+		throw error;
 	}
 };

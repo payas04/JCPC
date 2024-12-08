@@ -17,15 +17,13 @@ import {
 	jioPcOpenIssuePieChart,
 } from "../../db/data";
 import JCPCProduct from "../../components/JCPCProduct";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
-import { getUsers, logoutUser } from "../../lib/api";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/auth";
 
 const Dashboard = () => {
 	const profiles = useSelector((state) => state.profile.profiles);
-	const { user, logout } = useAuth();
+	const { user } = useAuth();
 	const navigate = useNavigate();
 	return (
 		<main className="flex-1 p-6 pt-12 overflow-y-auto mb-8">
