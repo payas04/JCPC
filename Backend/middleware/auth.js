@@ -28,7 +28,6 @@ const isAuthenticated = async (req, res, next) => {
 const isAdmin = async (req, res, next) => {
 	try {
 		const { token } = req.cookies;
-		console.log(token);
 
 		if (!token) {
 			return res.status(404).json({
