@@ -468,7 +468,8 @@ const Profile = () => {
 									<input
 										type="number"
 										min={0}
-										value={user.score.previous}
+										id="prevScore"
+										value={userData.score.previous}
 										onChange={(e) =>
 											setUserData({
 												...userData,
