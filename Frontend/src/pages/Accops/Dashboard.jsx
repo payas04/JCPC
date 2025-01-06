@@ -71,7 +71,7 @@ const Dashboard = () => {
 						shouldOpenModal={true}
 					/>
 					<StatCard
-						title="JioPC Open Issues"
+						title="X2 Open Issues"
 						value={jioPcOpenIssuePieChart.reduce(
 							(acc, item) => acc + item.value,
 							0
@@ -83,7 +83,7 @@ const Dashboard = () => {
 						shouldOpenModal={true}
 					/>
 					<StatCard
-						title="HP Chromebook Open Issues"
+						title="X4 Open Issues"
 						value={hpOpenIssuePieChart.reduce(
 							(acc, item) => acc + item.value,
 							0
@@ -106,7 +106,7 @@ const Dashboard = () => {
 				</div>
 				<div className="md:row-span-2 w-[36%]">
 					<div className="mb-4 font-semibold text-xl flex items-center justify-center text-black ">
-						Total Issues Raised (23rd Aug - 15th Oct)
+						Total Issues Raised (16th Oct - 31st Dec)
 					</div>
 					<div className="w-full flex items-center justify-center">
 						<CustomPieChart
@@ -121,16 +121,16 @@ const Dashboard = () => {
 			{/* Tasks Activity Table */}
 
 			<section className=" text-black mb-4 p-6 rounded-lg flex gap-10 ">
-				<JioPcObservation title="JioPC" workItems={jioPcWorkItems} />
+				<JioPcObservation title="JioCloud PC" workItems={jioPcWorkItems} />
 				<AreaChart
-					title="Issues Raised (23rd Aug - 15th Oct)"
+					title="Issues Raised (16th Oct - 31st Dec)"
 					areaChartData={jioPcAreaChartData}
 				/>
 			</section>
 			<section className=" text-black mb-4 p-6 rounded-lg flex gap-10 ">
-				<JioPcObservation title="HP Chromebook" workItems={hpWorkItems} />
+				<JioPcObservation title="Accops" workItems={hpWorkItems} />
 				<AreaChart
-					title="Issues Raised (23rd Aug - 15th Oct)"
+					title="Issues Raised (16th Oct - 31st Dec)"
 					areaChartData={hpAreaChartData}
 				/>
 			</section>

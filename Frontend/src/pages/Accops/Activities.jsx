@@ -11,7 +11,8 @@ const Activities = () => {
 	const [openSelfie, setOpenSelfie] = useState(false);
 	const [openAi, setOpenAi] = useState(false);
 	const [openJio, setOpenJio] = useState(false);
-
+	const [openNewCard, setOpenNewCard] = useState(false);
+	
 	return (
 		<section className="container pt-12 p-6 flex flex-col h-full overflow-scroll">
 			<header className="mb-4 px-6">
@@ -85,6 +86,22 @@ const Activities = () => {
 							</p>
 						</div>
 					</CardContent>
+				</Card>
+				<Card className="activityCard" onClick={() => setOpenNewCard(true)}>
+  {/* Replace 'NewCardComponent' with your new component */}
+  <Selfie open={openSelfie} setOpen={setOpenSelfie} />
+  <CardMedia sx={{ height: 200 }} image="/images/extra/NewCardImage.jpg" />
+  <CardContent>
+    <div className="">
+      <p className="bg-blue-100 inline-block px-2 py-1 rounded-full text-blue-800 font-light font-mono text-xs mb-2">
+        NEW CARD LABEL
+      </p>
+      <h3 className="text-lg font-semibold">New Card Title</h3>
+      <p className="text-sm text-gray-600">
+        Description of the new card.
+      </p>
+    </div>
+  </CardContent>
 				</Card>
 			</div>
 		</section>

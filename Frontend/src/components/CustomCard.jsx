@@ -38,7 +38,7 @@ export default function CustomCard({ user, allUsers }) {
 							className={` text-sm font-semibold ${
 								user.tag === "Released" ? "text-gray-500" : "text-blue-800"
 							} `}>
-							{user.tag}
+							{user.role}
 						</span>
 						<div className="mt-4 bg-blue-800 text-white rounded-full px-3 py-1 text-sm font-medium w-fit self-center duration-700">
 							Score: {user.score.current}
