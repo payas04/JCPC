@@ -16,6 +16,9 @@ const BirthdaySection = ({ todayBirthday, upcomingBirthday }) => {
 								alt="member"
 								width={50}
 								className="h-14 w-14 rounded-lg"
+								onError={(e) => {
+									e.target.src = "/images/profile/default.png";
+								}}
 							/>
 							<div className="my-auto w-full pl-2">
 								<p className="font-semibold text-sm">{btd.Name}</p>
@@ -39,6 +42,9 @@ const BirthdaySection = ({ todayBirthday, upcomingBirthday }) => {
 								alt="member"
 								width={50}
 								className="h-14 w-14 rounded-lg"
+								onError={(e) => {
+									e.target.src = "/images/profile/default.png";
+								}}
 							/>
 							<div className="my-auto w-full pl-2">
 								<p className="font-semibold text-sm">{btd.Name}</p>

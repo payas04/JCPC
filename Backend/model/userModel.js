@@ -102,8 +102,9 @@ userSchema.pre("updateOne", async function (next) {
 				{},
 				{
 					$set: {
-						"score.current": currentScore,
-						"score.previous": doc ? doc.score.current : 0,
+						score: {
+							current: currentScore,
+						},
 					},
 				}
 			);

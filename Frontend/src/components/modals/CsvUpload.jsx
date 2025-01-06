@@ -5,10 +5,12 @@ import { useDropzone } from "react-dropzone";
 import { csvUploadApi } from "../../lib/api";
 import toast from "react-hot-toast";
 import { useOutletContext } from "react-router-dom";
+import { useAuth } from "../../context/auth";
 
 const CsvUpload = () => {
 	const [jsonData, setJsonData] = useState(null);
 	const [file, setFile] = useState(null);
+	const { setTrigger } = useAuth();
 	const { setRefreshTrigger } = useOutletContext();
 	const [loading, setLoading] = useState(false);
 
@@ -38,16 +40,18 @@ const CsvUpload = () => {
 	});
 
 	const transformData = (data) => {
+		console.log(data);
+
 		return data
 			.filter((item) => {
 				// Filter out entries with empty DomainID or where all scores are 0
 				const hasValidDomain = item.DomainID && item.DomainID.trim() !== "";
 				const hasNonZeroScores =
-					parseInt(item["issues.blocker"] || 0) > 0 ||
-					parseInt(item["issues.critical"] || 0) > 0 ||
-					parseInt(item["issues.major"] || 0) > 0 ||
-					parseInt(item["issues.normal"] || 0) > 0 ||
-					parseInt(item["issues.minor"] || 0) > 0;
+					parseInt(item["blocker"] || 0) > 0 ||
+					parseInt(item["critical"] || 0) > 0 ||
+					parseInt(item["major"] || 0) > 0 ||
+					parseInt(item["normal"] || 0) > 0 ||
+					parseInt(item["minor"] || 0) > 0;
 
 				return hasValidDomain || hasNonZeroScores;
 			})
@@ -55,16 +59,20 @@ const CsvUpload = () => {
 				// Create a new object to hold transformed data
 				const transformedItem = {
 					domainID: (item.DomainID || "").trim(),
-					totalScore: (item.total || 0).trim(),
+				};
+
+				transformedItem.score = {
+					current: parseInt(item["current_total"]) || 0,
+					previous: parseInt(item["previous_total"] || 0),
 				};
 
 				// Create a nested issues object
 				transformedItem.issues = {
-					blocker: parseInt(item["issues.blocker"] || 0),
-					critical: parseInt(item["issues.critical"] || 0),
-					major: parseInt(item["issues.major"] || 0),
-					normal: parseInt(item["issues.normal"] || 0),
-					minor: parseInt(item["issues.minor"] || 0),
+					blocker: parseInt(item["blocker"] || 0),
+					critical: parseInt(item["critical"] || 0),
+					major: parseInt(item["major"] || 0),
+					normal: parseInt(item["normal"] || 0),
+					minor: parseInt(item["minor"] || 0),
 				};
 
 				return transformedItem;
@@ -83,8 +91,11 @@ const CsvUpload = () => {
 			const response = await csvUploadApi(jsonData);
 			if (response.data.success) {
 				const result = await response.data.usersNotFound;
+				if (result)
+					alert(result.map((names) => names.domainID) + " DomainIDs not found");
 				toast.success("Upload successful!");
 				setRefreshTrigger((prev) => !prev);
+				setTrigger((prev) => !prev);
 				setJsonData(null);
 				setFile(null);
 				setLoading(false);
@@ -175,6 +186,7 @@ const CsvUpload = () => {
 										<th>{header}</th>
 									))}
 									<th>Total Score</th>
+									<th>Previous Score</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -186,7 +198,8 @@ const CsvUpload = () => {
 										<td>{data.issues.major}</td>
 										<td>{data.issues.normal}</td>
 										<td>{data.issues.minor}</td>
-										<td>{data.totalScore}</td>
+										<td>{data.score.current}</td>
+										<td>{data.score.previous}</td>
 									</tr>
 								))}
 							</tbody>

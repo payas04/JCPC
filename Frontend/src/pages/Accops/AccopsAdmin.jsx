@@ -191,7 +191,11 @@ export default function AccopsAdmin() {
 						members?.map(
 							(member) =>
 								user._id !== member._id && (
-									<div key={member._id} className=" rounded-lg shadow-md">
+									<div
+										key={member._id}
+										className={`rounded-lg border-2 ${
+											member.isAdmin ? "border-red-300" : "border-green-300"
+										}`}>
 										<div className="p-6">
 											<div className="flex items-start justify-between">
 												<div className="flex items-center gap-4">
@@ -212,6 +216,11 @@ export default function AccopsAdmin() {
 															Score: {member.score.current}
 														</p>
 													</div>
+													{/* <div>
+														<p className="bg-red-200 rounded-md text-red-800 hover:bg-red-100/80">
+															admin
+														</p>
+													</div> */}
 												</div>
 												<div className="flex justify-between gap-2 sm:flex-col 2xl:flex-row">
 													<button
