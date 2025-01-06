@@ -1,11 +1,8 @@
 import { IoClose } from "react-icons/io5";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 import { Monitor, Clock, Download, File, Layout, Image } from "lucide-react";
-import { useState } from "react";
 
 const OsComparison = ({ open, setOpen }) => {
-	const [activeCategory, setActiveCategory] = useState("general");
-
 	const categories = [
 		{ name: "Boot Time", unit: "seconds" },
 		{ name: "Download Speed", unit: "mbps" },
@@ -94,8 +91,7 @@ const OsComparison = ({ open, setOpen }) => {
 									comprehensive performance comparison across multiple systems
 									and operating environments. The evaluation focused on download
 									speeds, video processing, application performance, multimedia
-									playback, and overall system stability.The comparison included
-									the following systems:
+									playback, and overall system stability.
 								</p>
 							</div>
 							<div className="mt-4 text-center">
@@ -103,6 +99,15 @@ const OsComparison = ({ open, setOpen }) => {
 									<Monitor className="w-8 h-8 text-blue-500" />
 									OS Performance Comparison
 								</h1>
+								<div className="items-center text-center space-x-4 mt-2">
+									<span className="border-l-4 border-green-500 rounded-md px-2 border">
+										Cinnamon
+									</span>
+									<span>VS</span>
+									<span className="border-l-4 border-blue-500 rounded-md px-2 border">
+										Windows
+									</span>
+								</div>
 							</div>
 							<div>
 								{categories.map((category) => (
@@ -116,7 +121,7 @@ const OsComparison = ({ open, setOpen }) => {
 													className={`p-4 rounded-lg ${getPerformanceColor(
 														performanceData[category.name]?.[system.name],
 														category.name
-													)} ${
+													)} border ${
 														system.type === "cinnamon"
 															? "border-l-4 border-green-500"
 															: "border-l-4 border-blue-500"
