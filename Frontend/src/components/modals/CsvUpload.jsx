@@ -58,7 +58,7 @@ const CsvUpload = () => {
 			.map((item) => {
 				// Create a new object to hold transformed data
 				const transformedItem = {
-					domainID: (item.DomainID || "").trim(),
+					domainID: (item.DomainID || "").trim().toLowerCase()
 				};
 
 				transformedItem.score = {

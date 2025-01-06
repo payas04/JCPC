@@ -13,11 +13,12 @@ const products = [
     img: "STB",
     description: "Affordable and efficient PC for everyday use",
     specs: [
-      "CPU: Synaptics BG5CT Quad Core",
-      "4GB RAM",
+      "CPU : ARM Cortex A53 Quad-Core",
+      "2GB RAM",
       "Internal Storage: 32GB",
-      "Download: 220.6 Mbps",
-      "Upload: 39.2 Mbps",
+      "GPU : ARM G31 MP2",
+      "Download: 212.2 Mbps",
+      "Upload: 38.6 Mbps",
     ],
   },
   {
@@ -25,9 +26,10 @@ const products = [
     img: "STB",
     description: "Affordable and efficient PC for everyday use",
     specs: [
-      "CPU: Synaptics BG5CT Quad Core",
-      "4GB RAM",
+      "CPU : ARM Cortex A55 Quad-Core",
+      "2GB RAM",
       "Internal Storage: 32GB",
+      "GPU : ARM G31 MP2",
       "Download: 220.6 Mbps",
       "Upload: 39.2 Mbps",
     ],
@@ -78,7 +80,7 @@ export default function JCPCProduct() {
                   className="absolute top-2 right-3 hover:bg-red-500 hover:rounded-full p-1 cursor-pointer"
                 />
                 <p className="font-bold text-4xl text-center py-2">
-                  Our Products
+                  Product Varients
                 </p>
               </div>
 
@@ -146,7 +148,7 @@ export default function JCPCProduct() {
       </Dialog>
       <div className="flex justify-between items-start mb-4">
         <div>
-          <h3 className="text-lg font-normal">Our Products</h3>
+          <h3 className="text-lg font-normal">Product Varients</h3>
           <p className="text-4xl font-semibold mt-2">2</p>
         </div>
         <div className="p-2 bg-white bg-opacity-30 rounded-lg">
