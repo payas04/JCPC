@@ -105,9 +105,9 @@ const uploadAndUpdateEmployees = async (req, res) => {
 
 		// Process each user in the array
 		for (const user of users) {
-			const { domainID, issues } = user;
+			const { domainID, issues, score } = user;
 
-			if (!domainID || !issues) {
+			if (!domainID || !issues || !score) {
 				console.warn(`Skipping invalid user: ${JSON.stringify(user)}`);
 				continue; // Skip invalid entries
 			}
@@ -119,9 +119,12 @@ const uploadAndUpdateEmployees = async (req, res) => {
 				// Merge existing user data with the new input
 				const updatedData = {
 					issues: issues || existingUser.issues, // Use new or existing issues
-					email: existingUser.email, // Ensure unique field stays consistent
-					name: existingUser.name, // Retain original name
-					role: existingUser.role || user.role, // Retain or update role
+					// email: existingUser.email, // Ensure unique field stays consistent
+					// name: existingUser.name, // Retain original name
+					// role: existingUser.role || user.role, // Retain or update role,
+					score: {
+						previous: score.previous || existingUser.score.previous,
+					},
 				};
 				// Update the user
 				await User.updateOne({ domainID }, { $set: updatedData });

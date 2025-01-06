@@ -11,6 +11,8 @@ import {
 } from "recharts";
 
 const BarGraph = ({ barData }) => {
+	console.log(barData[0].name);
+
 	return (
 		<div style={{ width: "100%", height: 200, maxWidth: 800 }}>
 			<ResponsiveContainer>
@@ -30,12 +32,12 @@ const BarGraph = ({ barData }) => {
 					<Tooltip />
 					<Legend />
 					<Bar
-						dataKey="Portrait"
+						dataKey={Object.keys(barData[0])[1]}
 						fill="#82B7CA" //#E4C087
 						// activeBar={<Rectangle fill="pink" stroke="blue" />}
 					/>
 					<Bar
-						dataKey="Landscape"
+						dataKey={Object.keys(barData[0])[2]}
 						fill="#82ca9d" //#BC7C7C
 						// activeBar={<Rectangle fill="gold" stroke="purple" />}
 					/>

@@ -2,9 +2,12 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { IoClose } from "react-icons/io5";
 import { useCarousel } from "../../hooks/useCarousel";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import BarGraph from "../charts/BarGraph";
 
 export default function UserModal({ open, setOpen, initialUser, users }) {
+	const [barGraph, setBarGraph] = useState(false);
+
 	const initialIndex = users.findIndex(
 		(user) => user.name === initialUser.name
 	);
@@ -17,6 +20,14 @@ export default function UserModal({ open, setOpen, initialUser, users }) {
 		currentIndex,
 		goTo,
 	} = useCarousel(users, initialIndex);
+
+	const compareGraph = [
+		{
+			name: "score",
+			Previous: user.score.previous,
+			Current: user.score.current,
+		},
+	];
 
 	const issue = [
 		{ value: user.issues.blocker, label: "Blocker" },
@@ -161,32 +172,58 @@ export default function UserModal({ open, setOpen, initialUser, users }) {
 
 									<div className="flex-1 space-y-4 h-full">
 										{/* <CustomPieChart data={issue} radiusValue={30} /> */}
-										<h3 className="text-lg font-bold text-blue-800 mb-6">
-											Issues Severity Distribution
-										</h3>
-										{issue.map((item) => (
-											<div
-												key={item.name}
-												className="flex items-center group transition-all duration-300 ease-in-out hover:scale-105">
-												<div className="w-24 text-sm font-semibold group-hover:font-bold">
-													{item.label}
-												</div>
-												<div className="flex-1 h-6 bg-gray-200 rounded-full overflow-hidden transition-all duration-300 ease-in-out">
-													<div
-														className="h-full bg-blue-800"
-														style={{
-															width:
-																item.value === 0
-																	? "0%"
-																	: `${(item.value / maxValue) * 100}%`,
-														}}
-													/>
-												</div>
-												<div className="w-12 text-right font-bold text-lg group-hover:text-lg transition-all duration-300 ease-in-out">
-													{item.value}
-												</div>
+										<div className="flex justify-between mb-6">
+											<h3 className="text-lg font-bold text-blue-800 ">
+												Issues Severity Distribution
+											</h3>
+											<div className="text-blue-800 overflow-hidden rounded-md border border-blue-800 flex">
+												<button
+													type="button"
+													onClick={() => setBarGraph(false)}
+													className={`px-2 ${
+														barGraph ? "" : "bg-blue-800 text-white"
+													}`}>
+													Issues
+												</button>
+												<div className="bg-blue-800 w-0.5" />
+												<button
+													type="button"
+													onClick={() => setBarGraph(true)}
+													className={`px-2 ${
+														barGraph ? "bg-blue-800 text-white" : ""
+													}`}>
+													Graph
+												</button>
 											</div>
-										))}
+										</div>
+										{barGraph ? (
+											<BarGraph barData={compareGraph} />
+										) : (
+											issue.map((item) => (
+												<div
+													key={item.name}
+													className="flex items-center group transition-all duration-300 ease-in-out hover:scale-105">
+													<div className="w-24 text-sm font-semibold group-hover:font-bold">
+														{item.label}
+													</div>
+													<div className="flex-1 h-6 bg-gray-200 rounded-full overflow-hidden transition-all duration-300 ease-in-out">
+														<div
+															className="h-full bg-blue-800"
+															style={{
+																width:
+																	item.value === 0
+																		? "0%"
+																		: `${(item.value / maxValue) * 100}%`,
+															}}
+														/>
+													</div>
+													<div className="w-12 text-right font-bold text-lg group-hover:text-lg transition-all duration-300 ease-in-out">
+														{item.value}
+													</div>
+												</div>
+											))
+										)}
+
 										<div className="space-x-3 text-center">
 											<p className="text-lg py-1 bg-gray-300 inline-block rounded-full text-gray-800 font-bold px-2">
 												Previous Score: {user.score.previous}
