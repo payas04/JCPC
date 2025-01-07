@@ -33,8 +33,8 @@ const Activities = () => {
               </p>
               <h3 className="text-lg font-semibold">OS Comparison</h3>
               <p className="text-sm text-gray-600">
-                Exploring low end operating system technology with Linux
-                distributions.
+                Comprehensive performance comparison of OS across multiple
+                systems and operating environments
               </p>
             </div>
           </CardContent>
@@ -55,8 +55,8 @@ const Activities = () => {
               </p>
               <h3 className="text-lg font-semibold">Peripherals Comparison</h3>
               <p className="text-sm text-gray-600">
-                Create distinct, natural-sounding questions that users might ask
-                an AI bot about WiFi.
+                Explored the key features and differences between mouse and
+                keyboards to choose the best peripherals.
               </p>
             </div>
           </CardContent>
@@ -69,13 +69,13 @@ const Activities = () => {
           <CardMedia sx={{ height: 200 }} image="/images/extra/2.jpg" />
           <CardContent>
             <div className="">
-              <p className="bg-blue-100 inline-block px-2 py-1 rounded-full text-blue-800 font-light font-mono text-xs mb-2">
+              <p className="bg-blue-100 inline-block px-3 py-1 rounded-full text-blue-800 font-light font-mono text-xs mb-2">
                 FAQ's
               </p>
               <h3 className="text-lg font-semibold">FAQ's JioCloud PC</h3>
               <p className="text-sm text-gray-600">
-                JioEducation is an application that was showcased at the India
-                Mobile Congress.
+                Our team worked on creating a comprehensive FAQ section for
+                JioCloud PC
               </p>
             </div>
           </CardContent>
@@ -92,12 +92,13 @@ const Activities = () => {
 
               <h3 className="text-lg font-semibold">JioTranslate</h3>
               <p className="text-sm text-gray-600">
-                Creating a dataset of selfies to train an AI model.
+                The team performed testing on the JioTranslate app across
+                different versions.
               </p>
             </div>
           </CardContent>
         </Card>
-
+        {/* JioCloud Testing */}
         <Card className="activityCard" onClick={() => setOpenJioCloud(true)}>
           <JioCloudTesting open={openJioCloud} setOpen={setOpenJioCloud} />
 
@@ -109,7 +110,8 @@ const Activities = () => {
               </p>
               <h3 className="text-lg font-semibold">JioCloud App</h3>
               <p className="text-sm text-gray-600">
-                Description of the new card.
+                The team performed testing on the JioCloud app across different
+                versions.
               </p>
             </div>
           </CardContent>

@@ -19,6 +19,14 @@ export const JioCloudTestingData = [
   { id: 4, value: 1, label: "Minor", color: "#34d399" },
 ];
 
+export const JioTranslateTestingData = [
+  { id: 0, value: 0, label: "Blocker", color: "#f87171" },
+  { id: 1, value: 1, label: "Critical", color: "#fb923c" },
+  { id: 2, value: 3, label: "Major", color: "#facc15" },
+  { id: 3, value: 7, label: "Normal", color: "#60a5fa" },
+  { id: 4, value: 0, label: "Minor", color: "#34d399" },
+];
+
 export const jioPcOpenIssuePieChart = [
   { id: 0, value: 8, label: "Blocker", color: "#f87171" },
   { id: 1, value: 48, label: "Critical", color: "#fb923c" },
@@ -81,7 +89,7 @@ export const jioPcWorkItems = [
     count: 4,
     color: "bg-green-200",
     text: "text-green-800",
-    definition: "Issues which are raised for accops in JioPC.",
+    definition: "Observations which makes product better overall.",
   },
 ];
 

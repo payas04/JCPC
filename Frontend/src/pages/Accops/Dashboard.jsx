@@ -119,7 +119,6 @@ const Dashboard = () => {
       </div>
 
       {/* Tasks Activity Table */}
-
       <section className=" text-black mb-4 p-6 rounded-lg flex gap-10 ">
         <JioPcObservation title="JioCloud PC" workItems={jioPcWorkItems} />
         <AreaChart

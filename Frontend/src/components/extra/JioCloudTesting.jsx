@@ -78,32 +78,6 @@ const JioCloudTesting = ({ open, setOpen }) => {
                         legend={false}
                         radiusValue={60}
                       />
-                      {/* <div className="space-y-3">
-                        {JioCloudTestingData.map((item) => (
-                          <div
-                            key={item.id}
-                            className="flex justify-between items-center"
-                          >
-                            <div className="flex items-center gap-3">
-                              <div
-                                className="w-7 h-7 rounded-md"
-                                style={{ backgroundColor: item.color }}
-                              />
-                              <span className="text-base font-medium">
-                                {item.label}
-                              </span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <span className="text-base font-bold bg-gray-200 px-2 py-1 rounded-md">
-                                {item.value}
-                              </span>
-                              <span className="text-sm text-gray-500">
-                                ({((item.value / 40) * 100).toFixed(1)}%)
-                              </span>
-                            </div>
-                          </div>
-                        ))}
-                      </div> */}
                     </div>
                   </div>
                 </section>

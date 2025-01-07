@@ -3,6 +3,9 @@ import BarGraph from "../charts/BarGraph";
 import { selfieBarData } from "../../db/data";
 import { IoClose } from "react-icons/io5";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
+import { JioTranslateTestingData } from "../../db/data";
+
+import CustomPieChart from "../charts/CustomPieChart";
 
 const Selfie = ({ open, setOpen }) => {
   return (
@@ -44,7 +47,7 @@ const Selfie = ({ open, setOpen }) => {
               {/* Versions Tested */}
               <section>
                 <h2 className="text-xl font-semibold mb-4">Versions Tested</h2>
-                <div className="bg-white p-4 rounded-lg shadow">
+                <div className="bg-white p-4 rounded-lg shadow flex gap-6">
                   <ul className="list-disc ml-6 space-y-2">
                     <li>
                       <span className="font-semibold">
@@ -62,76 +65,18 @@ const Selfie = ({ open, setOpen }) => {
                       </span>
                     </li>
                   </ul>
+
+                  {/* Pie Chart and Legend */}
+                  <div className="flex-1 space-y-4">
+                    <CustomPieChart
+                      data={JioTranslateTestingData}
+                      legend={false}
+                      radiusValue={60}
+                    />
+                  </div>
                 </div>
               </section>
             </div>
-
-            {/* <div className="p-8">
-              <div className="shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md mt-2 p-2">
-                <h4 className="font-bold text-2xl mb-4">Task Overview</h4>
-                <p className="text-lg font-semibold">
-                  Our team successfully completed the task of creating a dataset
-                  of selfies, generating a total over 2,000 selfies in both
-                  portrait and landscape orientations. The following are the
-                  detailed statistics of the work completed.
-                </p>
-              </div>
-              <div className="flex mt-10 justify-evenly shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md">
-                <div className="flex-1 flex flex-col border-r border-blue-800 pr-4 m-2">
-                  <h4 className="font-bold text-2xl mb-4">Data Summary</h4>
-                  <div className="h-full pb-4">
-                    <table className="h-full">
-                      <tr>
-                        <th>Phase</th>
-                        <th>Portrait</th>
-                        <th>Landscape</th>
-                        <th>Total</th>
-                      </tr>
-                      {selfieBarData.map((row) => (
-                        <tr>
-                          <td>{row.name}</td>
-                          <td>{row.Portrait}</td>
-                          <td>{row.Landscape}</td>
-                          <td>{row.Portrait + row.Landscape}</td>
-                        </tr>
-                      ))}
-                    </table>
-                  </div>
-                </div>
-                <div className="relative my-2 flex-1">
-                  <h4 className="font-bold text-2xl mb-4 pl-4">
-                    Task Statistics
-                  </h4> */}
-            {/* <p className="absolute  -rotate-90">Selfie Count</p> */}
-            {/* <BarGraph barData={selfieBarData} />
-                </div> */}
-
-            {/* <div className="text-center shadow-[0_0_10px_rgba(0,0,0,0.3)] px-2 rounded-md">
-									<h4 className="font-bold text-2xl mb-4">Selfie Types</h4>
-									<div className="flex flex-col items-center justify-center">
-										<div className="w-1/2">
-											<img
-												src="/images/extra/Landscape_Selfie.jpg"
-												alt="Landscape Image"
-												srcset=""
-												width={400}
-											/>
-											<p className="font-semibold">Portrait Selfie</p>
-										</div>
-										<div className="w-1/2 flex flex-col justify-center">
-											<img
-												src="/images/extra/Portrait_Selfie.jpg"
-												alt="Portrait Image"
-												width={200}
-												srcset=""
-												className="my-auto"
-											/>
-											<p className="font-semibold">Landscape Selfie</p>
-										</div>
-									</div>
-								</div> */}
-            {/* </div>
-            </div> */}
           </DialogPanel>
         </div>
       </div>
