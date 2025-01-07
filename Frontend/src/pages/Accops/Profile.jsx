@@ -187,7 +187,7 @@ const Profile = () => {
 											<img
 												alt="Profile picture"
 												className="rounded-full object-cover w-24 h-24"
-												src={userData.image || "/images/profile/default.png"}
+												src={userData.image}
 												onError={(e) => {
 													e.target.src = "/images/profile/default.png";
 												}}

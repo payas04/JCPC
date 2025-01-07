@@ -5,68 +5,108 @@ import { IoClose } from "react-icons/io5";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 
 const Selfie = ({ open, setOpen }) => {
-	return (
-		<Dialog
-			open={open}
-			onClose={() => setOpen(false)}
-			className="relative z-10">
-			<DialogBackdrop className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+  return (
+    <Dialog
+      open={open}
+      onClose={() => setOpen(false)}
+      className="relative z-10"
+    >
+      <DialogBackdrop className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
 
-			<div className="fixed inset-0 z-10 w-screen h-screen overflow-y-auto ">
-				<div className="flex items-center justify-center text-center h-screen w-screen">
-					<DialogPanel className="relative w-[60%] h-fit max-h-[85%] overflow-scroll rounded-lg bg-white text-left shadow-xl transition-all mb-6">
-						<div className="sticky top-0 left-0 w-full bg-blue-800 text-white z-20">
-							<IoClose
-								onClick={() => setOpen(false)}
-								color="white"
-								size={26}
-								className="absolute top-2 right-3 hover:bg-red-500 hover:rounded-full p-1 cursor-pointer"
-							/>
-							<p className="font-bold text-4xl text-center py-2">
-								AI Selfie Module
-							</p>
-						</div>
-						<div className="p-8">
-							<div className="shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md mt-2 p-2">
-								<h4 className="font-bold text-2xl mb-4">Task Overview</h4>
-								<p className="text-lg font-semibold">
-									Our team successfully completed the task of creating a dataset
-									of selfies, generating a total over 2,000 selfies in both
-									portrait and landscape orientations. The following are the
-									detailed statistics of the work completed.
-								</p>
-							</div>
-							<div className="flex mt-10 justify-evenly shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md">
-								<div className="flex-1 flex flex-col border-r border-blue-800 pr-4 m-2">
-									<h4 className="font-bold text-2xl mb-4">Data Summary</h4>
-									<div className="h-full pb-4">
-										<table className="h-full">
-											<tr>
-												<th>Phase</th>
-												<th>Portrait</th>
-												<th>Landscape</th>
-												<th>Total</th>
-											</tr>
-											{selfieBarData.map((row) => (
-												<tr>
-													<td>{row.name}</td>
-													<td>{row.Portrait}</td>
-													<td>{row.Landscape}</td>
-													<td>{row.Portrait + row.Landscape}</td>
-												</tr>
-											))}
-										</table>
-									</div>
-								</div>
-								<div className="relative my-2 flex-1">
-									<h4 className="font-bold text-2xl mb-4 pl-4">
-										Task Statistics
-									</h4>
-									{/* <p className="absolute  -rotate-90">Selfie Count</p> */}
-									<BarGraph barData={selfieBarData} />
-								</div>
+      <div className="fixed inset-0 z-10 w-screen h-screen overflow-y-auto ">
+        <div className="flex items-center justify-center text-center h-screen w-screen">
+          <DialogPanel className="relative w-[60%] h-fit max-h-[85%] overflow-scroll rounded-lg bg-white text-left shadow-xl transition-all mb-6">
+            <div className="sticky top-0 left-0 w-full bg-blue-800 text-white z-20">
+              <IoClose
+                onClick={() => setOpen(false)}
+                color="white"
+                size={26}
+                className="absolute top-2 right-3 hover:bg-red-500 hover:rounded-full p-1 cursor-pointer"
+              />
+              <p className="font-bold text-4xl text-center py-2">
+                JioTranslate Testing
+              </p>
+            </div>
 
-								{/* <div className="text-center shadow-[0_0_10px_rgba(0,0,0,0.3)] px-2 rounded-md">
+            <div className="bg-gray-100 p-6 rounded-lg shadow-md max-w-3xl mx-auto">
+              <h1 className="text-2xl font-bold text-center mb-6">
+                JioTranslate Testing Summary
+              </h1>
+
+              {/* Total Issues Raised */}
+              <section className="mb-6">
+                <div className="bg-white p-4 rounded-lg shadow flex items-center justify-between">
+                  <h2 className="text-xl font-semibold">Total Issues Raised</h2>
+                  <span className="text-2xl font-bold">11</span>
+                </div>
+              </section>
+
+              {/* Versions Tested */}
+              <section>
+                <h2 className="text-xl font-semibold mb-4">Versions Tested</h2>
+                <div className="bg-white p-4 rounded-lg shadow">
+                  <ul className="list-disc ml-6 space-y-2">
+                    <li>
+                      <span className="font-semibold">
+                        Android SIT Build V4.0.8(9)
+                      </span>
+                    </li>
+                    <li>
+                      <span className="font-semibold">
+                        Android SIT Build V4.0.10(11)
+                      </span>
+                    </li>
+                    <li>
+                      <span className="font-semibold">
+                        iOS Build version 4.0(4)
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+
+            {/* <div className="p-8">
+              <div className="shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md mt-2 p-2">
+                <h4 className="font-bold text-2xl mb-4">Task Overview</h4>
+                <p className="text-lg font-semibold">
+                  Our team successfully completed the task of creating a dataset
+                  of selfies, generating a total over 2,000 selfies in both
+                  portrait and landscape orientations. The following are the
+                  detailed statistics of the work completed.
+                </p>
+              </div>
+              <div className="flex mt-10 justify-evenly shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md">
+                <div className="flex-1 flex flex-col border-r border-blue-800 pr-4 m-2">
+                  <h4 className="font-bold text-2xl mb-4">Data Summary</h4>
+                  <div className="h-full pb-4">
+                    <table className="h-full">
+                      <tr>
+                        <th>Phase</th>
+                        <th>Portrait</th>
+                        <th>Landscape</th>
+                        <th>Total</th>
+                      </tr>
+                      {selfieBarData.map((row) => (
+                        <tr>
+                          <td>{row.name}</td>
+                          <td>{row.Portrait}</td>
+                          <td>{row.Landscape}</td>
+                          <td>{row.Portrait + row.Landscape}</td>
+                        </tr>
+                      ))}
+                    </table>
+                  </div>
+                </div>
+                <div className="relative my-2 flex-1">
+                  <h4 className="font-bold text-2xl mb-4 pl-4">
+                    Task Statistics
+                  </h4> */}
+            {/* <p className="absolute  -rotate-90">Selfie Count</p> */}
+            {/* <BarGraph barData={selfieBarData} />
+                </div> */}
+
+            {/* <div className="text-center shadow-[0_0_10px_rgba(0,0,0,0.3)] px-2 rounded-md">
 									<h4 className="font-bold text-2xl mb-4">Selfie Types</h4>
 									<div className="flex flex-col items-center justify-center">
 										<div className="w-1/2">
@@ -90,13 +130,13 @@ const Selfie = ({ open, setOpen }) => {
 										</div>
 									</div>
 								</div> */}
-							</div>
-						</div>
-					</DialogPanel>
-				</div>
-			</div>
-		</Dialog>
-	);
+            {/* </div>
+            </div> */}
+          </DialogPanel>
+        </div>
+      </div>
+    </Dialog>
+  );
 };
 
 export default Selfie;
