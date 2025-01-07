@@ -3,7 +3,9 @@ import Selfie from "../../components/extra/Selfie";
 import OsComparison from "../../components/extra/OsComparison";
 import PeripheralsComparison from "../../components/extra/PeripheralsComparison";
 import { Card, CardContent, CardMedia } from "@mui/material";
+
 import Faq from "../../components/extra/Faq";
+
 import JioCloudTesting from "../../components/extra/JioCloudTesting";
 
 const Activities = () => {
@@ -11,6 +13,7 @@ const Activities = () => {
   const [openSelfie, setOpenSelfie] = useState(false);
   const [openPeripherals, setOpenPeripherals] = useState(false);
   const [openFaq, setOpenFaq] = useState(false);
+
   const [openJioCloud, setOpenJioCloud] = useState(false);
 
   return (
@@ -62,6 +65,7 @@ const Activities = () => {
         {/* Faq */}
         <Card className="activityCard" onClick={() => setOpenFaq(true)}>
           <Faq open={openFaq} setOpen={setOpenFaq} heading={"hii"} />
+
           <CardMedia sx={{ height: 200 }} image="/images/extra/2.jpg" />
           <CardContent>
             <div className="">
@@ -96,6 +100,7 @@ const Activities = () => {
 
         <Card className="activityCard" onClick={() => setOpenJioCloud(true)}>
           <JioCloudTesting open={openJioCloud} setOpen={setOpenJioCloud} />
+
           <CardMedia sx={{ height: 200 }} image="/images/extra/5.jpg" />
           <CardContent>
             <div className="">

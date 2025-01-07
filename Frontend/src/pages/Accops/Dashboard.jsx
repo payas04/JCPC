@@ -41,11 +41,7 @@ const Dashboard = () => {
         </h1>
         <span className="cursor-pointer">
           <img
-<<<<<<< HEAD
             src={user.image || "/images/profile/default.png"}
-=======
-            src={user.image}
->>>>>>> parent of a14480c (Image refresh done)
             alt={user.name}
             onClick={() => {
               navigate(`/accops/profile/${user._id}`);
