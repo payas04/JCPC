@@ -78,7 +78,7 @@ const JioCloudTesting = ({ open, setOpen }) => {
                         legend={false}
                         radiusValue={60}
                       />
-                      <div className="space-y-3">
+                      {/* <div className="space-y-3">
                         {JioCloudTestingData.map((item) => (
                           <div
                             key={item.id}
@@ -103,7 +103,7 @@ const JioCloudTesting = ({ open, setOpen }) => {
                             </div>
                           </div>
                         ))}
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </section>
