@@ -4,6 +4,7 @@ import OsComparison from "../../components/extra/OsComparison";
 import AiBot from "../../components/extra/AiBot";
 import { Card, CardContent, CardMedia } from "@mui/material";
 import JioEducation from "../../components/extra/JioEducation";
+import JioCloudTesting from "../../components/extra/JioCloudTesting";
 
 const Activities = () => {
   const [selectedCard, setSelectedCard] = useState(null);
@@ -12,6 +13,8 @@ const Activities = () => {
   const [openAi, setOpenAi] = useState(false);
   const [openJio, setOpenJio] = useState(false);
   const [openNewCard, setOpenNewCard] = useState(false);
+
+  const [openJioCloud, setOpenJioCloud] = useState(false);
 
   return (
     <section className="container pt-12 p-6 flex flex-col h-full overflow-scroll">
@@ -72,6 +75,7 @@ const Activities = () => {
             </div>
           </CardContent>
         </Card>
+
         {/* JioTranslate */}
         <Card className="activityCard" onClick={() => setOpenSelfie(true)}>
           <Selfie open={openSelfie} setOpen={setOpenSelfie} />
@@ -90,8 +94,9 @@ const Activities = () => {
           </CardContent>
         </Card>
 
-        <Card className="activityCard" onClick={() => setOpenNewCard(true)}>
-          <Selfie open={openSelfie} setOpen={setOpenSelfie} />
+        {/* JioCloud App testing */}
+        <Card className="activityCard" onClick={() => setOpenJioCloud(true)}>
+          <JioCloudTesting open={openJioCloud} setOpen={setOpenJioCloud} />
           <CardMedia sx={{ height: 200 }} image="/images/extra/5.jpg" />
           <CardContent>
             <div className="">

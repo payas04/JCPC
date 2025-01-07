@@ -11,6 +11,14 @@ export const totalIssuePieChart = [
   { id: 4, value: 30, label: "Minor", color: "#34d399" },
 ];
 
+export const JioCloudTestingData = [
+  { id: 0, value: 0, label: "Blocker", color: "#f87171" },
+  { id: 1, value: 14, label: "Critical", color: "#fb923c" },
+  { id: 2, value: 14, label: "Major", color: "#facc15" },
+  { id: 3, value: 11, label: "Normal", color: "#60a5fa" },
+  { id: 4, value: 1, label: "Minor", color: "#34d399" },
+];
+
 export const jioPcOpenIssuePieChart = [
   { id: 0, value: 8, label: "Blocker", color: "#f87171" },
   { id: 1, value: 48, label: "Critical", color: "#fb923c" },
@@ -69,11 +77,11 @@ export const jioPcWorkItems = [
       "Issues which have been raised and has  been resolved by developers and are ready for testing.",
   },
   {
-  	title: "Enhancement",
-  	count: 4,
-  	color: "bg-green-200",
-  	text: "text-green-800",
-  	definition: "Issues which are raised for accops in JioPC.",
+    title: "Enhancement",
+    count: 4,
+    color: "bg-green-200",
+    text: "text-green-800",
+    definition: "Issues which are raised for accops in JioPC.",
   },
 ];
 
@@ -106,8 +114,7 @@ export const categoryObservations = [
     count: 3,
     color: "bg-purple-200",
     text: "text-purple-800",
-    definition:
-      "Issues related to the peripherals such as USB and printers.",
+    definition: "Issues related to the peripherals such as USB and printers.",
   },
   {
     title: "Browser Issues",
@@ -132,7 +139,7 @@ export const jioPcAreaChartData = [
   },
   {
     name: "Week 2",
-    Issues:0 ,
+    Issues: 0,
   },
   {
     name: "Week 3",
