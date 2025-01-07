@@ -2,7 +2,8 @@ import React from "react";
 import { IoClose } from "react-icons/io5";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 
-const JioEducation = ({ open, setOpen }) => {
+const Faq = ({ open, setOpen }) => {
+
   const buildData = [
     { version: "4.0(10)", issues: 13 },
     { version: "4.0(14)", issues: 7 },
