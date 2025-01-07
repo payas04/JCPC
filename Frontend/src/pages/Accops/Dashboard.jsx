@@ -41,7 +41,7 @@ const Dashboard = () => {
         </h1>
         <span className="cursor-pointer">
           <img
-            src={user.image}
+            src={user.image || "/images/profile/default.png"}
             alt={user.name}
             onClick={() => {
               navigate(`/accops/profile/${user._id}`);
@@ -58,8 +58,6 @@ const Dashboard = () => {
       <div className=" mb-4 p-6 rounded-md flex gap-10 ">
         <div className="grid grid-cols-2 md:grid-cols-2 gap-6 w-[64%]">
           <JCPCProduct />
-
-          {/* Total bugs and enhacements */}
           <StatCard
             title="Total Bugs and Enhancements"
             value={totalIssuePieChart.reduce(
@@ -72,8 +70,6 @@ const Dashboard = () => {
             pieData={totalIssuePieChart}
             shouldOpenModal={true}
           />
-
-          {/* JioCloud PC Open Issues */}
           <StatCard
             title="JioCloud PC Open Issues"
             value={jioPcOpenIssuePieChart.reduce(
@@ -86,8 +82,6 @@ const Dashboard = () => {
             pieData={jioPcOpenIssuePieChart}
             shouldOpenModal={true}
           />
-
-          {/* Launch Blocker Issues */}
           <StatCard
             title="Launch Blocker Issues"
             value={hpOpenIssuePieChart.reduce(
@@ -100,9 +94,16 @@ const Dashboard = () => {
             pieData={hpOpenIssuePieChart}
             shouldOpenModal={true}
           />
-        </div>
+          {/* <StatCard
+							title="Total Members"
+							value={TeamData.length}
+							color="bg-purple-200"
+							textColor="text-purple-800"
+							icon={Users}
+							/> */}
 
-        {/* Pie Chart */}
+          {/* JCPC productss */}
+        </div>
         <div className="md:row-span-2 w-[36%]">
           <div className="mb-4 font-semibold text-xl flex items-center justify-center text-black ">
             Total Issues Raised (16th Oct - 31st Dec)

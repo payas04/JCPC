@@ -1,20 +1,17 @@
 import React, { useState } from "react";
 import Selfie from "../../components/extra/Selfie";
 import OsComparison from "../../components/extra/OsComparison";
-import AiBot from "../../components/extra/AiBot";
+import PeripheralsComparison from "../../components/extra/PeripheralsComparison";
 import { Card, CardContent, CardMedia } from "@mui/material";
 import JioEducation from "../../components/extra/JioEducation";
 import JioCloudTesting from "../../components/extra/JioCloudTesting";
 
 const Activities = () => {
-  const [selectedCard, setSelectedCard] = useState(null);
   const [open, setOpen] = useState(false);
   const [openSelfie, setOpenSelfie] = useState(false);
-  const [openAi, setOpenAi] = useState(false);
-  const [openJio, setOpenJio] = useState(false);
+  const [openPeripherals, setOpenPeripherals] = useState(false);
+  const [openFaq, setOpenFaq] = useState(false);
   const [openNewCard, setOpenNewCard] = useState(false);
-
-  const [openJioCloud, setOpenJioCloud] = useState(false);
 
   return (
     <section className="container pt-12 p-6 flex flex-col h-full overflow-scroll">
@@ -41,8 +38,12 @@ const Activities = () => {
         </Card>
 
         {/* Peripherals Comparison */}
-        <Card className="activityCard" onClick={() => setOpenAi(true)}>
-          <AiBot open={openAi} setOpen={setOpenAi} heading={"hii"} />
+        <Card className="activityCard" onClick={() => setOpenPeripherals(true)}>
+          <PeripheralsComparison
+            open={openPeripherals}
+            setOpen={setOpenPeripherals}
+            heading={"hii"}
+          />
           <CardMedia sx={{ height: 200 }} image="/images/extra/1.jpg" />
           <CardContent>
             <div className="">
@@ -75,7 +76,6 @@ const Activities = () => {
             </div>
           </CardContent>
         </Card>
-
         {/* JioTranslate */}
         <Card className="activityCard" onClick={() => setOpenSelfie(true)}>
           <Selfie open={openSelfie} setOpen={setOpenSelfie} />
@@ -94,9 +94,8 @@ const Activities = () => {
           </CardContent>
         </Card>
 
-        {/* JioCloud App testing */}
-        <Card className="activityCard" onClick={() => setOpenJioCloud(true)}>
-          <JioCloudTesting open={openJioCloud} setOpen={setOpenJioCloud} />
+        <Card className="activityCard" onClick={() => setOpenNewCard(true)}>
+          <Selfie open={openSelfie} setOpen={setOpenSelfie} />
           <CardMedia sx={{ height: 200 }} image="/images/extra/5.jpg" />
           <CardContent>
             <div className="">

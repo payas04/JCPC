@@ -139,4 +139,4 @@ const JioEducation = ({ open, setOpen }) => {
   );
 };
 
-export default JioEducation;
+export default Faq;
