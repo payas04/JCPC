@@ -32,7 +32,10 @@ const EditMember = ({
               </div>
 
               <div className="space-y-3">
-                <label htmlFor={`name-${selectedMember.id}`} className="formLabel">
+                <label
+                  htmlFor={`name-${selectedMember.id}`}
+                  className="formLabel"
+                >
                   Name
                 </label>
                 <input
@@ -40,7 +43,10 @@ const EditMember = ({
                   id={`name-${selectedMember.id}`}
                   defaultValue={selectedMember.name}
                   onChange={(e) =>
-                    setSelectedMember({ ...selectedMember, name: e.target.value })
+                    setSelectedMember({
+                      ...selectedMember,
+                      name: e.target.value,
+                    })
                   }
                   className="formInput"
                 />
@@ -55,7 +61,10 @@ const EditMember = ({
                   id="tag"
                   defaultValue={selectedMember.tag}
                   onChange={(e) =>
-                    setSelectedMember({ ...selectedMember, tag: e.target.value })
+                    setSelectedMember({
+                      ...selectedMember,
+                      tag: e.target.value,
+                    })
                   }
                   className="formInput"
                 />
@@ -78,14 +87,20 @@ const EditMember = ({
               </div>
 
               <div className="space-y-3">
-                <label htmlFor={`role-${selectedMember.id}`} className="formLabel">
+                <label
+                  htmlFor={`role-${selectedMember.id}`}
+                  className="formLabel"
+                >
                   Role
                 </label>
                 <select
                   id={`role-${selectedMember.id}`}
                   defaultValue={selectedMember.role}
                   onChange={(e) =>
-                    setSelectedMember({ ...selectedMember, role: e.target.value })
+                    setSelectedMember({
+                      ...selectedMember,
+                      role: e.target.value,
+                    })
                   }
                   className="formSelect"
                 >
@@ -106,7 +121,10 @@ const EditMember = ({
                   id="courses"
                   defaultValue={selectedMember.courses}
                   onChange={(e) =>
-                    setSelectedMember({ ...selectedMember, courses: e.target.value })
+                    setSelectedMember({
+                      ...selectedMember,
+                      courses: e.target.value,
+                    })
                   }
                   className="formInput"
                 />
@@ -123,14 +141,17 @@ const EditMember = ({
                   id="bio"
                   defaultValue={selectedMember.bio}
                   onChange={(e) =>
-                    setSelectedMember({ ...selectedMember, bio: e.target.value })
+                    setSelectedMember({
+                      ...selectedMember,
+                      bio: e.target.value,
+                    })
                   }
-                  className="formInput resize-none min-h-[100px]"
+                  className="formInput resize-none min-h-[134px]"
                 />
               </div>
 
               <div className="space-y-3">
-                <label htmlFor="extraActivities" className="formLabel">
+                <label htmlFor="extraActivities" className="formLabel ">
                   Extra Activities
                 </label>
                 <input
@@ -153,28 +174,30 @@ const EditMember = ({
           <div className="space-y-6 mb-6">
             <h3 className="text-lg font-semibold">Issue Count</h3>
             <div className="grid grid-cols-5 gap-4">
-              {Object.entries(selectedMember.issues).map(([issueType, count]) => (
-                <div key={issueType}>
-                  <label htmlFor={issueType} className="formLabel mb-2">
-                  {issueType.charAt(0).toUpperCase() + issueType.slice(1)}
-                  </label>
-                  <input
-                    type="number"
-                    id={issueType}
-                    defaultValue={count}
-                    onChange={(e) =>
-                      setSelectedMember((prevMember) => ({
-                        ...prevMember,
-                        issues: {
-                          ...prevMember.issues,
-                          [issueType]: e.target.valueAsNumber,
-                        },
-                      }))
-                    }
-                    className="formInput space-y-5"
-                  />
-                </div>
-              ))}
+              {Object.entries(selectedMember.issues).map(
+                ([issueType, count]) => (
+                  <div key={issueType}>
+                    <label htmlFor={issueType} className="formLabel mb-2">
+                      {issueType.charAt(0).toUpperCase() + issueType.slice(1)}
+                    </label>
+                    <input
+                      type="number"
+                      id={issueType}
+                      defaultValue={count}
+                      onChange={(e) =>
+                        setSelectedMember((prevMember) => ({
+                          ...prevMember,
+                          issues: {
+                            ...prevMember.issues,
+                            [issueType]: e.target.valueAsNumber,
+                          },
+                        }))
+                      }
+                      className="formInput space-y-5"
+                    />
+                  </div>
+                )
+              )}
             </div>
           </div>
 
@@ -191,7 +214,10 @@ const EditMember = ({
                 onChange={(e) =>
                   setSelectedMember({
                     ...selectedMember,
-                    score: { ...selectedMember.score, previous: e.target.valueAsNumber },
+                    score: {
+                      ...selectedMember.score,
+                      previous: e.target.valueAsNumber,
+                    },
                   })
                 }
                 className="formInput"
@@ -206,7 +232,10 @@ const EditMember = ({
                 id="isAdmin"
                 defaultValue={selectedMember.isAdmin}
                 onChange={(e) =>
-                  setSelectedMember({ ...selectedMember, isAdmin: e.target.value })
+                  setSelectedMember({
+                    ...selectedMember,
+                    isAdmin: e.target.value,
+                  })
                 }
                 className="formSelect"
               >
