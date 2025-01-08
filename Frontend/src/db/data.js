@@ -1,6 +1,6 @@
 export const issuePieChart = [
-  { id: 0, value: 350, label: "X2 Issues", color: "#82B7CA" }, //#20236D
-  { id: 1, value: 106, label: "X4 Issues", color: "#82ca9d" },
+  { id: 0, value: 100, label: "Open Issues", color: "#82B7CA" }, //#20236D
+  { id: 1, value: 57, label: "Resolved", color: "#82ca9d" },
 ];
 
 export const totalIssuePieChart = [
@@ -28,9 +28,9 @@ export const JioTranslateTestingData = [
 ];
 
 export const jioPcOpenIssuePieChart = [
-  { id: 0, value: 8, label: "Blocker", color: "#fecaca" },
+  { id: 0, value: 9, label: "Blocker", color: "#fecaca" },
   { id: 1, value: 48, label: "Critical", color: "#fef08a" },
-  { id: 2, value: 38, label: "Major", color: "#fed7aa" },
+  { id: 2, value: 36, label: "Major", color: "#fed7aa" },
   { id: 3, value: 6, label: "Normal", color: "#e9d5ff" },
   { id: 4, value: 1, label: "Minor", color: "#bae6fd" },
 ];
@@ -138,6 +138,28 @@ export const categoryObservations = [
     text: "text-green-800",
     definition: "Issues which are related to the Registration flow journey.",
   },
+  {
+    title: "Video Streaming",
+    count: 39,
+    color: "bg-red-200",
+    text: "text-red-800",
+    definition: "Issues which are related to Video Streaming ",
+  },
+  {
+    title: "Wifi and Internet",
+    count: 39,
+    color: "bg-yellow-200",
+    text: "text-yellow-800",
+    definition: "Issues which are related to wifi and internet.",
+  },
+  {
+    title: "Client App",
+    count: 21,
+    color: "bg-orange-200",
+    text: "text-orange-800",
+    definition:
+      "Native Apps issue which are related to the Client Apps.",
+  }
 ];
 
 export const jioPcAreaChartData = [

@@ -34,7 +34,7 @@ const Activities = () => {
               <h3 className="text-lg font-semibold">OS Comparison</h3>
               <p className="text-sm text-gray-600">
                 Comprehensive performance comparison of OS across multiple
-                systems and operating environments
+                systems and os.
               </p>
             </div>
           </CardContent>

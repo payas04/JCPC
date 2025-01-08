@@ -138,6 +138,7 @@ const Dashboard = () => {
           areaChartData={hpAreaChartData}
         /> */}
       </section>
+      
     </main>
   );
 };
