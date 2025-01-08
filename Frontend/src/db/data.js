@@ -54,7 +54,7 @@ export const jioPcWorkItems = [
   },
   {
     title: "Open Blocker",
-    count:11,
+    count: 11,
     color: "bg-orange-200",
     text: "text-orange-800",
     definition:
@@ -157,52 +157,51 @@ export const categoryObservations = [
     count: 2,
     color: "bg-orange-200",
     text: "text-orange-800",
-    definition:
-      "Native Apps issue which are related to Keyboard and Mouse.",
-  }
+    definition: "Native Apps issue which are related to Keyboard and Mouse.",
+  },
 ];
 
 export const jioPcAreaChartData = [
   {
-    name: "Week 1",
-    Issues: 17,
+    name: "October",
+    Issues: 145,
   },
   {
-    name: "Week 2",
-    Issues: 0,
+    name: "November",
+    Issues: 90,
   },
   {
-    name: "Week 3",
-    Issues: 0,
+    name: "December",
+    Issues: 492,
   },
-  {
-    name: "Week 4",
-    Issues: 17,
-  },
-  {
-    name: "Week 5",
-    Issues: 55,
-  },
-  {
-    name: "Week 6",
-    Issues: 107,
-  },
-  {
-    name: "Week 7",
-    Issues: 479,
-  },
-  {
-    name: "Week 8",
-    Issues: 60,
-  },
-  {
-    name: "Week 9",
-    Issues: 59,
-  },
-  {
-    name: "Week 10",
-    Issues: 36,
-  },
+  // {
+  //   name: "Week 4",
+  //   Issues: 17,
+  // },
+  // {
+  //   name: "Week 5",
+  //   Issues: 55,
+  // },
+  // {
+  //   name: "Week 6",
+  //   Issues: 107,
+  // },
+  // {
+  //   name: "Week 7",
+  //   Issues: 479,
+  // },
+  // {
+  //   name: "Week 8",
+  //   Issues: 60,
+  // },
+  // {
+  //   name: "Week 9",
+  //   Issues: 59,
+  // },
+  // {
+  //   name: "Week 10",
+  //   Issues: 36,
+  // },
 ];
 
 export const hpAreaChartData = [
