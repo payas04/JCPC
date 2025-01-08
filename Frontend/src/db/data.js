@@ -4,43 +4,43 @@ export const issuePieChart = [
 ];
 
 export const totalIssuePieChart = [
-  { id: 0, value: 60, label: "Blocker", color: "#f87171" },
-  { id: 1, value: 290, label: "Critical", color: "#fb923c" },
-  { id: 2, value: 282, label: "Major", color: "#facc15" },
-  { id: 3, value: 203, label: "Normal", color: "#60a5fa" },
-  { id: 4, value: 30, label: "Minor", color: "#34d399" },
+  { id: 0, value: 60, label: "Blocker", color: "#fecaca" },
+  { id: 1, value: 290, label: "Critical", color: "#fef08a" },
+  { id: 2, value: 282, label: "Major", color: "#fed7aa" },
+  { id: 3, value: 203, label: "Normal", color: "#e9d5ff" },
+  { id: 4, value: 30, label: "Minor", color: "#bae6fd" },
 ];
 
 export const JioCloudTestingData = [
-  { id: 0, value: 0, label: "Blocker", color: "#f87171" },
-  { id: 1, value: 14, label: "Critical", color: "#fb923c" },
-  { id: 2, value: 14, label: "Major", color: "#facc15" },
-  { id: 3, value: 11, label: "Normal", color: "#60a5fa" },
-  { id: 4, value: 1, label: "Minor", color: "#34d399" },
+  { id: 0, value: 0, label: "Blocker", color: "#fecaca" },
+  { id: 1, value: 14, label: "Critical", color: "#fef08a" },
+  { id: 2, value: 14, label: "Major", color: "#fed7aa" },
+  { id: 3, value: 11, label: "Normal", color: "#e9d5ff" },
+  { id: 4, value: 1, label: "Minor", color: "#bae6fd" },
 ];
 
 export const JioTranslateTestingData = [
-  { id: 0, value: 0, label: "Blocker", color: "#f87171" },
-  { id: 1, value: 1, label: "Critical", color: "#fb923c" },
-  { id: 2, value: 3, label: "Major", color: "#facc15" },
-  { id: 3, value: 7, label: "Normal", color: "#60a5fa" },
-  { id: 4, value: 0, label: "Minor", color: "#34d399" },
+  { id: 0, value: 0, label: "Blocker", color: "#fecaca" },
+  { id: 1, value: 1, label: "Critical", color: "#fef08a" },
+  { id: 2, value: 3, label: "Major", color: "#fed7aa" },
+  { id: 3, value: 7, label: "Normal", color: "#e9d5ff" },
+  { id: 4, value: 0, label: "Minor", color: "#bae6fd" },
 ];
 
 export const jioPcOpenIssuePieChart = [
-  { id: 0, value: 8, label: "Blocker", color: "#f87171" },
-  { id: 1, value: 48, label: "Critical", color: "#fb923c" },
-  { id: 2, value: 38, label: "Major", color: "#facc15" },
-  { id: 3, value: 6, label: "Normal", color: "#60a5fa" },
-  { id: 4, value: 1, label: "Minor", color: "#34d399" },
+  { id: 0, value: 8, label: "Blocker", color: "#fecaca" },
+  { id: 1, value: 48, label: "Critical", color: "#fef08a" },
+  { id: 2, value: 38, label: "Major", color: "#fed7aa" },
+  { id: 3, value: 6, label: "Normal", color: "#e9d5ff" },
+  { id: 4, value: 1, label: "Minor", color: "#bae6fd" },
 ];
 
 export const hpOpenIssuePieChart = [
-  { id: 0, value: 5, label: "Blocker", color: "#f87171" },
-  { id: 1, value: 6, label: "Critical", color: "#fb923c" },
-  { id: 2, value: 3, label: "Major", color: "#facc15" },
-  { id: 3, value: 0, label: "Normal", color: "#60a5fa" },
-  { id: 4, value: 0, label: "Minor", color: "#34d399" },
+  { id: 0, value: 5, label: "Blocker", color: "#fecaca" },
+  { id: 1, value: 6, label: "Critical", color: "#fef08a" },
+  { id: 2, value: 3, label: "Major", color: "#fed7aa" },
+  { id: 3, value: 0, label: "Normal", color: "#e9d5ff" },
+  { id: 4, value: 0, label: "Minor", color: "#bae6fd" },
 ];
 
 export const jioPcWorkItems = [
