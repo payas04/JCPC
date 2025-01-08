@@ -4,11 +4,11 @@ export const issuePieChart = [
 ];
 
 export const totalIssuePieChart = [
-  { id: 0, value: 60, label: "Blocker", color: "#fecaca" },
-  { id: 1, value: 290, label: "Critical", color: "#fef08a" },
-  { id: 2, value: 282, label: "Major", color: "#fed7aa" },
-  { id: 3, value: 203, label: "Normal", color: "#e9d5ff" },
-  { id: 4, value: 30, label: "Minor", color: "#bae6fd" },
+  { id: 0, value: 44, label: "Blocker", color: "#fecaca" },
+  { id: 1, value: 213, label: "Critical", color: "#fef08a" },
+  { id: 2, value: 219, label: "Major", color: "#fed7aa" },
+  { id: 3, value: 140, label: "Normal", color: "#e9d5ff" },
+  { id: 4, value: 18, label: "Minor", color: "#bae6fd" },
 ];
 
 export const JioCloudTestingData = [
@@ -46,7 +46,7 @@ export const hpOpenIssuePieChart = [
 export const jioPcWorkItems = [
   {
     title: "Launch Blocker",
-    count: 14,
+    count: 39,
     color: "bg-red-200",
     text: "text-red-800",
     definition:
@@ -54,7 +54,7 @@ export const jioPcWorkItems = [
   },
   {
     title: "Open Blocker",
-    count: 8,
+    count:11,
     color: "bg-orange-200",
     text: "text-orange-800",
     definition:
@@ -62,7 +62,7 @@ export const jioPcWorkItems = [
   },
   {
     title: "Open Critical",
-    count: 32,
+    count: 36,
     color: "bg-yellow-200",
     text: "text-yellow-800",
     definition:
@@ -70,7 +70,7 @@ export const jioPcWorkItems = [
   },
   {
     title: "Product Confirmation",
-    count: 4,
+    count: 5,
     color: "bg-purple-200",
     text: "text-purple-800",
     definition:
@@ -78,7 +78,7 @@ export const jioPcWorkItems = [
   },
   {
     title: "Ready for Test",
-    count: 5,
+    count: 0,
     color: "bg-sky-200",
     text: "text-sky-800",
     definition:
@@ -86,7 +86,7 @@ export const jioPcWorkItems = [
   },
   {
     title: "Enhancement",
-    count: 4,
+    count: 3,
     color: "bg-green-200",
     text: "text-green-800",
     definition: "Observations which makes product better overall.",
@@ -96,7 +96,7 @@ export const jioPcWorkItems = [
 export const categoryObservations = [
   {
     title: "STB and remote",
-    count: 3,
+    count: 1,
     color: "bg-red-200",
     text: "text-red-800",
     definition:
@@ -104,7 +104,7 @@ export const categoryObservations = [
   },
   {
     title: "Native Apps",
-    count: 21,
+    count: 20,
     color: "bg-orange-200",
     text: "text-orange-800",
     definition:
@@ -112,53 +112,53 @@ export const categoryObservations = [
   },
   {
     title: "OS Issues",
-    count: 32,
+    count: 38,
     color: "bg-yellow-200",
     text: "text-yellow-800",
     definition: "Issues related to the OS of the Accops.",
   },
   {
     title: "Peripherals Issues",
-    count: 3,
+    count: 2,
     color: "bg-purple-200",
     text: "text-purple-800",
     definition: "Issues related to the peripherals such as USB and printers.",
   },
   {
     title: "Browser Issues",
-    count: 6,
+    count: 5,
     color: "bg-sky-200",
     text: "text-sky-800",
     definition: "Issues which have been raised for Browser.",
   },
   {
     title: "Registration Flow",
-    count: 39,
+    count: 22,
     color: "bg-green-200",
     text: "text-green-800",
     definition: "Issues which are related to the Registration flow journey.",
   },
   {
     title: "Video Streaming",
-    count: 39,
+    count: 0,
     color: "bg-red-200",
     text: "text-red-800",
     definition: "Issues which are related to Video Streaming ",
   },
   {
     title: "Wifi and Internet",
-    count: 39,
+    count: 1,
     color: "bg-yellow-200",
     text: "text-yellow-800",
     definition: "Issues which are related to wifi and internet.",
   },
   {
-    title: "Client App",
-    count: 21,
+    title: "Keyboard and Mouse",
+    count: 2,
     color: "bg-orange-200",
     text: "text-orange-800",
     definition:
-      "Native Apps issue which are related to the Client Apps.",
+      "Native Apps issue which are related to Keyboard and Mouse.",
   }
 ];
 

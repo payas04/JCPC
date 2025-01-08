@@ -59,24 +59,48 @@ const JioCloudTesting = ({ open, setOpen }) => {
                   <ul className="list-disc ml-6 space-y-2 flex-1">
                     <h2 className="text-lg font-semibold mb-5 -ml-5">Versions Tested</h2>
                     <li>
-                      <span className="">Android SIT Build V21.0.19</span>
+                      <span className="">Android v21.0.19</span>
                     </li>
                     <li>
-                      <span className="">Android SIT Build V21.0.20</span>
+                      <span className="">Android v21.0.20</span>
                     </li>
                     <li>
-                      <span className="">Android SIT Build V21.0.21</span>
+                      <span className="">Android v21.0.21</span>
                     </li>
                     <li>
-                      <span className="">Android SIT Build V21.0.25</span>
+                      <span className="">Android v21.0.25</span>
                     </li>
                     <li>
-                      <span className="">Android SIT Build V21.0.32</span>
+                      <span className="">Android v21.0.32</span>
+                    </li>
+                    <li>
+                      <span className="">Android v21.0.32</span>
+                    </li>
+                    <li>
+                      <span className="">Android v21.0.32</span>
+                    </li>
+                    <li>
+                      <span className="">IOS V70.5.22(12)</span>
+                    </li>
+                    <li>
+                      <span className="">IOS V70.5.22(19)</span>
+                    </li>
+                    <li>
+                      <span className="">IOS V70.5.22(35)</span>
+                    </li>
+                    <li>
+                      <span className="">IOS V70.5.23(3)</span>
+                    </li>
+                    <li>
+                      <span className="">IOS V70.5.25(7)</span>
+                    </li>
+                    <li>
+                      <span className="">IOS V70.6.0(51)</span>
                     </li>
                   </ul>
 
                   {/* Pie Chart and Legend */}
-                  <div className="flex-1 ">
+                  <div className="flex-1 mb-14 mr-7">
                     <CustomPieChart
                       data={JioCloudTestingData}
                       legend={false}

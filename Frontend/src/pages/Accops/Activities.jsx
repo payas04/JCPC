@@ -34,7 +34,7 @@ const Activities = () => {
               <h3 className="text-lg font-semibold">OS Comparison</h3>
               <p className="text-sm text-gray-600">
                 Comprehensive performance comparison of OS across multiple
-                systems and os.
+                systems.
               </p>
             </div>
           </CardContent>
@@ -45,7 +45,7 @@ const Activities = () => {
           <PeripheralsComparison
             open={openPeripherals}
             setOpen={setOpenPeripherals}
-            heading={"hii"}
+            heading={""}
           />
           <CardMedia sx={{ height: 200 }} image="/images/extra/1.jpg" />
           <CardContent>

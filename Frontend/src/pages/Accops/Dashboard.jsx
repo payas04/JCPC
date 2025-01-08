@@ -106,7 +106,7 @@ const Dashboard = () => {
         </div>
         <div className="md:row-span-2 w-[36%]">
           <div className="mb-4 font-semibold text-xl flex items-center justify-center text-black ">
-            Total Issues Raised (16th Oct - 31st Dec)
+            Resolved and Open Issues
           </div>
           <div className="w-full flex items-center justify-center">
             <CustomPieChart

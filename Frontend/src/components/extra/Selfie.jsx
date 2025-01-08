@@ -63,13 +63,13 @@ const Selfie = ({ open, setOpen }) => {
                   <ul className="list-disc ml-6 space-y-2 flex-1">
                     <h2 className="text-lg font-semibold mb-5 -ml-5">Versions Tested</h2>
                     <li>
-                      <span className="">Android SIT Build V4.0.8 (9)</span>
+                      <span className="">Android V4.0.8 (9)</span>
                     </li>
                     <li>
-                      <span className="">Android SIT Build V4.0.10 (11)</span>
+                      <span className="">Android V4.0.10 (11)</span>
                     </li>
                     <li>
-                      <span className="">IOS SIT Build V4.0 (4)</span>
+                      <span className="">IOS V4.0 (4)</span>
                     </li>
                   </ul>
 
