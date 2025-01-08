@@ -6,87 +6,111 @@ import { FaTasks } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { MdAdminPanelSettings } from "react-icons/md";
 import { useAuth } from "../context/auth";
+import { MdNewReleases } from "react-icons/md";
+import { useState } from "react";
+// import jioCloudIcon from "../../public/images/logo/JioCloudPC.svg";
 
 const Sidebar = () => {
-	const { user, logout } = useAuth();
-	const isAdmin = user?.isAdmin;
-	return (
-		<aside className="w-1/7 min-w-52 bg-blue-800 text-white pt-12 pb-2 flex flex-col justify-between m-2 rounded-lg mb-14">
-			<div className="text-2xl font-bold mb-8 px-3 py-2 text-center">
-				JioCloud PC
-			</div>
-			<nav className="flex-grow">
-				<ul className="space-y-4">
-					<Li
-						url="/accops/dashboard"
-						title="Dashboard"
-						location={location}
-						Icon={<MdSpaceDashboard />}
-					/>
-					<Li
-						url="/accops/activities"
-						title="Extra Activities"
-						location={location}
-						Icon={<FaTasks />}
-					/>
-					<Li
-						url="/accops/myteam"
-						title="Team"
-						location={location}
-						Icon={<RiTeamFill />}
-					/>
-					<Li
-						url={`/accops/profile/${user._id}`}
-						title="Profile"
-						location={location}
-						Icon={<CgProfile />}
-					/>
-					{isAdmin && (
-						<Li
-							url="/accops/admin"
-							title="Admin"
-							location={location}
-							Icon={<MdAdminPanelSettings />}
-						/>
-					)}
-				</ul>
-			</nav>
-			<div
-				className="hover:bg-blue-950 cursor-pointer rounded-xl mx-4 py-[5px] px-[12px]"
-				onClick={() => {
-					logout();
-				}}>
-				<span className="text-lg font-medium flex items-center gap-2">
-					<LogOut />
-					Logout
-				</span>
-			</div>
-		</aside>
-	);
+  const { user, logout } = useAuth();
+  const isAdmin = user?.isAdmin;
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  return (
+    <aside className="w-1/7 min-w-52 bg-blue-800 text-white pt-12 pb-2 flex flex-col justify-between m-2 rounded-lg mb-14">
+      <div className="text-2xl font-bold mb-8 px-3 py-2 text-center">
+        {/* <img src={jioCloudIcon} alt="Logo" className="h-8 w-8 mr-2" /> */}
+        JioCloud PC
+      </div>
+      <nav className="flex-grow">
+        <ul className="space-y-4">
+          <Li
+            url="/accops/dashboard"
+            title="Dashboard"
+            location={location}
+            Icon={<MdSpaceDashboard />}
+          />
+          <Li
+            url="/accops/activities"
+            title="Extra Activities"
+            location={location}
+            Icon={<FaTasks />}
+          />
+          <Li
+            url="/accops/myteam"
+            title="Team"
+            location={location}
+            Icon={<RiTeamFill />}
+          />
+          <Li
+            url={`/accops/profile/${user._id}`}
+            title="Profile"
+            location={location}
+            Icon={<CgProfile />}
+          />
+          <Li
+            // url={`/accops/profile/${user._id}`}
+            onClick={openModal}
+            title="What's New"
+            location={location}
+            Icon={<MdNewReleases />}
+          />
+          {isAdmin && (
+            <Li
+              url="/accops/admin"
+              title="Admin"
+              location={location}
+              Icon={<MdAdminPanelSettings />}
+            />
+          )}
+        </ul>
+      </nav>
+      <div
+        className="hover:bg-blue-950 cursor-pointer rounded-xl mx-4 py-[5px] px-[12px]"
+        onClick={() => {
+          logout();
+        }}
+      >
+        <span className="text-lg font-medium flex items-center gap-2">
+          <LogOut />
+          Logout
+        </span>
+      </div>
+    </aside>
+  );
 };
 
 const Li = ({ url, title, Icon, location }) => {
-	const navigate = useNavigate();
-	return (
-		<li
-			style={{
-				backgroundColor: location.pathname.includes(url) ? "#f3f4f6" : "",
-				padding: "5px 12px",
-			}}
-			className="hover:bg-blue-950 cursor-pointer rounded-xl mx-4"
-			onClick={() => {
-				navigate(`${url}`);
-			}}>
-			<span
-				className="text-lg font-medium flex items-center gap-2"
-				style={{
-					color: location.pathname.includes(url) ? "#1e1926" : "white",
-				}}>
-				{Icon}
-				{title}
-			</span>
-		</li>
-	);
+  const navigate = useNavigate();
+  return (
+    <li
+      style={{
+        backgroundColor: location.pathname.includes(url) ? "#f3f4f6" : "",
+        padding: "5px 12px",
+      }}
+      className="hover:bg-blue-950 cursor-pointer rounded-xl mx-4"
+      onClick={() => {
+        navigate(`${url}`);
+      }}
+    >
+      <span
+        className="text-lg font-medium flex items-center gap-2"
+        style={{
+          color: location.pathname.includes(url) ? "#1e1926" : "white",
+        }}
+      >
+        {Icon}
+        {title}
+      </span>
+    </li>
+  );
 };
 
 export default Sidebar;
