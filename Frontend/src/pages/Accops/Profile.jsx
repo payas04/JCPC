@@ -17,26 +17,6 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useOutletContext } from "react-router-dom";
 
-// Initial user data
-const initialUserData = {
-  domainID: "user123",
-  isAdmin: true,
-  role: "Developer",
-  name: "John Doe",
-  email: "john.doe@example.com",
-  image: "/placeholder.svg?height=128&width=128",
-  issues: {
-    blocker: "2",
-    critical: "5",
-    major: "10",
-    normal: "20",
-    minor: "8",
-  },
-  courses: "React, Node.js, MongoDB",
-  bio: "Passionate developer with 5 years of experience in web technologies.",
-  extraActivites: "Open source contributor, Tech blogger",
-  tag: "Frontend Specialist",
-};
 
 const Profile = () => {
   const { user, setTrigger } = useAuth();
@@ -308,7 +288,9 @@ const Profile = () => {
             </div>
 
             {/* Professional Details Section */}
-            <div className="flex flex-col overflow-y-scroll h-screen space-y-6 pb-48">
+            <div className="flex flex-col overflow-y-scroll h-screen space-y-6 pb-48 scroller" style={{
+			
+			}}>
               {/* Professional Details Card */}
               <div className="bg-white rounded-lg p-6 shadow-md flex-1">
                 <div className="mb-6">

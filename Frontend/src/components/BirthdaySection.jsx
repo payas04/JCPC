@@ -24,7 +24,7 @@ const BirthdaySection = ({ todayBirthday, upcomingBirthday, profiles }) => {
                 src={`/images/members/${btd.Domain}.jpg`}
                 alt="member"
                 width={50}
-                className="h-14 w-14 rounded-lg"
+                className="h-14 w-14 object-cover rounded-full"
                 onError={(e) => {
                   e.target.src = "/images/profile/default.png";
                 }}
@@ -51,8 +51,7 @@ const BirthdaySection = ({ todayBirthday, upcomingBirthday, profiles }) => {
               <img
                 src={getImageLink(btd.Name)}
                 alt="member"
-                width={50}
-                className="h-14 w-14 rounded-lg"
+                className="h-14 w-14 object-cover rounded-full"
                 onError={(e) => {
                   e.target.src = "/images/profile/default.png";
                 }}
