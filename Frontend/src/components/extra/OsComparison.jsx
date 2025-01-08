@@ -85,7 +85,7 @@ const OsComparison = ({ open, setOpen }) => {
             </div>
 
             <div className="bg-gray-100 flex flex-col gap-6 p-8">
-              <div className="shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-md mt-2 p-2 ">
+              <div className="bg-white rounded-md mt-2 p-2 ">
                 <h4 className="ml-2 text-2xl mb-4">Task Overview</h4>
                 <p className="ml-1">
                   We conducted a comprehensive performance comparison across
@@ -110,9 +110,9 @@ const OsComparison = ({ open, setOpen }) => {
                   </span>
                 </div>
               </div>
-              <div>
+              <div className="bg-white rounded-md">
                 {categories.map((category) => (
-                  <div className="p-4 m-2 rounded-md border">
+                  <div className="p-4 m-2 rounded-md ">
                     <h3 className="mb-4 text-lg font-semibold">
                       {category.name}
                     </h3>
