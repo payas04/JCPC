@@ -129,8 +129,12 @@ export default function UserModal({ open, setOpen, initialUser, users }) {
 											</p>
 										</div>
 										<div className="text-center rounded-lg overflow-hidden border-2 h-fit border-blue-800">
-											<p className="font-bold text-xl ">{user.score.current}</p>
-											<p className="bg-blue-800 text-white px-2">Total Score</p>
+											<p className="font-bold text-xl ">
+												{issue.reduce((acc, item) => acc + item.value, 0)}
+											</p>
+											<p className="bg-blue-800 text-white px-2">
+												Issues Count
+											</p>
 										</div>
 									</div>
 								</div>

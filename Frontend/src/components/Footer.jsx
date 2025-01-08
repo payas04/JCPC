@@ -23,6 +23,7 @@ const Footer = () => {
 				backgroundColor: JioCloudPath
 					? "rgba(0, 0, 0, 1)"
 					: "rgba(0, 0, 0, 0.5)",
+				display: location.pathname.includes("/accops/login") ? "none" : "",
 			}}>
 			<Power />
 			<div className="flex gap-4 justify-center items-center">

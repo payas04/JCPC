@@ -25,9 +25,10 @@ body {
 	display: none;
 }
 
-.scroller::-webkit-scrollbar{
-	display: block;
-	width: 8px;
+.scrollable-component {
+	overflow-y: auto;
+	scrollbar-width: thin; /* For Firefox */
+	scrollbar-color: #3b82f6 #f4f4f4;
 }
 
 @layer utilities {
@@ -53,9 +54,7 @@ body {
 	.modalPanel {
 		@apply relative min-w-[560px] min-h-10 h-fit max-h-[85%] transform overflow-scroll rounded-lg bg-white text-left shadow-xl transition-all mb-6;
 	}
-
 }
-
 
 @keyframes appear {
 	from {
