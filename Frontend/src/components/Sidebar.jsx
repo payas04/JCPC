@@ -6,7 +6,6 @@ import { FaTasks } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { MdAdminPanelSettings } from "react-icons/md";
 import { useAuth } from "../context/auth";
-import { MdNewReleases } from "react-icons/md";
 import { useState } from "react";
 // import jioCloudIcon from "../../public/images/logo/JioCloudPC.svg";
 
@@ -25,9 +24,12 @@ const Sidebar = () => {
 
   return (
     <aside className="w-1/7 min-w-52 bg-blue-800 text-white pt-12 pb-2 flex flex-col justify-between m-2 rounded-lg mb-14">
-      <div className="text-2xl font-bold mb-8 px-3 py-2 text-center">
-        {/* <img src={jioCloudIcon} alt="Logo" className="h-8 w-8 mr-2" /> */}
-        JioCloud PC
+      <div className="text-2xl font-bold px-3 py-2 text-center flex">
+        <img
+          src="/images/icons/JioCloudPc.png"
+          alt="JioCloudPc logo"
+          className="w-[50px] h-[50px] rounded-lg block mx-auto mb-3"
+        />
       </div>
       <nav className="flex-grow">
         <ul className="space-y-4">
@@ -54,13 +56,6 @@ const Sidebar = () => {
             title="Profile"
             location={location}
             Icon={<CgProfile />}
-          />
-          <Li
-            // url={`/accops/profile/${user._id}`}
-            onClick={openModal}
-            title="What's New"
-            location={location}
-            Icon={<MdNewReleases />}
           />
           {isAdmin && (
             <Li

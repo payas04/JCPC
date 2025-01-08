@@ -52,7 +52,7 @@ function Power() {
 			<div className="flex justify-center items-center">
 				<FaRegCircle size={20} />
 			</div>
-			{isDropdownOpen && (
+			{/* {isDropdownOpen && (
 				<ul className="absolute bottom-14 left-3 p-2 shadow rounded-lg w-40 bg-neutral-800 border-black border-2 border-opacity-10 flex flex-col gap-3">
 					<li>
 						<button
@@ -69,7 +69,7 @@ function Power() {
 						</button>
 					</li>
 				</ul>
-			)}
+			)} */}
 		</span>
 	);
 }
