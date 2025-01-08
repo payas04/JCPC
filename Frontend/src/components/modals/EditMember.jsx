@@ -8,16 +8,17 @@ const EditMember = ({
 }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="bg-white p-6 rounded-lg w-full max-w-5xl space-y-2">
-        <h2 className="text-xl font-bold mb-4">Edit Team Member</h2>
+      <div className="bg-white p-8 rounded-lg w-full max-w-5xl">
+        <h2 className="text-2xl font-bold mb-6">Edit Team Member</h2>
         <form
           onSubmit={(e) => {
             handlerUpdateUser(e);
           }}
         >
-          <div className="grid grid-cols-3 gap-4">
-            <div className="space-y-2">
-              <div className="space-y-2">
+          <div className="grid grid-cols-3 gap-6 mb-6">
+            {/* First Column */}
+            <div className="space-y-6">
+              <div className="space-y-3">
                 <label htmlFor="domainId" className="formLabel">
                   Domain ID
                 </label>
@@ -25,37 +26,27 @@ const EditMember = ({
                   type="text"
                   id="domainId"
                   defaultValue={selectedMember.domainID}
-                  onChange={(e) => {
-                    setSelectedMember({
-                      ...selectedMember,
-                      domainID: e.target.value,
-                    });
-                  }}
                   disabled
                   className="formInput cursor-not-allowed"
                 />
               </div>
-              <div className="space-y-2">
-                <label
-                  htmlFor={`name-${selectedMember.id}`}
-                  className="formLabel"
-                >
+
+              <div className="space-y-3">
+                <label htmlFor={`name-${selectedMember.id}`} className="formLabel">
                   Name
                 </label>
                 <input
-                  id={`name-${selectedMember.id}`}
                   type="text"
+                  id={`name-${selectedMember.id}`}
                   defaultValue={selectedMember.name}
-                  onChange={(e) => {
-                    setSelectedMember({
-                      ...selectedMember,
-                      name: e.target.value,
-                    });
-                  }}
+                  onChange={(e) =>
+                    setSelectedMember({ ...selectedMember, name: e.target.value })
+                  }
                   className="formInput"
                 />
               </div>
-              <div className="space-y-2">
+
+              <div className="space-y-3">
                 <label htmlFor="tag" className="formLabel">
                   Tags
                 </label>
@@ -63,46 +54,40 @@ const EditMember = ({
                   type="text"
                   id="tag"
                   defaultValue={selectedMember.tag}
-                  className="formInput"
                   onChange={(e) =>
-                    setSelectedMember({
-                      ...selectedMember,
-                      tag: e.target.value,
-                    })
+                    setSelectedMember({ ...selectedMember, tag: e.target.value })
                   }
+                  className="formInput"
                 />
               </div>
             </div>
-            <div className="space-y-2">
-              <div className="space-y-2">
+
+            {/* Second Column */}
+            <div className="space-y-6">
+              <div className="space-y-3">
                 <label htmlFor="email" className="formLabel">
                   Email
                 </label>
                 <input
-                  id="email"
                   type="email"
+                  id="email"
                   defaultValue={selectedMember.email}
-                  className="formInput cursor-not-allowed"
                   disabled
+                  className="formInput cursor-not-allowed"
                 />
               </div>
-              <div className="space-y-2">
-                <label
-                  htmlFor={`role-${selectedMember.id}`}
-                  className="formLabel"
-                >
+
+              <div className="space-y-3">
+                <label htmlFor={`role-${selectedMember.id}`} className="formLabel">
                   Role
                 </label>
                 <select
                   id={`role-${selectedMember.id}`}
                   defaultValue={selectedMember.role}
-                  className="formSelect"
                   onChange={(e) =>
-                    setSelectedMember({
-                      ...selectedMember,
-                      role: e.target.value,
-                    })
+                    setSelectedMember({ ...selectedMember, role: e.target.value })
                   }
+                  className="formSelect"
                 >
                   <option value="">Select role</option>
                   <option value="Program Manager">Program Manager</option>
@@ -112,7 +97,7 @@ const EditMember = ({
                 </select>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <label htmlFor="courses" className="formLabel">
                   Courses
                 </label>
@@ -120,34 +105,31 @@ const EditMember = ({
                   type="text"
                   id="courses"
                   defaultValue={selectedMember.courses}
-                  className="formInput"
                   onChange={(e) =>
-                    setSelectedMember({
-                      ...selectedMember,
-                      courses: e.target.value,
-                    })
+                    setSelectedMember({ ...selectedMember, courses: e.target.value })
                   }
+                  className="formInput"
                 />
               </div>
             </div>
-            <div className="flex flex-col justify-between">
-              <div className="space-y-2">
+
+            {/* Third Column */}
+            <div className="space-y-6">
+              <div className="space-y-3">
                 <label htmlFor="bio" className="formLabel">
                   Bio
                 </label>
                 <textarea
                   id="bio"
                   defaultValue={selectedMember.bio}
-                  className="resize-none formInput min-h-[120px]"
                   onChange={(e) =>
-                    setSelectedMember({
-                      ...selectedMember,
-                      bio: e.target.value,
-                    })
+                    setSelectedMember({ ...selectedMember, bio: e.target.value })
                   }
+                  className="formInput resize-none min-h-[100px]"
                 />
               </div>
-              <div className="space-y-2">
+
+              <div className="space-y-3">
                 <label htmlFor="extraActivities" className="formLabel">
                   Extra Activities
                 </label>
@@ -155,49 +137,50 @@ const EditMember = ({
                   type="text"
                   id="extraActivities"
                   defaultValue={selectedMember.extraActivites}
-                  className="formInput"
                   onChange={(e) =>
                     setSelectedMember({
                       ...selectedMember,
                       extraActivites: e.target.value,
                     })
                   }
+                  className="formInput"
                 />
               </div>
             </div>
           </div>
-          <div className="space-y-2">
-            <h3 className="text-lg font-semibold">Issues</h3>
+
+          {/* Issues Section */}
+          <div className="space-y-6 mb-6">
+            <h3 className="text-lg font-semibold">Issue Count</h3>
             <div className="grid grid-cols-5 gap-4">
-              {Object.entries(selectedMember.issues).map(
-                ([issueType, count]) => (
-                  <div key={issueType}>
-                    <label htmlFor={issueType} className="formLabel">
-                      {issueType}
-                    </label>
-                    <input
-                      type="number"
-                      id={issueType}
-                      defaultValue={count}
-                      className="formInput"
-                      onChange={(e) =>
-                        setSelectedMember((prevMember) => ({
-                          ...prevMember,
-                          issues: {
-                            ...prevMember.issues,
-                            [issueType]: e.target.valueAsNumber,
-                          },
-                        }))
-                      }
-                    />
-                  </div>
-                )
-              )}
+              {Object.entries(selectedMember.issues).map(([issueType, count]) => (
+                <div key={issueType}>
+                  <label htmlFor={issueType} className="formLabel mb-2">
+                  {issueType.charAt(0).toUpperCase() + issueType.slice(1)}
+                  </label>
+                  <input
+                    type="number"
+                    id={issueType}
+                    defaultValue={count}
+                    onChange={(e) =>
+                      setSelectedMember((prevMember) => ({
+                        ...prevMember,
+                        issues: {
+                          ...prevMember.issues,
+                          [issueType]: e.target.valueAsNumber,
+                        },
+                      }))
+                    }
+                    className="formInput space-y-5"
+                  />
+                </div>
+              ))}
             </div>
           </div>
-          {/* Admin Status and previous score */}
-          <div className="grid grid-cols-3 gap-6">
-            <div className="space-y-2">
+
+          {/* Additional Fields */}
+          <div className="grid grid-cols-3 gap-6 mb-6">
+            <div className="space-y-3">
               <label htmlFor="prevScore" className="formLabel">
                 Previous Score
               </label>
@@ -208,16 +191,14 @@ const EditMember = ({
                 onChange={(e) =>
                   setSelectedMember({
                     ...selectedMember,
-                    score: {
-                      ...prevScore.score,
-                      previous: e.target.valueAsNumber,
-                    },
+                    score: { ...selectedMember.score, previous: e.target.valueAsNumber },
                   })
                 }
                 className="formInput"
               />
             </div>
-            <div className="space-y-2">
+
+            <div className="space-y-3">
               <label htmlFor="isAdmin" className="formLabel">
                 Admin Status
               </label>
@@ -225,10 +206,7 @@ const EditMember = ({
                 id="isAdmin"
                 defaultValue={selectedMember.isAdmin}
                 onChange={(e) =>
-                  setSelectedMember({
-                    ...selectedMember,
-                    isAdmin: e.target.value,
-                  })
+                  setSelectedMember({ ...selectedMember, isAdmin: e.target.value })
                 }
                 className="formSelect"
               >
@@ -237,11 +215,13 @@ const EditMember = ({
               </select>
             </div>
           </div>
-          <div className="flex justify-end gap-4 mt-6">
+
+          {/* Buttons */}
+          <div className="flex justify-end gap-4">
             <button
               type="button"
               onClick={() => setIsEditModalOpen(false)}
-              className="px-4 py-2 border rounded-md hover:bg-gray-50"
+              className="px-4 py-2 border rounded-md hover:bg-gray-100"
             >
               Cancel
             </button>
