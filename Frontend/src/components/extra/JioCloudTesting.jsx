@@ -57,7 +57,7 @@ const JioCloudTesting = ({ open, setOpen }) => {
               <section className="bg-white p-6 rounded-lg shadow mb-6">
                 <div className="bg-white p-4 rounded-lg items-center flex gap-6">
                   <ul className="list-disc ml-6 space-y-2 flex-1">
-                    <h2 className="text-lg font-semibold mb-10 -ml-5">Versions Tested</h2>
+                    <h2 className="text-lg font-semibold mb-5 -ml-5">Versions Tested</h2>
                     <li>
                       <span className="">Android SIT Build V21.0.19</span>
                     </li>

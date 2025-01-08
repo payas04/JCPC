@@ -17,11 +17,11 @@ const Activities = () => {
   const [openJioCloud, setOpenJioCloud] = useState(false);
 
   return (
-    <section className="container pt-12 p-6 flex flex-col h-full overflow-scroll">
+    <section className="container pt-10 p-10 flex flex-col h-full overflow-scroll">
       <header className="mb-4 px-6">
         <h2 className="text-4xl font-bold mt-6">Extra Activities</h2>
       </header>
-      <div className="flex-grow flex justify-between items-center gap-6 p-6 mb-10">
+      <div className="flex-grow flex justify-between items-center gap-6 p-6 mb-12">
         {/* OS Comparison */}
         <Card className="activityCard" onClick={() => setOpen(true)}>
           <OsComparison open={open} setOpen={setOpen} heading={"hiii"} />
