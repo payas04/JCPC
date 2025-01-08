@@ -13,7 +13,6 @@ const Footer = () => {
 	const navigate = useNavigate();
 	const location = useLocation();
 	const JioCloudPath = location.pathname.startsWith("/accops");
-	const ChromePath = location.pathname.startsWith("/chrome");
 	const { isChromeOpen, setChromeOpen } = useAuth();
 
 	return (
