@@ -33,15 +33,15 @@ const Faq = ({ open, setOpen }) => {
               </h2>
             </div>
 
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md max-w-4xl mx-auto">
-              <h1 className="text-2xl font-bold text-center mb-6">
+            <div className="bg-gray-100 p-8 mt-2 mb-2 rounded-md shadow-md max-w-4xl mx-auto">
+              {/* <h1 className="text-2xl font-bold text-center mb-6">
                 Team Accomplishments: JioCloud PC FAQ
-              </h1>
+              </h1> */}
 
               {/* Project Overview Section */}
-              <section className="mb-8">
-                <h2 className="text-xl font-semibold mb-4">Project Overview</h2>
-                <p className="bg-white p-4 rounded-lg shadow">
+              <section className="bg-white p-6 rounded-lg shadow mb-8">
+                <h2 className="text-lg font-semibold mb-4">Task Overview</h2>
+                <p className="bg-white rounded-lg ">
                   Our team worked on creating a comprehensive FAQ section for
                   JioCloud PC, covering key aspects like setup, device
                   compatibility, account creation, subscription details, and
@@ -52,21 +52,26 @@ const Faq = ({ open, setOpen }) => {
               </section>
 
               {/* Key Deliverables Section */}
-              <section>
-                <h2 className="text-xl font-semibold mb-4">Key Deliverables</h2>
-                <ul className="list-disc ml-6 bg-white p-8 rounded-lg shadow space-y-2">
+              <section className="bg-white p-4 rounded-lg shadow mb-8">
+                <h2 className="text-lg font-semibold mb-1">Key Deliverables</h2>
+                <ul className="list-disc ml-2 bg-white p-4 rounded-lg  space-y-2">
                   <li>
-                    <strong>Drafted FAQs:</strong> Addressing device setup,
-                    performance, and troubleshooting.
+                    <strong className="font-semibold">Drafted FAQs:</strong>{" "}
+                    Addressing device setup, performance, and troubleshooting.
                   </li>
                   <li>
-                    <strong>Detailed Guidance:</strong> On registering for
-                    JioCloud PC, managing subscriptions, and connecting
-                    peripherals.
+                    <strong className="font-semibold">
+                      Detailed Guidance:
+                    </strong>{" "}
+                    On registering for JioCloud PC, managing subscriptions, and
+                    connecting peripherals.
                   </li>
                   <li>
-                    <strong>Step-by-Step Solutions:</strong> For common issues
-                    and setup instructions to improve user experience.
+                    <strong className="font-semibold">
+                      Step-by-Step Solutions:
+                    </strong>{" "}
+                    For common issues and setup instructions to improve user
+                    experience.
                   </li>
                 </ul>
               </section>

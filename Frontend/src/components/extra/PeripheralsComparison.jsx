@@ -14,6 +14,7 @@ const PeripheralsComparison = ({ open, setOpen }) => {
       <div className="fixed inset-0 z-10 w-screen h-screen overflow-y-auto ">
         <div className="flex items-center justify-center text-center h-screen w-screen">
           <DialogPanel className="relative w-[60%] h-fit max-h-[85%] overflow-scroll rounded-lg bg-white text-left shadow-xl transition-all mb-6">
+            {/* Heading div */}
             <div className="sticky top-0 left-0 w-full bg-blue-800 text-white z-20">
               <IoClose
                 onClick={() => setOpen(false)}
@@ -25,30 +26,32 @@ const PeripheralsComparison = ({ open, setOpen }) => {
                 Peripherals Comparision
               </h2>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md max-w-4xl mx-auto">
-              <h1 className="text-2xl font-bold text-center mb-6">
+            <div className="bg-gray-100 p-6 rounded-lg shadow-md max-w-4xl mx-auto mt-2">
+              {/* <h1 className="text-2xl font-bold text-center mb-6">
                 Wireless Mouse and Keyboard Comparison
-              </h1>
+              </h1> */}
 
               {/* Mouse Highlights */}
               <section className="mb-8">
-                <h2 className="text-xl font-semibold mb-4">Mouse Highlights</h2>
+                <h2 className="text-xl font-bold mb-4">Mouse Comparison</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-                    <h3 className="font-bold text-lg">HP KM200</h3>
+                  <div className="bg-green-200 p-4 rounded-lg shadow hover:shadow-lg">
+                    <h3 className="font-semibold text-lg">HP KM200</h3>
                     <p>
                       Durable, stable wireless connection, and 800-1000 DPI.
                       Ideal for reliability.
                     </p>
                   </div>
                   <div className="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-                    <h3 className="font-bold text-lg">
+                    <h3 className="font-semibold text-lg">
                       Amkette Wi-Key Mini SWM01
                     </h3>
                     <p>Slim, portable, 1200 DPI, but requires harder clicks.</p>
                   </div>
                   <div className="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-                    <h3 className="font-bold text-lg">Amkette Primus Neo</h3>
+                    <h3 className="font-semibold text-lg">
+                      Amkette Primus Neo
+                    </h3>
                     <p>
                       800-1600 DPI with a wide range, durable, but harder
                       clicks.
@@ -59,19 +62,17 @@ const PeripheralsComparison = ({ open, setOpen }) => {
 
               {/* Keyboard Highlights */}
               <section className="mb-8">
-                <h2 className="text-xl font-semibold mb-4">
-                  Keyboard Highlights
-                </h2>
+                <h2 className="text-xl font-bold mb-4">Keyboard Comparison</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-                    <h3 className="font-bold text-lg">HP KM200</h3>
+                    <h3 className="font-semibold text-lg">HP KM200</h3>
                     <p>
                       Full-size with a numpad, responsive keys, and minimal
                       typing sound.
                     </p>
                   </div>
                   <div className="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-                    <h3 className="font-bold text-lg">
+                    <h3 className="font-semibold text-lg">
                       Amkette Wi-Key Mini SWK01
                     </h3>
                     <p>
@@ -79,8 +80,10 @@ const PeripheralsComparison = ({ open, setOpen }) => {
                       key.
                     </p>
                   </div>
-                  <div className="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-                    <h3 className="font-bold text-lg">Amkette Primus Neo</h3>
+                  <div className="bg-green-200 p-4 rounded-lg shadow hover:shadow-lg">
+                    <h3 className="font-semibold text-lg">
+                      Amkette Primus Neo
+                    </h3>
                     <p>
                       Full-size, moderately spaced keys, with multimedia
                       shortcuts.
@@ -91,18 +94,18 @@ const PeripheralsComparison = ({ open, setOpen }) => {
 
               {/* Final Selection */}
               <section>
-                <h2 className="text-xl font-semibold mb-4">Final Selection</h2>
+                <h2 className="text-xl font-bold mb-4">Final Selection</h2>
                 <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg">
                   <ul className="list-disc ml-6 space-y-2">
                     <li>
-                      <span className="font-bold">
-                        KM200 Wireless Mouse and Keyboard Combo:
+                      <span className="font-semibold">
+                        HP KM200 Wireless Mouse and Keyboard Combo:
                       </span>{" "}
                       Durable, reliable, and full-size comfort.
                     </li>
                     <li>
-                      <span className="font-bold">
-                        AMKETTE Primus Neo Wireless Combo:
+                      <span className="font-semibold">
+                        Amkette Primus Neo Wireless Combo:
                       </span>{" "}
                       Feature-rich, affordable, and great value.
                     </li>

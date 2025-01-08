@@ -19,7 +19,7 @@ const Activities = () => {
   return (
     <section className="container pt-12 p-6 flex flex-col h-full overflow-scroll">
       <header className="mb-4 px-6">
-        <h2 className="text-4xl font-bold">Extra Activities</h2>
+        <h2 className="text-4xl font-bold mt-6">Extra Activities</h2>
       </header>
       <div className="flex-grow flex justify-between items-center gap-6 p-6 mb-10">
         {/* OS Comparison */}
@@ -80,6 +80,7 @@ const Activities = () => {
             </div>
           </CardContent>
         </Card>
+
         {/* JioTranslate */}
         <Card className="activityCard" onClick={() => setOpenSelfie(true)}>
           <Selfie open={openSelfie} setOpen={setOpenSelfie} />

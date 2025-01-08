@@ -31,43 +31,50 @@ const Selfie = ({ open, setOpen }) => {
               </p>
             </div>
 
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md max-w-3xl mx-auto">
-              <h1 className="text-2xl font-bold text-center mb-6">
+            <div className="bg-gray-100 p-8 mt-2 mb-2 rounded-md shadow-md max-w-4xl mx-auto">
+              {/* <h1 className="text-2xl font-bold text-center mb-6">
                 JioTranslate Testing Summary
-              </h1>
+              </h1> */}
+
+              {/* Project Overview Section */}
+              <section className="bg-white p-6 rounded-lg shadow mb-8">
+                <h2 className="text-lg font-semibold mb-4">Task Overview</h2>
+                <p className="bg-white rounded-lg ">
+                  Our team worked on creating a comprehensive FAQ section for
+                  JioCloud PC, covering key aspects like setup, device
+                  compatibility, account creation, subscription details, and
+                  troubleshooting. We ensured that users have easy access to
+                  information regarding common issues with peripherals,
+                  registration, and login processes.
+                </p>
+              </section>
 
               {/* Total Issues Raised */}
-              <section className="mb-6">
+              {/* <section className="mb-6">
                 <div className="bg-white p-4 rounded-lg shadow flex items-center justify-between">
                   <h2 className="text-xl font-semibold">Total Issues Raised</h2>
                   <span className="text-2xl font-bold">11</span>
                 </div>
-              </section>
+              </section> */}
 
               {/* Versions Tested */}
-              <section>
-                <h2 className="text-xl font-semibold mb-4">Versions Tested</h2>
-                <div className="bg-white p-4 rounded-lg shadow flex gap-6">
+              <section className="bg-white p-6 rounded-lg shadow mb-6">
+                <h2 className="text-lg font-semibold mb-4">Versions Tested</h2>
+                <div className="bg-white p-4 rounded-lg  flex gap-6">
                   <ul className="list-disc ml-6 space-y-2">
                     <li>
-                      <span className="font-semibold">
-                        Android SIT Build V4.0.8(9)
-                      </span>
+                      <span className="">Android SIT Build V4.0.8(9)</span>
                     </li>
                     <li>
-                      <span className="font-semibold">
-                        Android SIT Build V4.0.10(11)
-                      </span>
+                      <span className="">Android SIT Build V4.0.10(11)</span>
                     </li>
                     <li>
-                      <span className="font-semibold">
-                        iOS Build version 4.0(4)
-                      </span>
+                      <span className="">iOS Build version 4.0(4)</span>
                     </li>
                   </ul>
 
                   {/* Pie Chart and Legend */}
-                  <div className="flex-1 space-y-4">
+                  <div className="flex-1 ml-8">
                     <CustomPieChart
                       data={JioTranslateTestingData}
                       legend={false}
