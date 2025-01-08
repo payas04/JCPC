@@ -38,7 +38,7 @@ const Selfie = ({ open, setOpen }) => {
 
               {/* Project Overview Section */}
               <section className="bg-white p-6 rounded-lg shadow mb-8">
-                <h2 className="text-lg font-semibold mb-4">Task Overview</h2>
+                <h2 className="text-lg font-semibold mb-3">Task Overview</h2>
                 <p className="bg-white rounded-lg ">
                   Our team worked on creating a comprehensive FAQ section for
                   JioCloud PC, covering key aspects like setup, device
@@ -61,7 +61,7 @@ const Selfie = ({ open, setOpen }) => {
               <section className="bg-white p-6 rounded-lg shadow mb-6">
                 <div className="bg-white p-4 rounded-lg items-center flex gap-6">
                   <ul className="list-disc ml-6 space-y-2 flex-1">
-                    <h2 className="text-lg font-semibold mb-10 -ml-5">Versions Tested</h2>
+                    <h2 className="text-lg font-semibold mb-5 -ml-5">Versions Tested</h2>
                     <li>
                       <span className="">Android SIT Build V4.0.8 (9)</span>
                     </li>
