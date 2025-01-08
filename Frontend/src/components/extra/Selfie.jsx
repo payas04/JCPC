@@ -59,22 +59,22 @@ const Selfie = ({ open, setOpen }) => {
 
               {/* Versions Tested */}
               <section className="bg-white p-6 rounded-lg shadow mb-6">
-                <h2 className="text-lg font-semibold mb-4">Versions Tested</h2>
-                <div className="bg-white p-4 rounded-lg  flex gap-6">
-                  <ul className="list-disc ml-6 space-y-2">
+                <div className="bg-white p-4 rounded-lg items-center flex gap-6">
+                  <ul className="list-disc ml-6 space-y-2 flex-1">
+                    <h2 className="text-lg font-semibold mb-10 -ml-5">Versions Tested</h2>
                     <li>
-                      <span className="">Android SIT Build V4.0.8(9)</span>
+                      <span className="">Android SIT Build V4.0.8 (9)</span>
                     </li>
                     <li>
-                      <span className="">Android SIT Build V4.0.10(11)</span>
+                      <span className="">Android SIT Build V4.0.10 (11)</span>
                     </li>
                     <li>
-                      <span className="">iOS Build version 4.0(4)</span>
+                      <span className="">IOS SIT Build V4.0 (4)</span>
                     </li>
                   </ul>
 
                   {/* Pie Chart and Legend */}
-                  <div className="flex-1 ml-8">
+                  <div className="flex-1 ">
                     <CustomPieChart
                       data={JioTranslateTestingData}
                       legend={false}

@@ -1,8 +1,12 @@
+import { JioCloudTestingData } from "../../db/data";
+import { JioTranslateTestingData } from "../../db/data";
+
 import React from "react";
 import { IoClose } from "react-icons/io5";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 import CustomPieChart from "../charts/CustomPieChart";
-import { JioCloudTestingData } from "../../db/data";
+
+
 
 const JioCloudTesting = ({ open, setOpen }) => {
   return (
@@ -11,77 +15,76 @@ const JioCloudTesting = ({ open, setOpen }) => {
       onClose={() => setOpen(false)}
       className="relative z-10"
     >
-      {/* Backdrop */}
       <DialogBackdrop className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
 
-      {/* Modal Panel */}
-      <div className="fixed inset-0 z-10 w-screen h-screen overflow-y-auto">
-        <div className="flex items-center justify-center min-h-screen">
-          <DialogPanel className="relative w-[60%] max-h-[85%] overflow-y-auto rounded-lg bg-white shadow-xl">
-            {/* Header */}
-            <div className="sticky top-0 bg-blue-800 text-white z-20">
+      <div className="fixed inset-0 z-10 w-screen h-screen overflow-y-auto ">
+        <div className="flex items-center justify-center text-center h-screen w-screen">
+          <DialogPanel className="relative w-[60%] h-fit max-h-[85%] overflow-scroll rounded-lg bg-white text-left shadow-xl transition-all mb-6">
+            <div className="sticky top-0 left-0 w-full bg-blue-800 text-white z-20">
               <IoClose
                 onClick={() => setOpen(false)}
+                color="white"
                 size={26}
-                className="absolute top-3 right-4 cursor-pointer hover:bg-red-500 hover:rounded-full p-1"
+                className="absolute top-2 right-3 hover:bg-red-500 hover:rounded-full p-1 cursor-pointer"
               />
-              <p className="font-bold text-3xl text-center py-3">
-                JioCloud Testing
+              <p className="font-bold text-4xl text-center py-2">
+                JioCloud App Testing
               </p>
             </div>
 
-            {/* Content */}
-            <div className="p-6 space-y-8">
-              {/* Summary */}
-              <div className="bg-gray-100 p-6 rounded-lg shadow-md">
-                <h1 className="text-2xl font-bold text-center mb-6">
-                  JioCloud App Testing Summary
-                </h1>
+            <div className="bg-gray-100 p-8 mt-2 mb-2 rounded-md shadow-md max-w-4xl mx-auto">
+              {/* <h1 className="text-2xl font-bold text-center mb-6">
+                JioTranslate Testing Summary
+              </h1> */}
 
-                {/* Total Issues Raised */}
-                <section className="mb-6">
-                  <div className="bg-white p-4 rounded-lg shadow flex items-center justify-between">
-                    <h2 className="text-lg font-semibold">
-                      Total Issues Raised
-                    </h2>
-                    <span className="text-2xl font-bold">40</span>
+              {/* Project Overview Section */}
+              <section className="bg-white p-6 rounded-lg shadow mb-8">
+                <h2 className="text-lg font-semibold mb-4">Task Overview</h2>
+                <p className="bg-white rounded-lg ">
+                Our team worked on testing the JioCloud app, ensuring seamless functionality across key features like app installation, account management, file syncing, and troubleshooting
+                </p>
+              </section>
+
+              {/* Total Issues Raised */}
+              {/* <section className="mb-6">
+                <div className="bg-white p-4 rounded-lg shadow flex items-center justify-between">
+                  <h2 className="text-xl font-semibold">Total Issues Raised</h2>
+                  <span className="text-2xl font-bold">11</span>
+                </div>
+              </section> */}
+
+              {/* Versions Tested */}
+              <section className="bg-white p-6 rounded-lg shadow mb-6">
+                <div className="bg-white p-4 rounded-lg items-center flex gap-6">
+                  <ul className="list-disc ml-6 space-y-2 flex-1">
+                    <h2 className="text-lg font-semibold mb-10 -ml-5">Versions Tested</h2>
+                    <li>
+                      <span className="">Android SIT Build V21.0.19</span>
+                    </li>
+                    <li>
+                      <span className="">Android SIT Build V21.0.20</span>
+                    </li>
+                    <li>
+                      <span className="">Android SIT Build V21.0.21</span>
+                    </li>
+                    <li>
+                      <span className="">Android SIT Build V21.0.25</span>
+                    </li>
+                    <li>
+                      <span className="">Android SIT Build V21.0.32</span>
+                    </li>
+                  </ul>
+
+                  {/* Pie Chart and Legend */}
+                  <div className="flex-1 ">
+                    <CustomPieChart
+                      data={JioCloudTestingData}
+                      legend={false}
+                      radiusValue={60}
+                    />
                   </div>
-                </section>
-
-                {/* Versions Tested */}
-                <section>
-                  <h2 className="text-lg font-semibold mb-4">
-                    Versions Tested
-                  </h2>
-                  <div className="bg-white p-6 rounded-lg shadow flex gap-6">
-                    {/* List of Versions */}
-                    <div className="flex-1">
-                      <ul className="list-disc ml-6 space-y-3">
-                        {[
-                          "v21.0.19",
-                          "v21.0.20",
-                          "v21.0.21",
-                          "v21.0.25",
-                          "v21.0.32",
-                        ].map((version, index) => (
-                          <li key={index} className="text-base font-medium">
-                            {version}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Pie Chart and Legend */}
-                    <div className="flex-1 space-y-4">
-                      <CustomPieChart
-                        data={JioCloudTestingData}
-                        legend={false}
-                        radiusValue={60}
-                      />
-                    </div>
-                  </div>
-                </section>
-              </div>
+                </div>
+              </section>
             </div>
           </DialogPanel>
         </div>
