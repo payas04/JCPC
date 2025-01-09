@@ -40,12 +40,7 @@ const Selfie = ({ open, setOpen }) => {
               <section className="bg-white p-6 rounded-lg shadow mb-8">
                 <h2 className="text-lg font-semibold mb-3">Task Overview</h2>
                 <p className="bg-white rounded-lg ">
-                  Our team worked on creating a comprehensive FAQ section for
-                  JioCloud PC, covering key aspects like setup, device
-                  compatibility, account creation, subscription details, and
-                  troubleshooting. We ensured that users have easy access to
-                  information regarding common issues with peripherals,
-                  registration, and login processes.
+                We conducted comprehensive testing on JioTranslate to ensure its accuracy, performance, and reliability across various devices and scenarios. 
                 </p>
               </section>
 
