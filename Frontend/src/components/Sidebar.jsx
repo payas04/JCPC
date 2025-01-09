@@ -23,7 +23,7 @@ const Sidebar = () => {
   };
 
   return (
-    <aside className="w-1/7 min-w-52 bg-blue-800 text-white pt-12 pb-2 flex flex-col justify-between m-2 rounded-lg mb-14">
+    <aside className="w-1/7 min-w-56 bg-blue-800 text-white pt-12 pb-2 flex flex-col justify-between m-2 rounded-lg ">
       <div className="text-2xl font-bold px-3 py-2 text-center flex">
         <img
           src="/images/icons/JioCloudPc.png"

@@ -18,40 +18,41 @@ const Activities = lazy(() => import("./pages/Accops/Activities"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 
 const protectedRoutes = [
-	{ path: "dashboard", component: Dashboard },
-	{ path: "myteam", component: AccopsTeam },
-	{ path: "activities", component: Activities },
-	{ path: "admin", component: AccopsAdmin },
-	{ path: "profile/:id", component: Profile },
+  { path: "dashboard", component: Dashboard },
+  { path: "myteam", component: AccopsTeam },
+  { path: "activities", component: Activities },
+  { path: "admin", component: AccopsAdmin },
+  { path: "profile/:id", component: Profile },
 ];
 
 const App = () => {
-	return (
-		<Router>
-			<Suspense fallback={<Loader />}>
-				<Routes>
-					{/* <Route path="/" element={<Lockscreen />} /> */}
-					<Route path="/" element={<Home />} />
-					<Route path="/accops/login" element={<AccopsLogin />} />
-					// Routes of accops with protected route
-					<Route
-						path="/accops"
-						element={
-							<ProtectedRoute>
-								<AccopsLayout />
-							</ProtectedRoute>
-						}>
-						{protectedRoutes.map(({ path, component: Component }) => (
-							<Route key={path} path={path} element={<Component />} />
-						))}
-					</Route>
-					<Route path="*" element={<PageNotFound />} />
-				</Routes>
-			</Suspense>
-			<Footer />
-			<Toaster />
-		</Router>
-	);
+  return (
+    <Router>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          {/* <Route path="/" element={<Lockscreen />} /> */}
+          <Route path="/" element={<Home />} />
+          <Route path="/accops/login" element={<AccopsLogin />} />
+          // Routes of accops with protected route
+          <Route
+            path="/accops"
+            element={
+              <ProtectedRoute>
+                <AccopsLayout />
+              </ProtectedRoute>
+            }
+          >
+            {protectedRoutes.map(({ path, component: Component }) => (
+              <Route key={path} path={path} element={<Component />} />
+            ))}
+          </Route>
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </Suspense>
+      {/* <Footer /> */}
+      <Toaster />
+    </Router>
+  );
 };
 
 export default App;
