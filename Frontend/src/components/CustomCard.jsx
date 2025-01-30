@@ -12,6 +12,7 @@ export default function CustomCard({ user, allUsers }) {
   const handleCloseModal = () => {
     setIsOpen(false);
   };
+  //editing in github
 
   return (
     <>
