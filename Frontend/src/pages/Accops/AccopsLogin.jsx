@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
-import AppHeader from "../../components/layouts/AppHeader";
 import LoginComponent from "../../components/ui/LoginComponent";
 import { useAuth } from "../../context/auth";
 
@@ -31,7 +30,6 @@ const AccopsLogin = () => {
 
 	return (
 		<>
-			<AppHeader />
 			<LoginComponent
 				domainID={domainID}
 				setDomainID={setDomainID}

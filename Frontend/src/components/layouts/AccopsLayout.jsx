@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../Sidebar";
-import AppHeader from "./AppHeader";
 import { getUsers } from "../../lib/api";
 import { useDispatch } from "react-redux";
 import { setAllProfiles } from "../../store/profilesSlice";
@@ -24,11 +23,8 @@ const AccopsLayout = () => {
 	};
 	return (
 		<div className="flex h-screen bg-gray-100 text-black">
-			<AppHeader />
 			<Sidebar />
-			{/* <main className="flex-1 pt-12 mb-8"> */}
 			<Outlet context={{ setRefreshTrigger }} />
-			{/* </main> */}
 		</div>
 	);
 };
