@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CustomModal from "./CustomModal";
 import { useNavigate } from "react-router-dom";
+import { SquareArrowOutUpRight } from "lucide-react";
 
 const StatCard = ({
 	title,
@@ -42,6 +43,9 @@ const StatCard = ({
 				<div className="p-2 bg-white bg-opacity-30 rounded-lg">
 					<Icon size={24} />
 				</div>
+			</div>
+			<div className="flex justify-end">
+				<SquareArrowOutUpRight />
 			</div>
 		</div>
 	);

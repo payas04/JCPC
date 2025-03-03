@@ -55,11 +55,11 @@ const TeamSection = ({ data }) => {
 						</sub>
 					</div>
 					<div>
-						<p className="max-w-2xl  dark:text-gray-800 font-bold">
+						<div className="max-w-2xl  dark:text-gray-800 font-bold">
 							"Every day may not be good, but there is something good in every
 							day."
-							<div className="text-end mr-7">- Rahul Bhandari</div>
-						</p>
+							<p className="text-end mr-7">- Rahul Bhandari</p>
+						</div>
 					</div>
 				</div>
 				<div className="w-full grid grid-cols-4 gap-8 p-6">
