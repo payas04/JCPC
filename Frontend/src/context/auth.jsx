@@ -12,8 +12,6 @@ export const AuthProvider = ({ children }) => {
 	const [isAuthenticated, setIsAuthenticated] = useState(false);
 	const [loading, setLoading] = useState(true);
 	const [user, setUser] = useState(null);
-	const [isShutdown, setIsShutdown] = useState(false);
-	const [isChromeOpen, setChromeOpen] = useState(false);
 	const [trigger, setTrigger] = useState(false);
 
 	useEffect(() => {
@@ -81,10 +79,6 @@ export const AuthProvider = ({ children }) => {
 	};
 
 	const value = {
-		isShutdown,
-		setIsShutdown,
-		isChromeOpen,
-		setChromeOpen,
 		isAuthenticated,
 		user,
 		loading,
