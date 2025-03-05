@@ -74,8 +74,6 @@ export const uploadImageApi = async (imageFile, domainID) => {
 	} catch (error) {
 		console.error("Error uploading image:", error);
 		alert("Error uploading image. Please try again.");
-	} finally {
-		// setUploading(false);
 	}
 };
 
