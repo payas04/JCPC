@@ -8,7 +8,6 @@ import {
 	Activity,
 	Contact,
 } from "lucide-react";
-import { Switch } from "@mui/material";
 import { useAuth } from "../../context/auth";
 const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
@@ -66,18 +65,23 @@ const Profile = () => {
 					withCredentials: true,
 				}
 			);
-
+			updatedUserData.score.current =
+				updatedUserData.issues.blocker * 10 +
+				updatedUserData.issues.critical * 8 +
+				updatedUserData.issues.major * 5 +
+				updatedUserData.issues.normal * 3 +
+				updatedUserData.issues.minor * 1;
 			if (response.data.success) {
 				toast.success(`${response?.data?.message}`);
 				setIsLoading(false);
 				setIsEditing(false);
 				setTrigger((prev) => !prev); // refresh user data
-				// dispatch(
-				// 	fetchProfilesSuccess(
-				// 		profiles.map((p) => (p._id === user._id ? updatedUserData : p))
-				// 	)
-				// );
-				setRefreshTrigger((prev) => !prev); //refresh profile data
+				dispatch(
+					fetchProfilesSuccess(
+						profiles.map((p) => (p._id === user._id ? updatedUserData : p))
+					)
+				);
+				// setRefreshTrigger((prev) => !prev); //refresh profile data
 			}
 		} catch (error) {
 			setIsLoading(false);

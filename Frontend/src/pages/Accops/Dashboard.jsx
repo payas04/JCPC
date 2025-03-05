@@ -15,12 +15,10 @@ import {
 	jioPcOpenIssuePieChart,
 } from "../../db/data";
 import JCPCProduct from "../../components/JCPCProduct";
-import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/auth";
 
 const Dashboard = () => {
-	const profiles = useSelector((state) => state.profile.profiles);
 	const { user } = useAuth();
 	const navigate = useNavigate();
 	return (

@@ -8,7 +8,6 @@ import { Toaster } from "react-hot-toast";
 
 const Dashboard = lazy(() => import("./pages/Accops/Dashboard"));
 const AccopsTeam = lazy(() => import("./pages/Accops/AccopsTeam"));
-
 const AccopsAdmin = lazy(() => import("./pages/Accops/AccopsAdmin"));
 const Profile = lazy(() => import("./pages/Accops/Profile"));
 const Activities = lazy(() => import("./pages/Accops/Activities"));
