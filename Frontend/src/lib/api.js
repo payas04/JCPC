@@ -77,6 +77,35 @@ export const uploadImageApi = async (imageFile, domainID) => {
 	}
 };
 
+export const uploadTestImage = async (imageFile, domainID) => {
+	const formData = new FormData();
+	formData.append("file", imageFile);
+	const publicId = domainID;
+	const generateSignature = await axios.post(
+		BASE_URL + `/api/user/signature?public_id=${publicId}`,
+		{
+			withCredentials: true,
+		}
+	);
+
+	const { signature, timestamp, upload_preset } = generateSignature.data;
+	formData.append("api_key", import.meta.env.VITE_CLOUDINARY_API_KEY);
+	formData.append("upload_preset", upload_preset);
+	formData.append("timestamp", timestamp);
+	formData.append("signature", signature);
+	formData.append("public_id", publicId);
+	formData.append("overwrite", "true");
+	const response = await axios.post(
+		import.meta.env.VITE_CLOUDINARY_URL +
+			`/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload`,
+		formData
+	);
+	console.log(response);
+
+	// const data = await response.json();
+	console.log("Image Upload", data);
+};
+
 export const csvUploadApi = async (usersData) => {
 	try {
 		const response = await axios.post(

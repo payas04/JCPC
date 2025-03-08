@@ -1,5 +1,6 @@
 let asynHandler = require("express-async-handler");
 let User = require("../model/userModel");
+const cloudinary = require("../config/cloudinaryConfig");
 
 const registerUser = async (req, res) => {
 	try {
@@ -147,6 +148,22 @@ const uploadAndUpdateEmployees = async (req, res) => {
 	}
 };
 
+const generateSignature = (req, res) => {
+	const timestamp = Math.round(new Date().getTime() / 1000);
+	const public_id = req.query.public_id; // Get public_id from query parameters
+	const upload_preset = process.env.CLOUDINARY_UPLOAD_PRESET;
+	const signature = cloudinary.utils.api_sign_request(
+		{
+			timestamp,
+			public_id,
+			upload_preset,
+			overwrite: true,
+		},
+		process.env.CLOUDINARY_API_SECRET
+	);
+	res.json({ timestamp, signature, public_id, upload_preset });
+};
+
 module.exports = {
 	getUsers,
 	getUser,
@@ -154,4 +171,5 @@ module.exports = {
 	deleteUser,
 	registerUser,
 	uploadAndUpdateEmployees,
+	generateSignature,
 };

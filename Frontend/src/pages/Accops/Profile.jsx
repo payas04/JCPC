@@ -11,7 +11,7 @@ import {
 import { useAuth } from "../../context/auth";
 const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
-import { uploadImageApi } from "../../lib/api";
+import { uploadImageApi, uploadTestImage } from "../../lib/api";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useOutletContext } from "react-router-dom";
@@ -49,12 +49,13 @@ const Profile = () => {
 			const updatedUserData = { ...userData };
 
 			if (imageUrl) {
-				const image = await uploadImageApi(imageUrl, user.domainID);
+				// const image = await uploadImageApi(imageUrl, user.domainID);
+				return await uploadTestImage(imageUrl, user.domainID);
 				updatedUserData.image = image;
 				setPreview(null);
 				setUserData((prev) => ({ ...prev, image: image }));
 			}
-
+			return;
 			const response = await axios.put(
 				BASE_URL + `/api/user/${user._id}`,
 				updatedUserData,
@@ -85,6 +86,7 @@ const Profile = () => {
 			}
 		} catch (error) {
 			setIsLoading(false);
+
 			setTrigger((prev) => !prev);
 		}
 	};
@@ -98,6 +100,7 @@ const Profile = () => {
 		};
 		reader.readAsDataURL(imageFile);
 		setImageUrl(imageFile);
+		await uploadTestImage(imageFile, user.domainID);
 	};
 
 	const handleCancel = () => {

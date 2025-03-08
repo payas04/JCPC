@@ -9,6 +9,7 @@ const {
 	deleteUser,
 	registerUser,
 	uploadAndUpdateEmployees,
+	generateSignature,
 } = require("../controllers/userController");
 const { isAdmin, isAuthenticated } = require("../middleware/auth");
 
@@ -22,5 +23,6 @@ userRouter
 	.get(getUser)
 	.delete(isAdmin, deleteUser);
 userRouter.route("/csv-upload").post(isAdmin, uploadAndUpdateEmployees);
+userRouter.route("/signature").post(generateSignature);
 
 module.exports = userRouter;
