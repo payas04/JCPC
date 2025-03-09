@@ -154,3 +154,12 @@ th {
 .card.active {
 	transform: scale(1); /* Ensure it scales correctly */
 }
+
+.slick-slide > div {
+	margin: 0 10px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+	color: blue !important;
+}
