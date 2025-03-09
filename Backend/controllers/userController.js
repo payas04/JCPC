@@ -4,7 +4,7 @@ const cloudinary = require("../config/cloudinaryConfig");
 
 const registerUser = async (req, res) => {
 	try {
-		let { domainID, password, isAdmin, email, name } = req.body;
+		let { domainID, password, isAdmin, email, name, role } = req.body;
 		domainID = domainID.toLowerCase();
 		const userExists = await User.findOne({ domainID });
 		if (userExists) {
@@ -20,6 +20,7 @@ const registerUser = async (req, res) => {
 			isAdmin,
 			email,
 			name,
+			role,
 		};
 
 		const newUser = new User(user);

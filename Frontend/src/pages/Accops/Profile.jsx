@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
 	Camera,
 	Mail,
@@ -9,14 +9,14 @@ import {
 	Contact,
 } from "lucide-react";
 import { useAuth } from "../../context/auth";
-const BASE_URL = import.meta.env.VITE_BACKEND_URL;
-
-import { uploadImageApi, uploadTestImage } from "../../lib/api";
+import { uploadImageApi } from "../../lib/api";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useOutletContext } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProfilesSuccess } from "../../store/profilesSlice";
+
+const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
 const Profile = () => {
 	const { user, setTrigger } = useAuth();
@@ -49,13 +49,11 @@ const Profile = () => {
 			const updatedUserData = { ...userData };
 
 			if (imageUrl) {
-				// const image = await uploadImageApi(imageUrl, user.domainID);
-				return await uploadTestImage(imageUrl, user.domainID);
+				const image = await uploadImageApi(imageUrl, user.domainID);
 				updatedUserData.image = image;
 				setPreview(null);
 				setUserData((prev) => ({ ...prev, image: image }));
 			}
-			return;
 			const response = await axios.put(
 				BASE_URL + `/api/user/${user._id}`,
 				updatedUserData,
@@ -100,7 +98,6 @@ const Profile = () => {
 		};
 		reader.readAsDataURL(imageFile);
 		setImageUrl(imageFile);
-		await uploadTestImage(imageFile, user.domainID);
 	};
 
 	const handleCancel = () => {

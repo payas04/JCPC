@@ -15,7 +15,7 @@ const TeamSection = ({ data }) => {
 	}, [data, searchQuery]);
 
 	return (
-		<section className="w-full overflow-y-scroll pb-20 p-6">
+		<section className="w-full overflow-y-scroll pb-4 p-6">
 			<div className="container w-full flex flex-col mx-auto space-y-8 py-6">
 				<div className="flex justify-between items-center w-full px-6 ">
 					<div className="text-4xl font-bold  leading-none text-nowrap">
