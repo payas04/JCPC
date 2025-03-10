@@ -24,12 +24,17 @@ export default function CustomCard({ user, allUsers }) {
 				<CardContainer className="flex flex-col w-full justify-center mx-2 my-4 text-center  ">
 					<CardItem
 						translateZ="60"
-						className="flex flex-col justify-center items-center w-full">
+						className="flex flex-col justify-center items-center w-full relative">
 						<UserProfile
 							src={user.image}
 							domainId={user.domainId}
 							className="h-24 mb-4 rounded-full ring-2 ring-blue-800 ring-offset-2 transition-all duration-300 group-hover:ring-4"
 						/>
+						{user.tag === "Released" && (
+							<p className="absolute top-0 right-4 bg-green-600 text-white rounded-full text-sm px-2 font-semibold ">
+								Released
+							</p>
+						)}
 						<span className="text-lg flex flex-col font-semibold leading-tight">
 							{user &&
 								(() => {

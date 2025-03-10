@@ -236,7 +236,7 @@ const CsvUpload = () => {
 							<tr>
 								{columns.map((_, i) => (
 									<td key={i} className="text-muted-foreground italic">
-										{i === 0 ? "example_domain" : "0"}
+										{i === 0 ? "Domain.Id" : "0"}
 									</td>
 								))}
 							</tr>

@@ -334,6 +334,11 @@ export default function AccopsAdmin() {
 															Admin
 														</div>
 													)}
+													{member.tag === "Released" && (
+														<div className="bg-green-600 text-white rounded-full text-sm px-2 font-semibold mt-2">
+															Released
+														</div>
+													)}
 												</div>
 											</div>
 										</div>
