@@ -4,11 +4,11 @@ export const issuePieChart = [
 ];
 
 export const totalIssuePieChart = [
-	{ id: 0, value: 44, label: "Blocker", color: "#fecaca" },
-	{ id: 1, value: 213, label: "Critical", color: "#fef08a" },
-	{ id: 2, value: 219, label: "Major", color: "#fed7aa" },
-	{ id: 3, value: 140, label: "Normal", color: "#e9d5ff" },
-	{ id: 4, value: 18, label: "Minor", color: "#bae6fd" },
+	{ id: 0, value: 64, label: "Blocker", color: "#fecaca" },
+	{ id: 1, value: 400, label: "Critical", color: "#fef08a" },
+	{ id: 2, value: 499, label: "Major", color: "#fed7aa" },
+	{ id: 3, value: 358, label: "Normal", color: "#e9d5ff" },
+	{ id: 4, value: 46, label: "Minor", color: "#bae6fd" },
 ];
 
 export const JioCloudTestingData = [
@@ -35,61 +35,58 @@ export const jioPcOpenIssuePieChart = [
 	{ id: 4, value: 1, label: "Minor", color: "#bae6fd" },
 ];
 
-export const hpOpenIssuePieChart = [
-	{ id: 0, value: 9, label: "Blocker", color: "#fecaca" },
-	{ id: 1, value: 17, label: "Critical", color: "#fef08a" },
-	{ id: 2, value: 13, label: "Major", color: "#fed7aa" },
-	{ id: 3, value: 0, label: "Normal", color: "#e9d5ff" },
+export const launchBlockerIssuePieChart = [
+	{ id: 0, value: 3, label: "Blocker", color: "#fecaca" },
+	{ id: 1, value: 28, label: "Critical", color: "#fef08a" },
+	{ id: 2, value: 11, label: "Major", color: "#fed7aa" },
+	{ id: 3, value: 3, label: "Normal", color: "#e9d5ff" },
 	{ id: 4, value: 0, label: "Minor", color: "#bae6fd" },
 ];
 
 export const jioPcWorkItems = [
 	{
 		title: "Launch Blocker",
-		count: 39,
+		count: 45,
 		color: "bg-red-200",
 		text: "text-red-800",
 		definition:
 			"Launch blocker are the issues which are needed to be fixed before launching the product.",
 	},
 	{
-		title: "Open Blocker",
-		count: 9,
+		title: "Key Blocker/Critical",
+		count: 14,
 		color: "bg-orange-200",
 		text: "text-orange-800",
 		definition:
-			"Open blockers are the issue which are in new state and are of severity blocker.",
+			"Key Blocker/Critical are the issues which are more product specific",
 	},
 	{
-		title: "Open Critical",
-		count: 48,
+		title: "X2 & X4 Issues",
+		count: 225,
 		color: "bg-yellow-200",
 		text: "text-yellow-800",
-		definition:
-			"Open critical are the issue which are in new state and are of severity critical.",
+		definition: "Open Issues for both X2 & X4",
 	},
 	{
-		title: "Product Confirmation",
-		count: 5,
+		title: "X2 Specific",
+		count: 7,
 		color: "bg-purple-200",
 		text: "text-purple-800",
-		definition:
-			"Issues awaiting product team confirmation for project scope inclusion.",
+		definition: "Open issues for X2 Specific",
 	},
 	{
-		title: "Ready for Test",
-		count: 0,
+		title: "X4 Specific",
+		count: 6,
 		color: "bg-sky-200",
 		text: "text-sky-800",
-		definition:
-			"Issues which have been raised and has  been resolved by developers and are ready for testing.",
+		definition: "Open issues for X4 Specific.",
 	},
 	{
-		title: "Enhancement",
-		count: 3,
+		title: "Ready for test",
+		count: 8,
 		color: "bg-green-200",
 		text: "text-green-800",
-		definition: "Observations which makes product better overall.",
+		definition: "Issues which are ready for testing",
 	},
 ];
 
@@ -163,29 +160,29 @@ export const categoryObservations = [
 
 export const jioPcAreaChartData = [
 	{
-		name: "October",
+		name: "Oct",
 		Issues: 145,
 	},
 	{
-		name: "November",
+		name: "Nov",
 		Issues: 90,
 	},
 	{
-		name: "December",
+		name: "Dec",
 		Issues: 492,
 	},
-	// {
-	//   name: "Week 4",
-	//   Issues: 17,
-	// },
-	// {
-	//   name: "Week 5",
-	//   Issues: 55,
-	// },
-	// {
-	//   name: "Week 6",
-	//   Issues: 107,
-	// },
+	{
+		name: "Jan",
+		Issues: 343,
+	},
+	{
+		name: "Feb",
+		Issues: 265,
+	},
+	{
+		name: "Mar",
+		Issues: 32,
+	},
 	// {
 	//   name: "Week 7",
 	//   Issues: 479,

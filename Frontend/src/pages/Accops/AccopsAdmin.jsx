@@ -7,6 +7,7 @@ import {
 	PlusCircle,
 	Search,
 	SearchIcon,
+	Shield,
 	ShieldCheck,
 	Trash2,
 	UsersRound,
@@ -280,7 +281,9 @@ export default function AccopsAdmin() {
 									<div
 										key={member._id}
 										className={`rounded-lg ${
-											member.isAdmin ? "bg-green-200" : "bg-slate-200"
+											member.isAdmin
+												? "border-2 border-black bg-slate-200"
+												: "bg-slate-200"
 										}`}>
 										<div className="p-5">
 											<div className="flex items-start justify-between">
@@ -311,23 +314,26 @@ export default function AccopsAdmin() {
 															Score: {member.score.current}
 														</p>
 													</div>
-													{/* <div>
-														<p className="bg-red-200 rounded-md text-red-800 hover:bg-red-100/80">
-															admin
-														</p>
-													</div> */}
 												</div>
-												<div className="flex justify-between gap-2 sm:flex-col 2xl:flex-row">
-													<button
-														onClick={() => openEditModal(member)}
-														className="p-2 text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100">
-														<Edit className="h-4 w-4" />
-													</button>
-													<button
-														onClick={() => handleDeleteUser(member._id)}
-														className="p-2 text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100">
-														<Trash2 className="h-4 w-4" />
-													</button>
+												<div>
+													<div className="flex justify-between gap-2 sm:flex-col 2xl:flex-row">
+														<button
+															onClick={() => openEditModal(member)}
+															className="p-2 text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100">
+															<Edit className="h-4 w-4" />
+														</button>
+														<button
+															onClick={() => handleDeleteUser(member._id)}
+															className="p-2 text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100">
+															<Trash2 className="h-4 w-4" />
+														</button>
+													</div>
+													{member.isAdmin && (
+														<div className="bg-gray-300 rounded-full flex items-center px-2 py-1 text-sm gap-1 mt-2">
+															<Shield size={15} />
+															Admin
+														</div>
+													)}
 												</div>
 											</div>
 										</div>

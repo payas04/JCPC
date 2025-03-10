@@ -18,7 +18,9 @@ export default function CustomCard({ user, allUsers }) {
 		<>
 			<div
 				onClick={handleOpenModal}
-				className="group bg-[#F8F9FA] rounded-lg border cursor-pointer shadow-lg transition-all duration-300  hover:-translate-y-2 hover:bg-blue-300">
+				className={`group rounded-lg border cursor-pointer shadow-lg transition-all duration-300  hover:-translate-y-2 hover:bg-blue-300 ${
+					user.tag === "Released" ? "bg-gray-300" : "bg-[#F8F9FA]"
+				}`}>
 				<CardContainer className="flex flex-col w-full justify-center mx-2 my-4 text-center  ">
 					<CardItem
 						translateZ="60"
@@ -54,7 +56,7 @@ export default function CustomCard({ user, allUsers }) {
 					open={isOpen}
 					setOpen={handleCloseModal}
 					initialUser={user}
-					users={allUsers} // Pass all users for carousel functionality
+					users={allUsers}
 				/>
 			)}
 		</>

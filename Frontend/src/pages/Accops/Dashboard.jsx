@@ -11,8 +11,8 @@ import {
 	totalIssuePieChart,
 	jioPcWorkItems,
 	jioPcAreaChartData,
-	hpOpenIssuePieChart,
 	jioPcOpenIssuePieChart,
+	launchBlockerIssuePieChart,
 } from "../../db/data";
 import JCPCProduct from "../../components/JCPCProduct";
 import { useNavigate } from "react-router-dom";
@@ -80,14 +80,14 @@ const Dashboard = () => {
 					/>
 					<StatCard
 						title="Launch Blocker Issues"
-						value={hpOpenIssuePieChart.reduce(
+						value={launchBlockerIssuePieChart.reduce(
 							(acc, item) => acc + item.value,
 							0
 						)}
 						color="bg-purple-200"
 						textColor="text-purple-800"
 						icon={Bug}
-						pieData={hpOpenIssuePieChart}
+						pieData={launchBlockerIssuePieChart}
 						shouldOpenModal={true}
 					/>
 				</div>
@@ -109,7 +109,7 @@ const Dashboard = () => {
 			<section className=" text-black mb-4 p-6 rounded-lg flex gap-10 ">
 				<JioPcObservation title="JioCloud PC" workItems={jioPcWorkItems} />
 				<AreaChart
-					title="Issues Raised (16th Oct - 31st Dec)"
+					title="Issues Raised (16th Oct - 8th Mar)"
 					areaChartData={jioPcAreaChartData}
 				/>
 			</section>

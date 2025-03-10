@@ -32,22 +32,6 @@
 		"Tags": "Tester"
 	},
 	{
-		"Domain": "Aman11.Tiwari",
-		"Name": "Aman Tiwari",
-		"About": "Aspiring developer with a passion for learning coding and problem-solving.My goal is to continuously improve my skills and contribute to impactful projects.",
-		"Courses Completed": "1. Node JS Essential training",
-		"Extra Activities": "1. AI Bot (Managed WiFi)\n2. AI Selfie Module",
-		"linkedin": "https://www.linkedin.com/in/aman-tiwari-6643ab20b/",
-		"DOB": "31st March",
-		"Blocker": 0,
-		"Critical": 1,
-		"Major": 6,
-		"Normal": 4,
-		"Minor": 1,
-		"Total_score": 51,
-		"Tags": "Tester"
-	},
-	{
 		"Domain": "Ananyaa.Sridhar",
 		"Name": "Ananyaa Sridhar",
 		"About": "An artistic and creative professional with a passion for exploring new ideas. An aspiring 3D model artist and eager to expand her skills and make her mark in the world of digital art.",
@@ -510,22 +494,6 @@
 		"Minor": 1,
 		"Total_score": 49,
 		"Tags": "Tester"
-	},
-	{
-		"Domain": "Shivee.Yadav",
-		"Name": "Shivee Yadav",
-		"About": "A dedicated and tenacious individual with a passion for coding, driven by a love for continuous learning and problem-solving.",
-		"Courses Completed": "1. Introduction to Java\n2. Introduction to Web development",
-		"Extra Activities": "1. AI Selfie Module Task Lead\n2. AI Bot (Managed Wifi )",
-		"linkedin": "https://www.linkedin.com/in/yshivee/",
-		"DOB": "30th March",
-		"Blocker": 0,
-		"Critical": 1,
-		"Major": 3,
-		"Normal": 6,
-		"Minor": 1,
-		"Total_score": 42,
-		"Tags": "Released"
 	},
 	{
 		"Domain": "Shreyansh.Gholse",

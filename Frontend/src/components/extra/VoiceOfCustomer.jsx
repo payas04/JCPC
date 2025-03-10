@@ -1,34 +1,8 @@
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
+import React from "react";
 import { IoClose } from "react-icons/io5";
 
-const SoftwareCenterApps = ({ open, setOpen }) => {
-	const apps = [
-		"Eye of GNOME",
-		"Gwenview",
-		"GIMP",
-		"Krita",
-		"Okular",
-		"Evince",
-		"MPV",
-		"GNOME Videos (Totem)",
-		"Bluefish",
-		"Brackets",
-		"GNU Emacs",
-		"Kate",
-		"Komikku",
-		"Crosswords",
-		"Papers",
-		"Vipsdisp",
-		"Sly",
-		"Words",
-		"Dialect",
-		"Firefox",
-		"Adobe",
-		"Photocrea",
-		"Timer",
-		"Insomnia",
-	];
-
+const VoiceOfCustomer = ({ open, setOpen }) => {
 	return (
 		<Dialog
 			open={open}
@@ -48,7 +22,7 @@ const SoftwareCenterApps = ({ open, setOpen }) => {
 								className="absolute top-2 right-3 hover:bg-red-500 hover:rounded-full p-1 cursor-pointer"
 							/>
 							<h2 className="font-bold text-4xl text-center py-2">
-								Additional Apps
+								Voice of Customer
 							</h2>
 						</div>
 
@@ -57,28 +31,40 @@ const SoftwareCenterApps = ({ open, setOpen }) => {
 							<section className="bg-white p-6 rounded-lg shadow mb-8">
 								<h2 className="text-lg font-semibold mb-4">Task Overview</h2>
 								<p className="bg-white rounded-lg">
-									Conducted research to identify and evaluate additional
-									applications from "www.flathub.org" that are compatible with
-									JioCloud PC, provided insights and recommendations for the
-									same.
+									As part of enhancing customer engagement and support, our team
+									has curated a comprehensive list of 50 potential customer
+									queries across 10 product modules. The goal is to create
+									clear, informative, and structured responses. This will serve
+									as a valuable resource for customer interactions, FAQs, and
+									support documentation.
 								</p>
 							</section>
 
-							{/* Applications Section */}
+							{/* key deliverables  */}
 							<section className="bg-white p-6 rounded-lg shadow mb-6">
-								<h2 className="text-lg font-semibold mb-5">
-									Applications Tested
-								</h2>
-
-								<div className="grid grid-cols-4 gap-4">
-									{apps.map((app, index) => (
-										<div
-											key={index}
-											className="bg-blue-100 hover:bg-blue-200 transition-all duration-300 rounded-lg shadow p-4 text-center text-sm font-semibold">
-											{app}
-										</div>
-									))}
-								</div>
+								<h2 className="text-lg font-semibold mb-5">Key Deliverables</h2>
+								<ul className="list-disc ml-2 bg-white p-4 rounded-lg  space-y-2">
+									<li>
+										<strong className="font-semibold">Drafted FAQs: </strong>
+										Develop clear, precise, and customer-friendly responses for
+										each question
+									</li>
+									<li>
+										<strong className="font-semibold">
+											Detailed Guidance:
+										</strong>{" "}
+										Deliver the FAQ document in a structured format that can be
+										easily uploaded to relevant platforms (e.g., website,
+										customer support portal).
+									</li>
+									{/* <li>
+										<strong className="font-semibold">
+											Step-by-Step Solutions:
+										</strong>{" "}
+										For common issues and setup instructions to improve user
+										experience.
+									</li> */}
+								</ul>
 							</section>
 						</div>
 					</DialogPanel>
@@ -88,4 +74,4 @@ const SoftwareCenterApps = ({ open, setOpen }) => {
 	);
 };
 
-export default SoftwareCenterApps;
+export default VoiceOfCustomer;
