@@ -1,5 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Edit, PlusCircle, Search, SearchIcon, Trash2 } from "lucide-react";
+import {
+	Award,
+	CheckCircle,
+	Crown,
+	Edit,
+	PlusCircle,
+	Search,
+	SearchIcon,
+	ShieldCheck,
+	Trash2,
+	UsersRound,
+} from "lucide-react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -9,6 +20,7 @@ import EditMember from "../../components/modals/EditMember";
 import NewMember from "../../components/modals/NewMember";
 import CsvUpload from "../../components/modals/CsvUpload";
 import ModalLayout from "../../components/ModalLayout";
+import UserProfile from "../../components/UserProfile";
 const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
 export default function AccopsAdmin() {
@@ -148,7 +160,7 @@ export default function AccopsAdmin() {
 	return (
 		<main className="h-screen w-full flex flex-col p-6 pt-12">
 			{/* Fixed Header */}
-			<div className="mb-6 px-6">
+			<div className="mb-2 px-6">
 				<div className="flex justify-between items-center">
 					<h1 className="text-3xl font-bold">Team Management</h1>
 					<div className="flex items-center gap-4">
@@ -164,12 +176,6 @@ export default function AccopsAdmin() {
 								className="bg-white text-blue-800 text-base rounded-lg placeholder:text-blue-800 block w-full ps-10 p-2.5 focus:outline focus:outline-blue-800"
 							/>
 						</div>
-						{/* <select className="w-[180px] p-2 border rounded-md">
-							<option value="name">Sort by Name</option>
-							<option value="score-high">Score: High to Low</option>
-							<option value="score-low">Score: Low to High</option>
-							<option value="role">Sort by Role</option>
-						</select> */}
 						<button
 							onClick={() => setIsNewUserModalOpen(true)}
 							className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
@@ -183,6 +189,83 @@ export default function AccopsAdmin() {
 							<PlusCircle className="h-4 w-4" />
 							Upload CSV File
 						</button>
+					</div>
+				</div>
+				<div className="flex justify-between gap-3 mt-6">
+					<div className="statisticsCard">
+						<Award
+							size={50}
+							color="#1e40af"
+							className="statisticsCardLogo bg-blue-100"
+						/>
+						<div>
+							<span className="statisticsCardTitle text-blue-800">
+								Total Score
+							</span>
+							<p className="statisticsCardValue text-blue-800">
+								{members.reduce((acc, item) => acc + item.score.current, 0)}
+							</p>
+						</div>
+					</div>
+					<div className="statisticsCard">
+						<UsersRound
+							size={50}
+							color="#6b21a8"
+							className="statisticsCardLogo bg-purple-100"
+						/>
+						<div>
+							<span className="statisticsCardTitle text-purple-800">
+								Total Members
+							</span>
+							<p className="statisticsCardValue text-purple-800">
+								{members.length}
+							</p>
+						</div>
+					</div>
+					<div className="statisticsCard">
+						<Crown
+							size={50}
+							color="#991b1b"
+							className="statisticsCardLogo bg-red-100"
+						/>
+						<div>
+							<span className="statisticsCardTitle text-red-800">
+								Team Lead
+							</span>
+							<p className="statisticsCardValue text-red-800">
+								{members.filter((member) => member.role === "Team Lead").length}
+							</p>
+						</div>
+					</div>
+					<div className="statisticsCard">
+						<ShieldCheck
+							size={50}
+							color="#854d0e"
+							className="statisticsCardLogo bg-yellow-100"
+						/>
+						<div>
+							<span className="statisticsCardTitle text-yellow-800">
+								Validator
+							</span>
+							<p className="statisticsCardValue text-yellow-800">
+								{members.filter((member) => member.role === "Validator").length}
+							</p>
+						</div>
+					</div>
+					<div className="statisticsCard">
+						<CheckCircle
+							size={50}
+							color="#166534"
+							className="statisticsCardLogo bg-green-100"
+						/>
+						<div>
+							<span className="statisticsCardTitle text-green-800">
+								Testers
+							</span>
+							<p className="statisticsCardValue text-green-800">
+								{members.filter((member) => member.role === "Tester").length}
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -202,13 +285,10 @@ export default function AccopsAdmin() {
 										<div className="p-5">
 											<div className="flex items-start justify-between">
 												<div className="flex items-center gap-4">
-													<img
+													<UserProfile
 														src={member.image}
-														alt={member.domainID}
+														domainId={member.domainID}
 														className="rounded-full w-20 h-20 object-cover"
-														onError={(e) => {
-															e.target.src = "/images/profile/default.png";
-														}}
 													/>
 													<div>
 														<h3 className="font-semibold text-lg">

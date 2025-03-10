@@ -90,7 +90,6 @@ const Dashboard = () => {
 						pieData={hpOpenIssuePieChart}
 						shouldOpenModal={true}
 					/>
-					{/* JCPC productss */}
 				</div>
 				<div className="md:row-span-2 w-[36%]">
 					<div className="mb-4 font-semibold text-xl flex items-center justify-center text-black ">

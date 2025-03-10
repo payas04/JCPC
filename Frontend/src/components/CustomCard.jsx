@@ -23,16 +23,11 @@ export default function CustomCard({ user, allUsers }) {
 					<CardItem
 						translateZ="60"
 						className="flex flex-col justify-center items-center w-full">
-						{/* <img
-              alt={user.name}
-              className="w-24 h-24 mb-4 object-cover rounded-full ring-2 ring-blue-800 ring-offset-2 transition-all duration-300 group-hover:ring-4 bg-white "
-              src={user.image}
-              onError={(e) => {
-                e.target.src = "/images/profile/default.png";
-              }} kept for future use
-            /> */}
-
-						<UserProfile src={user.image} />
+						<UserProfile
+							src={user.image}
+							domainId={user.domainId}
+							className="h-24 mb-4 rounded-full ring-2 ring-blue-800 ring-offset-2 transition-all duration-300 group-hover:ring-4"
+						/>
 						<span className="text-lg flex flex-col font-semibold leading-tight">
 							{user &&
 								(() => {
