@@ -1,6 +1,6 @@
 export const issuePieChart = [
-	{ id: 0, value: 100, label: "Open Issues", color: "#82B7CA" }, //#20236D
-	{ id: 1, value: 57, label: "Resolved", color: "#82ca9d" },
+	{ id: 0, value: 237, label: "Open Issues", color: "#82B7CA" }, //#20236D
+	{ id: 1, value: 158, label: "Resolved", color: "#82ca9d" },
 ];
 
 export const totalIssuePieChart = [
@@ -28,16 +28,16 @@ export const JioTranslateTestingData = [
 ];
 
 export const jioPcOpenIssuePieChart = [
-	{ id: 0, value: 9, label: "Blocker", color: "#fecaca" },
-	{ id: 1, value: 48, label: "Critical", color: "#fef08a" },
-	{ id: 2, value: 36, label: "Major", color: "#fed7aa" },
-	{ id: 3, value: 6, label: "Normal", color: "#e9d5ff" },
+	{ id: 0, value: 7, label: "Blocker", color: "#fecaca" },
+	{ id: 1, value: 77, label: "Critical", color: "#fef08a" },
+	{ id: 2, value: 125, label: "Major", color: "#fed7aa" },
+	{ id: 3, value: 27, label: "Normal", color: "#e9d5ff" },
 	{ id: 4, value: 1, label: "Minor", color: "#bae6fd" },
 ];
 
 export const launchBlockerIssuePieChart = [
 	{ id: 0, value: 3, label: "Blocker", color: "#fecaca" },
-	{ id: 1, value: 28, label: "Critical", color: "#fef08a" },
+	{ id: 1, value: 29, label: "Critical", color: "#fef08a" },
 	{ id: 2, value: 11, label: "Major", color: "#fed7aa" },
 	{ id: 3, value: 3, label: "Normal", color: "#e9d5ff" },
 	{ id: 4, value: 0, label: "Minor", color: "#bae6fd" },
@@ -46,7 +46,7 @@ export const launchBlockerIssuePieChart = [
 export const jioPcWorkItems = [
 	{
 		title: "Launch Blocker",
-		count: 45,
+		count: 46,
 		color: "bg-red-200",
 		text: "text-red-800",
 		definition:
@@ -62,7 +62,7 @@ export const jioPcWorkItems = [
 	},
 	{
 		title: "X2 & X4 Issues",
-		count: 225,
+		count: 224,
 		color: "bg-yellow-200",
 		text: "text-yellow-800",
 		definition: "Open Issues for both X2 & X4",
@@ -83,7 +83,7 @@ export const jioPcWorkItems = [
 	},
 	{
 		title: "Ready for test",
-		count: 8,
+		count: 4,
 		color: "bg-green-200",
 		text: "text-green-800",
 		definition: "Issues which are ready for testing",
