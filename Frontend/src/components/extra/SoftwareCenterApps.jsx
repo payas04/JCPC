@@ -58,9 +58,9 @@ const SoftwareCenterApps = ({ open, setOpen }) => {
 								<h2 className="text-lg font-semibold mb-4">Task Overview</h2>
 								<p className="bg-white rounded-lg">
 									Conducted research to identify and evaluate additional
-									applications from "www.flathub.org" that are compatible with
-									JioCloud PC, provided insights and recommendations for the
-									same.
+									applications from 8 different categories which are available
+									on "www.flathub.org" that are compatible with JioCloud PC,
+									provided insights and recommendations for the same.
 								</p>
 							</section>
 

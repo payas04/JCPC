@@ -20,11 +20,13 @@ const Activities = () => {
 	const [openSoftwareCenterApps, setOpenSoftwareCenterApps] = useState(false);
 	const [openCustomer, setOpenCustomer] = useState(false);
 	const settings = {
+		className: "center",
+		centerMode: true,
 		dots: true,
 		infinite: true,
-		speed: 500,
+		centerPadding: "60px",
 		slidesToShow: 3,
-		slidesToScroll: 3,
+		speed: 500,
 	};
 
 	return (
