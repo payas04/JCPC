@@ -1,6 +1,6 @@
 export const issuePieChart = [
 	{ id: 0, value: 237, label: "Open Issues", color: "#82B7CA" }, //#20236D
-	{ id: 1, value: 158, label: "Resolved", color: "#82ca9d" },
+	{ id: 1, value: 215, label: "Resolved", color: "#82ca9d" },
 ];
 
 export const totalIssuePieChart = [
