@@ -13,8 +13,6 @@ const products = [
 			"2GB RAM",
 			"Internal Storage: 32GB",
 			"GPU : ARM G31 MP2",
-			"Download: 212.2 Mbps",
-			"Upload: 38.6 Mbps",
 		],
 	},
 	{
@@ -25,8 +23,6 @@ const products = [
 			"2GB RAM",
 			"Internal Storage: 32GB",
 			"GPU : ARM G31 MP2",
-			"Download: 220.6 Mbps",
-			"Upload: 39.2 Mbps",
 		],
 	},
 ];
