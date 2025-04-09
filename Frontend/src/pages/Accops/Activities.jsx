@@ -10,6 +10,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import VoiceOfCustomer from "../../components/extra/VoiceOfCustomer";
+import AiChatBot from "../../components/extra/AiChatBot";
 
 const Activities = () => {
 	const [open, setOpen] = useState(false);
@@ -19,6 +20,7 @@ const Activities = () => {
 	const [openJioCloud, setOpenJioCloud] = useState(false);
 	const [openSoftwareCenterApps, setOpenSoftwareCenterApps] = useState(false);
 	const [openCustomer, setOpenCustomer] = useState(false);
+	const [openAiChatBot, setOpenAiChatBot] = useState(false);
 	const settings = {
 		className: "center",
 		centerMode: true,
@@ -62,6 +64,22 @@ const Activities = () => {
 							</div>
 						</CardContent>
 					</Card>
+					<Card className="activityCard" onClick={() => setOpenAiChatBot(true)}>
+	<AiChatBot open={openAiChatBot} setOpen={setOpenAiChatBot} />
+	<CardMedia sx={{ height: 200 }} image="/images/extra/ai_bot.jpg" />
+	<CardContent>
+		<div className="">
+			<p className="bg-blue-100 inline-block px-2 py-1 rounded-full text-blue-800 font-light font-mono text-xs mb-2">
+				AI Feature
+			</p>
+			<h3 className="text-lg font-semibold">AI Chat Bot</h3>
+			<p className="text-sm text-gray-600">
+				Developed a smart AI ChatBot to handle user queries and FAQs regarding JioCloud PC.
+			</p>
+		</div>
+	</CardContent>
+</Card>
+
 
 					{/* Peripherals Comparison */}
 					<Card
