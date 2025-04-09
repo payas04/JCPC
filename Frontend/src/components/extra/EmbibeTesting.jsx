@@ -2,7 +2,7 @@ import React from "react";
 import { IoClose } from "react-icons/io5";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 
-const LearnLiteEmbibeReport = ({ open, setOpen }) => {
+const EmbibeTesting = ({ open, setOpen }) => {
   return (
     <Dialog
       open={open}
@@ -180,4 +180,4 @@ const LearnLiteEmbibeReport = ({ open, setOpen }) => {
   );
 };
 
-export default LearnLiteEmbibeReport;
+export default EmbibeTesting;

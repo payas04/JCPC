@@ -1,25 +1,20 @@
 import React, { useState } from "react";
 import Selfie from "../../components/extra/Selfie";
-import OsComparison from "../../components/extra/OsComparison";
 import PeripheralsComparison from "../../components/extra/PeripheralsComparison";
 import { Card, CardContent, CardMedia } from "@mui/material";
-import Faq from "../../components/extra/Faq";
-import JioCloudTesting from "../../components/extra/JioCloudTesting";
+import Faq from "../../components/extra/EmbibeTesting";
 import SoftwareCenterApps from "../../components/extra/SoftwareCenterApps";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import VoiceOfCustomer from "../../components/extra/VoiceOfCustomer";
 import AiChatBot from "../../components/extra/AiChatBot";
+import EmbibeTesting from "../../components/extra/EmbibeTesting";
 
 const Activities = () => {
-  const [open, setOpen] = useState(false);
   const [openSelfie, setOpenSelfie] = useState(false);
   const [openPeripherals, setOpenPeripherals] = useState(false);
-  const [openFaq, setOpenFaq] = useState(false);
-  const [openJioCloud, setOpenJioCloud] = useState(false);
+  const [openEmbibe, setOpenEmbibe] = useState(false);
   const [openSoftwareCenterApps, setOpenSoftwareCenterApps] = useState(false);
-  const [openCustomer, setOpenCustomer] = useState(false);
   const [openAiChatBot, setOpenAiChatBot] = useState(false);
   const settings = {
     className: "center",
@@ -64,22 +59,6 @@ const Activities = () => {
               </div>
             </CardContent>
           </Card>
-          <Card className="activityCard" onClick={() => setOpenAiChatBot(true)}>
-            <AiChatBot open={openAiChatBot} setOpen={setOpenAiChatBot} />
-            <CardMedia sx={{ height: 200 }} image="/images/extra/ai_bot.jpg" />
-            <CardContent>
-              <div className="">
-                <p className="bg-blue-100 inline-block px-2 py-1 rounded-full text-blue-800 font-light font-mono text-xs mb-2">
-                  AI Feature
-                </p>
-                <h3 className="text-lg font-semibold">AI Chat Bot</h3>
-                <p className="text-sm text-gray-600">
-                  Developed a smart AI ChatBot to handle user queries and FAQs
-                  regarding JioCloud PC.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
 
           {/* Peripherals Comparison */}
           <Card
@@ -108,17 +87,17 @@ const Activities = () => {
             </CardContent>
           </Card>
 
-          {/* Faq */}
-          <Card className="activityCard" onClick={() => setOpenFaq(true)}>
-            <Faq open={openFaq} setOpen={setOpenFaq} heading={"hii"} />
+          {/* Embibe */}
+          <Card className="activityCard" onClick={() => setOpenEmbibe(true)}>
+            <EmbibeTesting open={openEmbibe} setOpen={setOpenEmbibe} />
 
-            <CardMedia sx={{ height: 200 }} image="/images/extra/2.jpg" />
+            <CardMedia sx={{ height: 200 }} image="/images/extra/" />
             <CardContent>
               <div className="">
                 <p className="bg-blue-100 inline-block px-3 py-1 rounded-full text-blue-800 font-light font-mono text-xs mb-2">
-                  FAQ's
+                  Testing
                 </p>
-                <h3 className="text-lg font-semibold">FAQ's JioCloud PC</h3>
+                <h3 className="text-lg font-semibold">Embibe Testing</h3>
                 <p className="text-sm text-gray-600">
                   Our team worked on creating a comprehensive FAQ section for
                   JioCloud PC
@@ -127,7 +106,25 @@ const Activities = () => {
             </CardContent>
           </Card>
 
-          {/* JioTranslate */}
+          {/* Ai Chat Bot */}
+          <Card className="activityCard" onClick={() => setOpenAiChatBot(true)}>
+            <AiChatBot open={openAiChatBot} setOpen={setOpenAiChatBot} />
+            <CardMedia sx={{ height: 200 }} image="/images/extra/ai_bot.jpg" />
+            <CardContent>
+              <div className="">
+                <p className="bg-blue-100 inline-block px-2 py-1 rounded-full text-blue-800 font-light font-mono text-xs mb-2">
+                  AI Feature
+                </p>
+                <h3 className="text-lg font-semibold">AI Chat Bot</h3>
+                <p className="text-sm text-gray-600">
+                  Developed a smart AI ChatBot to handle user queries and FAQs
+                  regarding JioPC.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* LearnLite and TeachLite */}
           <Card className="activityCard" onClick={() => setOpenSelfie(true)}>
             <Selfie open={openSelfie} setOpen={setOpenSelfie} />
             <CardMedia sx={{ height: 200 }} image="/images/extra/4.jpg" />
@@ -137,49 +134,12 @@ const Activities = () => {
                   Testing
                 </p>
 
-                <h3 className="text-lg font-semibold">JioTranslate</h3>
+                <h3 className="text-lg font-semibold">
+                  Teachlite and Learnlite
+                </h3>
                 <p className="text-sm text-gray-600">
                   The team performed testing on the JioTranslate app across
                   different versions.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-          {/* JioCloud Testing */}
-          <Card className="activityCard" onClick={() => setOpenJioCloud(true)}>
-            <JioCloudTesting open={openJioCloud} setOpen={setOpenJioCloud} />
-
-            <CardMedia sx={{ height: 200 }} image="/images/extra/5.jpg" />
-            <CardContent>
-              <div className="">
-                <p className="bg-blue-100 inline-block px-2 py-1 rounded-full text-blue-800 font-light font-mono text-xs mb-2">
-                  Testing
-                </p>
-                <h3 className="text-lg font-semibold">JioCloud App</h3>
-                <p className="text-sm text-gray-600">
-                  The team performed testing on the JioCloud app across
-                  different versions.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Voice of Customer */}
-          <Card className="activityCard" onClick={() => setOpenCustomer(true)}>
-            <VoiceOfCustomer open={openCustomer} setOpen={setOpenCustomer} />
-            <CardMedia
-              sx={{ height: 200 }}
-              image="/images/extra/VoiceOfCustomer.webp"
-            />
-            <CardContent>
-              <div className="">
-                <p className="bg-blue-100 inline-block px-2 py-1 rounded-full text-blue-800 font-light font-mono text-xs mb-2">
-                  FAQ's
-                </p>
-                <h3 className="text-lg font-semibold">Voice of Customer</h3>
-                <p className="text-sm text-gray-600">
-                  Team conducted research to identify customer queries about
-                  JioCloud PC
                 </p>
               </div>
             </CardContent>
